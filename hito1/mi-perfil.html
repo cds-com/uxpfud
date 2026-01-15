@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <base href="./">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -19,6 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 	  
 	      <!-- ESTO DEBE SER IMPACTADO EN ARCHIVO.CSS -->
+         		<!-- sidebar-brand -->
     <style>
 
 		
@@ -27,7 +27,7 @@
   background-color: #fff !important;
 }
 
-		<!-- sidebar-brand -->
+
 	.sidebar-brand-full {
   display: block;
   width: 100%;
@@ -88,22 +88,32 @@
     <li class="nav-title">Formularios</li>
     
     <li class="nav-item">
-      <a class="nav-link" href="revisiones.html">
+      <a class="nav-link" href="en-creacion.html">
         <svg class="nav-icon">
-          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-list"></use>
+          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
         </svg>
-        <span>Revisiones</span>
+        <span>En creación</span>
         <span class="badge badge-sm bg-secondary ms-auto">12</span>
       </a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="publicados-vigentes.html">
+      <a class="nav-link" href="pendientes.html">
+        <svg class="nav-icon">
+          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
+        </svg>
+        <span>Pendientes</span>
+        <span class="badge badge-sm bg-warning ms-auto">8</span>
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="publicados.html">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
         </svg>
-        <span>Publicados/Vigentes</span>
-        <span class="badge badge-sm bg-success ms-auto">8</span>
+        <span>Publicados</span>
+        <span class="badge badge-sm bg-success ms-auto">3</span>
       </a>
     </li>
     
@@ -113,7 +123,6 @@
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>
         <span>Builder/Constructor</span>
-        <span class="badge badge-sm bg-info ms-auto">3</span>
       </a>
     </li>
   </ul>
@@ -235,6 +244,9 @@
         </ol>
       </nav>
       <div class="d-flex align-items-baseline flex-wrap">
+        <svg class="me-2" width="28" height="28" fill="currentColor" style="opacity: 0.7;">
+          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+        </svg>
         <h1 class="h2 mb-0 me-3">MI PERFIL</h1>
         <p class="text-body-secondary mb-0">Normas Minvu</p>
       </div>
@@ -247,6 +259,87 @@
         </header>
       <div class="body flex-grow-1 bg-body-tertiary">
         <div class="container-fluid px-5">
+          
+        
+          
+          <!-- Perfil de Usuario -->
+          <div class="row">
+            
+            <!-- Card 1: Foto de Perfil -->
+            <div class="col-lg-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <div class="mb-4">
+                    <div class="mx-auto mb-3" style="width: 180px; height: 180px;">
+                      <img class="rounded-circle w-100 h-100" style="object-fit: cover;" src="../assets/img/perfil.jpg" alt="Foto del usuario">
+                    </div>
+                    <h5 class="mb-1">Dominique Chacra Gaete</h5>
+                    <p class="text-body-secondary mb-3">dchacrag@minvu.cl</p>
+                    <button class="btn btn-outline-primary btn-sm">
+                      <svg class="icon me-1" width="14" height="14" fill="currentColor">
+                        <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-camera"></use>
+                      </svg>
+                      Cambiar Foto
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Card 2: Información Personal -->
+            <div class="col-lg-8 mb-4">
+              <div class="card h-100">
+                <div class="card-header">
+                  <h5 class="mb-0">Información Personal</h5>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row mb-3">
+                      <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="nombres" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="nombres" value="Dominique" disabled>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" value="Chacra Gaete" disabled>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="rut" class="form-label">RUT</label>
+                        <input type="text" class="form-control" id="rut" value="12.345.678-9" disabled>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" value="dchacrag@minvu.cl">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" value="+56 9 1234 5678">
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                      <button type="submit" class="btn btn-primary">
+                        <svg class="icon me-1" width="14" height="14" fill="currentColor">
+                          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-save"></use>
+                        </svg>
+                        Guardar Cambios
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+              <!-- Mensaje informativo tipo Snackbar -->
+          <div class="d-flex align-items-center px-3 py-2 rounded bg-dark text-white mb-4" style="max-width: 100%;">
+            <div class="d-flex align-items-center gap-2">
+              <span class="text-warning fs-5">⚠</span>
+              <span class="small">Los datos presentados en esta sección son administrados centralizadamente, por lo que no pueden ser modificados a través de este portal. Si necesitas realizar alguna actualización a éstos datos, contacta al equipo de soporte PSSIM al teléfono <a href="tel:+56012345678" class="text-white text-decoration-underline">+56012345678</a> o al correo electrónico <a href="mailto:soporte.pssim@minvu.cl" class="text-white text-decoration-underline">soporte.pssim@minvu.cl</a></span>
+            </div>
+          </div>
+          </div>
           
         </div>
       </div>

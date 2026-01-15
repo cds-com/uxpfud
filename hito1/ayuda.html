@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <base href="./">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -88,22 +87,32 @@
     <li class="nav-title">Formularios</li>
     
     <li class="nav-item">
-      <a class="nav-link" href="revisiones.html">
+      <a class="nav-link" href="en-creacion.html">
         <svg class="nav-icon">
-          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-list"></use>
+          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
         </svg>
-        <span>Revisiones</span>
+        <span>En creación</span>
         <span class="badge badge-sm bg-secondary ms-auto">12</span>
       </a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="publicados-vigentes.html">
+      <a class="nav-link" href="pendientes.html">
+        <svg class="nav-icon">
+          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
+        </svg>
+        <span>Pendientes</span>
+        <span class="badge badge-sm bg-warning ms-auto">8</span>
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="publicados.html">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
         </svg>
-        <span>Publicados/Vigentes</span>
-        <span class="badge badge-sm bg-success ms-auto">8</span>
+        <span>Publicados</span>
+        <span class="badge badge-sm bg-success ms-auto">3</span>
       </a>
     </li>
     
@@ -113,7 +122,6 @@
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>
         <span>Builder/Constructor</span>
-        <span class="badge badge-sm bg-info ms-auto">3</span>
       </a>
     </li>
   </ul>
@@ -235,6 +243,9 @@
         </ol>
       </nav>
       <div class="d-flex align-items-baseline flex-wrap">
+		  <svg class="me-2" width="28" height="28" fill="currentColor" style="opacity: 0.7;">
+          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+        </svg>
         <h1 class="h2 mb-0 me-3">AYUDA</h1>
         <p class="text-body-secondary mb-0">Normas Minvu</p>
       </div>
@@ -247,6 +258,117 @@
         </header>
       <div class="body flex-grow-1 bg-body-tertiary">
         <div class="container-fluid px-5">
+          
+          <!-- Colección de Cards de Ayuda -->
+          <div class="row">
+            
+            <!-- Card 1: Manual de uso del Builder -->
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start mb-3">
+                    <svg class="text-primary me-2 flex-shrink-0" width="24" height="24" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-book"></use>
+                    </svg>
+                    <h5 class="card-title mb-0">Manual de uso del Builder</h5>
+                  </div>
+                  <p class="card-text text-body-secondary">Guía completa para utilizar el constructor de formularios. Aprende a crear, editar y gestionar formularios de manera eficiente.</p>
+                  <a href="../assets/img/pfud-demo.pdf" target="_blank" class="btn btn-sm btn-outline-primary">
+                    <svg class="icon me-1" width="14" height="14" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-external-link"></use>
+                    </svg>
+                    Ver
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Card 2: Categorías de Formularios -->
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start mb-3">
+                    <svg class="text-primary me-2 flex-shrink-0" width="24" height="24" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder-open"></use>
+                    </svg>
+                    <h5 class="card-title mb-0">Categorías de Formularios</h5>
+                  </div>
+                  <p class="card-text text-body-secondary">Conoce las diferentes categorías de formularios disponibles en el sistema y sus características principales.</p>
+                  <a href="../assets/img/pfud-demo.pdf" target="_blank" class="btn btn-sm btn-outline-primary">
+                    <svg class="icon me-1" width="14" height="14" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-external-link"></use>
+                    </svg>
+                    Ver
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Card 3: Listado de Componentes Disponibles -->
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-start mb-3">
+                    <svg class="text-primary me-2 flex-shrink-0" width="24" height="24" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-apps"></use>
+                    </svg>
+                    <h5 class="card-title mb-0">Listado de Componentes Disponibles</h5>
+                  </div>
+                  <p class="card-text text-body-secondary">Catálogo completo de componentes y elementos que puedes utilizar para construir tus formularios personalizados.</p>
+                  <a href="../assets/img/pfud-demo.pdf" target="_blank" class="btn btn-sm btn-outline-primary">
+                    <svg class="icon me-1" width="14" height="14" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-external-link"></use>
+                    </svg>
+                    Ver
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Card 4: Datos de Soporte -->
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card h-100 border-primary">
+                <div class="card-body">
+                  <div class="d-flex align-items-start mb-3">
+                    <svg class="text-primary me-2 flex-shrink-0" width="24" height="24" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-headphones"></use>
+                    </svg>
+                    <h5 class="card-title mb-0">Soporte Técnico</h5>
+                  </div>
+                  <p class="card-text text-body-secondary mb-3">¿Necesitas ayuda? Contáctanos a través de los siguientes canales:</p>
+                  <div class="mb-2">
+                    <div class="small text-body-secondary">Teléfono</div>
+                    <a href="tel:+56012345678" class="text-decoration-none">+56 012 345 678</a>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-body-secondary">Email</div>
+                    <a href="mailto:soporte.pssim@minvu.cl" class="text-decoration-none">soporte.pssim@minvu.cl</a>
+                  </div>
+                  <small class="text-body-secondary">Horario de atención: Lunes a Viernes, 9:00 - 18:00 hrs.</small>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Card 5: Tour Guiado -->
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card h-100 bg-light">
+                <div class="card-body">
+                  <div class="d-flex align-items-start mb-3">
+                    <svg class="text-primary me-2 flex-shrink-0" width="24" height="24" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-lightbulb"></use>
+                    </svg>
+                    <h5 class="card-title mb-0">Tour Guiado</h5>
+                  </div>
+                  <p class="card-text text-body-secondary">Vuelve a ver la introducción guiada del sistema y descubre todas sus funcionalidades paso a paso.</p>
+                  <button class="btn btn-sm btn-primary" onclick="alert('Tour guiado activado')">
+                    <i class="bi bi-play-circle me-1"></i>
+                    Iniciar Tour
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
           
         </div>
       </div>
