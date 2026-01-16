@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <base href="./">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -240,6 +239,9 @@
         </ol>
       </nav>
       <div class="d-flex align-items-baseline flex-wrap">
+        <svg class="me-2" width="28" height="28" fill="currentColor" style="opacity: 0.7;">
+          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+        </svg>
         <h1 class="h2 mb-0 me-3">DASHBOARD</h1>
         <p class="text-body-secondary mb-0">Normas Minvu</p>
       </div>
@@ -549,11 +551,11 @@
                   </div>
                 </div>
                 <div class="card-footer text-end">
-                  <a href="#" class="btn btn-outline-secondary btn-sm small">Ver Todas</a>
+                  <a href="en-creacion.html" class="btn btn-outline-secondary btn-sm small">Ver Todas</a>
                 </div>
               </div>
             </div>
-            <!-- Tarjeta: Formularios PUBLICADOS -->
+            <!-- Tarjeta: Formularios Pendientes -->
             <div class="col-12 col-md-6">
               <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
@@ -734,13 +736,15 @@
                   </div>
                 </div>
                 <div class="card-footer text-end">
-                  <a href="#" class="btn btn-outline-secondary btn-sm small">Ver Todas</a>
+                  <a href="pendientes.html" class="btn btn-outline-secondary btn-sm small">Ver Todas</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="row g-4 mb-4 bg-body-tertiary">
-            <!-- Tarjeta: Builder/Constructor -->
+			  
+			  
+            <!-- Tarjeta: Publicados -->
             <div class="col-12">
               <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
@@ -837,7 +841,7 @@
                   </div>
                 </div>
                 <div class="card-footer text-end">
-                  <a href="#" class="btn btn-outline-secondary btn-sm small">Ver Todas</a>
+                  <a href="publicados.html" class="btn btn-outline-secondary btn-sm small">Ver Todas</a>
                 </div>
               </div>
             </div>
@@ -878,6 +882,19 @@
     <script src="../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
     <script src="../_coreui-base/js/main.js"></script>
     <script src="../assets/js/font-size.js"></script>
+    <script>
+      // Hover dropdown para los tres puntos en las tarjetas del dashboard
+      document.addEventListener('DOMContentLoaded', function() {
+        const dropdownButtons = document.querySelectorAll('.table .dropdown button[data-coreui-toggle="dropdown"]');
+        dropdownButtons.forEach(function(button) {
+          button.addEventListener('mouseenter', function() {
+            if (!this.classList.contains('show')) {
+              this.click();
+            }
+          });
+        });
+      });
+    </script>
 	  
   </body>
 </html>
