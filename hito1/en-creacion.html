@@ -92,7 +92,7 @@
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
         </svg>
         <span>En creación</span>
-        <span class="badge badge-sm bg-secondary ms-auto">12</span>
+        <span class="badge badge-sm bg-primary ms-auto">12</span>
       </a>
     </li>
     
@@ -102,7 +102,7 @@
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
         </svg>
         <span>Pendientes</span>
-        <span class="badge badge-sm bg-warning ms-auto">8</span>
+        <span class="badge badge-sm bg-secondary ms-auto">8</span>
       </a>
     </li>
     
@@ -112,7 +112,7 @@
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
         </svg>
         <span>Publicados</span>
-        <span class="badge badge-sm bg-success ms-auto">3</span>
+        <span class="badge badge-sm bg-secondary ms-auto">3</span>
       </a>
     </li>
     
@@ -246,10 +246,12 @@
         <svg class="me-2" width="28" height="28" fill="currentColor" style="opacity: 0.7;">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
         </svg>
-        <h1 class="h2 mb-0 me-3">EN CREACIÓN</h1>
-        <p class="text-body-secondary mb-0">Normas Minvu</p>
+        <h1 class="h2 mb-0 me-3">En creación</h1>
       </div>
     </div>
+  </div>
+  <div class="d-flex justify-content-end mt-3">
+    <a href="builder-constructor.html" class="btn btn-sm small btn-primary">Crear nuevo Formulario</a>
   </div>
 </div>
 
@@ -257,7 +259,38 @@
 
         </header>
       <div class="body flex-grow-1 bg-body-tertiary">
-        <div class="container-fluid px-5">
+        <div class="container-fluid px-5 py-3">
+          
+          <!-- Área de filtros y búsqueda -->
+          <div class="row g-3 mb-3 bg-body border rounded p-3">
+            <div class="col-md-3">
+              <label class="form-label fw-semibold mb-2 small">Buscar</label>
+              <input type="text" class="form-control form-control-sm" placeholder="Buscar formulario...">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-semibold mb-2 small">Filtrar por usuario</label>
+              <select class="form-select form-select-sm">
+                <option selected>María González (Yo)</option>
+                <option>Juan Pérez</option>
+                <option>Carlos Rodríguez</option>
+                <option>Ana Martínez</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-semibold mb-2 small">Filtrar por fecha</label>
+              <input type="date" class="form-control form-control-sm">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-semibold mb-2 small">Filtrar por familia</label>
+              <select class="form-select form-select-sm">
+                <option selected>Todas las familias</option>
+                <option>Familia 1</option>
+                <option>Familia 2</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="container-fluid px-0">
           
           <!-- Listado de Formularios -->
           <div class="row">
@@ -268,8 +301,8 @@
                   <!-- Formulario 1 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Solicitud de Subsidio Habitacional DS49</h6>
-                      <small class="text-body-secondary">Creado por: María González | Última modificación: 14/01/2026 15:30</small>
+                      <h6 class="mb-1">2-3.1 Solicitud de Permiso de Edificación, Obra nueva</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">María González</a> | Última modificación: 14/01/2026 15:30</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -290,8 +323,8 @@
                   <!-- Formulario 2 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Formulario de Postulación Programa Integración Social</h6>
-                      <small class="text-body-secondary">Creado por: Juan Pérez | Última modificación: 14/01/2026 10:15</small>
+                      <h6 class="mb-1">2-1.3 Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Alteración</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Juan Pérez</a> | Última modificación: 14/01/2026 10:15</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -312,8 +345,8 @@
                   <!-- Formulario 3 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Certificado de Factibilidad Técnica de Construcción</h6>
-                      <small class="text-body-secondary">Creado por: Carlos Ramírez | Última modificación: 13/01/2026 16:45</small>
+                      <h6 class="mb-1">2-4.2 Permiso de Edificación, Ampliación Mayor a 100 m2</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Carlos Ramírez</a> | Última modificación: 13/01/2026 16:45</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -334,8 +367,8 @@
                   <!-- Formulario 4 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Solicitud de Mejoramiento de Vivienda</h6>
-                      <small class="text-body-secondary">Creado por: Ana Martínez | Última modificación: 13/01/2026 14:20</small>
+                      <h6 class="mb-1">2-3.3 Solicitud de Permiso de Edificación, Alteración</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Ana Martínez</a> | Última modificación: 13/01/2026 14:20</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -356,8 +389,8 @@
                   <!-- Formulario 5 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Declaración Jurada de Patrimonio y Rentas</h6>
-                      <small class="text-body-secondary">Creado por: Pedro Silva | Última modificación: 12/01/2026 11:00</small>
+                      <h6 class="mb-1">2-2.2 Resolución de Aprobación de Anteproyecto de Obras de Edificación, Ampliación Mayor a 100 m2</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Pedro Silva</a> | Última modificación: 12/01/2026 11:00</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -378,8 +411,8 @@
                   <!-- Formulario 6 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Registro de Proveedor de Servicios MINVU</h6>
-                      <small class="text-body-secondary">Creado por: Lucía Torres | Última modificación: 12/01/2026 09:30</small>
+                      <h6 class="mb-1">2-3.2 Solicitud de Permiso de Edificación, Ampliación Mayor a 100 m2</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Lucía Torres</a> | Última modificación: 12/01/2026 09:30</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -400,8 +433,8 @@
                   <!-- Formulario 7 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Solicitud de Cambio de Titularidad de Vivienda</h6>
-                      <small class="text-body-secondary">Creado por: Roberto Vargas | Última modificación: 11/01/2026 17:15</small>
+                      <h6 class="mb-1">2-2.1 Resolución de Aprobación de Anteproyecto de Obras de Edificación, Obra Nueva</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Roberto Vargas</a> | Última modificación: 11/01/2026 17:15</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -422,8 +455,8 @@
                   <!-- Formulario 8 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Formulario de Inscripción Registro Nacional de Constructores</h6>
-                      <small class="text-body-secondary">Creado por: Fernanda López | Última modificación: 11/01/2026 13:45</small>
+                      <h6 class="mb-1">2-4.1 Permiso de Edificación, Obra nueva</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Fernanda López</a> | Última modificación: 11/01/2026 13:45</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -444,8 +477,8 @@
                   <!-- Formulario 9 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Solicitud de Certificado de Subsidio</h6>
-                      <small class="text-body-secondary">Creado por: Diego Morales | Última modificación: 10/01/2026 15:00</small>
+                      <h6 class="mb-1">2-4.4 Permiso de Edificación, Reconstrucción</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Diego Morales</a> | Última modificación: 10/01/2026 15:00</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -466,8 +499,8 @@
                   <!-- Formulario 10 -->
                   <div class="d-flex align-items-center justify-content-between p-3">
                     <div style="max-width: 60%;">
-                      <h6 class="mb-1">Formulario de Actualización de Datos de Beneficiario</h6>
-                      <small class="text-body-secondary">Creado por: Valentina Castro | Última modificación: 10/01/2026 10:30</small>
+                      <h6 class="mb-1">2-4.3 Permiso de Edificación, Alteración</h6>
+                      <small class="text-body-secondary">Creado por: <a href="#" class="text-decoration-none">Valentina Castro</a> | Última modificación: 10/01/2026 10:30</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
@@ -532,7 +565,7 @@
       </div>
       <div class="modal-footer border-0 justify-content-center pb-4">
         <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Cancelar</button>
-        <a href="out.html" class="btn btn-primary">Sí, quiero salir</a>
+        <a href="index.html" class="btn btn-primary">Sí, quiero salir</a>
       </div>
     </div>
   </div>

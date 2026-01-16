@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="description" content="Portal de Formularios - MINVU">
   <meta name="author" content="MINVU">
-  <title>Acceso - Portal de Formularios MINVU</title>
+  <title>Iniciar Sesión - Portal de Formularios MINVU</title>
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/favico.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logos/favico.png">
   <meta name="theme-color" content="#09132D">
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <!-- Panel Derecho: Login -->
+    <!-- Panel Derecho: Formulario RUT -->
     <div class="col-md-6 bg-body-tertiary d-flex flex-column align-items-center justify-content-center p-4">
       <div class="col-md-6 mx-auto">
         <!-- Controles de Accesibilidad -->
@@ -66,32 +66,35 @@
           </div>
         </div>
         
-        <!-- Card: Acceder con RUT -->
-        <div class="card mb-3">
+
+
+        <!-- Card: Formulario -->
+        <div class="card">
           <div class="card-body p-3">
-            <h3 class="h6 mb-3 text-body-secondary">Ingresa Acá</h3>
-            <a href="login-rut.html" class="btn btn-outline-primary w-100 mb-2">
-              Acceder con Rut o Pasaporte
-            </a>
-            <div class="text-center small">
-              <span class="text-body-secondary">Si no tiene una cuenta </span>
-              <a href="#" class="text-decoration-none">Regístrese Aquí</a>
-            </div>
+            <h2 class="h5 text-center mb-3 text-body">Iniciar Sesión</h2>
+            
+            <form action="dashboard.html" method="get">
+              <div class="mb-3">
+                <label for="rut" class="form-label">RUT <span class="text-danger">*</span></label>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  id="rut" 
+                  name="rut" 
+                  placeholder="Ej: 17072798-3" 
+                  aria-label="Ingrese su RUT"
+                >
+                <div class="form-text">Ingrese su RUT con dígito verificador (ejemplo: 17072798-3)</div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+            </form>
           </div>
         </div>
 
-        <!-- Card: Clave Única -->
-        <div class="card">
-          <div class="card-body p-3">
-            <h3 class="h6 mb-3 text-body-secondary">Ingresar con tu Clave Única</h3>
-            <a href="login-rut.html" class="btn btn-primary w-100 mb-2">
-              <i class="bi bi-fingerprint me-2"></i>Iniciar sesión
-            </a>
-            <div class="text-center small">
-              <span class="text-body-secondary">Si no tienes tu Claveúnica revisa cómo </span>
-              <a href="https://claveunica.gob.cl" target="_blank" class="text-decoration-none">Obtenerla Aquí</a>
-            </div>
-          </div>
+        <!-- Footer -->
+        <div class="text-center mt-3">
+          <p class="small text-body-secondary mb-0">© 2026 MINVU - Todos los derechos reservados</p>
         </div>
 
       </div>
