@@ -16,18 +16,18 @@
     <!-- Main styles for this application-->
     <link href="../_coreui-base/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/pfud.css">
 	  
 	      <!-- ESTO DEBE SER IMPACTADO EN ARCHIVO.CSS -->
     <style>
 
-		
 .sidebar-toggler::before,
 .sidebar-toggler::after {
   background-color: #fff !important;
 }
 
-		/* sidebar-brand */
-	.sidebar-brand-full {
+/* sidebar-brand */
+.sidebar-brand-full {
   display: block;
   width: 100%;
 }
@@ -45,27 +45,15 @@
   display: block;
 }
 
-
-
     </style>
-    <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
-	  
-	  
     <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
     <script src="../_coreui-base/js/config.js"></script>
     <script src="../_coreui-base/js/color-modes.js"></script>
-
-
-
   </head>
   <body>
-	  
-	 
     <div class="d-flex">
-		
 <!-- Sidebar-->
-
-<div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
+      <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
   <div class="sidebar-header border-bottom">
     <div class="sidebar-brand">
       <img src="../assets/img/logos/minvu.png" alt="MINVU" class="sidebar-brand-full w-75">
@@ -76,7 +64,7 @@
   
   <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
     <li class="nav-item">
-      <a class="nav-link active" href="dashboard.html" aria-label="Ir a Dashboard" title="Dashboard">
+      <a class="nav-link active pfud-hint" href="dashboard.html" data-hint="nav_dashboard">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
         </svg>
@@ -87,7 +75,7 @@
     <li class="nav-title">Formularios</li>
     
     <li class="nav-item">
-      <a class="nav-link" href="en-creacion.html" aria-label="Ver formularios en creación" title="En creación">
+      <a class="nav-link pfud-hint" href="en-creacion.html" data-hint="nav_creacion">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
         </svg>
@@ -97,7 +85,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="pendientes.html" aria-label="Ver formularios pendientes" title="Pendientes">
+      <a class="nav-link pfud-hint" href="pendientes.html" data-hint="nav_pendientes">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
         </svg>
@@ -107,7 +95,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="publicados.html" aria-label="Ver formularios publicados" title="Publicados">
+      <a class="nav-link pfud-hint" href="publicados.html" data-hint="nav_publicados">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
         </svg>
@@ -117,7 +105,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="builder-constructor.html" aria-label="Ir al constructor de formularios" title="Builder/Constructor">
+      <a class="nav-link pfud-hint" href="builder-constructor.html" data-hint="nav_builder">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>
@@ -125,15 +113,13 @@
       </a>
     </li>
   </ul>
-  
+
   <div class="sidebar-footer border-top d-none d-md-flex">
-    <button class="sidebar-toggler text-white fs-5 p-2" type="button" data-coreui-toggle="unfoldable" aria-label="Colapsar menú" title="Colapsar menú"></button>
+    <button class="sidebar-toggler text-white fs-5 p-2 pfud-hint" type="button" data-coreui-toggle="unfoldable" data-hint="sidebar_toggle"></button>
   </div>
 </div>
 
-
-		
-		 <!-- top-->
+<!-- top-->
       <div class="wrapper flex-grow-1 d-flex flex-column min-vh-100">
         <header class="header header-sticky p-0 mb-4" data-coreui-theme="auto" data-coreui-theme-dark="bg-dark text-white" data-coreui-theme-light="bg-light text-body">
           <div class="w-100 bg-body-tertiary border-bottom position-sticky top-0 z-3">
@@ -144,32 +130,32 @@
                 <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
               </div>
                 <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
-                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" title="Disminuir tamaño de fuente" aria-label="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)"><span class="fw-bold">A-</span></button>
-                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" title="Aumentar tamaño de fuente" aria-label="Aumentar tamaño de fuente" onclick="adjustFontSize(1)"><span class="fw-bold">A+</span></button>
+                  <button class="btn btn-outline-secondary btn-sm me-0 pfud-hint" type="button" data-hint="font_decrease" onclick="adjustFontSize(-1)"><span class="fw-bold">A-</span></button>
+                  <button class="btn btn-outline-secondary btn-sm me-0 pfud-hint" type="button" data-hint="font_increase" onclick="adjustFontSize(1)"><span class="fw-bold">A+</span></button>
                   <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
                 <div class="dropdown">
-                  <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown" title="Cambiar tema">
+                  <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center pfud-hint" type="button" aria-expanded="false" data-coreui-toggle="dropdown" data-hint="theme_toggle">
                     <svg class="icon icon-lg theme-icon-active">
       <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                     </svg>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light" aria-label="Cambiar a modo claro" title="Modo claro">
+                      <button class="dropdown-item d-flex align-items-center pfud-hint" type="button" data-coreui-theme-value="light" data-hint="theme_light">
                         <svg class="icon icon-lg me-3">
                           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
                         </svg>Light
                       </button>
                     </li>
                     <li>
-                      <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark" aria-label="Cambiar a modo oscuro" title="Modo oscuro">
+                      <button class="dropdown-item d-flex align-items-center pfud-hint" type="button" data-coreui-theme-value="dark" data-hint="theme_dark">
                         <svg class="icon icon-lg me-3">
                           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
                         </svg>Dark
                       </button>
                     </li>
                     <li>
-                      <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto" aria-label="Cambiar a modo automático" title="Modo automático">
+                      <button class="dropdown-item d-flex align-items-center active pfud-hint" type="button" data-coreui-theme-value="auto" data-hint="theme_auto">
                         <svg class="icon icon-lg me-3">
                           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                         </svg>Auto
@@ -177,16 +163,16 @@
                     </li>
                   </ul>
                 </div>
-                <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div><a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary" href="ayuda.html" title="Ayuda">
+                <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div><a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary pfud-hint" href="ayuda.html" data-hint="ayuda_link">
                   <svg class="me-1 align-middle" width="18" height="18" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use></svg>
                   <span>Ayuda</span>
                 </a>
                 <div class="dropdown">
-                  <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false" aria-label="Abrir menú de perfil" title="Mi perfil">
+                  <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle pfud-hint" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false" data-hint="perfil_menu">
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use></svg>
                     <span>Mi Perfil</span>
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-end" style="min-width: 240px;" aria-labelledby="perfilDropdown">
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
                     <li class="px-3 py-1">
                       <div class="avatar avatar-xl mb-3">
                         <img class="avatar-img" src="../assets/img/perfil.jpg" alt="Foto del usuario">
@@ -205,7 +191,7 @@
                     <li><hr class="dropdown-divider my-0"></li>
                     <li class="px-3 py-2">
                       <div class="small text-body-secondary">E-mail</div>
-                      <div class="small"><a href="mailto:dchacrag@minvu.cl" aria-label="Enviar correo a dchacrag@minvu.cl" title="Enviar correo">dchacrag@minvu.cl</a></div>
+                      <div class="small"><a href="mailto:dchacrag@minvu.cl" class="pfud-hint" data-hint="perfil_email">dchacrag@minvu.cl</a></div>
                     </li>
                     <li><hr class="dropdown-divider my-0"></li>
                     <li class="px-3 py-2">
@@ -214,14 +200,14 @@
                     </li>
                     <li><hr class="dropdown-divider my-0"></li>
                     <li class="px-3 py-2">
-                      <a href="mi-perfil.html" class="btn btn-sm btn-outline-primary w-100" aria-label="Ir a mi perfil para actualizar datos" title="Actualizar datos">
+                      <a href="mi-perfil.html" class="btn btn-sm btn-outline-primary w-100 pfud-hint" data-hint="perfil_update">
                         <svg class="me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use></svg>
                         <span class="small">Actualizar Datos</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-                <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary" href="#" data-coreui-toggle="modal" data-coreui-target="#logoutModal" title="Salir">
+                <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary pfud-hint" href="#" data-coreui-toggle="modal" data-coreui-target="#logoutModal" data-hint="logout_link">
                   <svg class="me-1 align-middle" width="18" height="18" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use></svg>
                   <span>Salir</span>
                 </a>
@@ -229,85 +215,66 @@
             </div>
             </div>
           </div>
+
 <div class="container-fluid px-5">
   <div class="row py-3 bg-body rounded-3 text-body mt-2 align-items-center">
     <div class="col">
       <nav aria-label="breadcrumb" class="mb-2">
         <ol class="breadcrumb my-0 small">
-          <li class="breadcrumb-item"><a href="dashboard.html" class="small" aria-label="Volver al Dashboard" title="Inicio">Home</a></li>
+          <li class="breadcrumb-item"><a href="dashboard.html" class="small pfud-hint" data-hint="breadcrumb_home">Home</a></li>
           <li class="breadcrumb-item active"><span class="small">Dashboard</span></li>
         </ol>
       </nav>
       <div class="d-flex align-items-baseline flex-wrap">
-        <svg class="me-2" width="28" height="28" fill="currentColor" style="opacity: 0.7;">
+        <svg class="me-2" width="28" height="28" fill="currentColor">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
         </svg>
         <h1 class="h2 mb-0 me-3">Dashboard</h1>
-        <p class="text-body-secondary mb-0">Normas Minvu</p>
       </div>
     </div>
   </div>
   <div class="d-flex justify-content-end mt-3">
-    <a href="builder-constructor.html" class="btn btn-sm small btn-primary" aria-label="Ir al constructor para crear nuevo formulario" title="Crear formulario">Crear nuevo Formulario</a>
+    <a href="builder-constructor.html" class="btn btn-sm small btn-primary pfud-hint" data-hint="crear_formulario">Crear nuevo Formulario</a>
   </div>
 </div>
 
 
 
         </header>
-		  
-		  
-		  <!--cuerpo-->
+
+<!--cuerpo-->
       <div class="body flex-grow-1 bg-body-tertiary">
         <div class="container-fluid px-5">
           
           <!-- Fila de Métricas KPI -->
           <div class="row g-3 mb-4">
-            <!-- Métrica 1: Publicados -->
-            <div class="col-12 col-sm-6 col-lg">
+            <!-- Métrica 1: Formularios Publicados -->
+            <div class="col-12 col-md-4 col-xl-2">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-start mb-2">
                     <div>
                       <div class="fs-2 fw-semibold mb-1" id="counterPublicados">24</div>
-                      <div class="fs-5 text-uppercase">Publicados</div>
-                      <div class="small text-body-secondary">Cantidad de Formularios publicados</div>
+                      <div class="fs-6 text-uppercase fw-bold">Formularios</div>
+                      <div class="small text-body-secondary">Publicados al 31/01/2026</div>
                     </div>
                     <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
                     </svg>
                   </div>
                 </div>
               </div>
             </div>
             
-            <!-- Métrica 2: Observaciones -->
-            <div class="col-12 col-sm-6 col-lg">
+            <!-- Métrica 2: Formularios en Proceso -->
+            <div class="col-12 col-md-4 col-xl-2">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-start mb-2">
                     <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterObservaciones">47</div>
-                      <div class="fs-5 text-uppercase">Observaciones</div>
-                      <div class="small text-body-secondary">Observaciones a formularios</div>
-                    </div>
-                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-comment-square"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Métrica 3: En Creación -->
-            <div class="col-12 col-sm-6 col-lg">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterCreacion">12</div>
-                      <div class="fs-5 text-uppercase">En Creación</div>
-                      <div class="small text-body-secondary">Cantidad de Formularios en creación</div>
+                      <div class="fs-2 fw-semibold mb-1" id="counterProceso">12</div>
+                      <div class="fs-6 text-uppercase fw-bold">Formularios</div>
+                      <div class="small text-body-secondary">En proceso de creación.</div>
                     </div>
                     <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
                       <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
@@ -317,15 +284,33 @@
               </div>
             </div>
             
-            <!-- Métrica 4: Usuarios Activos -->
-            <div class="col-12 col-sm-6 col-lg">
+            <!-- Métrica 3: Observaciones -->
+            <div class="col-12 col-md-4 col-xl-2">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-start mb-2">
                     <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterUsuarios">156</div>
-                      <div class="fs-5 text-uppercase">Usuarios </div>
-                      <div class="small text-body-secondary">Usuarios utilizando los formularios</div>
+                      <div class="fs-2 fw-semibold mb-1" id="counterObservaciones">47</div>
+                      <div class="fs-6 text-uppercase fw-bold">Observaciones</div>
+                      <div class="small text-body-secondary">Sin resolver en formularios.</div>
+                    </div>
+                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Métrica 4: Ciudadanos -->
+            <div class="col-12 col-md-4 col-xl-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <div class="fs-2 fw-semibold mb-1" id="counterCiudadanos">156</div>
+                      <div class="fs-6 text-uppercase fw-bold">Ciudadanos</div>
+                      <div class="small text-body-secondary">Han ingresado al sistema.</div>
                     </div>
                     <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
                       <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-people"></use>
@@ -335,15 +320,33 @@
               </div>
             </div>
             
-            <!-- Métrica 5: Tiempo Promedio -->
-            <div class="col-12 col-sm-6 col-lg">
+            <!-- Métrica 5: Solicitudes -->
+            <div class="col-12 col-md-4 col-xl-2">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-start mb-2">
                     <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterTiempo">8:42</div>
-                      <div class="fs-5 text-uppercase">Tiempo Promedio</div>
-                      <div class="small text-body-secondary">Tiempo promedio de llenado de formularios</div>
+                      <div class="fs-2 fw-semibold mb-1" id="counterSolicitudes">240</div>
+                      <div class="fs-6 text-uppercase fw-bold">Solicitudes</div>
+                      <div class="small text-body-secondary">Ingresadas el último mes.</div>
+                    </div>
+                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-inbox"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Métrica 6: Tiempo Promedio -->
+            <div class="col-12 col-md-4 col-xl-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <div class="fs-2 fw-semibold mb-1" id="counterTiempo">12.2</div>
+                      <div class="fs-6 text-uppercase fw-bold">Promedio</div>
+                      <div class="small text-body-secondary">Tiempo de llenado</div>
                     </div>
                     <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
                       <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
@@ -379,19 +382,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Editar formulario" title="Editar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_edit">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
                                   </svg>
                                   Editar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -414,19 +417,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Editar formulario" title="Editar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_edit">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
                                   </svg>
                                   Editar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -449,19 +452,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Editar formulario" title="Editar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_edit">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
                                   </svg>
                                   Editar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -484,19 +487,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Editar formulario" title="Editar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_edit">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
                                   </svg>
                                   Editar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -519,19 +522,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Editar formulario" title="Editar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_edit">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
                                   </svg>
                                   Editar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -546,7 +549,7 @@
                   </div>
                 </div>
                 <div class="card-footer text-end">
-                  <a href="en-creacion.html" class="btn btn-outline-secondary btn-sm small" aria-label="Ver todos los formularios en creación" title="Ver todas">Ver Todas</a>
+                  <a href="en-creacion.html" class="btn btn-outline-secondary btn-sm small pfud-hint" data-hint="ver_todas_creacion">Ver Todos</a>
                 </div>
               </div>
             </div>
@@ -574,19 +577,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Programar publicación del formulario" title="Programar publicación">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_schedule">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
                                   </svg>
                                   Programar Publicación
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -609,19 +612,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Programar publicación del formulario" title="Programar publicación">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_schedule">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
                                   </svg>
                                   Programar Publicación
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -644,19 +647,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Programar publicación del formulario" title="Programar publicación">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_schedule">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
                                   </svg>
                                   Programar Publicación
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -679,19 +682,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Programar publicación del formulario" title="Programar publicación">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_schedule">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
                                   </svg>
                                   Programar Publicación
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -714,19 +717,19 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Programar publicación del formulario" title="Programar publicación">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_schedule">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
                                   </svg>
                                   Programar Publicación
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" aria-label="Eliminar formulario" title="Eliminar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="#" data-hint="action_delete">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
                                   </svg>
@@ -741,7 +744,7 @@
                   </div>
                 </div>
                 <div class="card-footer text-end">
-                  <a href="pendientes.html" class="btn btn-outline-secondary btn-sm small" aria-label="Ver todos los formularios pendientes" title="Ver todas">Ver Todas</a>
+                  <a href="pendientes.html" class="btn btn-outline-secondary btn-sm small pfud-hint" data-hint="ver_todas_pendientes">Ver Todos</a>
                 </div>
               </div>
             </div>
@@ -773,13 +776,13 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Crear nueva versión del formulario" title="Crear nueva versión">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_new_version">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
                                   </svg>
@@ -802,13 +805,13 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Crear nueva versión del formulario" title="Crear nueva versión">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_new_version">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
                                   </svg>
@@ -831,13 +834,13 @@
                                 <i class="bi bi-three-dots-vertical"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Previsualizar formulario" title="Previsualizar">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_preview">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                                   </svg>
                                   Previsualizar
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#" aria-label="Crear nueva versión del formulario" title="Crear nueva versión">
+                                <a class="dropdown-item pfud-hint d-flex align-items-center gap-2 py-2 px-2 small" href="#" data-hint="action_new_version">
                                   <svg class="align-middle" width="18" height="18" fill="currentColor">
                                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
                                   </svg>
@@ -852,13 +855,15 @@
                   </div>
                 </div>
                 <div class="card-footer text-end">
-                  <a href="publicados.html" class="btn btn-outline-secondary btn-sm small" aria-label="Ver todos los formularios publicados" title="Ver todas">Ver Todas</a>
+                  <a href="publicados.html" class="btn btn-outline-secondary btn-sm small pfud-hint" data-hint="ver_todas_publicados">Ver Todos</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+<!-- Pie-->
       <footer class="footer px-4">
         <div class="d-flex justify-content-between align-items-center w-100 small">
           <div class="small">MINVU © 2025 MINISTERIO DE VIVIENDA Y URBANISMO</div>
@@ -880,8 +885,8 @@
         <p class="text-body-secondary">Presiona aceptar para guardar tu trabajo y cerrar tu sesión. En caso contrario, presiona Cancelar o haz click en la X.</p>
       </div>
       <div class="modal-footer border-0 justify-content-center pb-4">
-        <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Cancelar</button>
-        <a href="index.html" class="btn btn-primary" aria-label="Confirmar salida y cerrar sesión" title="Salir">Sí, quiero salir</a>
+        <button type="button" class="btn btn-secondary pfud-hint" data-coreui-dismiss="modal" data-hint="modal_cancel">Cancelar</button>
+        <a href="index.html" class="btn btn-primary pfud-hint" data-hint="modal_confirm_logout">Sí, quiero salir</a>
       </div>
     </div>
   </div>

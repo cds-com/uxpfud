@@ -16,18 +16,17 @@
     <!-- Main styles for this application-->
     <link href="../_coreui-base/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-	  
-	      <!-- ESTO DEBE SER IMPACTADO EN ARCHIVO.CSS -->
+
+    <!-- ESTO DEBE SER IMPACTADO EN ARCHIVO.CSS -->
+    <!-- sidebar-brand -->
     <style>
 
-		
 .sidebar-toggler::before,
 .sidebar-toggler::after {
   background-color: #fff !important;
 }
 
-		<!-- sidebar-brand -->
-	.sidebar-brand-full {
+.sidebar-brand-full {
   display: block;
   width: 100%;
 }
@@ -45,27 +44,15 @@
   display: block;
 }
 
-
-
     </style>
-    <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
-	  
-	  
     <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
     <script src="../_coreui-base/js/config.js"></script>
     <script src="../_coreui-base/js/color-modes.js"></script>
-
-
-
   </head>
   <body>
-	  
-	 
     <div class="d-flex">
-		
 <!-- Sidebar-->
-
-<div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
+      <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
   <div class="sidebar-header border-bottom">
     <div class="sidebar-brand">
       <img src="../assets/img/logos/minvu.png" alt="MINVU" class="sidebar-brand-full w-75">
@@ -76,7 +63,7 @@
   
   <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
     <li class="nav-item">
-      <a class="nav-link" href="dashboard.html">
+      <a class="nav-link" href="dashboard.html" aria-label="Ir a Dashboard">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
         </svg>
@@ -87,7 +74,7 @@
     <li class="nav-title">Formularios</li>
     
     <li class="nav-item">
-      <a class="nav-link" href="en-creacion.html">
+      <a class="nav-link" href="en-creacion.html" aria-label="Ver formularios en creación">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
         </svg>
@@ -97,7 +84,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="pendientes.html">
+      <a class="nav-link" href="pendientes.html" aria-label="Ver formularios pendientes">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
         </svg>
@@ -107,7 +94,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="publicados.html">
+      <a class="nav-link" href="publicados.html" aria-label="Ver formularios publicados">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
         </svg>
@@ -117,7 +104,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="builder-constructor.html">
+      <a class="nav-link" href="builder-constructor.html" aria-label="Ir al constructor de formularios">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>
@@ -125,19 +112,13 @@
       </a>
     </li>
   </ul>
-  
-<div class="sidebar-footer border-top d-none d-md-flex">
+
+  <div class="sidebar-footer border-top d-none d-md-flex">
     <button class="sidebar-toggler text-white fs-5 p-2" type="button" data-coreui-toggle="unfoldable" aria-label="Colapsar menú"></button>
+  </div>
 </div>
 
-
-
-
-
-</div>
-
-		
-		 <!-- cuerpo-->
+<!-- top-->
       <div class="wrapper flex-grow-1 d-flex flex-column min-vh-100">
         <header class="header header-sticky p-0 mb-4" data-coreui-theme="auto" data-coreui-theme-dark="bg-dark text-white" data-coreui-theme-light="bg-light text-body">
           <div class="w-100 bg-body-tertiary border-bottom position-sticky top-0 z-3">
@@ -148,32 +129,32 @@
                 <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
               </div>
                 <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
-                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" title="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)"><span class="fw-bold">A-</span></button>
-                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" title="Aumentar tamaño de fuente" onclick="adjustFontSize(1)"><span class="fw-bold">A+</span></button>
+                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" aria-label="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)"><span class="fw-bold">A-</span></button>
+                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" aria-label="Aumentar tamaño de fuente" onclick="adjustFontSize(1)"><span class="fw-bold">A+</span></button>
                   <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
                 <div class="dropdown">
-                  <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown">
+                  <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown" aria-label="Cambiar tema">
                     <svg class="icon icon-lg theme-icon-active">
                       <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                     </svg>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light">
+                      <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light" aria-label="Cambiar a modo claro">
                         <svg class="icon icon-lg me-3">
                           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
                         </svg>Light
                       </button>
                     </li>
                     <li>
-                      <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark">
+                      <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark" aria-label="Cambiar a modo oscuro">
                         <svg class="icon icon-lg me-3">
                           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
                         </svg>Dark
                       </button>
                     </li>
                     <li>
-                      <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto">
+                      <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto" aria-label="Cambiar a modo automático">
                         <svg class="icon icon-lg me-3">
                           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                         </svg>Auto
@@ -181,16 +162,16 @@
                     </li>
                   </ul>
                 </div>
-                <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div><a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary" href="ayuda.html" title="Ayuda">
+                <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div><a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary" href="ayuda.html" aria-label="Ver ayuda">
                   <svg class="me-1 align-middle" width="18" height="18" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use></svg>
                   <span>Ayuda</span>
                 </a>
                 <div class="dropdown">
-                  <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false">
+                  <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false" aria-label="Abrir menú de perfil">
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use></svg>
                     <span>Mi Perfil</span>
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-end" style="min-width: 240px;" aria-labelledby="perfilDropdown">
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
                     <li class="px-3 py-1">
                       <div class="avatar avatar-xl mb-3">
                         <img class="avatar-img" src="../assets/img/perfil.jpg" alt="Foto del usuario">
@@ -209,7 +190,7 @@
                     <li><hr class="dropdown-divider my-0"></li>
                     <li class="px-3 py-2">
                       <div class="small text-body-secondary">E-mail</div>
-                      <div class="small"><a href="mailto:dchacrag@minvu.cl">dchacrag@minvu.cl</a></div>
+                      <div class="small"><a href="mailto:dchacrag@minvu.cl" aria-label="Enviar correo a dchacrag@minvu.cl">dchacrag@minvu.cl</a></div>
                     </li>
                     <li><hr class="dropdown-divider my-0"></li>
                     <li class="px-3 py-2">
@@ -218,14 +199,14 @@
                     </li>
                     <li><hr class="dropdown-divider my-0"></li>
                     <li class="px-3 py-2">
-                      <a href="mi-perfil.html" class="btn btn-sm btn-outline-primary w-100">
+                      <a href="mi-perfil.html" class="btn btn-sm btn-outline-primary w-100" aria-label="Ir a mi perfil para actualizar datos">
                         <svg class="me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use></svg>
                         <span class="small">Actualizar Datos</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-                <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary" href="#" data-coreui-toggle="modal" data-coreui-target="#logoutModal" title="Salir">
+                <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary" href="#" data-coreui-toggle="modal" data-coreui-target="#logoutModal" aria-label="Cerrar sesión">
                   <svg class="me-1 align-middle" width="18" height="18" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use></svg>
                   <span>Salir</span>
                 </a>
@@ -238,12 +219,12 @@
     <div class="col">
       <nav aria-label="breadcrumb" class="mb-2">
         <ol class="breadcrumb my-0 small">
-          <li class="breadcrumb-item"><a href="dashboard.html" class="small">Home</a></li>
+          <li class="breadcrumb-item"><a href="dashboard.html" class="small" aria-label="Volver al Dashboard">Home</a></li>
           <li class="breadcrumb-item active"><span class="small">Publicaods</span></li>
         </ol>
       </nav>
       <div class="d-flex align-items-baseline flex-wrap">
-        <svg class="me-2" width="28" height="28" fill="currentColor" style="opacity: 0.7;">
+        <svg class="me-2" width="28" height="28" fill="currentColor">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
         </svg>
         <h1 class="h2 mb-0 me-3">Publicados</h1>
@@ -255,6 +236,8 @@
 
 
         </header>
+
+<!--cuerpo-->
       <div class="body flex-grow-1 bg-body-tertiary">
         <div class="container-fluid px-5">
           
@@ -266,16 +249,16 @@
                   
                   <!-- Formulario 1 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-8.2 Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2 - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 07/01/2026, a las 14:35:22, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión del formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -284,16 +267,16 @@
                   
                   <!-- Formulario 2 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-6.4 Resolución Aprueba Modificación de Proyecto de Edificación, Reconstrucción - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 04/01/2026, a las 09:15:48, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -302,16 +285,16 @@
                   
                   <!-- Formulario 3 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-8.4 Certificado de Recepción Definitiva de Obras de Reconstrucción de Edificación, Reconstrucción - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 02/01/2026, a las 16:42:13, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -320,16 +303,16 @@
                   
                   <!-- Formulario 4 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-5.2 Solicitud de Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2 - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 28/12/2025, a las 11:20:35, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -338,16 +321,16 @@
                   
                   <!-- Formulario 5 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-8.2 Certificado de Recepción Definitiva de Obras de Edificación, Ampliación Mayor a 100 m2 - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 20/12/2025, a las 14:55:12, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -356,16 +339,16 @@
                   
                   <!-- Formulario 6 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-7.4 Solicitud de Recepción Definitiva de Obras de Edificación, Reconstrucción - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 15/12/2025, a las 10:30:47, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -374,16 +357,16 @@
                   
                   <!-- Formulario 7 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-6.2 Resolución Aprueba Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2 - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 08/12/2025, a las 16:15:22, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -392,16 +375,16 @@
                   
                   <!-- Formulario 8 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-1.2 Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Ampliación Mayor a 100 m2 - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 01/12/2025, a las 09:45:33, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -410,16 +393,16 @@
                   
                   <!-- Formulario 9 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-8.4 Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Reconstrucción - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 25/11/2025, a las 13:22:18, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -428,16 +411,16 @@
                   
                   <!-- Formulario 10 -->
                   <div class="d-flex align-items-center justify-content-between p-3">
-                    <div style="max-width: 60%;">
+                    <div>
                       <h6 class="mb-1">2-5.4 Solicitud de Modificación de Proyecto de Reconstrucción de Edificación, Reconstrucción - ID FORMULARIO - VERSIÓN</h6>
                       <small class="text-body-secondary">Publicado el 18/11/2025, a las 15:10:55, por Dominique Chacra Gaete</small>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap">
+                      <a href="#" class="btn btn-sm btn-outline-secondary text-nowrap" aria-label="Crear nueva versión">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use></svg>
                         Crear nueva versión
                       </a>
@@ -454,12 +437,12 @@
                     <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
                   </li>
                   <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">1</a>
+                    <a class="page-link" href="#" aria-label="Página 1">1</a>
                   </li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#" aria-label="Ir a página 2">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#" aria-label="Ir a página 3">3</a></li>
                   <li class="page-item">
-                    <a class="page-link" href="#">Siguiente</a>
+                    <a class="page-link" href="#" aria-label="Ir a página siguiente">Siguiente</a>
                   </li>
                 </ul>
               </nav>
@@ -469,6 +452,8 @@
           
         </div>
       </div>
+
+<!-- Pie-->
       <footer class="footer px-4">
         <div class="d-flex justify-content-between align-items-center w-100 small">
           <div class="small">MINVU © 2025 MINISTERIO DE VIVIENDA Y URBANISMO</div>
@@ -490,8 +475,8 @@
         <p class="text-body-secondary">Presiona aceptar para guardar tu trabajo y cerrar tu sesión. En caso contrario, presiona Cancelar o haz click en la X.</p>
       </div>
       <div class="modal-footer border-0 justify-content-center pb-4">
-        <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal">Cancelar</button>
-        <a href="index.html" class="btn btn-primary">Sí, quiero salir</a>
+        <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal" aria-label="Cancelar y permanecer en la página">Cancelar</button>
+        <a href="index.html" class="btn btn-primary" aria-label="Confirmar salida y cerrar sesión">Sí, quiero salir</a>
       </div>
     </div>
   </div>

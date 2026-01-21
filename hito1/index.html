@@ -31,32 +31,32 @@
       <div class="col-md-6 mx-auto">
         <!-- Controles de Accesibilidad -->
         <div class="d-flex justify-content-end align-items-center gap-2 mb-3">
-          <button class="btn btn-outline-secondary btn-sm" type="button" title="Disminuir tamaño de fuente" aria-label="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)"><span class="fw-bold">A-</span></button>
-          <button class="btn btn-outline-secondary btn-sm" type="button" title="Aumentar tamaño de fuente" aria-label="Aumentar tamaño de fuente" onclick="adjustFontSize(1)"><span class="fw-bold">A+</span></button>
+          <button class="btn btn-outline-secondary btn-sm" type="button" aria-label="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)"><span class="fw-bold">A-</span></button>
+          <button class="btn btn-outline-secondary btn-sm" type="button" aria-label="Aumentar tamaño de fuente" onclick="adjustFontSize(1)"><span class="fw-bold">A+</span></button>
           <div class="vr mx-1"></div>
           <div class="dropdown">
-            <button class="btn btn-link nav-link py-1 px-2 d-flex align-items-center" type="button" data-coreui-toggle="dropdown" title="Cambiar tema" aria-label="Cambiar modo de color">
+            <button class="btn btn-link nav-link py-1 px-2 d-flex align-items-center" type="button" data-coreui-toggle="dropdown" aria-label="Cambiar tema">
               <svg class="icon icon-lg theme-icon-active">
                 <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
               </svg>
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light" aria-label="Cambiar a modo claro" title="Modo claro">
+                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light" aria-label="Cambiar a modo claro">
                   <svg class="icon icon-lg me-2">
                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
                   </svg>Light
                 </button>
               </li>
               <li>
-                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark" aria-label="Cambiar a modo oscuro" title="Modo oscuro">
+                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark" aria-label="Cambiar a modo oscuro">
                   <svg class="icon icon-lg me-2">
                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
                   </svg>Dark
                 </button>
               </li>
               <li>
-                <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto" aria-label="Cambiar a modo automático" title="Modo automático">
+                <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto" aria-label="Cambiar a modo automático">
                   <svg class="icon icon-lg me-2">
                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                   </svg>Auto
@@ -70,12 +70,12 @@
         <div class="card mb-3">
           <div class="card-body p-3">
             <h3 class="h6 mb-3 text-body-secondary">Ingresa Acá</h3>
-            <a href="login-rut.html" class="btn btn-outline-primary w-100 mb-2">
+            <a href="login-rut.html" class="btn btn-outline-primary w-100 mb-2" aria-label="Acceder con RUT o Pasaporte">
               Acceder con Rut o Pasaporte
             </a>
             <div class="text-center small">
               <span class="text-body-secondary">Si no tiene una cuenta </span>
-              <a href="#" class="text-decoration-none">Regístrese Aquí</a>
+              <a href="#" class="text-decoration-none" aria-label="Registrarse en el sistema">Regístrese Aquí</a>
             </div>
           </div>
         </div>
@@ -84,12 +84,12 @@
         <div class="card">
           <div class="card-body p-3">
             <h3 class="h6 mb-3 text-body-secondary">Ingresar con tu Clave Única</h3>
-            <a href="login-rut.html" class="btn btn-primary w-100 mb-2">
+            <a href="login-rut.html" class="btn btn-primary w-100 mb-2" aria-label="Iniciar sesión con Clave Única">
               <i class="bi bi-fingerprint me-2"></i>Iniciar sesión
             </a>
             <div class="text-center small">
               <span class="text-body-secondary">Si no tienes tu Claveúnica revisa cómo </span>
-              <a href="https://claveunica.gob.cl" target="_blank" class="text-decoration-none">Obtenerla Aquí</a>
+              <a href="https://claveunica.gob.cl" target="_blank" class="text-decoration-none" aria-label="Obtener Clave Única en sitio oficial">Obtenerla Aquí</a>
             </div>
           </div>
         </div>

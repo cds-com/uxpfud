@@ -31,32 +31,32 @@
       <div class="col-md-6 mx-auto">
         <!-- Controles de Accesibilidad -->
         <div class="d-flex justify-content-end align-items-center gap-2 mb-3">
-          <button class="btn btn-outline-secondary btn-sm" type="button" title="Disminuir tamaño de fuente" aria-label="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)"><span class="fw-bold">A-</span></button>
-          <button class="btn btn-outline-secondary btn-sm" type="button" title="Aumentar tamaño de fuente" aria-label="Aumentar tamaño de fuente" onclick="adjustFontSize(1)"><span class="fw-bold">A+</span></button>
+          <button class="btn btn-outline-secondary btn-sm" type="button" aria-label="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)"><span class="fw-bold">A-</span></button>
+          <button class="btn btn-outline-secondary btn-sm" type="button" aria-label="Aumentar tamaño de fuente" onclick="adjustFontSize(1)"><span class="fw-bold">A+</span></button>
           <div class="vr mx-1"></div>
           <div class="dropdown">
-            <button class="btn btn-link nav-link py-1 px-2 d-flex align-items-center" type="button" data-coreui-toggle="dropdown" title="Cambiar tema" aria-label="Cambiar modo de color">
+            <button class="btn btn-link nav-link py-1 px-2 d-flex align-items-center" type="button" data-coreui-toggle="dropdown" aria-label="Cambiar modo de color">
               <svg class="icon icon-lg theme-icon-active">
                 <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
               </svg>
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
               <li>
-                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light" aria-label="Cambiar a modo claro" title="Modo claro">
+                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light" aria-label="Cambiar a modo claro">
                   <svg class="icon icon-lg me-2">
                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
                   </svg>Light
                 </button>
               </li>
               <li>
-                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark" aria-label="Cambiar a modo oscuro" title="Modo oscuro">
+                <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark" aria-label="Cambiar a modo oscuro">
                   <svg class="icon icon-lg me-2">
                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
                   </svg>Dark
                 </button>
               </li>
               <li>
-                <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto" aria-label="Cambiar a modo automático" title="Modo automático">
+                <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto" aria-label="Cambiar a modo automático">
                   <svg class="icon icon-lg me-2">
                     <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                   </svg>Auto
@@ -65,8 +65,6 @@
             </ul>
           </div>
         </div>
-        
-
 
         <!-- Card: Formulario -->
         <div class="card">
@@ -87,9 +85,37 @@
                 <div class="form-text">Ingrese su RUT con dígito verificador (ejemplo: 17072798-3)</div>
               </div>
               
-              <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+              <button type="submit" class="btn btn-primary w-100" aria-label="Ingresar al sistema">Ingresar</button>
             </form>
           </div>
+        </div>
+
+        <!-- Mensaje informativo -->
+        <div class="d-flex justify-content-center gap-2 mt-3 mb-3">
+          <button type="button" class="btn btn-outline-info btn-sm" aria-label="Solicitar clave de acceso"
+                  data-coreui-toggle="popover" 
+                  data-coreui-placement="bottom"
+                  data-coreui-trigger="focus"
+                  data-coreui-title="¿No tienes clave de acceso?"
+                  data-coreui-content="Para obtener o solicitar tu clave PSSIM, debes contactar al administrador de tu institución o al área de soporte técnico de MINVU. La gestión de credenciales no es un proceso automático y requiere validación institucional."
+                  data-coreui-html="true">
+            <svg class="icon me-1">
+              <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+            </svg>
+            Solicitar clave
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" aria-label="Ver información sobre privacidad"
+                  data-coreui-toggle="popover" 
+                  data-coreui-placement="bottom"
+                  data-coreui-trigger="focus"
+                  data-coreui-title="Uso de datos personales"
+                  data-coreui-content="Al acceder a este sistema, aceptas que tus datos personales serán procesados conforme a la Ley N° 19.628 sobre Protección de la Vida Privada y utilizados exclusivamente para los fines institucionales de MINVU."
+                  data-coreui-html="true">
+            <svg class="icon me-1">
+              <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-shield-alt"></use>
+            </svg>
+            Privacidad
+          </button>
         </div>
 
         <!-- Footer -->
@@ -102,6 +128,7 @@
   </div>
 
   <script src="../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+  <script src="../_coreui-base/js/popovers.js"></script>
   <script src="../assets/js/font-size.js"></script>
 </body>
 </html>
