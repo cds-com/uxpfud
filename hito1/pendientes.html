@@ -16,6 +16,7 @@
     <!-- Main styles for this application-->
     <link href="../_coreui-base/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/pfud.css">
 
     <!-- ESTO DEBE SER IMPACTADO EN ARCHIVO.CSS -->
     <!-- sidebar-brand -->
@@ -219,15 +220,15 @@
     <div class="col">
       <nav aria-label="breadcrumb" class="mb-2">
         <ol class="breadcrumb my-0 small">
-          <li class="breadcrumb-item"><a href="dashboard.html" class="small" aria-label="Volver al Dashboard">Home</a></li>
-          <li class="breadcrumb-item active"><span class="small">Pendientes de publicación</span></li>
+          <li class="breadcrumb-item"><a href="dashboard.html" class="small" aria-label="Volver al Dashboard">Dashboard</a></li>
+          <li class="breadcrumb-item active"><span class="small"> Formularios / Pendientes de publicación</span></li>
         </ol>
       </nav>
       <div class="d-flex align-items-baseline flex-wrap">
         <svg class="me-2" width="28" height="28" fill="currentColor">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
         </svg>
-        <h1 class="h2 mb-0 me-3">Pendientes de publicación</h1>
+        <h1 class="h2 mb-0">Pendientes de publicación</h1>
       </div>
     </div>
   </div>
@@ -249,9 +250,16 @@
                   
                   <!-- Formulario 1 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-8.2 Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2</h6>
-                      <small class="text-body-secondary">Creado por: Sofía Muñoz | Última modificación: 12/01/2026 10:30</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-primary">2-8.2</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">D.S. N°61/2011 MINVU, Art. 4.3.1</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">12/01/2026, 10:30</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Sofía Muñoz">Sofía Muñoz</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -271,9 +279,16 @@
                   
                   <!-- Formulario 2 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-1.4 Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Reconstrucción</h6>
-                      <small class="text-body-secondary">Creado por: Juan Pérez | Última modificación: 09/01/2026 16:45</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-info">2-1.4</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Reconstrucción</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">NCh3357/2015, Cláusula 5.2</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">09/01/2026, 16:45</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Juan Pérez">Juan Pérez</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -293,9 +308,16 @@
                   
                   <!-- Formulario 3 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-5.4 Solicitud de Modificación de Proyecto de Reconstrucción de Edificación, Reconstrucción</h6>
-                      <small class="text-body-secondary">Creado por: Isabel Torres | Última modificación: 01/01/2026 14:20</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-primary">2-5.4</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Solicitud de Modificación de Proyecto de Reconstrucción de Edificación, Reconstrucción</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">D.S. N°50/2016 MINVU, Título 3</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">01/01/2026, 14:20</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Isabel Torres">Isabel Torres</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -315,9 +337,16 @@
                   
                   <!-- Formulario 4 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-6.4 Resolución Aprueba Modificación de Proyecto de Edificación, Reconstrucción</h6>
-                      <small class="text-body-secondary">Creado por: Roberto Díaz | Última modificación: 25/12/2025 11:00</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-info">2-6.4</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Resolución Aprueba Modificación de Proyecto de Edificación, Reconstrucción</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">Ley General de Urbanismo y Construcciones, Art. 143</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">25/12/2025, 11:00</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Roberto Díaz">Roberto Díaz</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -337,9 +366,16 @@
                   
                   <!-- Formulario 5 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-8.4 Certificado de Recepción Definitiva de Obras de Reconstrucción de Edificación, Reconstrucción</h6>
-                      <small class="text-body-secondary">Creado por: Fernanda Morales | Última modificación: 15/12/2025 09:30</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-primary">2-8.4</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Certificado de Recepción Definitiva de Obras de Reconstrucción de Edificación, Reconstrucción</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">D.S. N°117/2010 MINVU, Art. 2.5</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">15/12/2025, 09:30</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Fernanda Morales">Fernanda Morales</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -359,9 +395,16 @@
                   
                   <!-- Formulario 6 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-1.1 Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Obra Nueva</h6>
-                      <small class="text-body-secondary">Creado por: Andrea Soto | Última modificación: 10/12/2025 17:15</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-info">2-1.1</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Obra Nueva</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">D.S. N°47/1992 MINVU, Art. 5.1.4</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">10/12/2025, 17:15</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Andrea Soto">Andrea Soto</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -381,9 +424,16 @@
                   
                   <!-- Formulario 7 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-7.1 Solicitud de Recepción Definitiva de Obras de Edificación, Obra nueva</h6>
-                      <small class="text-body-secondary">Creado por: Patricio Núñez | Última modificación: 05/12/2025 13:45</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-primary">2-7.1</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Solicitud de Recepción Definitiva de Obras de Edificación, Obra nueva</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">Ordenanza General de Urbanismo y Construcciones, Art. 5.1.24</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">05/12/2025, 13:45</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Patricio Núñez">Patricio Núñez</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -403,9 +453,16 @@
                   
                   <!-- Formulario 8 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-8.1 Certificado de Recepción Definitiva de Obras de Edificación, Obra nueva</h6>
-                      <small class="text-body-secondary">Creado por: Marcela Vega | Última modificación: 28/11/2025 15:00</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-info">2-8.1</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Certificado de Recepción Definitiva de Obras de Edificación, Obra nueva</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">D.S. N°47/1992 MINVU, Art. 5.1.10</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">28/11/2025, 15:00</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Marcela Vega">Marcela Vega</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -425,9 +482,16 @@
                   
                   <!-- Formulario 9 -->
                   <div class="d-flex align-items-center justify-content-between border-bottom p-3">
-                    <div>
-                      <h6 class="mb-1">2-3.5 Solicitud de Permiso de Edificación, Reparación</h6>
-                      <small class="text-body-secondary">Creado por: Héctor Campos | Última modificación: 20/11/2025 10:30</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-primary">2-3.5</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Solicitud de Permiso de Edificación, Reparación</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">Ley General de Urbanismo y Construcciones, Art. 116</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">20/11/2025, 10:30</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Héctor Campos">Héctor Campos</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -447,9 +511,16 @@
                   
                   <!-- Formulario 10 -->
                   <div class="d-flex align-items-center justify-content-between p-3">
-                    <div>
-                      <h6 class="mb-1">2-2.3 Resolución de Aprobación de Anteproyecto de Obras de Edificación, Alteración</h6>
-                      <small class="text-body-secondary">Creado por: Claudia Ramos | Última modificación: 15/11/2025 08:15</small>
+                    <div class="d-flex gap-3 flex-grow-1 overflow-hidden">
+                      <div class="flex-shrink-0">
+                        <span class="badge bg-info">2-2.3</span>
+                      </div>
+                      <div class="flex-grow-1 overflow-hidden">
+                        <h6 class="mb-1 pfud-text-truncate-2">Resolución de Aprobación de Anteproyecto de Obras de Edificación, Alteración</h6>
+                        <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">Ordenanza General de Urbanismo y Construcciones, Art. 4.2.15</a></div>
+                        <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">15/11/2025, 08:15</span></div>
+                        <div class="small text-body-secondary">Creado por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Claudia Ramos">Claudia Ramos</a></div>
+                      </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
                       <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
@@ -503,31 +574,12 @@
     </div>
     </div>
 
-<!-- Modal Logout -->
-<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center px-4 pb-4">
-        <h5 class="mb-3">¿Estás seguro que deseas salir?</h5>
-        <p class="text-body-secondary">Presiona aceptar para guardar tu trabajo y cerrar tu sesión. En caso contrario, presiona Cancelar o haz click en la X.</p>
-      </div>
-      <div class="modal-footer border-0 justify-content-center pb-4">
-        <button type="button" class="btn btn-secondary" data-coreui-dismiss="modal" aria-label="Cancelar y permanecer en la página">Cancelar</button>
-        <a href="index.html" class="btn btn-primary" aria-label="Confirmar salida y cerrar sesión">Sí, quiero salir</a>
-      </div>
-    </div>
-  </div>
-</div>
-
     <!-- CoreUI and necessary plugins-->
     <script src="../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <script src="../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
     <script src="../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
     <script src="../_coreui-base/js/main.js"></script>
-    <script src="../assets/js/font-size.js"></script>
+    <script src="../assets/js/pfud.js"></script>
 	  
   </body>
 </html>

@@ -27,3 +27,5 @@ action_schedule=Programar publicación del formulario
 action_new_version=Crear nueva versión del formulario
 modal_cancel=Cancelar y permanecer en la página
 modal_confirm_logout=Confirmar salida y cerrar sesión
+norma_link=Ver detalles de la norma
+perfil_link=Ver perfil del usuario

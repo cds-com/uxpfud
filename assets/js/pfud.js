@@ -135,5 +135,28 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  
+  // Inyectar modal de logout
+  const logoutModalHTML = `
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center px-4 pb-4">
+        <h5 class="mb-3">¿Estás seguro que deseas salir?</h5>
+        <p class="text-body-secondary">Presiona aceptar para guardar tu trabajo y cerrar tu sesión. En caso contrario, presiona Cancelar o haz click en la X.</p>
+      </div>
+      <div class="modal-footer border-0 justify-content-center pb-4 gap-2">
+        <button type="button" class="btn btn-secondary pfud-hint" data-coreui-dismiss="modal" data-hint="modal_cancel">Cancelar</button>
+        <button type="button" class="btn btn-success pfud-hint" data-coreui-dismiss="modal" data-hint="modal_save_progress">Guardar avance</button>
+        <a href="index.html" class="btn btn-primary pfud-hint" data-hint="modal_confirm_logout">Sí, quiero salir</a>
+      </div>
+    </div>
+  </div>
+</div>`;
+  
+  document.body.insertAdjacentHTML('beforeend', logoutModalHTML);
 });
 
