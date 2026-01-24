@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="Portal Ciudadano - MINVU">
     <meta name="author" content="MINVU">
-    <title>Mi Perfil - Portal Ciudadano MINVU</title>
+    <title>Comprobante de Programación - Portal Ciudadano MINVU</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/favico.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logos/favico.png">
     <meta name="theme-color" content="#09132D">
@@ -16,6 +16,7 @@
     <!-- Main styles for this application-->
     <link href="../_coreui-base/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/pfud.css">
 
     <!-- ESTO DEBE SER IMPACTADO EN ARCHIVO.CSS -->
     <!-- sidebar-brand -->
@@ -89,7 +90,7 @@
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
         </svg>
         <span>Pendientes</span>
-        <span class="badge badge-sm bg-secondary ms-auto">8</span>
+        <span class="badge badge-sm bg-primary ms-auto">8</span>
       </a>
     </li>
     
@@ -167,7 +168,7 @@
                   <span>Ayuda</span>
                 </a>
                 <div class="dropdown">
-                  <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle active" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false" aria-label="Abrir menú de perfil">
+                  <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false" aria-label="Abrir menú de perfil">
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use></svg>
                     <span>Mi Perfil</span>
                   </a>
@@ -214,117 +215,87 @@
             </div>
             </div>
           </div>
-<div class="container-fluid px-5">
-  <div class="row py-3 bg-body rounded-3 text-body mt-2 align-items-center">
-    <div class="col">
-      <nav aria-label="breadcrumb" class="mb-2">
-        <ol class="breadcrumb my-0 small">
-          <li class="breadcrumb-item"><a href="dashboard.html" class="small" aria-label="Volver al Dashboard">Dashboard</a></li>
-          <li class="breadcrumb-item active"><span class="small">Mi Perfil</span></li>
-        </ol>
-      </nav>
-      <div class="d-flex align-items-baseline flex-wrap">
-        <svg class="me-2 opacity-75" width="28" height="28" fill="currentColor">
-          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-        </svg>
-        <h1 class="h2 mb-0 me-3">Mi perfil</h1>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
         </header>
 
 <!--cuerpo-->
       <div class="body flex-grow-1 bg-body-tertiary">
         <div class="container-fluid px-5">
+          
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              
+              <div class="border rounded p-4 bg-white mb-4">
 
-          <!-- Perfil de Usuario -->
-          <div class="row">
-            
-            <!-- Card 1: Foto de Perfil -->
-            <div class="col-lg-4 mb-4">
-              <div class="card h-100">
-                <div class="card-body text-center">
-                  <div class="mb-4">
-                    <div class="mx-auto mb-3">
-                      <img class="rounded-circle object-fit-cover" width="180" height="180" src="../assets/img/perfil.jpg" alt="Foto del usuario">
-                    </div>
-                    <h5 class="mb-1">Dominique Chacra Gaete</h5>
-                    <p class="text-body-secondary mb-3">dchacrag@minvu.cl</p>
-                    <button class="btn btn-outline-primary btn-sm" aria-label="Cambiar foto de perfil">
-                      <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                        <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-camera"></use>
-                      </svg>
-                      Cambiar Foto
-                    </button>
+                <!-- Encabezado -->
+                <div class="border-bottom pb-3 mb-4">
+                  <div class="h5 mb-1">Comprobante de programación</div>
+                  <div class="text-muted">Formulario programado correctamente</div>
+                </div>
+
+                <!-- Cuerpo tipo documento -->
+                <div class="row mb-3">
+                  <div class="col-6">
+                    <div class="text-muted small">Nombre del Formulario</div>
+                    <div class="fw-semibold">Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2</div>
+                  </div>
+                  <div class="col-6">
+                    <div class="text-muted small">Familia del Formulario</div>
+                    <div class="fw-semibold">2-8.2</div>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-            <!-- Card 2: Información Personal -->
-            <div class="col-lg-8 mb-4">
-              <div class="card h-100">
-                <div class="card-header">
-                  <h5 class="mb-0">Información Personal</h5>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="row mb-3">
-                      <div class="col-md-6 mb-3 mb-md-0">
-                        <label for="nombres" class="form-label">Nombres</label>
-                        <input type="text" class="form-control" id="nombres" value="Dominique" disabled>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="apellidos" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="apellidos" value="Chacra Gaete" disabled>
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6 mb-3 mb-md-0">
-                        <label for="rut" class="form-label">RUT</label>
-                        <input type="text" class="form-control" id="rut" value="12.345.678-9" disabled>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" value="dchacrag@minvu.cl">
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-6">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="tel" class="form-control" id="telefono" value="+56 9 1234 5678">
-                      </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                      <button type="submit" class="btn btn-sm btn-primary" aria-label="Guardar cambios de perfil">
-                        <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                          <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-save"></use>
-                        </svg>
-                        Guardar Cambios
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-              <!-- Mensaje informativo tipo Snackbar -->
-          <div class="alert d-flex align-items-center mb-4 w-100 border-start border-info bg-transparent" role="alert">
-  <svg class="me-2 text-info" width="20" height="20" aria-hidden="true">
-    <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
-  </svg>
-  <span class="small text-body">
-    Los datos presentados en esta sección son administrados centralizadamente, por lo que no pueden ser modificados a través de este portal.
-    Si necesitas realizar alguna actualización a estos datos, contacta al equipo de soporte PSSIM al teléfono
-    <a href="tel:+56012345678" class="text-decoration-underline">+56 01 2345 678</a>
-    o al correo electrónico
-    <a href="mailto:soporte.pssim@minvu.cl" class="text-decoration-underline">soporte.pssim@minvu.cl</a>.
-  </span>
-</div>
 
+                <div class="row mb-3">
+                  <div class="col-6">
+                    <div class="text-muted small">Norma que lo Justifica</div>
+                    <div class="fw-semibold">D.S. N°61/2011 MINVU, Art. 4.3.1</div>
+                  </div>
+                  <div class="col-6">
+                    <div class="text-muted small">Usuario que lo Creó</div>
+                    <div class="fw-semibold">Sofía Muñoz</div>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-6">
+                    <div class="text-muted small">Usuario que lo Aprobó</div>
+                    <div class="fw-semibold">Carlos Mendoza - 11/01/2026, 14:20</div>
+                  </div>
+                  <div class="col-6">
+                    <div class="text-muted small">Formulario al que Reemplaza</div>
+                    <div class="fw-semibold">N/A</div>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-6">
+                    <div class="text-muted small">Fecha de Inicio de Publicación</div>
+                    <div class="fw-semibold">15/02/2026</div>
+                  </div>
+                  <div class="col-6">
+                    <div class="text-muted small">Estado</div>
+                    <div class="text-success fw-semibold">Programado</div>
+                  </div>
+                </div>
+
+                <div class="row mb-4">
+                  <div class="col-12">
+                    <div class="text-muted small">Observación</div>
+                    <div>
+                      Este comprobante acredita la programación de publicación del formulario en el Portal Ciudadano MINVU. El formulario será publicado automáticamente en la fecha indicada.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Cierre -->
+                <div class="border-top pt-3 d-flex justify-content-end gap-2">
+                  <a href="pendientes.html" class="btn btn-primary btn-sm">
+                    Volver al inicio
+                  </a>
+                </div>
+
+              </div>
+              
+            </div>
           </div>
           
         </div>
