@@ -73,7 +73,7 @@
             
             <form action="dashboard.html" method="get">
               <div class="mb-3">
-                <label for="rut" class="form-label">RUT <span class="text-danger">*</span></label>
+                <label for="rut" class="form-label">RUT</label>
                 <input 
                   type="text" 
                   class="form-control" 
@@ -85,18 +85,23 @@
               </div>
               
               <div class="mb-3">
-                <label for="password" class="form-label">Contraseña <span class="text-danger">*</span></label>
-                <input 
-                  type="password" 
-                  class="form-control" 
-                  id="password" 
-                  name="password" 
-                  placeholder="Ingrese su contraseña" 
-                  aria-label="Ingrese su contraseña"
-                >
+                <label for="password" class="form-label">Contraseña</label>
+                <div class="input-group">
+                  <input 
+                    type="password" 
+                    class="form-control" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Ingrese su contraseña" 
+                    aria-label="Ingrese su contraseña"
+                  >
+                  <button class="btn btn-outline-secondary" type="button" id="togglePassword" aria-label="Mostrar u ocultar contraseña">
+                    <i class="bi bi-eye" id="eyeIcon"></i>
+                  </button>
+                </div>
               </div>
               
-              <button type="submit" class="btn btn-primary w-100" aria-label="Ingresar al sistema">Ingresar</button>
+              <button type="submit" class="btn btn-primary w-100" id="loginButton" aria-label="Ingresar al sistema" disabled>Ingresar</button>
             </form>
           </div>
         </div>
@@ -142,6 +147,22 @@
   <script src="../_coreui-base/js/popovers.js"></script>
   <script src="../assets/js/pfud.js"></script>
   <script>
+    // Toggle password visibility
+    document.getElementById('togglePassword').addEventListener('click', function() {
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eyeIcon');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.remove('bi-eye');
+        eyeIcon.classList.add('bi-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.remove('bi-eye-slash');
+        eyeIcon.classList.add('bi-eye');
+      }
+    });
+    
     // Formatear RUT automáticamente
     document.getElementById('rut').addEventListener('input', function(e) {
       let value = e.target.value.replace(/[^0-9kK]/g, '');

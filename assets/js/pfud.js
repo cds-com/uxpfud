@@ -146,11 +146,10 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="modal-body text-center px-4 pb-4">
         <h5 class="mb-3">¿Estás seguro que deseas salir?</h5>
-        <p class="text-body-secondary">Presiona aceptar para guardar tu trabajo y cerrar tu sesión. En caso contrario, presiona Cancelar o haz click en la X.</p>
+        <p class="text-body-secondary">Si deseas salir del portal, presiona Sí, quiero salir. En caso contrario, presiona la X para mantenerte en el portal.</p>
       </div>
-      <div class="modal-footer border-0 justify-content-center pb-4 gap-2">
-        <button type="button" class="btn btn-secondary pfud-hint" data-coreui-dismiss="modal" data-hint="modal_cancel">Cancelar</button>
-        <button type="button" class="btn btn-success pfud-hint" data-coreui-dismiss="modal" data-hint="modal_save_progress">Guardar avance</button>
+      <div class="modal-footer border-0 justify-content-end pb-4 gap-2">
+        
         <a href="index.html" class="btn btn-primary pfud-hint" data-hint="modal_confirm_logout">Sí, quiero salir</a>
       </div>
     </div>
@@ -158,5 +157,54 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>`;
   
   document.body.insertAdjacentHTML('beforeend', logoutModalHTML);
+  
+  // Validación de login si existe el botón
+  if (document.getElementById('loginButton')) {
+    validarLogin();
+  }
 });
 
+// Función para archivar formulario y mostrar toast
+function archivarFormulario() {
+  const toastEl = document.getElementById('archivarToast');
+  const toast = new coreui.Toast(toastEl, {
+    autohide: true,
+    delay: 3000
+  });
+  toast.show();
+}
+
+// Validación de login - activar botón solo con datos válidos
+function validarLogin() {
+  const rutInput = document.getElementById('rut');
+  const passwordInput = document.getElementById('password');
+  const loginButton = document.getElementById('loginButton');
+  
+  if (!rutInput || !passwordInput || !loginButton) return;
+  
+  function validarRUT(rut) {
+    // Validar formato XX.XXX.XXX-X o XXXXXXXX-X
+    const rutLimpio = rut.replace(/\./g, '');
+    const rutRegex = /^\d{7,8}-[0-9kK]$/;
+    return rutRegex.test(rutLimpio) && rutLimpio.length >= 9;
+  }
+  
+  function validarPassword(password) {
+    // Mínimo 4 caracteres
+    return password.length >= 4;
+  }
+  
+  function actualizarBoton() {
+    const rutValido = validarRUT(rutInput.value);
+    const passwordValido = validarPassword(passwordInput.value);
+    
+    if (rutValido && passwordValido) {
+      loginButton.disabled = false;
+    } else {
+      loginButton.disabled = true;
+    }
+  }
+  
+  rutInput.addEventListener('input', actualizarBoton);
+  passwordInput.addEventListener('input', actualizarBoton);
+}

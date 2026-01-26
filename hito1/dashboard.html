@@ -105,11 +105,11 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link pfud-hint" href="builder-constructor.html" data-hint="nav_builder">
+      <a class="nav-link pfud-hint" href="builder-datos.html" data-hint="nav_builder">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>
-        <span>Builder/Constructor</span>
+        <span>Crear Formulario</span>
       </a>
     </li>
   </ul>
@@ -245,117 +245,148 @@
 <!--cuerpo-->
       <div class="body flex-grow-1 bg-body-tertiary">
         <div class="container-fluid px-5">
-          
-          <!-- Fila de Métricas KPI -->
+
+   <!-- Fila de Métricas KPI -->
           <div class="row g-3 mb-4">
-            <!-- Métrica 1: Formularios Publicados -->
-            <div class="col-12 col-md-4 col-xl-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterPublicados">24</div>
-                      <div class="fs-6 text-uppercase fw-bold">Formularios</div>
-                      <div class="small text-body-secondary">Publicados al 31/01/2026</div>
-                    </div>
-                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Métrica 2: Formularios en Proceso -->
-            <div class="col-12 col-md-4 col-xl-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterProceso">12</div>
-                      <div class="fs-6 text-uppercase fw-bold">Formularios</div>
-                      <div class="small text-body-secondary">En proceso de creación.</div>
-                    </div>
-                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Métrica 3: Observaciones -->
-            <div class="col-12 col-md-4 col-xl-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterObservaciones">47</div>
-                      <div class="fs-6 text-uppercase fw-bold">Observaciones</div>
-                      <div class="small text-body-secondary">Sin resolver en formularios.</div>
-                    </div>
-                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Métrica 4: Ciudadanos -->
-            <div class="col-12 col-md-4 col-xl-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterCiudadanos">156</div>
-                      <div class="fs-6 text-uppercase fw-bold">Ciudadanos</div>
-                      <div class="small text-body-secondary">Han ingresado al sistema.</div>
-                    </div>
-                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-people"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Métrica 5: Solicitudes -->
-            <div class="col-12 col-md-4 col-xl-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterSolicitudes">240</div>
-                      <div class="fs-6 text-uppercase fw-bold">Solicitudes</div>
-                      <div class="small text-body-secondary">Ingresadas el último mes.</div>
-                    </div>
-                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-inbox"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Métrica 6: Tiempo Promedio -->
-            <div class="col-12 col-md-4 col-xl-2">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <div class="fs-2 fw-semibold mb-1" id="counterTiempo">12.2</div>
-                      <div class="fs-6 text-uppercase fw-bold">Promedio</div>
-                      <div class="small text-body-secondary">Tiempo de uso del sistema</div>
-                    </div>
-                    <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- Métrica 1: Formularios Publicados -->
+  <div class="col-12 col-md-4 col-xl-2">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+        <!-- Número principal -->
+        <div class="w-100" style="min-height: 48px;">
+          <span class="fs-2 fw-semibold" id="counterPublicados">24</span>
+        </div>
+        <!-- Título -->
+        <div class="w-100" style="min-height: 32px;">
+          <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
+        </div>
+        <!-- Descripción -->
+        <div class="w-100 mb-2" style="min-height: 32px;">
+          <span class="small text-body-secondary d-block">Publicados al 31/01/2026</span>
+        </div>
+        <!-- Icono validación -->
+        <div class="position-absolute top-0 end-0 m-2">
+          <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Métrica 2: Formularios en Proceso -->
+  <div class="col-12 col-md-4 col-xl-2">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+        <div class="w-100" style="min-height: 48px;">
+          <span class="fs-2 fw-semibold" id="counterProceso">12</span>
+        </div>
+        <div class="w-100" style="min-height: 32px;">
+          <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
+        </div>
+        <div class="w-100 mb-2" style="min-height: 32px;">
+          <span class="small text-body-secondary d-block">En proceso de creación.</span>
+        </div>
+        <div class="position-absolute top-0 end-0 m-2">
+          <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Métrica 3: Observaciones -->
+  <div class="col-12 col-md-4 col-xl-2">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+        <div class="w-100" style="min-height: 48px;">
+          <span class="fs-2 fw-semibold" id="counterObservaciones">47</span>
+        </div>
+        <div class="w-100" style="min-height: 32px;">
+          <span class="fs-6 text-uppercase fw-bold d-block">Observaciones</span>
+        </div>
+        <div class="w-100 mb-2" style="min-height: 32px;">
+          <span class="small text-body-secondary d-block">Sin resolver en formularios.</span>
+        </div>
+        <div class="position-absolute top-0 end-0 m-2">
+          <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Métrica 4: Ciudadanos -->
+  <div class="col-12 col-md-4 col-xl-2">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+        <div class="w-100" style="min-height: 48px;">
+          <span class="fs-2 fw-semibold" id="counterCiudadanos">156</span>
+        </div>
+        <div class="w-100" style="min-height: 32px;">
+          <span class="fs-6 text-uppercase fw-bold d-block">Ciudadanos</span>
+        </div>
+        <div class="w-100 mb-2" style="min-height: 32px;">
+          <span class="small text-body-secondary d-block">Han ingresado al sistema.</span>
+        </div>
+        <div class="position-absolute top-0 end-0 m-2">
+          <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-people"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Métrica 5: Solicitudes -->
+  <div class="col-12 col-md-4 col-xl-2">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+        <div class="w-100" style="min-height: 48px;">
+          <span class="fs-2 fw-semibold" id="counterSolicitudes">240</span>
+        </div>
+        <div class="w-100" style="min-height: 32px;">
+          <span class="fs-6 text-uppercase fw-bold d-block">Solicitudes</span>
+        </div>
+        <div class="w-100 mb-2" style="min-height: 32px;">
+          <span class="small text-body-secondary d-block">Ingresadas durante el último mes.</span>
+        </div>
+        <div class="position-absolute top-0 end-0 m-2">
+          <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-inbox"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Métrica 6: Tiempo Promedio -->
+  <div class="col-12 col-md-4 col-xl-2">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+        <div class="w-100" style="min-height: 48px;">
+          <span class="fs-2 fw-semibold" id="counterTiempo">12.2</span>
+        </div>
+        <div class="w-100" style="min-height: 32px;">
+          <span class="fs-6 text-uppercase fw-bold d-block">TIEMPO PROMEDIO</span>
+        </div>
+        <div class="w-100 mb-2" style="min-height: 32px;">
+          <span class="small text-body-secondary d-block">De usuarios usando el sistema</span>
+        </div>
+        <div class="position-absolute top-0 end-0 m-2">
+          <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+         <!-- FIN Fila de Métricas KPI -->          
           
           <div class="row g-4 mb-4 bg-body-tertiary">
             <!-- Tarjeta: Formularios A REVISAR -->
@@ -378,8 +409,7 @@
                               <div class="flex-grow-1 overflow-hidden">
                                 <div class="fw-semibold small pfud-text-truncate-2">Solicitud de Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2</div>
                                 <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">Ley General de Urbanismo y Construcciones, Art. 116</a></div>
-                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">05/01/2026, 10:30</span></div>
-                                <div class="small text-body-secondary">Enviado hace <span class="text-body">2 días</span> por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de María González">María González</a></div>
+                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">05/01/2026 10:30</span>, por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de María González">María González</a></div>
                               </div>
                             </div>
                           </td>
@@ -420,8 +450,7 @@
                               <div class="flex-grow-1 overflow-hidden">
                                 <div class="fw-semibold small pfud-text-truncate-2">Certificado de Recepción Definitiva de Obras de Edificación, Ampliación Mayor a 100 m2</div>
                                 <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">D.S. N°47/1992 MINVU, Art. 5.1.10</a></div>
-                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">03/01/2026, 15:45</span></div>
-                                <div class="small text-body-secondary">Enviado hace <span class="text-body">4 días</span> por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Carlos Rojas">Carlos Rojas</a></div>
+                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">03/01/2026 15:45</span>, por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Carlos Rojas">Carlos Rojas</a></div>
                               </div>
                             </div>
                           </td>
@@ -462,8 +491,7 @@
                               <div class="flex-grow-1 overflow-hidden">
                                 <div class="fw-semibold small pfud-text-truncate-2">Solicitud de Recepción Definitiva de Obras de Edificación, Reconstrucción</div>
                                 <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">Ordenanza General de Urbanismo y Construcciones, Art. 4.2.15</a></div>
-                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">30/12/2025, 09:20</span></div>
-                                <div class="small text-body-secondary">Enviado hace <span class="text-body">1 semana</span> por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Ana Martínez">Ana Martínez</a></div>
+                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">30/12/2025 09:20</span>, por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Ana Martínez">Ana Martínez</a></div>
                               </div>
                             </div>
                           </td>
@@ -504,8 +532,7 @@
                               <div class="flex-grow-1 overflow-hidden">
                                 <div class="fw-semibold small pfud-text-truncate-2">Resolución Aprueba Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2</div>
                                 <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">D.S. N°100/2006 MINVU, Art. 3</a></div>
-                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">27/12/2025, 14:10</span></div>
-                                <div class="small text-body-secondary">Enviado hace <span class="text-body">10 días</span> por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Pedro Silva">Pedro Silva</a></div>
+                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">27/12/2025 14:10</span>, por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Pedro Silva">Pedro Silva</a></div>
                               </div>
                             </div>
                           </td>
@@ -546,8 +573,7 @@
                               <div class="flex-grow-1 overflow-hidden">
                                 <div class="fw-semibold small pfud-text-truncate-2">Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Ampliación Mayor a 100 m2</div>
                                 <div class="small text-body-secondary"><span class="fw-bold">Norma aplicable al cambio:</span> <a href="#" class="pfud-hint" data-hint="norma_link" aria-label="Ver detalles de la norma">Ley N°20.703/2013, Art. 12</a></div>
-                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">23/12/2025, 16:55</span></div>
-                                <div class="small text-body-secondary">Enviado hace <span class="text-body">2 semanas</span> por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Luis Fernández">Luis Fernández</a></div>
+                                <div class="small text-body-secondary"><span class="fw-bold">Última modificación:</span> <span class="text-body">23/12/2025 16:55</span>, por <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Luis Fernández">Luis Fernández</a></div>
                               </div>
                             </div>
                           </td>

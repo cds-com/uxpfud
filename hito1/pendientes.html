@@ -105,11 +105,11 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="builder-constructor.html" aria-label="Ir al constructor de formularios">
+      <a class="nav-link" href="builder-datos.html" aria-label="Crear nuevo formulario">
         <svg class="nav-icon">
           <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
         </svg>
-        <span>Builder/Constructor</span>
+        <span>Crear Formulario</span>
       </a>
     </li>
   </ul>
@@ -242,11 +242,63 @@
             </svg>
           </span>
           <input type="text" class="form-control border-start-0" placeholder="Buscar formulario..." aria-label="Buscar formulario">
-          <button class="btn btn-outline-secondary" type="button" data-coreui-toggle="collapse" data-coreui-target="#filtrosAvanzados" aria-expanded="false" aria-controls="filtrosAvanzados" aria-label="Abrir filtros avanzados">
-            <svg class="icon" width="16" height="16" fill="currentColor">
-              <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-filter"></use>
-            </svg>
-          </button>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary" type="button" data-coreui-toggle="dropdown" aria-expanded="false" aria-label="Abrir filtros avanzados" data-coreui-auto-close="outside">
+              <svg class="icon" width="16" height="16" fill="currentColor">
+                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-filter"></use>
+              </svg>
+            </button>
+            
+            <div class="dropdown-menu dropdown-menu-end p-3 shadow-lg" style="min-width: 600px;">
+              <div class="container-fluid">
+                <div class="row g-3">
+                  <div class="col-md-3 col-sm-6">
+                    <label class="form-label fw-semibold small">Filtrar por usuario</label>
+                    <select class="form-select form-select-sm">
+                      <option selected>Todos los usuarios</option>
+                      <option>María González (Yo)</option>
+                      <option>Juan Pérez</option>
+                      <option>Carlos Rodríguez</option>
+                      <option>Ana Martínez</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <label class="form-label fw-semibold small">Filtrar por fecha</label>
+                    <input type="date" class="form-control form-control-sm">
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <label class="form-label fw-semibold small">Filtrar por familia</label>
+                    <select class="form-select form-select-sm">
+                      <option selected>Todas las familias</option>
+                      <option>Familia 1</option>
+                      <option>Familia 2</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <label class="form-label fw-semibold small">Filtrar por estado</label>
+                    <select class="form-select form-select-sm">
+                      <option selected>Todos los estados</option>
+                      <option>En creación</option>
+                      <option>Borrador</option>
+                      <option>Publicado</option>
+                      <option>Archivado</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="incluirArchivados">
+                      <label class="form-check-label small" for="incluirArchivados">
+                        Incluir formularios archivados
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 text-end mt-3">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="this.closest('.dropdown-menu').previousElementSibling.click()">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -256,55 +308,6 @@
       </a>
     </div>
   </div>
-  
-  <!-- Panel de filtros avanzados (colapsable) -->
-  <div class="collapse mt-3" id="filtrosAvanzados">
-    <div class="card card-body">
-      <div class="row g-3">
-        <div class="col-md-3">
-          <label class="form-label fw-semibold small">Filtrar por usuario</label>
-          <select class="form-select form-select-sm">
-            <option selected>Todos los usuarios</option>
-            <option>María González (Yo)</option>
-            <option>Juan Pérez</option>
-            <option>Carlos Rodríguez</option>
-            <option>Ana Martínez</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <label class="form-label fw-semibold small">Filtrar por fecha</label>
-          <input type="date" class="form-control form-control-sm">
-        </div>
-        <div class="col-md-3">
-          <label class="form-label fw-semibold small">Filtrar por familia</label>
-          <select class="form-select form-select-sm">
-            <option selected>Todas las familias</option>
-            <option>Familia 1</option>
-            <option>Familia 2</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <label class="form-label fw-semibold small">Filtrar por estado</label>
-          <select class="form-select form-select-sm">
-            <option selected>Todos los estados</option>
-            <option>En creación</option>
-            <option>Borrador</option>
-            <option>Publicado</option>
-            <option>Archivado</option>
-          </select>
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="incluirArchivados">
-            <label class="form-check-label small" for="incluirArchivados">
-              Incluir formularios archivados
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -344,9 +347,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" data-coreui-toggle="modal" data-coreui-target="#eliminarModal" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap " data-coreui-toggle="modal" data-coreui-target="#eliminarModal" aria-label="Archivar formulario" >
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -373,9 +376,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -390,11 +393,11 @@
                         <h6 class="mb-1 pfud-text-truncate-2">Solicitud de Modificación de Proyecto de Reconstrucción de Edificación, Reconstrucción</h6>
                         <div class="small text-body-secondary"><span class="fw-bold">Norma:</span> D.S. N°50/2016 MINVU, Título 3</div>
                         <div class="small text-body-secondary"><span class="fw-bold">Creado por:</span> <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Isabel Torres">Isabel Torres</a></div>
-                        <div class="small text-body-secondary"><span class="fw-bold">Aprobado por:</span> <a href="#" class="pfud-hint" data-hint="perfil_link" aria-label="Ver perfil de Roberto Díaz">Roberto Díaz</a>; <span class="text-body">01/01/2026, 14:20</span></div>
+                        <div class="small text-body-secondary"><!--    --><span class="badge me-1 bg-danger" >Sin Aprobación</span></div>
                       </div>
                     </div>
                     <div class="d-flex gap-2 ms-3 flex-shrink-0">
-                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap" aria-label="Previsualizar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-primary text-nowrap " aria-label="Previsualizar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use></svg>
                         Previsualizar
                       </a>
@@ -402,9 +405,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap disabled" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -431,9 +434,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -460,9 +463,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -489,9 +492,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -518,9 +521,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -547,9 +550,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -576,9 +579,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -605,9 +608,9 @@
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
                         Programar
                       </a>
-                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Eliminar formulario">
+                      <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" aria-label="Archivar formulario">
                         <svg class="icon me-1" width="14" height="14" fill="currentColor"><use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use></svg>
-                        Eliminar
+                        Archivar
                       </a>
                     </div>
                   </div>
@@ -673,17 +676,32 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="eliminarModalLabel">¿Está seguro que desea eliminar este formulario?</h5>
+            <h5 class="modal-title" id="eliminarModalLabel">¿Estás seguro de querer archivar este formulario?</h5>
             <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Cerrar"></button>
           </div>
           <div class="modal-body">
-            <p>La eliminación es un borrado lógico. El formulario será archivado y podrá recuperarse más adelante para su publicación.</p>
+            <p>Al hacerlo, el formulario desaparecerá de tu listado de pendientes de publicación.</p>
             <p class="mb-0">Solo se mostrarán los formularios disponibles para publicar. Para ver los archivados, utilice el filtro "Archivados".</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-sm btn-secondary" data-coreui-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-sm btn-danger" onclick="alert('Formulario archivado'); return false;" data-coreui-dismiss="modal">Confirmar</button>
+            <button type="button" class="btn btn-sm btn-danger" onclick="archivarFormulario()" data-coreui-dismiss="modal">Archivar formulario.</button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor de Toasts -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="archivarToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-success text-white">
+          <svg class="me-2" width="16" height="16" fill="currentColor">
+            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
+          </svg>
+          <strong class="me-auto">Confirmación</strong>
+          <button type="button" class="btn-close btn-close-white" data-coreui-dismiss="toast" aria-label="Cerrar"></button>
+        </div>
+        <div class="toast-body">
+          Formulario archivado con éxito
         </div>
       </div>
     </div>
