@@ -46,41 +46,6 @@ function animateDecimalCounter(id, start, end, duration) {
   window.requestAnimationFrame(step);
 }
 
-// Sistema de tooltips PFUD
-const pfudTooltips = {
-  'nav_dashboard': 'Ir al Dashboard',
-  'nav_creacion': 'Ver formularios en creación',
-  'nav_pendientes': 'Ver formularios pendientes',
-  'nav_publicados': 'Ver formularios publicados',
-  'nav_builder': 'Ir al constructor de formularios',
-  'sidebar_toggle': 'Colapsar o expandir menú lateral',
-  'font_decrease': 'Disminuir tamaño de fuente',
-  'font_increase': 'Aumentar tamaño de fuente',
-  'theme_toggle': 'Cambiar modo de color',
-  'theme_light': 'Cambiar a modo claro',
-  'theme_dark': 'Cambiar a modo oscuro',
-  'theme_auto': 'Cambiar a modo automático',
-  'ayuda_link': 'Ver ayuda',
-  'perfil_menu': 'Abrir menú de perfil',
-  'perfil_email': 'Enviar correo a dchacrag@minvu.cl',
-  'perfil_update': 'Ir a mi perfil para actualizar datos',
-  'logout_link': 'Cerrar sesión',
-  'breadcrumb_home': 'Volver al inicio',
-  'crear_formulario': 'Crear nuevo formulario',
-  'ver_todas_creacion': 'Ver todos los formularios en creación',
-  'ver_todas_pendientes': 'Ver todos los formularios pendientes',
-  'ver_todas_publicados': 'Ver todos los formularios publicados',
-  'action_preview': 'Previsualizar formulario',
-  'action_edit': 'Editar formulario',
-  'action_delete': 'Eliminar formulario',
-  'action_schedule': 'Programar publicación del formulario',
-  'action_new_version': 'Crear nueva versión del formulario',
-  'modal_cancel': 'Cancelar y permanecer en la página',
-  'modal_confirm_logout': 'Confirmar salida y cerrar sesión',
-  'norma_link': 'Ver detalles de la norma',
-  'perfil_link': 'Ver perfil del usuario'
-};
-
 document.addEventListener('DOMContentLoaded', function() {
   animateCounter('counterPublicados', 0, 24, 1800);
   animateCounter('counterProceso', 0, 12, 1800);
@@ -88,43 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
   animateCounter('counterCiudadanos', 0, 156, 1800);
   animateCounter('counterSolicitudes', 0, 240, 1800);
   animateDecimalCounter('counterTiempo', 0, 12.2, 1800);
-  
-  // Inicializar tooltips PFUD
-  document.querySelectorAll('.pfud-hint').forEach(el => {
-    const hintId = el.getAttribute('data-hint');
-    
-    el.addEventListener('mouseenter', function(e) {
-      if (pfudTooltips[hintId]) {
-        const text = pfudTooltips[hintId];
-        this.setAttribute('aria-label', text);
-        
-        // Crear tooltip
-        const tooltip = document.createElement('div');
-        tooltip.className = 'pfud-tooltip show';
-        tooltip.textContent = text;
-        tooltip.id = 'pfud-active-tooltip';
-        document.body.appendChild(tooltip);
-        
-        // Posicionar
-        const rect = this.getBoundingClientRect();
-        const tooltipRect = tooltip.getBoundingClientRect();
-        
-        tooltip.style.left = (rect.left + rect.width / 2 - tooltipRect.width / 2) + window.scrollX + 'px';
-        tooltip.style.top = (rect.bottom + 8) + window.scrollY + 'px';
-      }
-    });
-    
-    el.addEventListener('mouseleave', function() {
-      const tooltip = document.getElementById('pfud-active-tooltip');
-      if (tooltip) tooltip.remove();
-    });
-    
-    el.addEventListener('focus', function() {
-      if (pfudTooltips[hintId]) {
-        this.setAttribute('aria-label', pfudTooltips[hintId]);
-      }
-    });
-  });
   
   // Hover dropdown para los tres puntos en las tarjetas del dashboard
   const dropdownButtons = document.querySelectorAll('.table .dropdown button[data-coreui-toggle="dropdown"]');
@@ -150,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="modal-footer border-0 justify-content-end pb-4 gap-2">
         
-        <a href="index.html" class="btn btn-primary pfud-hint" data-hint="modal_confirm_logout">Sí, quiero salir</a>
+        <a href="index.html" class="btn btn-primary">Sí, quiero salir</a>
       </div>
     </div>
   </div>
@@ -207,4 +135,49 @@ function validarLogin() {
   
   rutInput.addEventListener('input', actualizarBoton);
   passwordInput.addEventListener('input', actualizarBoton);
+}
+
+// Builder: Ocultar breadcrumb y título al hacer scroll
+function initBuilderScrollBehavior() {
+  const breadcrumbContainer = document.getElementById('builderBreadcrumb');
+  if (!breadcrumbContainer) return;
+  
+  window.addEventListener('scroll', function() {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+      breadcrumbContainer.classList.add('d-none');
+    } else {
+      breadcrumbContainer.classList.remove('d-none');
+    }
+  });
+}
+
+// Builder: Scroll to top button
+function initScrollToTop() {
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  if (!scrollBtn) return;
+  
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  });
+  
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+// Inicializar funcionalidades de builder si estamos en builder-constructor
+if (window.location.pathname.includes('builder-constructor')) {
+  document.addEventListener('DOMContentLoaded', function() {
+    initBuilderScrollBehavior();
+    initScrollToTop();
+  });
 }

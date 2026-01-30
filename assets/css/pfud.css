@@ -22,6 +22,32 @@
 }
 
 /* ========================================
+   SIDEBAR - Brand
+   ======================================== */
+.sidebar-toggler::before,
+.sidebar-toggler::after {
+  background-color: #fff !important;
+}
+
+.sidebar-brand-full {
+  display: block;
+  width: 100%;
+}
+
+.sidebar-brand-narrow {
+  display: none;
+  width: 48px;
+}
+
+.sidebar.sidebar-narrow .sidebar-brand-full {
+  display: none;
+}
+
+.sidebar.sidebar-narrow .sidebar-brand-narrow {
+  display: block;
+}
+
+/* ========================================
    HEADER - Menú de perfil
    ======================================== */
 .dropdown-menu[aria-labelledby="perfilDropdown"] {
