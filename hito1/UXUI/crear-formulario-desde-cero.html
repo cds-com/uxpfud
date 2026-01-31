@@ -21,7 +21,7 @@
     <script src="../../_coreui-base/js/config.js"></script>
     <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
-  <body>
+  <body class="theme-auto theme-auto">
     <div class="d-flex">
       <!-- Sidebar-->
       <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
@@ -34,14 +34,14 @@
             class="btn-close d-lg-none"
             type="button"
             data-coreui-theme="dark"
-            aria-label="Close"
+            title="Close"
             onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()"
           ></button>
         </div>
 
         <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
           <li class="nav-item">
-            <a class="nav-link" href="dashboard.html" aria-label="Ir a Dashboard">
+            <a class="nav-link" href="dashboard.html" title="Ir a Dashboard">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
               </svg>
@@ -52,7 +52,7 @@
           <li class="nav-title">Formularios</li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="crear-formulario.html">
+            <a class="nav-link active" href="crear-formulario.html" title="Ir a Crear Formulario">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
               </svg>
@@ -63,7 +63,7 @@
           <li class="nav-divider border-top my-2"></li>
 
           <li class="nav-item">
-            <a class="nav-link" href="en-creacion.html">
+            <a class="nav-link" href="en-creacion.html" title="Ir a En Creacion">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
               </svg>
@@ -73,7 +73,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="aprobaciones.html">
+            <a class="nav-link" href="aprobaciones.html" title="Ir a Aprobaciones">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
               </svg>
@@ -83,7 +83,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="pendientes.html">
+            <a class="nav-link" href="pendientes.html" title="Ir a Pendientes">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
               </svg>
@@ -93,7 +93,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="publicados.html">
+            <a class="nav-link" href="publicados.html" title="Ir a Publicados">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
               </svg>
@@ -107,7 +107,7 @@
             class="sidebar-toggler text-white fs-5 p-2"
             type="button"
             data-coreui-toggle="unfoldable"
-            aria-label="Colapsar menú"
+            title="Colapsar menú"
           ></button>
         </div>
       </div>
@@ -130,7 +130,7 @@
                   <button
                     class="btn btn-outline-secondary btn-sm me-0"
                     type="button"
-                    aria-label="Disminuir tamaño de fuente"
+                    title="Disminuir tamaño de fuente"
                     onclick="adjustFontSize(-1)"
                   >
                     <span class="fw-bold">A-</span>
@@ -138,7 +138,7 @@
                   <button
                     class="btn btn-outline-secondary btn-sm me-0"
                     type="button"
-                    aria-label="Aumentar tamaño de fuente"
+                    title="Aumentar tamaño de fuente"
                     onclick="adjustFontSize(1)"
                   >
                     <span class="fw-bold">A+</span>
@@ -150,7 +150,7 @@
                       type="button"
                       aria-expanded="false"
                       data-coreui-toggle="dropdown"
-                      aria-label="Cambiar tema"
+                      title="Cambiar tema"
                     >
                       <svg class="icon icon-lg theme-icon-active">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
@@ -161,8 +161,8 @@
                         <button
                           class="dropdown-item d-flex align-items-center"
                           type="button"
-                          data-coreui-theme-value="light"
-                          aria-label="Cambiar a modo claro"
+                          title="Cambiar a modo claro" data-coreui-theme-value="light"
+                          title="Cambiar a modo claro"
                         >
                           <svg class="icon icon-lg me-3">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
@@ -174,8 +174,8 @@
                         <button
                           class="dropdown-item d-flex align-items-center"
                           type="button"
-                          data-coreui-theme-value="dark"
-                          aria-label="Cambiar a modo oscuro"
+                          title="Cambiar a modo oscuro" data-coreui-theme-value="dark"
+                          title="Cambiar a modo oscuro"
                         >
                           <svg class="icon icon-lg me-3">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
@@ -187,8 +187,8 @@
                         <button
                           class="dropdown-item d-flex align-items-center active"
                           type="button"
-                          data-coreui-theme-value="auto"
-                          aria-label="Cambiar a modo automático"
+                          title="Cambiar a modo automático" data-coreui-theme-value="auto"
+                          title="Cambiar a modo automático"
                         >
                           <svg class="icon icon-lg me-3">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
@@ -202,7 +202,7 @@
                   <a
                     class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary"
                     href="ayuda.html"
-                    aria-label="Ver ayuda"
+                    title="Ver ayuda"
                   >
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
                       <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
@@ -216,7 +216,7 @@
                       id="perfilDropdown"
                       data-coreui-toggle="dropdown"
                       aria-expanded="false"
-                      aria-label="Abrir menú de perfil"
+                      title="Abrir menú de perfil"
                     >
                       <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
@@ -231,19 +231,19 @@
                       </li>
 
                       <li class="px-3 py-2">
-                        <div class="mall text-body-secondary">NOMBRE</div>
+                        <div class="mall text-body-secondary">Nombre</div>
                         <div class="mall">Dominique Chacra Gaete</div>
                       </li>
                       <li><hr class="dropdown-divider my-0" /></li>
                       <li class="px-3 py-2">
-                        <div class="mall text-body-secondary">ROL</div>
+                        <div class="mall text-body-secondary">Rol</div>
                         <div class="mall">Minvu Normas</div>
                       </li>
                       <li><hr class="dropdown-divider my-0" /></li>
                       <li class="px-3 py-2">
                         <div class="mall text-body-secondary">E-mail</div>
                         <div class="mall">
-                          <a href="mailto:dchacrag@minvu.cl" aria-label="Enviar correo a dchacrag@minvu.cl">
+                          <a href="mailto:dchacrag@minvu.cl" title="Enviar correo a dchacrag@minvu.cl" title="Enviar correo a dchacrag@minvu.cl">
                             dchacrag@minvu.cl
                           </a>
                         </div>
@@ -258,7 +258,7 @@
                         <a
                           href="mi-perfil.html"
                           class="btn btn-sm btn-outline-primary w-100"
-                          aria-label="Ir a mi perfil para ver o actualizar datos"
+                          title="Ir a mi perfil para ver o actualizar datos"
                         >
                           <span class="mall">Ver / Actualizar Datos</span>
                         </a>
@@ -270,7 +270,7 @@
                     href="#"
                     data-coreui-toggle="modal"
                     data-coreui-target="#logoutModal"
-                    aria-label="Cerrar sesión"
+                    title="Cerrar sesión"
                   >
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
                       <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
@@ -282,10 +282,10 @@
             </div>
           </div>
           <div class="container-fluid px-5 p-3">
-            <nav aria-label="breadcrumb" class="mb-2 mt-2">
+            <nav title="breadcrumb" class="mb-2 mt-2">
               <ol class="breadcrumb my-0 small">
                 <li class="breadcrumb-item">
-                  <a href="dashboard.html" class="mall" aria-label="Volver al Dashboard">Dashboard</a>
+                  <a href="dashboard.html" class="mall" title="Volver al Dashboard">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
                   <span class="mall">Formularios</span>
@@ -351,10 +351,9 @@
                           </div>
                           <input
                             type="date"
-                            class="form-control"
+                            class="form-control pfud-max-w-200"
                             id="fechaTermino"
-                            style="max-width: 200px"
-                            aria-label="Fecha término de vigencia"
+                            title="Fecha término de vigencia"
                           />
                         </div>
                       </div>
@@ -366,12 +365,12 @@
                     </div>
 
                     <div class="d-flex gap-2 justify-content-end mt-4 pt-3 border-top">
-                      <a href="crear-formulario.html" class="btn btn-secondary" aria-label="Volver">
+                      <a href="crear-formulario.html" class="btn btn-sm small btn-secondary" title="Volver">
                         Volver
                       </a>
                       <button
                         type="button"
-                        class="btn btn-primary"
+                        class="btn btn-sm small btn-primary"
                         onclick="window.open('builder-constructor.html', '_blank')"
                       >
                         Crear formulario

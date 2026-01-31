@@ -105,3 +105,53 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+/* ========================================
+   BUILDER - Scroll to top button
+   ======================================== */
+#scrollTopBtn {
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1050;
+}
+
+#scrollTopBtn.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Toast container z-index */
+.toast-container {
+  z-index: 1055;
+}
+
+/* ========================================
+   UTILITY CLASSES - Widths y Heights
+   ======================================== */
+.pfud-w-60 {
+  width: 60%;
+}
+
+.pfud-min-w-600 {
+  min-width: 600px;
+}
+
+.pfud-max-w-200 {
+  max-width: 200px;
+}
+
+.pfud-min-h-32 {
+  min-height: 32px;
+}
+
+.pfud-min-h-48 {
+  min-height: 48px;
+}
+
+/* Z-index utilities */
+.pfud-z-1050 {
+  z-index: 1050;
+}

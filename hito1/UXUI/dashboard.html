@@ -22,7 +22,7 @@
     <script src="../../_coreui-base/js/config.js"></script>
     <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
-  <body>
+  <body class="theme-auto theme-auto">
     <div class="d-flex">
       <!-- Sidebar-->
       <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
@@ -35,14 +35,14 @@
             class="btn-close d-lg-none"
             type="button"
             data-coreui-theme="dark"
-            aria-label="Close"
+            title="Close"
             onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()"
           ></button>
         </div>
 
         <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
           <li class="nav-item">
-            <a class="nav-link active" href="dashboard.html">
+            <a class="nav-link active" href="dashboard.html" title="Ir a Dashboard">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
               </svg>
@@ -53,7 +53,7 @@
           <li class="nav-title">Formularios</li>
 
           <li class="nav-item">
-            <a class="nav-link" href="crear-formulario.html">
+            <a class="nav-link" href="crear-formulario.html" title="Ir a Crear Formulario">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
               </svg>
@@ -64,7 +64,7 @@
           <li class="nav-divider border-top my-2"></li>
 
           <li class="nav-item">
-            <a class="nav-link" href="en-creacion.html">
+            <a class="nav-link" href="en-creacion.html" title="Ir a En Creacion">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
               </svg>
@@ -74,7 +74,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="aprobaciones.html">
+            <a class="nav-link" href="aprobaciones.html" title="Ir a Aprobaciones">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
               </svg>
@@ -84,7 +84,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="pendientes.html">
+            <a class="nav-link" href="pendientes.html" title="Ir a Pendientes">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
               </svg>
@@ -94,7 +94,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="publicados.html">
+            <a class="nav-link" href="publicados.html" title="Ir a Publicados">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
               </svg>
@@ -108,7 +108,7 @@
             class="sidebar-toggler text-white fs-5 p-2"
             type="button"
             data-coreui-toggle="unfoldable"
-            aria-label="Colapsar menú"
+            title="Colapsar menú"
           ></button>
         </div>
       </div>
@@ -132,16 +132,16 @@
                     <button
                       class="btn btn-outline-secondary btn-sm dropdown-toggle"
                       type="button"
-                      data-coreui-toggle="dropdown"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                       aria-expanded="false"
-                      aria-label="Seleccionar rol"
+                      title="Seleccionar rol"
                     >
                       Rol Minvu Normas Aprobador
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">MINVU ADM</a></li>
-                      <li><a class="dropdown-item" href="#">MINVU NORMAS CREADOR</a></li>
-                      <li><a class="dropdown-item active" href="#">MINVU NORMAS APROBADOR</a></li>
+                      <li><a class="dropdown-item"" href="#" title="MINVU ADM">MINVU ADM</a></li>
+                      <li><a class="dropdown-item"" href="#" title="MINVU NORMAS CREADOR">MINVU NORMAS CREADOR</a></li>
+                      <li><a class="dropdown-item active"" href="#" title="MINVU NORMAS APROBADOR">MINVU NORMAS APROBADOR</a></li>
                     </ul>
                   </div>
                 </div>
@@ -149,7 +149,7 @@
                   <button
                     class="btn btn-outline-secondary btn-sm me-0"
                     type="button"
-                    aria-label="Disminuir tamaño de fuente"
+                    title="Disminuir tamaño de fuente"
                     onclick="adjustFontSize(-1)"
                   >
                     <span class="fw-bold">A-</span>
@@ -157,7 +157,7 @@
                   <button
                     class="btn btn-outline-secondary btn-sm me-0"
                     type="button"
-                    aria-label="Aumentar tamaño de fuente"
+                    title="Aumentar tamaño de fuente"
                     onclick="adjustFontSize(1)"
                   >
                     <span class="fw-bold">A+</span>
@@ -168,8 +168,8 @@
                       class="btn btn-link nav-link py-2 px-2 d-flex align-items-center"
                       type="button"
                       aria-expanded="false"
-                      data-coreui-toggle="dropdown"
-                      aria-label="Cambiar tema"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                      title="Cambiar tema"
                     >
                       <svg class="icon icon-lg theme-icon-active">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
@@ -180,7 +180,7 @@
                         <button
                           class="dropdown-item d-flex align-items-center"
                           type="button"
-                          data-coreui-theme-value="light"
+                          title="Cambiar a modo claro" title="Cambiar a modo claro" data-coreui-theme-value="light"
                         >
                           <svg class="icon icon-lg me-3">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
@@ -192,7 +192,7 @@
                         <button
                           class="dropdown-item d-flex align-items-center"
                           type="button"
-                          data-coreui-theme-value="dark"
+                          title="Cambiar a modo oscuro" title="Cambiar a modo oscuro" data-coreui-theme-value="dark"
                         >
                           <svg class="icon icon-lg me-3">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
@@ -204,7 +204,7 @@
                         <button
                           class="dropdown-item d-flex align-items-center active"
                           type="button"
-                          data-coreui-theme-value="auto"
+                          title="Cambiar a modo automático" title="Cambiar a modo automático" data-coreui-theme-value="auto"
                         >
                           <svg class="icon icon-lg me-3">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
@@ -218,7 +218,7 @@
                   <a
                     class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary"
                     href="ayuda.html"
-                    aria-label="Ver ayuda"
+                    title="Ver ayuda"
                   >
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
                       <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
@@ -230,9 +230,9 @@
                       class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle"
                       href="#"
                       id="perfilDropdown"
-                      data-coreui-toggle="dropdown"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                       aria-expanded="false"
-                      aria-label="Abrir menú de perfil"
+                      title="Abrir menú de perfil"
                     >
                       <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
@@ -247,18 +247,18 @@
                       </li>
 
                       <li class="px-3 py-2">
-                        <div class="mall text-body-secondary">NOMBRE</div>
+                        <div class="mall text-body-secondary">Nombre</div>
                         <div class="mall">Dominique Chacra Gaete</div>
                       </li>
                       <li><hr class="dropdown-divider my-0" /></li>
                       <li class="px-3 py-2">
-                        <div class="mall text-body-secondary">ROL</div>
+                        <div class="mall text-body-secondary">Rol</div>
                         <div class="mall">Minvu Normas</div>
                       </li>
                       <li><hr class="dropdown-divider my-0" /></li>
                       <li class="px-3 py-2">
                         <div class="mall text-body-secondary">E-mail</div>
-                        <div class="mall"><a href="mailto:dchacrag@minvu.cl">dchacrag@minvu.cl</a></div>
+                        <div class="mall"><a href="mailto:dchacrag@minvu.cl" title="Enviar correo a dchacrag@minvu.cl" title="Enviar correo a dchacrag@minvu.cl">dchacrag@minvu.cl</a></div>
                       </li>
                       <li><hr class="dropdown-divider my-0" /></li>
                       <li class="px-3 py-2">
@@ -270,7 +270,7 @@
                         <a
                           href="mi-perfil.html"
                           class="btn btn-sm btn-outline-primary w-100"
-                          aria-label="Ir a mi perfil para ver o actualizar datos"
+                          title="Ir a mi perfil para ver o actualizar datos"
                         >
                           <span class="mall">Ver / Actualizar Datos</span>
                         </a>
@@ -282,7 +282,7 @@
                     href="#"
                     data-coreui-toggle="modal"
                     data-coreui-target="#logoutModal"
-                    aria-label="Cerrar sesión"
+                    title="Cerrar sesión"
                   >
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
                       <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
@@ -296,9 +296,9 @@
           <div class="container-fluid px-5">
             <div class="row py-3 bg-body rounded-3 text-body mt-2 align-items-center">
               <div class="col">
-                <nav aria-label="breadcrumb" class="mb-2">
+                <nav title="breadcrumb" class="mb-2">
                   <ol class="breadcrumb my-0 small">
-                    <li class="breadcrumb-item"><a href="dashboard.html" class="mall">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="dashboard.html" class="mall" title="Dashboard">Dashboard</a></li>
                   </ol>
                 </nav>
                 <div class="d-flex align-items-baseline flex-wrap">
@@ -310,7 +310,7 @@
               </div>
             </div>
             <div class="d-flex justify-content-end mt-3">
-              <a href="builder-constructor.html" class="btn btn-sm small btn-primary" target="_blank">
+              <a href="crear-formulario.html" class="btn btn-sm small btn-primary" title="Crear nuevo Formulario">
                 Crear nuevo Formulario
               </a>
             </div>
@@ -326,15 +326,15 @@
                 <div class="card h-100">
                   <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
                     <!-- Número principal -->
-                    <div class="w-100" style="min-height: 48px">
+                    <div class="w-100" class="pfud-min-h-48">
                       <span class="fs-2 fw-semibold" id="counterPublicados">24</span>
                     </div>
                     <!-- Título -->
-                    <div class="w-100" style="min-height: 32px">
+                    <div class="w-100" class="pfud-min-h-32">
                       <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
                     </div>
                     <!-- Descripción -->
-                    <div class="w-100 mb-2" style="min-height: 32px">
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
                       <span class="mall text-body-secondary d-block">Publicados al 31/01/2026</span>
                     </div>
                     <!-- Icono validación -->
@@ -350,13 +350,13 @@
               <div class="col-12 col-md-4 col-xl-2">
                 <div class="card h-100">
                   <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
-                    <div class="w-100" style="min-height: 48px">
+                    <div class="w-100" class="pfud-min-h-48">
                       <span class="fs-2 fw-semibold" id="counterProceso">12</span>
                     </div>
-                    <div class="w-100" style="min-height: 32px">
+                    <div class="w-100" class="pfud-min-h-32">
                       <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
                     </div>
-                    <div class="w-100 mb-2" style="min-height: 32px">
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
                       <span class="mall text-body-secondary d-block">En proceso de creación.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
@@ -371,13 +371,13 @@
               <div class="col-12 col-md-4 col-xl-2">
                 <div class="card h-100">
                   <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
-                    <div class="w-100" style="min-height: 48px">
+                    <div class="w-100" class="pfud-min-h-48">
                       <span class="fs-2 fw-semibold" id="counterObservaciones">47</span>
                     </div>
-                    <div class="w-100" style="min-height: 32px">
+                    <div class="w-100" class="pfud-min-h-32">
                       <span class="fs-6 text-uppercase fw-bold d-block">Observaciones</span>
                     </div>
-                    <div class="w-100 mb-2" style="min-height: 32px">
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
                       <span class="mall text-body-secondary d-block">Sin resolver en formularios.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
@@ -392,13 +392,13 @@
               <div class="col-12 col-md-4 col-xl-2">
                 <div class="card h-100">
                   <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
-                    <div class="w-100" style="min-height: 48px">
+                    <div class="w-100" class="pfud-min-h-48">
                       <span class="fs-2 fw-semibold" id="counterCiudadanos">156</span>
                     </div>
-                    <div class="w-100" style="min-height: 32px">
+                    <div class="w-100" class="pfud-min-h-32">
                       <span class="fs-6 text-uppercase fw-bold d-block">Ciudadanos</span>
                     </div>
-                    <div class="w-100 mb-2" style="min-height: 32px">
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
                       <span class="mall text-body-secondary d-block">Han ingresado al sistema.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
@@ -413,13 +413,13 @@
               <div class="col-12 col-md-4 col-xl-2">
                 <div class="card h-100">
                   <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
-                    <div class="w-100" style="min-height: 48px">
+                    <div class="w-100" class="pfud-min-h-48">
                       <span class="fs-2 fw-semibold" id="counterSolicitudes">240</span>
                     </div>
-                    <div class="w-100" style="min-height: 32px">
+                    <div class="w-100" class="pfud-min-h-32">
                       <span class="fs-6 text-uppercase fw-bold d-block">Solicitudes</span>
                     </div>
-                    <div class="w-100 mb-2" style="min-height: 32px">
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
                       <span class="mall text-body-secondary d-block">Ingresadas durante el último mes.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
@@ -434,13 +434,13 @@
               <div class="col-12 col-md-4 col-xl-2">
                 <div class="card h-100">
                   <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
-                    <div class="w-100" style="min-height: 48px">
+                    <div class="w-100" class="pfud-min-h-48">
                       <span class="fs-2 fw-semibold" id="counterTiempo">12.2</span>
                     </div>
-                    <div class="w-100" style="min-height: 32px">
+                    <div class="w-100" class="pfud-min-h-32">
                       <span class="fs-6 text-uppercase fw-bold d-block">TIEMPO PROMEDIO</span>
                     </div>
-                    <div class="w-100 mb-2" style="min-height: 32px">
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
                       <span class="mall text-body-secondary d-block">De usuarios por sesión.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
@@ -464,7 +464,7 @@
                   </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
-                      <table class="table table-hover mb-0">
+                      <table class="table mb-0">
                         <tbody>
                           <tr class="pfud-table-truncate">
                             <td>
@@ -494,15 +494,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -510,7 +510,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Editar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
@@ -562,15 +562,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -578,7 +578,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Editar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
@@ -629,15 +629,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -645,7 +645,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Editar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
@@ -676,13 +676,228 @@
                     <a
                       href="en-creacion.html"
                       class="btn btn-outline-secondary btn-sm small"
-                      aria-label="Ver todos los formularios en creación"
+                      title="Ver todos los formularios en creación"
                     >
                       Ver Todos
                     </a>
                   </div>
                 </div>
               </div>
+              <!-- Tarjeta: Pendientes de Aprobación -->
+              <div class="col-12 col-md-6">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="fw-semibold">Pendientes de Aprobación</div>
+                    <span class="badge bg-warning">3 Formularios</span>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table mb-0">
+                        <tbody>
+                          <tr class="pfud-table-truncate">
+                            <td>
+                              <div class="d-flex align-items-start gap-3">
+                                <div class="flex-shrink-0">
+                                  <span class="badge bg-warning">4-3.1</span>
+                                </div>
+                                <div class="flex-grow-1 overflow-hidden">
+                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                    Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación,
+                                    Ampliación Mayor a 100 m2
+                                  </div>
+                                  <div class="mall text-body-secondary">
+                                    <span class="fw-bold">Norma:</span>
+                                    <span>D.S. N°61/2011 MINVU, Art. 4.3.1</span>
+                                  </div>
+                                  <div class="mall text-body-secondary">
+                                    <span class="fw-bold">Aprobación solicitada por:</span>
+                                    <span>Carlos Mendoza; 11/01/2026, 14:20</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="text-end">
+                              <div class="dropdown">
+                                <button
+                                  class="btn btn-link text-body p-0"
+                                  type="button"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                  title="Abrir menú de acciones"
+                                >
+                                  <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
+                                      ></use>
+                                    </svg>
+                                    Previsualizar
+                                  </a>
+                                  <a class="dropdown-item" href="#" title="Aprobar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check"
+                                      ></use>
+                                    </svg>
+                                    Aprobar
+                                  </a>
+                                  <a class="dropdown-item" href="#" title="Rechazar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x"
+                                      ></use>
+                                    </svg>
+                                    Rechazar
+                                  </a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="pfud-table-truncate">
+                            <td>
+                              <div class="d-flex align-items-start gap-3">
+                                <div class="flex-shrink-0">
+                                  <span class="badge bg-warning">5-2.3</span>
+                                </div>
+                                <div class="flex-grow-1 overflow-hidden">
+                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                    Resolución Aprueba Modificación de Proyecto de Edificación, Reconstrucción
+                                  </div>
+                                  <div class="mall text-body-secondary">
+                                    <span class="fw-bold">Norma:</span>
+                                    <span>D.S. N°75/2004 MINVU, Art. 5.2.3</span>
+                                  </div>
+                                  <div class="mall text-body-secondary">
+                                    <span class="fw-bold">Aprobación solicitada por:</span>
+                                    <span>María González; 10/01/2026, 16:45</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="text-end">
+                              <div class="dropdown">
+                                <button
+                                  class="btn btn-link text-body p-0"
+                                  type="button"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                  title="Abrir menú de acciones"
+                                >
+                                  <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
+                                      ></use>
+                                    </svg>
+                                    Previsualizar
+                                  </a>
+                                  <a class="dropdown-item" href="#" title="Aprobar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check"
+                                      ></use>
+                                    </svg>
+                                    Aprobar
+                                  </a>
+                                  <a class="dropdown-item" href="#" title="Rechazar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x"
+                                      ></use>
+                                    </svg>
+                                    Rechazar
+                                  </a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="pfud-table-truncate">
+                            <td>
+                              <div class="d-flex align-items-start gap-3">
+                                <div class="flex-shrink-0">
+                                  <span class="badge bg-warning">3-1.5</span>
+                                </div>
+                                <div class="flex-grow-1 overflow-hidden">
+                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                    Certificado de Recepción Definitiva de Obras de Reconstrucción de Edificación
+                                  </div>
+                                  <div class="mall text-body-secondary">
+                                    <span class="fw-bold">Norma:</span>
+                                    <span>Ley N°19.537/1997, Art. 3.1.5</span>
+                                  </div>
+                                  <div class="mall text-body-secondary">
+                                    <span class="fw-bold">Aprobación solicitada por:</span>
+                                    <span>Roberto Silva; 09/01/2026, 11:30</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="text-end">
+                              <div class="dropdown">
+                                <button
+                                  class="btn btn-link text-body p-0"
+                                  type="button"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                  title="Abrir menú de acciones"
+                                >
+                                  <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
+                                      ></use>
+                                    </svg>
+                                    Previsualizar
+                                  </a>
+                                  <a class="dropdown-item" href="#" title="Aprobar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check"
+                                      ></use>
+                                    </svg>
+                                    Aprobar
+                                  </a>
+                                  <a class="dropdown-item" href="#" title="Rechazar">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x"
+                                      ></use>
+                                    </svg>
+                                    Rechazar
+                                  </a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="card-footer text-end">
+                    <a
+                      href="aprobaciones.html"
+                      class="btn btn-outline-secondary btn-sm small"
+                      title="Ver todos los formularios pendientes de aprobación"
+                    >
+                      Ver Todos
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row g-4 mb-4 bg-body-tertiary">
               <!-- Tarjeta: Formularios Pendientes -->
               <div class="col-12 col-md-6">
                 <div class="card">
@@ -692,7 +907,7 @@
                   </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
-                      <table class="table table-hover mb-0">
+                      <table class="table mb-0">
                         <tbody>
                           <tr class="pfud-table-truncate">
                             <td>
@@ -725,15 +940,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -741,7 +956,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Programar Publicación">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"
@@ -794,15 +1009,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -810,7 +1025,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Programar Publicación">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"
@@ -864,15 +1079,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -880,7 +1095,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Programar Publicación">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"
@@ -911,15 +1126,13 @@
                     <a
                       href="pendientes.html"
                       class="btn btn-outline-secondary btn-sm small"
-                      aria-label="Ver todos los formularios pendientes"
+                      title="Ver todos los formularios pendientes"
                     >
                       Ver Todos
                     </a>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row g-4 mb-4 bg-body-tertiary">
               <!-- Tarjeta: Publicados -->
               <div class="col-12 col-md-6">
                 <div class="card">
@@ -929,7 +1142,7 @@
                   </div>
                   <div class="card-body p-0">
                     <div class="table-responsive">
-                      <table class="table table-hover mb-0">
+                      <table class="table mb-0">
                         <tbody>
                           <tr class="pfud-table-truncate">
                             <td>
@@ -962,15 +1175,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -978,13 +1191,21 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Crear nueva versión">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"
                                       ></use>
                                     </svg>
                                     Crear nueva versión
+                                  </a>
+                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="publicados-derogar.html">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"
+                                      ></use>
+                                    </svg>
+                                    Derogar
                                   </a>
                                 </div>
                               </div>
@@ -1020,15 +1241,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -1036,13 +1257,21 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Crear nueva versión">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"
                                       ></use>
                                     </svg>
                                     Crear nueva versión
+                                  </a>
+                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="publicados-derogar.html">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"
+                                      ></use>
+                                    </svg>
+                                    Derogar
                                   </a>
                                 </div>
                               </div>
@@ -1079,15 +1308,15 @@
                                 <button
                                   class="btn btn-link text-body p-0"
                                   type="button"
-                                  data-coreui-toggle="dropdown"
+                                  title="Abrir menú de acciones" data-coreui-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
+                                  title="Abrir menú de acciones"
                                 >
                                   <i class="bi bi-three-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -1095,13 +1324,21 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
+                                  <a class="dropdown-item" href="#" title="Crear nueva versión">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"
                                       ></use>
                                     </svg>
                                     Crear nueva versión
+                                  </a>
+                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="publicados-derogar.html">
+                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
+                                      <use
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"
+                                      ></use>
+                                    </svg>
+                                    Derogar
                                   </a>
                                 </div>
                               </div>
@@ -1115,220 +1352,7 @@
                     <a
                       href="publicados.html"
                       class="btn btn-outline-secondary btn-sm small"
-                      aria-label="Ver todos los formularios publicados"
-                    >
-                      Ver Todos
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Tarjeta: Pendientes de Aprobación -->
-              <div class="col-12 col-md-6">
-                <div class="card">
-                  <div class="card-header d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Pendientes de Aprobación</div>
-                    <span class="badge bg-warning">3 Formularios</span>
-                  </div>
-                  <div class="card-body p-0">
-                    <div class="table-responsive">
-                      <table class="table table-hover mb-0">
-                        <tbody>
-                          <tr class="pfud-table-truncate">
-                            <td>
-                              <div class="d-flex align-items-start gap-3">
-                                <div class="flex-shrink-0">
-                                  <span class="badge bg-warning">4-3.1</span>
-                                </div>
-                                <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
-                                    Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación,
-                                    Ampliación Mayor a 100 m2
-                                  </div>
-                                  <div class="mall text-body-secondary">
-                                    <span class="fw-bold">Norma:</span>
-                                    <span>D.S. N°61/2011 MINVU, Art. 4.3.1</span>
-                                  </div>
-                                  <div class="mall text-body-secondary">
-                                    <span class="fw-bold">Aprobación solicitada por:</span>
-                                    <span>Carlos Mendoza; 11/01/2026, 14:20</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td class="text-end">
-                              <div class="dropdown">
-                                <button
-                                  class="btn btn-link text-body p-0"
-                                  type="button"
-                                  data-coreui-toggle="dropdown"
-                                  aria-haspopup="true"
-                                  aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
-                                >
-                                  <i class="bi bi-three-dots-vertical"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
-                                      ></use>
-                                    </svg>
-                                    Previsualizar
-                                  </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check"
-                                      ></use>
-                                    </svg>
-                                    Aprobar
-                                  </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x"
-                                      ></use>
-                                    </svg>
-                                    Rechazar
-                                  </a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr class="pfud-table-truncate">
-                            <td>
-                              <div class="d-flex align-items-start gap-3">
-                                <div class="flex-shrink-0">
-                                  <span class="badge bg-warning">5-2.3</span>
-                                </div>
-                                <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
-                                    Resolución Aprueba Modificación de Proyecto de Edificación, Reconstrucción
-                                  </div>
-                                  <div class="mall text-body-secondary">
-                                    <span class="fw-bold">Norma:</span>
-                                    <span>D.S. N°75/2004 MINVU, Art. 5.2.3</span>
-                                  </div>
-                                  <div class="mall text-body-secondary">
-                                    <span class="fw-bold">Aprobación solicitada por:</span>
-                                    <span>María González; 10/01/2026, 16:45</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td class="text-end">
-                              <div class="dropdown">
-                                <button
-                                  class="btn btn-link text-body p-0"
-                                  type="button"
-                                  data-coreui-toggle="dropdown"
-                                  aria-haspopup="true"
-                                  aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
-                                >
-                                  <i class="bi bi-three-dots-vertical"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
-                                      ></use>
-                                    </svg>
-                                    Previsualizar
-                                  </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check"
-                                      ></use>
-                                    </svg>
-                                    Aprobar
-                                  </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x"
-                                      ></use>
-                                    </svg>
-                                    Rechazar
-                                  </a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr class="pfud-table-truncate">
-                            <td>
-                              <div class="d-flex align-items-start gap-3">
-                                <div class="flex-shrink-0">
-                                  <span class="badge bg-warning">3-1.5</span>
-                                </div>
-                                <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
-                                    Certificado de Recepción Definitiva de Obras de Reconstrucción de Edificación
-                                  </div>
-                                  <div class="mall text-body-secondary">
-                                    <span class="fw-bold">Norma:</span>
-                                    <span>Ley N°19.537/1997, Art. 3.1.5</span>
-                                  </div>
-                                  <div class="mall text-body-secondary">
-                                    <span class="fw-bold">Aprobación solicitada por:</span>
-                                    <span>Roberto Silva; 09/01/2026, 11:30</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </td>
-                            <td class="text-end">
-                              <div class="dropdown">
-                                <button
-                                  class="btn btn-link text-body p-0"
-                                  type="button"
-                                  data-coreui-toggle="dropdown"
-                                  aria-haspopup="true"
-                                  aria-expanded="false"
-                                  aria-label="Abrir menú de acciones"
-                                >
-                                  <i class="bi bi-three-dots-vertical"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
-                                      ></use>
-                                    </svg>
-                                    Previsualizar
-                                  </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check"
-                                      ></use>
-                                    </svg>
-                                    Aprobar
-                                  </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small" href="#">
-                                    <svg class="align-middle" width="18" height="18" fill="currentColor">
-                                      <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x"
-                                      ></use>
-                                    </svg>
-                                    Rechazar
-                                  </a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="card-footer text-end">
-                    <a
-                      href="aprobaciones.html"
-                      class="btn btn-outline-secondary btn-sm small"
-                      aria-label="Ver todos los formularios pendientes de aprobación"
+                      title="Ver todos los formularios publicados"
                     >
                       Ver Todos
                     </a>
