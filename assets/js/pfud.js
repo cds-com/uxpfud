@@ -1,5 +1,8 @@
 // Función global para ajuste de tamaño de fuente
 let currentFontSize = 100; // porcentaje base
+currentFontSize = 90;
+document.documentElement.style.fontSize = currentFontSize + '%';
+
 function adjustFontSize(delta) {
   currentFontSize += delta * 10; // cambio de 10% cada vez
   if (currentFontSize < 80) currentFontSize = 80;   // mínimo 80%

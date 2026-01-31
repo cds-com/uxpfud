@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta name="description" content="Portal Ciudadano - MINVU" />
     <meta name="author" content="MINVU" />
-    <title>Programar Publicación - Portal Ciudadano MINVU</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/favico.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/logos/favico.png" />
+    <title>Comprobante de Aprobación - Portal Ciudadano MINVU</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
     <meta name="theme-color" content="#09132D" />
     <!-- Vendors styles-->
-    <link rel="stylesheet" href="../_coreui-base/vendors/simplebar/css/simplebar.css" />
-    <link rel="stylesheet" href="../_coreui-base/css/vendors/simplebar.css" />
+    <link rel="stylesheet" href="../../_coreui-base/vendors/simplebar/css/simplebar.css" />
+    <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
     <!-- Main styles for this application-->
-    <link href="../_coreui-base/css/style.css" rel="stylesheet" />
+    <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="../assets/css/pfud.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud.css" />
     <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
-    <script src="../_coreui-base/js/config.js"></script>
-    <script src="../_coreui-base/js/color-modes.js"></script>
+    <script src="../../_coreui-base/js/config.js"></script>
+    <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
   <body>
     <div class="d-flex">
@@ -27,8 +27,8 @@
       <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
         <div class="sidebar-header border-bottom">
           <div class="sidebar-brand">
-            <img src="../assets/img/logos/minvu.png" alt="MINVU" class="sidebar-brand-full w-75" />
-            <img src="../assets/img/logos/minvu-icon.png" alt="MINVU" class="sidebar-brand-narrow" />
+            <img src="../../assets/img/logos/minvu.png" alt="MINVU" class="sidebar-brand-full w-75" />
+            <img src="../../assets/img/logos/minvu-icon.png" alt="MINVU" class="sidebar-brand-narrow" />
           </div>
           <button
             class="btn-close d-lg-none"
@@ -43,7 +43,7 @@
           <li class="nav-item">
             <a class="nav-link" href="dashboard.html" aria-label="Ir a Dashboard">
               <svg class="nav-icon">
-                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
               </svg>
               <span>Dashboard</span>
             </a>
@@ -52,9 +52,20 @@
           <li class="nav-title">Formularios</li>
 
           <li class="nav-item">
-            <a class="nav-link" href="en-creacion.html" aria-label="Ver formularios en creación">
+            <a class="nav-link" href="crear-formulario.html">
               <svg class="nav-icon">
-                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+              </svg>
+              <span>Crear Formulario</span>
+            </a>
+          </li>
+
+          <li class="nav-divider border-top my-2"></li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="en-creacion.html">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
               </svg>
               <span>En creación</span>
               <span class="badge badge-sm bg-secondary ms-auto">12</span>
@@ -62,41 +73,32 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="pendientes.html" aria-label="Ver formularios pendientes">
-              <svg class="nav-icon">
-                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
-              </svg>
-              <span>Pendientes</span>
-              <span class="badge badge-sm bg-primary ms-auto">8</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a class="nav-link" href="aprobaciones.html">
               <svg class="nav-icon">
-                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
               </svg>
-              <span>Aprobaciones</span>
+              <span>Pendientes de Aprobación</span>
               <span class="badge badge-sm bg-secondary ms-auto">2</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="publicados.html" aria-label="Ver formularios publicados">
+            <a class="nav-link" href="pendientes.html">
               <svg class="nav-icon">
-                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
               </svg>
-              <span>Publicados</span>
-              <span class="badge badge-sm bg-secondary ms-auto">3</span>
+              <span>Pendientes de Publicación</span>
+              <span class="badge badge-sm bg-secondary ms-auto">8</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="builder-datos.html" aria-label="Crear nuevo formulario">
+            <a class="nav-link" href="publicados.html">
               <svg class="nav-icon">
-                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
               </svg>
-              <span>Crear Formulario</span>
+              <span>Publicados</span>
+              <span class="badge badge-sm bg-secondary ms-auto">3</span>
             </a>
           </li>
         </ul>
@@ -151,7 +153,7 @@
                       aria-label="Cambiar tema"
                     >
                       <svg class="icon icon-lg theme-icon-active">
-                        <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                       </svg>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -163,7 +165,7 @@
                           aria-label="Cambiar a modo claro"
                         >
                           <svg class="icon icon-lg me-3">
-                            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
                           </svg>
                           Light
                         </button>
@@ -176,7 +178,7 @@
                           aria-label="Cambiar a modo oscuro"
                         >
                           <svg class="icon icon-lg me-3">
-                            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
                           </svg>
                           Dark
                         </button>
@@ -189,7 +191,7 @@
                           aria-label="Cambiar a modo automático"
                         >
                           <svg class="icon icon-lg me-3">
-                            <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                           </svg>
                           Auto
                         </button>
@@ -203,7 +205,7 @@
                     aria-label="Ver ayuda"
                   >
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
                     </svg>
                     <span>Ayuda</span>
                   </a>
@@ -217,14 +219,14 @@
                       aria-label="Abrir menú de perfil"
                     >
                       <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
-                        <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
                       </svg>
                       <span>Mi Perfil</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
                       <li class="px-3 py-1">
                         <div class="avatar avatar-xl mb-3">
-                          <img class="avatar-img" src="../assets/img/perfil.jpg" alt="Foto del usuario" />
+                          <img class="avatar-img" src="../../assets/img/perfil.jpg" alt="Foto del usuario" />
                         </div>
                       </li>
 
@@ -271,7 +273,7 @@
                     aria-label="Cerrar sesión"
                   >
                     <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
-                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
                     </svg>
                     <span>Salir</span>
                   </a>
@@ -289,17 +291,16 @@
                   <span class="mall">Formularios</span>
                 </li>
                 <li class="breadcrumb-item">
-                  <a href="pendientes.html" class="mall" aria-label="Volver a Pendientes">Pendientes de publicación</a>
+                  <a href="aprobaciones.html" class="mall" aria-label="Volver a Aprobaciones">Aprobaciones</a>
                 </li>
               </ol>
             </nav>
             <div class="d-flex w-100 align-items-center gap-3 flex-nowrap">
               <div class="d-flex align-items-baseline flex-wrap gap-2">
                 <svg class="me-2" width="28" height="28" fill="currentColor">
-                  <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
                 </svg>
-                <h1 class="h2 mb-0">Programar Publicación</h1>
-                <span class="badge bg-warning text-dark">NUEVA VERSIÓN DE UN FORMULARIO YA EXISTENTE</span>
+                <h1 class="h2 mb-0">Aprobar Formulario</h1>
               </div>
             </div>
           </div>
@@ -309,32 +310,63 @@
           <div class="container-fluid px-5">
             <div class="row">
               <div class="col-12">
-                <div class="card mb-4">
-                  <div class="card-body p-4">
-                    <div class="text-center py-5">
-                      <h1 class="h3 mb-3">El formulario no ha podido programarse.</h1>
-                      <p class="text-body-secondary mb-4">
-                        Ocurrió un problema al intentar programar la publicación del formulario.
-                      </p>
-                      <p class="text-body-secondary mb-5">Código de ERROR: XXXXXXXXXXXX</p>
+                <div class="border rounded p-4 bg-white mb-4">
+                  <!-- Encabezado -->
+                  <div class="border-bottom pb-3 mb-4">
+                    <div class="h5 mb-1">Comprobante de aprobación</div>
+                    <div class="text-muted">Formulario aprobado correctamente</div>
+                  </div>
+                  <!-- Cuerpo tipo documento -->
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <div class="text-muted small">Nombre del Formulario</div>
+                      <div class="fw-semibold">
+                        Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor
+                        a 100 m2
+                      </div>
                     </div>
-
-                    <div class="d-flex justify-content-end gap-3 mt-4 pt-3 border-top">
-                      <a
-                        href="pendientes.html"
-                        class="btn btn-sm btn-outline-secondary px-5"
-                        aria-label="Volver a formularios pendientes"
-                      >
-                        Volver a Formularios
-                      </a>
-                      <a
-                        href="programar-publicacion-nueva-version.html"
-                        class="btn btn-sm btn-primary px-5"
-                        aria-label="Reintentar programación de publicación"
-                      >
-                        Reintentar
-                      </a>
+                    <div class="col-6">
+                      <div class="text-muted small">Familia del Formulario</div>
+                      <div class="fw-semibold"><span class="badge bg-primary">2-8.2</span></div>
                     </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <div class="text-muted small">Norma que lo Justifica</div>
+                      <div class="fw-semibold">D.S. N°61/2011 MINVU, Art. 4.3.1</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="text-muted small">Usuario que lo Creó</div>
+                      <div class="fw-semibold">Sofía Muñoz</div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <div class="text-muted small">Fecha de término de vigencia de este formulario</div>
+                      <div class="fw-semibold">03/03/2025</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="text-muted small">Formulario al que Reemplaza</div>
+                      <div class="fw-semibold">
+                        NOMBRE DEL FORMULARIO AL QUE REEMPLAZA, ubicado desde el DD/MM/AAAA.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col-12">
+                      <div class="alert alert-info mb-0" role="alert">
+                        <strong>Importante:</strong>
+                        Al aprobar este formulario, quedará disponible para que sea publicado por los usuarios
+                        autorizados y no estará visible a ciudadanos, hasta que sea programada su publicación en el
+                        portal.
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Cierre -->
+                  <div class="border-top pt-3 d-flex justify-content-end gap-2">
+                    <a href="aprobaciones.html" class="btn btn-primary btn-sm" aria-label="Volver a aprobaciones">
+                      Volver
+                    </a>
                   </div>
                 </div>
               </div>
@@ -357,10 +389,10 @@
       </div>
     </div>
     <!-- CoreUI and necessary plugins-->
-    <script src="../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
-    <script src="../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
-    <script src="../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
-    <script src="../_coreui-base/js/main.js"></script>
-    <script src="../assets/js/pfud.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
+    <script src="../../_coreui-base/js/main.js"></script>
+    <script src="../../assets/js/pfud.js"></script>
   </body>
 </html>

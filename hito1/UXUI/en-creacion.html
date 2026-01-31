@@ -14,32 +14,32 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../assets/img/logos/favico.png"
+      href="../../assets/img/logos/favico.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../assets/img/logos/favico.png"
+      href="../../assets/img/logos/favico.png"
     />
     <meta name="theme-color" content="#09132D" />
     <!-- Vendors styles-->
     <link
       rel="stylesheet"
-      href="../_coreui-base/vendors/simplebar/css/simplebar.css"
+      href="../../_coreui-base/vendors/simplebar/css/simplebar.css"
     />
-    <link rel="stylesheet" href="../_coreui-base/css/vendors/simplebar.css" />
+    <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
     <!-- Main styles for this application-->
-    <link href="../_coreui-base/css/style.css" rel="stylesheet" />
+    <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="../assets/css/pfud.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud.css" />
 
     <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
-    <script src="../_coreui-base/js/config.js"></script>
-    <script src="../_coreui-base/js/color-modes.js"></script>
+    <script src="../../_coreui-base/js/config.js"></script>
+    <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
 
   <body>
@@ -49,12 +49,12 @@
         <div class="sidebar-header border-bottom">
           <div class="sidebar-brand">
             <img
-              src="../assets/img/logos/minvu.png"
+              src="../../assets/img/logos/minvu.png"
               alt="MINVU"
               class="sidebar-brand-full w-75"
             />
             <img
-              src="../assets/img/logos/minvu-icon.png"
+              src="../../assets/img/logos/minvu-icon.png"
               alt="MINVU"
               class="sidebar-brand-narrow"
             />
@@ -81,7 +81,7 @@
             >
               <svg class="nav-icon">
                 <use
-                  xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"
+                  xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"
                 ></use>
               </svg>
               <span>Dashboard</span>
@@ -91,79 +91,57 @@
           <li class="nav-title">Formularios</li>
 
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="en-creacion.html"
-              aria-label="Ver formularios en creación"
-            >
+            <a class="nav-link" href="crear-formulario.html">
               <svg class="nav-icon">
-                <use
-                  xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"
-                ></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
               </svg>
-              <span>En creación</span>
-              <span class="badge badge-sm bg-primary ms-auto">12</span>
+              <span>Crear Formulario</span>
             </a>
           </li>
 
+          <li class="nav-divider border-top my-2"></li>
+
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="pendientes.html"
-              aria-label="Ver formularios pendientes"
-            >
+            <a class="nav-link active" href="en-creacion.html">
               <svg class="nav-icon">
-                <use
-                  xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"
-                ></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
               </svg>
-              <span>Pendientes</span>
-              <span class="badge badge-sm bg-secondary ms-auto">8</span>
+              <span>En creación</span>
+              <span class="badge badge-sm bg-secondary ms-auto">12</span>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="aprobaciones.html">
               <svg class="nav-icon">
-                <use
-                  xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"
-                ></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
               </svg>
-              <span>Aprobaciones</span>
+              <span>Pendientes de Aprobación</span>
               <span class="badge badge-sm bg-secondary ms-auto">2</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="publicados.html"
-              aria-label="Ver formularios publicados"
-            >
+            <a class="nav-link" href="pendientes.html">
               <svg class="nav-icon">
-                <use
-                  xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"
-                ></use>
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
+              </svg>
+              <span>Pendientes de Publicación</span>
+              <span class="badge badge-sm bg-secondary ms-auto">8</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="publicados.html">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
               </svg>
               <span>Publicados</span>
               <span class="badge badge-sm bg-secondary ms-auto">3</span>
             </a>
           </li>
 
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="builder-datos.html"
-              aria-label="Crear nuevo formulario"
-            >
-              <svg class="nav-icon">
-                <use
-                  xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
-                ></use>
-              </svg>
-              <span>Crear Formulario</span>
-            </a>
-          </li>
+         
         </ul>
         <div class="sidebar-footer border-top d-none d-md-flex">
           <button
@@ -230,7 +208,7 @@
                     >
                       <svg class="icon icon-lg theme-icon-active">
                         <use
-                          xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"
+                          xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"
                         ></use>
                       </svg>
                     </button>
@@ -244,7 +222,7 @@
                         >
                           <svg class="icon icon-lg me-3">
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"
                             ></use>
                           </svg>
                           Light
@@ -259,7 +237,7 @@
                         >
                           <svg class="icon icon-lg me-3">
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"
                             ></use>
                           </svg>
                           Dark
@@ -274,7 +252,7 @@
                         >
                           <svg class="icon icon-lg me-3">
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"
                             ></use>
                           </svg>
                           Auto
@@ -297,7 +275,7 @@
                       fill="currentColor"
                     >
                       <use
-                        xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"
+                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"
                       ></use>
                     </svg>
                     <span>Ayuda</span>
@@ -318,7 +296,7 @@
                         fill="currentColor"
                       >
                         <use
-                          xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"
+                          xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"
                         ></use>
                       </svg>
                       <span>Mi Perfil</span>
@@ -331,7 +309,7 @@
                         <div class="avatar avatar-xl mb-3">
                           <img
                             class="avatar-img"
-                            src="../assets/img/perfil.jpg"
+                            src="../../assets/img/perfil.jpg"
                             alt="Foto del usuario"
                           />
                         </div>
@@ -396,7 +374,7 @@
                       fill="currentColor"
                     >
                       <use
-                        xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"
+                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"
                       ></use>
                     </svg>
                     <span>Salir</span>
@@ -425,7 +403,7 @@
               <div class="d-flex align-items-baseline flex-wrap">
                 <svg class="me-2" width="28" height="28" fill="currentColor">
                   <use
-                    xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"
+                    xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"
                   ></use>
                 </svg>
                 <h1 class="h2 mb-0">En creación</h1>
@@ -435,7 +413,7 @@
                   <div class="input-group input-group-sm">
                     <span class="input-group-text bg-body">
                       <svg class="icon" width="16" height="16" fill="currentColor">
-                        <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use>
                       </svg>
                     </span>
                     <input
@@ -456,7 +434,7 @@
                       data-coreui-auto-close="outside"
                     >
                       <svg class="icon" width="16" height="16" fill="currentColor">
-                        <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-filter"></use>
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-filter"></use>
                       </svg>
                     </button>
 
@@ -613,7 +591,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -630,7 +608,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -647,7 +625,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -701,7 +679,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -718,7 +696,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -735,7 +713,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -790,7 +768,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -807,7 +785,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -824,7 +802,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -878,7 +856,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -895,7 +873,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -912,7 +890,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -968,7 +946,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -985,7 +963,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -1002,7 +980,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -1057,7 +1035,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -1074,7 +1052,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -1091,7 +1069,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -1145,7 +1123,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -1162,7 +1140,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -1179,7 +1157,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -1233,7 +1211,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -1250,7 +1228,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -1267,7 +1245,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -1322,7 +1300,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -1339,7 +1317,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -1356,7 +1334,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -1412,7 +1390,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"
                             ></use>
                           </svg>
                           Previsualizar
@@ -1429,7 +1407,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"
                             ></use>
                           </svg>
                           Editar
@@ -1446,7 +1424,7 @@
                             fill="currentColor"
                           >
                             <use
-                              xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                              xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
                             ></use>
                           </svg>
                           Archivar
@@ -1515,10 +1493,10 @@
       </div>
     </div>
     <!-- CoreUI and necessary plugins-->
-    <script src="../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
-    <script src="../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
-    <script src="../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
-    <script src="../_coreui-base/js/main.js"></script>
-    <script src="../assets/js/pfud.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
+    <script src="../../_coreui-base/js/main.js"></script>
+    <script src="../../assets/js/pfud.js"></script>
   </body>
 </html>
