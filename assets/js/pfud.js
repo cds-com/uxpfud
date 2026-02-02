@@ -386,3 +386,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Navegación del formulario previsualizar
+document.addEventListener('DOMContentLoaded', function() {
+  const navItems = document.querySelectorAll('.progress-nav-item');
+  const sections = document.querySelectorAll('[id^="sec"], #encabezado');
+  
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const targetSection = this.getAttribute('data-section');
+      const section = document.getElementById(targetSection);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        navItems.forEach(nav => nav.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+});

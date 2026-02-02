@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta name="description" content="Portal Ciudadano - MINVU" />
     <meta name="author" content="MINVU" />
-    <title>Crear Formulario - Portal Ciudadano MINVU</title>
+    <title>Aprobaciones - Portal Ciudadano MINVU</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
     <meta name="theme-color" content="#09132D" />
@@ -52,7 +52,7 @@
           <li class="nav-title">Formularios</li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="crear-formulario.html" title="Ir a Crear Formulario">
+            <a class="nav-link" href="crear-formulario.html" title="Ir a Crear Formulario">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
               </svg>
@@ -73,7 +73,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="aprobaciones.html" title="Ir a Aprobaciones">
+            <a class="nav-link active" href="aprobaciones.html" title="Ir a Aprobaciones">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
               </svg>
@@ -166,9 +166,8 @@
                     <button
                       class="btn btn-link nav-link py-2 px-2 d-flex align-items-center"
                       type="button"
-                      aria-expanded="false"
                       data-coreui-toggle="dropdown"
-                      title="Cambiar tema"
+                      title="Cambiar modo de color"
                     >
                       <svg class="icon icon-lg theme-icon-active">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
@@ -182,7 +181,7 @@
                           title="Cambiar a modo claro" data-coreui-theme-value="light"
                           title="Cambiar a modo claro"
                         >
-                          <svg class="icon icon-lg me-3">
+                          <svg class="icon icon-lg me-2">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
                           </svg>
                           Light
@@ -195,7 +194,7 @@
                           title="Cambiar a modo oscuro" data-coreui-theme-value="dark"
                           title="Cambiar a modo oscuro"
                         >
-                          <svg class="icon icon-lg me-3">
+                          <svg class="icon icon-lg me-2">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
                           </svg>
                           Dark
@@ -208,7 +207,7 @@
                           title="Cambiar a modo automático" data-coreui-theme-value="auto"
                           title="Cambiar a modo automático"
                         >
-                          <svg class="icon icon-lg me-3">
+                          <svg class="icon icon-lg me-2">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
                           </svg>
                           Auto
@@ -302,17 +301,29 @@
           <div class="container-fluid px-5 p-3">
             <nav title="breadcrumb" class="mb-2 mt-2">
               <ol class="breadcrumb my-0 small">
-                <li class="breadcrumb-item">
-                  <a href="dashboard.html" class="mall" title="Volver al Dashboard">Dashboard</a>
+                <li class="breadcrumb-item active">
+                  <span class="mall">Formularios</span>
                 </li>
               </ol>
             </nav>
             <div class="d-flex w-100 align-items-center gap-3 flex-nowrap">
-              <div class="d-flex align-items-baseline flex-wrap">
+              <div class="d-flex align-items-baseline flex-wrap gap-2">
                 <svg class="me-2" width="28" height="28" fill="currentColor">
-                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
                 </svg>
-                <h1 class="h2 mb-0">Crear Formulario</h1>
+                <h1 class="h2 mb-0">Pendientes de Aprobación</h1>
+              </div>
+              <div class="ms-auto">
+                <a
+                  href="crear-formulario.html"
+                  class="btn btn-sm btn-primary"
+                  title="Ir al constructor para crear nuevo formulario"
+                >
+                  <svg class="icon me-1" width="16" height="16" fill="currentColor">
+                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                  </svg>
+                  Crear nuevo Formulario
+                </a>
               </div>
             </div>
           </div>
@@ -320,152 +331,36 @@
         <!--cuerpo-->
         <div class="body flex-grow-1 bg-body-tertiary">
           <div class="container-fluid px-5">
-            <div class="row g-4">
-              <!-- COLUMNA IZQUIERDA: NUEVO FORMULARIO (Desde Cero) -->
-              <div class="col-md-6">
-                <div class="card h-100">
+            <div class="row">
+              <div class="col-12">
+                <div class="card mb-4">
                   <div class="card-body p-4">
-                    <div class="mb-4">
-                      <h2 class="h4 mb-1">NUEVO FORMULARIO</h2>
-                      <p class="text-body-secondary mb-0">Desde Cero</p>
+                  <div class="alert alert-info d-flex align-items-center" role="alert">
+                    <svg class="icon icon-xl me-3 flex-shrink-0">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                    </svg>
+                    <div>
+                      No hay formularios Pendientes de Aprobación. Para crear un nuevo formulario, presiona el botón Crear nuevo Formulario
                     </div>
-
-                    <div class="mb-3">
-                      <label for="nombreFormularioNuevo" class="form-label">Nombre del nuevo formulario</label>
-                      <input type="text" class="form-control" id="nombreFormularioNuevo" />
+                  </div>
+                  <div class="alert alert-warning d-flex align-items-center" role="alert">
+                    <svg class="icon icon-xl me-3 flex-shrink-0">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                    </svg>
+                    <div>
+                      No hay formularios Pendientes de Aprobación que coincidan con las palabras ingresadas en el buscador.
                     </div>
-
-                    <div class="mb-3">
-                      <label for="familiaFormularioNuevo" class="form-label">
-                        Familia a la que pertenece el formulario
-                      </label>
-                      <select class="form-select" id="familiaFormularioNuevo">
-                        <option disabled value="">Selecciona una familia</option>
-                        <option value="anteproyecto">Anteproyecto</option>
-                        <option value="proyecto" selected>Proyecto</option>
-                        <option value="modificacion">Modificación del Proyecto</option>
-                        <option value="recepcion">Recepción Definitiva</option>
-                      </select>
+                  </div>
+                  <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <svg class="icon icon-xl me-3 flex-shrink-0">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x-circle"></use>
+                    </svg>
+                    <div>
+                      <div class="mb-2">No se ha podido obtener el listado de formularios Pendientes de Aprobación.</div>
+                      <div>Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.</div>
                     </div>
-
-                    <div class="mb-4">
-                      <label for="normaFormularioNuevo" class="form-label">
-                        Indica la Norma que justifica este documento.
-                      </label>
-                      <input type="text" class="form-control" id="normaFormularioNuevo" />
-                    </div>
-
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="vigenciaFija" />
-                        <label class="form-check-label" for="vigenciaFija">Formulario tiene vigencia fija.</label>
-                      </div>
-                      <input
-                        type="date"
-                        class="form-control pfud-max-w-200"
-                        id="fechaTermino"
-                        title="Fecha término de vigencia"
-                      />
-                    </div>
-
-                    <div class="alert alert-info mb-4">
-                      <strong>Importante:</strong>
-                      Al hacer click en Crear formulario, abriremos el editor de formularios en una ventana nueva,
-                    </div>
-
-                    <div class="d-flex gap-2">
-                      <a href="dashboard.html" class="btn btn-secondary flex-fill" title="Volver al dashboard">
-                        Volver
-                      </a>
-                      <button
-                        type="button"
-                        class="btn btn-primary flex-fill"
-                        onclick="window.open('builder-constructor.html', '_blank')"
-                      >
-                        <svg class="icon me-1">
-                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
-                        </svg>
-                        Crear formulario
-                      </button>
-                    </div>
-                </div>
-              </div>
-
-              <!-- COLUMNA DERECHA: NUEVA VERSIÓN (A partir de uno publicado) -->
-              <div class="col-md-6">
-                <div class="bg-body p-4 rounded-3 h-100 border">
-                    <div class="mb-4">
-                      <h2 class="h4 mb-1">NUEVO FORMULARIO</h2>
-                      <p class="text-body-secondary mb-0">A partir de uno ya publicado</p>
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="nombreFormularioVersion" class="form-label">Nombre del nuevo formulario</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="nombreFormularioVersion"
-                        value="Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2"
-                        disabled
-                      />
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="familiaFormularioVersion" class="form-label">
-                        Familia a la que pertenece el formulario
-                      </label>
-                      <select class="form-select" id="familiaFormularioVersion" disabled>
-                        <option selected value="proyecto">Proyecto</option>
-                        <option value="anteproyecto">Anteproyecto</option>
-                        <option value="modificacion">Modificación del Proyecto</option>
-                        <option value="recepcion">Recepción Definitiva</option>
-                      </select>
-                    </div>
-
-                    <div class="mb-4">
-                      <label for="normaFormularioVersion" class="form-label">
-                        Indica la Norma que justifica este documento.
-                      </label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="normaFormularioVersion"
-                        value="Reglamento de Ley N° 99.9999, publicado el 03/03/2025"
-                      />
-                    </div>
-
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="vigenciaFijaVersion" />
-                        <label class="form-check-label" for="vigenciaFijaVersion">
-                          Formulario tiene vigencia fija.
-                        </label>
-                      </div>
-                      <input
-                        type="date"
-                        class="form-control pfud-max-w-200"
-                        id="fechaTerminoVersion"
-                        title="Fecha término de vigencia"
-                      />
-                    </div>
-
-                    <div class="alert alert-info mb-4">
-                      <strong>Importante:</strong>
-                      En caso que este formulario sea aprobado y publicado, reemplazará al formulario: ID 2.5.1-0001
-                    </div>
-
-                    <div class="d-flex gap-2">
-                      <a href="dashboard.html" class="btn btn-secondary flex-fill" title="Volver al dashboard">
-                        Volver
-                      </a>
-                      <button
-                        type="button"
-                        class="btn btn-primary flex-fill"
-                        onclick="window.open('builder-constructor.html', '_blank')"
-                      >
-                        Crear versión
-                      </button>
-                    </div>
+                  </div>
+                  </div>
                 </div>
               </div>
             </div>

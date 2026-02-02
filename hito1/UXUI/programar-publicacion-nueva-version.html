@@ -126,6 +126,24 @@
                   <span class="text-body-secondary small me-2 d-none d-lg-inline">Hola,</span>
                   <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
                 </div>
+                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                      type="button"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                      aria-expanded="false"
+                      title="Seleccionar rol"
+                    >
+                      Rol Minvu Normas Aprobador
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item"" href="#" title="MINVU ADM">MINVU ADM</a></li>
+                      <li><a class="dropdown-item"" href="#" title="MINVU NORMAS CREADOR">MINVU NORMAS CREADOR</a></li>
+                      <li><a class="dropdown-item active"" href="#" title="MINVU NORMAS APROBADOR">MINVU NORMAS APROBADOR</a></li>
+                    </ul>
+                  </div>
+                </div>
                 <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
                   <button
                     class="btn btn-outline-secondary btn-sm me-0"
@@ -285,13 +303,10 @@
             <nav title="breadcrumb" class="mb-2 mt-2">
               <ol class="breadcrumb my-0 small">
                 <li class="breadcrumb-item">
-                  <a href="dashboard.html" class="mall" title="Volver al Dashboard">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item">
                   <span class="mall">Formularios</span>
                 </li>
-                <li class="breadcrumb-item">
-                  <a href="pendientes.html" class="mall" title="Volver a Pendientes">Pendientes de publicación</a>
+                <li class="breadcrumb-item active">
+                  <span class="mall">Pendientes de publicación</span>
                 </li>
               </ol>
             </nav>
@@ -311,8 +326,7 @@
           <div class="container-fluid px-5">
             <div class="row">
               <div class="col-12">
-                <div class="card mb-4">
-                  <div class="card-body p-4">
+                <div class="bg-body p-4 rounded-3 mb-4 border">
                     <div class="row g-4">
                       <div class="col-md-6">
                         <label class="form-label fw-semibold text-uppercase small text-body-secondary">
@@ -393,7 +407,7 @@
                         <label class="form-label fw-semibold text-uppercase small text-body-secondary">
                           Fecha de término de vigencia de este formulario
                         </label>
-                        <input type="date" class="form-control" value="2025-03-03" />
+                        <div class="fw-medium">10/10/2026 - No Tiene fecha de vigencia de validación</div>
                       </div>
 
                       <div class="col-12"><hr class="my-0" /></div>
@@ -409,7 +423,6 @@
                       </a>
                       <a href="error-programacion.html" class="btn btn-sm btn-primary px-5" title="Programar">Programar</a>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>

@@ -126,6 +126,23 @@
                   <span class="text-body-secondary small me-2 d-none d-lg-inline">Hola,</span>
                   <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
                 </div>
+                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                      type="button"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                      aria-expanded="false"
+                      title="Seleccionar rol"
+                    >
+                      Rol Minvu Normas Aprobador
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item"" href="#" title="MINVU ADM">MINVU ADM</a></li>
+                      <li><a class="dropdown-item active"" href="#" title="MINVU NORMAS APROBADOR">MINVU NORMAS APROBADOR</a></li>
+                    </ul>
+                  </div>
+                </div>
                 <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
                   <button
                     class="btn btn-outline-secondary btn-sm me-0"
@@ -284,9 +301,6 @@
           <div class="container-fluid px-5 p-3">
             <nav title="breadcrumb" class="mb-2 mt-2">
               <ol class="breadcrumb my-0 small">
-                <li class="breadcrumb-item">
-                  <a href="dashboard.html" class="mall" title="Volver al Dashboard">Dashboard</a>
-                </li>
                 <li class="breadcrumb-item active">
                   <span class="mall">Formularios</span>
                 </li>
@@ -313,6 +327,9 @@
                       placeholder="Buscar formulario..."
                       title="Buscar formulario"
                     />
+                    <a href="pendientes-resultado-busqueda.html" class="btn btn-primary">
+                      Buscar
+                    </a>
                     <div class="dropdown">
                       <button
                         class="btn btn-sm small btn-outline-secondary"
@@ -330,7 +347,7 @@
                       <div class="dropdown-menu dropdown-menu-end p-3 shadow-lg pfud-min-w-600">
                         <div class="container-fluid">
                           <div class="row g-3">
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-6">
                               <label class="form-label fw-semibold small">Filtrar por usuario</label>
                               <select class="form-select form-select-sm">
                                 <option selected>Todos los usuarios</option>
@@ -340,11 +357,7 @@
                                 <option>Ana Martínez</option>
                               </select>
                             </div>
-                            <div class="col-md-3 col-sm-6">
-                              <label class="form-label fw-semibold small">Filtrar por fecha</label>
-                              <input type="date" class="form-control form-control-sm" />
-                            </div>
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-6">
                               <label class="form-label fw-semibold small">Filtrar por familia</label>
                               <select class="form-select form-select-sm">
                                 <option selected>Todas las familias</option>
@@ -352,7 +365,11 @@
                                 <option>Familia 2</option>
                               </select>
                             </div>
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-6">
+                              <label class="form-label fw-semibold small">Filtrar por fecha</label>
+                              <input type="date" class="form-control form-control-sm" />
+                            </div>
+                            <div class="col-md-6">
                               <label class="form-label fw-semibold small">Filtrar por estado</label>
                               <select class="form-select form-select-sm">
                                 <option selected>Todos los estados</option>
@@ -362,7 +379,7 @@
                                 <option>Archivado</option>
                               </select>
                             </div>
-                            <div class="col-12">
+                            <div class="col-md-6">
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="incluirArchivados" />
                                 <label class="form-check-label small" for="incluirArchivados">
@@ -371,13 +388,12 @@
                               </div>
                             </div>
                             <div class="col-12 text-end mt-3">
-                              <button
-                                type="button"
+                              <a
+                                href="pendientes-resultado-busqueda.html"
                                 class="btn btn-secondary btn-sm"
-                                onclick="this.closest('.dropdown-menu').previousElementSibling.click()"
                               >
-                                Cerrar
-                              </button>
+                                Aplicar Filtros
+                              </a>
                             </div>
                           </div>
                         </div>
@@ -391,8 +407,10 @@
                   href="crear-formulario.html"
                   class="btn btn-sm btn-primary"
                   title="Ir al constructor para crear nuevo formulario"
-                  target="_blank"
-                 title="Crear nuevo Formulario">
+                >
+                  <svg class="icon me-1">
+                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                  </svg>
                   Crear nuevo Formulario
                 </a>
               </div>
@@ -465,7 +483,7 @@
                           title="Archivar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -499,6 +517,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -519,9 +539,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -555,6 +575,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -575,9 +597,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -611,6 +633,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -631,9 +655,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -668,6 +692,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -688,9 +714,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -724,6 +750,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -744,9 +772,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -781,6 +809,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -801,9 +831,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -837,6 +867,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -857,9 +889,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -891,6 +923,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -911,9 +945,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -948,6 +982,8 @@
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
                           href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -968,9 +1004,9 @@
                           </svg>
                           Programar
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario">
+                        <a href="#" class="btn btn-sm btn-outline-danger text-nowrap" title="Archivar formulario" data-coreui-toggle="modal" data-coreui-target="#eliminarModal">
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
-                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"></use>
                           </svg>
                           Archivar
                         </a>
@@ -989,7 +1025,6 @@
                       <a class="page-link" href="#" title="Página 1">1</a>
                     </li>
                     <li class="page-item"><a class="page-link" href="#" title="Ir a página 2">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#" title="Ir a página 3">3</a></li>
                     <li class="page-item">
                       <a class="page-link" href="#" title="Ir a página siguiente">Siguiente</a>
                     </li>

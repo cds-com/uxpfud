@@ -284,13 +284,9 @@
           <div class="container-fluid px-5 p-3">
             <nav title="breadcrumb" class="mb-2 mt-2">
               <ol class="breadcrumb my-0 small">
-                <li class="breadcrumb-item">
-                  <a href="dashboard.html" class="mall" title="Volver al Dashboard">Dashboard</a>
-                </li>
                 <li class="breadcrumb-item active">
                   <span class="mall">Formularios</span>
                 </li>
-                
               </ol>
             </nav>
             <div class="d-flex w-100 align-items-center gap-3 flex-nowrap">
@@ -308,8 +304,7 @@
           <div class="container-fluid px-5">
             <div class="row g-4">
               <div class="col-md-6">
-                <div class="card h-100">
-                  <div class="card-body p-5 d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="bg-body p-5 rounded-3 border h-100 d-flex flex-column align-items-center justify-content-center text-center">
                     <h2 class="h4 mb-1">NUEVO FORMULARIO</h2>
                     <p class="text-body-secondary mb-4">Desde Cero</p>
                     <button
@@ -317,24 +312,27 @@
                       class="btn btn-sm small btn-primary"
                       onclick="window.location.href='crear-formulario-desde-cero.html'"
                     >
+                      <svg class="icon me-1">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                      </svg>
                       Crear Formulario desde Cero
                     </button>
-                  </div>
                 </div>
               </div>
 
               <div class="col-md-6">
-                <div class="card h-100">
-                  <div class="card-body p-5 d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="bg-body p-5 rounded-3 border h-100 d-flex flex-column align-items-center justify-content-center text-center">
                     <h2 class="h4 mb-1">NUEVO FORMULARIO</h2>
                     <p class="text-body-secondary mb-4">A partir de uno ya publicado</p>
                     <button
                       type="button"
                       class="btn btn-sm small btn-primary"
                       onclick="window.location.href='crear-formulario-duplicado.html'">
+                      <svg class="icon me-1">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                      </svg>
                       Crear Formulario a partir de uno ya publicado
                     </button>
-                  </div>
                 </div>
               </div>
             </div>

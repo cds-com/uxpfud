@@ -126,6 +126,24 @@
                   <span class="text-body-secondary small me-2 d-none d-lg-inline">Hola,</span>
                   <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
                 </div>
+                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                      type="button"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                      aria-expanded="false"
+                      title="Seleccionar rol"
+                    >
+                      Rol Minvu Normas Aprobador
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item"" href="#" title="MINVU ADM">MINVU ADM</a></li>
+                      <li><a class="dropdown-item"" href="#" title="MINVU NORMAS CREADOR">MINVU NORMAS CREADOR</a></li>
+                      <li><a class="dropdown-item active"" href="#" title="MINVU NORMAS APROBADOR">MINVU NORMAS APROBADOR</a></li>
+                    </ul>
+                  </div>
+                </div>
                 <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
                   <button
                     class="btn btn-outline-secondary btn-sm me-0"
@@ -200,6 +218,7 @@
                   </div>
                   <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
                   <a
+                          href="#"
                     class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary"
                     href="ayuda.html"
                     title="Ver ayuda"
@@ -211,8 +230,8 @@
                   </a>
                   <div class="dropdown">
                     <a
+                          href="#"
                       class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle"
-                      href="publicados-derogar.html"
                       id="perfilDropdown"
                       data-coreui-toggle="dropdown"
                       aria-expanded="false"
@@ -256,6 +275,7 @@
                       <li><hr class="dropdown-divider my-0" /></li>
                       <li class="px-3 py-2">
                         <a
+                          href="#"
                           href="mi-perfil.html"
                           class="btn btn-sm btn-outline-primary w-100"
                           title="Ir a mi perfil para ver o actualizar datos"
@@ -266,8 +286,8 @@
                     </ul>
                   </div>
                   <a
+                          href="#"
                     class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary"
-                    href="publicados-derogar.html"
                     data-coreui-toggle="modal"
                     data-coreui-target="#logoutModal"
                     title="Cerrar sesión"
@@ -284,9 +304,6 @@
           <div class="container-fluid px-5 p-3">
             <nav title="breadcrumb" class="mb-2 mt-2">
               <ol class="breadcrumb my-0 small">
-                <li class="breadcrumb-item">
-                  <a href="dashboard.html" class="mall" title="Volver al Dashboard">Dashboard</a>
-                </li>
                 <li class="breadcrumb-item active">
                   <span class="mall">Formularios</span>
                 </li>
@@ -313,6 +330,9 @@
                       placeholder="Buscar formulario..."
                       title="Buscar formulario"
                     />
+                    <a href="publicados-resultado-busqueda.html" class="btn btn-primary">
+                      Buscar
+                    </a>
                     <div class="dropdown">
                       <button
                         class="btn btn-sm small btn-outline-secondary"
@@ -330,7 +350,7 @@
                       <div class="dropdown-menu dropdown-menu-end p-3 shadow-lg pfud-min-w-600">
                         <div class="container-fluid">
                           <div class="row g-3">
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-6">
                               <label class="form-label fw-semibold small">Filtrar por usuario</label>
                               <select class="form-select form-select-sm">
                                 <option selected>Todos los usuarios</option>
@@ -340,11 +360,7 @@
                                 <option>Ana Martínez</option>
                               </select>
                             </div>
-                            <div class="col-md-3 col-sm-6">
-                              <label class="form-label fw-semibold small">Filtrar por fecha</label>
-                              <input type="date" class="form-control form-control-sm" />
-                            </div>
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-6">
                               <label class="form-label fw-semibold small">Filtrar por familia</label>
                               <select class="form-select form-select-sm">
                                 <option selected>Todas las familias</option>
@@ -352,7 +368,11 @@
                                 <option>Familia 2</option>
                               </select>
                             </div>
-                            <div class="col-md-3 col-sm-6">
+                            <div class="col-md-6">
+                              <label class="form-label fw-semibold small">Filtrar por fecha</label>
+                              <input type="date" class="form-control form-control-sm" />
+                            </div>
+                            <div class="col-md-6">
                               <label class="form-label fw-semibold small">Filtrar por estado</label>
                               <select class="form-select form-select-sm">
                                 <option selected>Todos los estados</option>
@@ -362,7 +382,7 @@
                                 <option>Archivado</option>
                               </select>
                             </div>
-                            <div class="col-12">
+                            <div class="col-md-6">
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="incluirArchivados" />
                                 <label class="form-check-label small" for="incluirArchivados">
@@ -371,13 +391,13 @@
                               </div>
                             </div>
                             <div class="col-12 text-end mt-3">
-                              <button
-                                type="button"
+                              <a
+                          href="#"
+                                href="publicados-resultado-busqueda.html"
                                 class="btn btn-secondary btn-sm"
-                                onclick="this.closest('.dropdown-menu').previousElementSibling.click()"
                               >
-                                Cerrar
-                              </button>
+                                Aplicar Filtros
+                              </a>
                             </div>
                           </div>
                         </div>
@@ -391,8 +411,10 @@
                   href="crear-formulario.html"
                   class="btn btn-sm btn-primary"
                   title="Ir al constructor para crear nuevo formulario"
-                  target="_blank"
-                 title="Crear nuevo Formulario">
+                >
+                  <svg class="icon me-1">
+                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                  </svg>
                   Crear nuevo Formulario
                 </a>
               </div>
@@ -486,10 +508,10 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-primary text-nowrap"
+                          href="#"
                           data-coreui-toggle="modal"
                           data-coreui-target="#previsualizarModal"
+                          class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
@@ -500,7 +522,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión del formulario"
                         >
@@ -509,10 +531,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -554,7 +573,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -566,7 +587,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -575,10 +596,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -619,7 +637,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -631,7 +651,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -640,10 +660,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -685,7 +702,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -697,7 +716,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -706,10 +725,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -749,7 +765,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -761,7 +779,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -770,10 +788,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -815,7 +830,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -827,7 +844,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -836,10 +853,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -879,7 +893,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -891,7 +907,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -900,10 +916,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -943,7 +956,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -955,7 +970,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -964,10 +979,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -1008,7 +1020,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -1020,7 +1034,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -1029,10 +1043,7 @@
                           </svg>
                           Crear nueva versión
                         </a>
-                        <a
-                          href="publicados-derogar.html"
-                          class="btn btn-sm btn-outline-danger text-nowrap"
-                          title="Derogar formulario"
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
                         >
                           <svg class="icon me-1" width="14" height="14" fill="currentColor">
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
@@ -1072,7 +1083,9 @@
                       </div>
                       <div class="d-flex gap-2 ms-3 flex-shrink-0">
                         <a
-                          href="publicados-derogar.html"
+                          href="#"
+                          data-coreui-toggle="modal"
+                          data-coreui-target="#previsualizarModal"
                           class="btn btn-sm btn-outline-primary text-nowrap"
                           title="Previsualizar formulario"
                         >
@@ -1084,7 +1097,7 @@
                           Previsualizar
                         </a>
                         <a
-                          href="#"
+                          href="crear-formulario-duplicado.html"
                           class="btn btn-sm btn-outline-secondary text-nowrap"
                           title="Crear nueva versión"
                         >
@@ -1092,6 +1105,13 @@
                             <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
                           </svg>
                           Crear nueva versión
+                        </a>
+                        <a href="publicados-derogar.html" class="btn btn-sm btn-outline-danger text-nowrap" title="Derogar formulario"
+                        >
+                          <svg class="icon me-1" width="14" height="14" fill="currentColor">
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
+                          </svg>
+                          Derogar
                         </a>
                       </div>
                     </div>
@@ -1102,15 +1122,11 @@
                 <nav title="Navegación de páginas">
                   <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
-                      <a class="page-link" href="publicados-derogar.html" tabindex="-1" aria-disabled="true">Anterior</a>
                     </li>
                     <li class="page-item active" aria-current="page">
-                      <a class="page-link" href="publicados-derogar.html" title="Página 1">1</a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="publicados-derogar.html" title="Ir a página 2">2</a></li>
                     <li class="page-item"><a class="page-link" href="publicados-derogar.html" title="Ir a página 3">3</a></li>
                     <li class="page-item">
-                      <a class="page-link" href="publicados-derogar.html" title="Ir a página siguiente">Siguiente</a>
                     </li>
                   </ul>
                 </nav>

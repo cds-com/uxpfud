@@ -3,39 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificación de Proyecto - MINVU</title>
-    <link rel="stylesheet" href="css/minvu.css">
-    <link rel="stylesheet" href="css/minvu-compact.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap">
+    <title>Previsualizar - Portal Ciudadano MINVU</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
+    <meta name="theme-color" content="#09132D" />
+    <!-- Vendors styles-->
+    <link rel="stylesheet" href="../../_coreui-base/vendors/simplebar/css/simplebar.css" />
+    <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
+    <!-- Main styles for this application-->
+    <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud.css" />
+    <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
+    <script src="../../_coreui-base/js/config.js"></script>
+    <script src="../../_coreui-base/js/color-modes.js"></script>
     <style>
-        .sidebar-brand-full { display: block; }
-        .sidebar-brand-narrow { display: none; }
-        .sidebar-narrow .sidebar-brand-full { display: none; }
-        .sidebar-narrow .sidebar-brand-narrow { display: block; }
-        .section-title {
-            background: #f8f9fa;
-            padding: 12px 20px;
-            margin: 30px 0 20px 0;
-            border-left: 4px solid #3B71CA;
-            font-weight: 600;
-        }
-        .subsection-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #495057;
-            margin-top: 20px;
-            margin-bottom: 12px;
-        }
-        .form-note {
-            font-size: 12px;
-            color: #6c757d;
-            font-style: italic;
-            margin-top: 5px;
-        }
         .progress-nav {
             position: sticky;
-            top: 56px;
+            top: 0;
             z-index: 1020;
             background: white;
             border-bottom: 1px solid #dee2e6;
@@ -65,36 +50,6 @@
         }
         
         /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-        }
-        body.dark-mode .sidebar {
-            background-color: #2d2d2d;
-            border-color: #404040;
-        }
-        body.dark-mode .header {
-            background-color: #2d2d2d;
-            border-color: #404040;
-        }
-        body.dark-mode .body {
-            background-color: #1a1a1a;
-        }
-        body.dark-mode .card {
-            background-color: #2d2d2d;
-            color: #e0e0e0;
-        }
-        body.dark-mode .form-control,
-        body.dark-mode .form-select {
-            background-color: #3a3a3a;
-            color: #e0e0e0;
-            border-color: #555;
-        }
-        body.dark-mode .section-title {
-            background-color: #3a3a3a;
-            color: #e0e0e0;
-            border-left-color: #5a8fd4;
-        }
         body.dark-mode .progress-nav {
             background-color: #2d2d2d;
             border-color: #404040;
@@ -102,210 +57,12 @@
         body.dark-mode .progress-nav-item:hover {
             background-color: #3a3a3a;
         }
-        body.dark-mode .table {
-            color: #e0e0e0 !important;
-        }
-        body.dark-mode .table-bordered {
-            border-color: #555 !important;
-        }
-        body.dark-mode .table-bordered td,
-        body.dark-mode .table-bordered th {
-            border-color: #555 !important;
-        }
-        body.dark-mode .table-light {
-            background-color: #3a3a3a !important;
-            color: #e0e0e0 !important;
-        }
-        body.dark-mode tbody td {
-            background-color: #1a1a1a !important;
-            color: #e0e0e0 !important;
-        }
-        body.dark-mode thead th {
-            background-color: #3a3a3a !important;
-            color: #e0e0e0 !important;
-        }
-        body.dark-mode td:has(input),
-        body.dark-mode td:has(select) {
-            background-color: transparent !important;
-        }
-        body.dark-mode .form-label {
-            color: #e0e0e0;
-        }
-        body.dark-mode .breadcrumb {
-            background-color: transparent;
-        }
-        body.dark-mode .breadcrumb-item,
-        body.dark-mode .breadcrumb-item a {
-            color: #aaa;
-        }
-        body.dark-mode .breadcrumb-item.active {
-            color: #e0e0e0;
-        }
-        body.dark-mode .footer {
-            background-color: #2d2d2d;
-            color: #aaa;
-        }
-        body.dark-mode .alert-info {
-            background-color: #2a4a6a;
-            color: #b8d4f1;
-            border-color: #3a5a7a;
-        }
-        body.dark-mode .card-header {
-            background-color: #3a3a3a !important;
-            color: #e0e0e0;
-            border-color: #555;
-        }
-        body.dark-mode .form-note {
-            color: #aaa;
-        }
-        body.dark-mode .subsection-title {
-            color: #e0e0e0;
-        }
-        body.dark-mode .form-control-sm,
-        body.dark-mode input.form-control,
-        body.dark-mode input.form-control-sm,
-        body.dark-mode select.form-select {
-            background-color: #3a3a3a !important;
-            color: #e0e0e0 !important;
-            border-color: #555 !important;
-        }
-        body.dark-mode .form-check-input {
-            background-color: #3a3a3a;
-            border-color: #555;
-        }
-        body.dark-mode .form-check-input:checked {
-            background-color: #5a8fd4;
-            border-color: #5a8fd4;
-        }
-        body.dark-mode .nav-link {
-            color: #e0e0e0;
-        }
-        body.dark-mode .nav-link:hover {
-            color: #5a8fd4;
-        }
-        body.dark-mode th {
-            background-color: #3a3a3a;
-            color: #e0e0e0;
-        }
     </style>
 </head>
 <body>
-    <!-- Sidebar CoreUI -->
-    <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
-        <div class="sidebar-header border-bottom">
-            <div class="sidebar-brand d-flex justify-content-center align-items-center">
-                <img src="img/minvu.png" alt="MINVU" class="sidebar-brand-full" style="width: 120px; height: auto;">
-                <img src="img/minvu.png" alt="MINVU" class="sidebar-brand-narrow" style="width: 40px; height: auto;">
-            </div>
-            <button class="btn-close d-lg-none header-toggler" type="button" aria-label="Close"></button>
-        </div>
-        <ul class="sidebar-nav" data-coreui="navigation">
-            <li class="nav-item">
-                <a class="nav-link" href="ciud-dashboard.html">
-                    <i class="nav-icon bi bi-house-door"></i> Inicio
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ciud-solicitudes.html">
-                    <i class="nav-icon bi bi-file-text"></i> Mis Solicitudes
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ciud-borradores.html">
-                    <i class="nav-icon bi bi-pencil-square"></i> Borradores
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="ciud-nueva-solicitud.html">
-                    <i class="nav-icon bi bi-plus-circle"></i> Nueva Solicitud
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ciud-documentos.html">
-                    <i class="nav-icon bi bi-folder"></i> Documentos
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ciud-expedientes-externos.html">
-                    <i class="nav-icon bi bi-printer"></i> Firma Manual
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ciud-notificaciones.html">
-                    <i class="nav-icon bi bi-bell"></i> Notificaciones
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ciud-perfil-usuario.html">
-                    <i class="nav-icon bi bi-person"></i> Perfil
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ciud-ayuda.html">
-                    <i class="nav-icon bi bi-question-circle"></i> Ayuda
-                </a>
-            </li>
-            <li class="nav-item mt-auto">
-                <a class="nav-link text-danger" href="ciud-logout.html">
-                    <i class="nav-icon bi bi-box-arrow-right"></i> Cerrar Sesión
-                </a>
-            </li>
-        </ul>
-        <div class="sidebar-footer border-top d-none d-md-flex">
-            <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
-        </div>
-    </div>
-
-    <!-- Wrapper CoreUI -->
-    <div class="wrapper d-flex flex-column min-vh-100">
-        <!-- Header CoreUI -->
-        <header class="header header-sticky p-0 mb-4">
-            <div class="container-fluid d-flex align-items-center px-4">
-                <button class="header-toggler d-lg-none me-3" type="button" style="margin-inline-start: -14px;">
-                    <i class="bi bi-list" style="font-size: 1.5rem;"></i>
-                </button>
-                <div class="ms-3">
-                    <span class="fw-semibold">Bienvenido/a, [Nombre Usuario]</span>
-                </div>
-                <ul class="header-nav d-flex align-items-center ms-auto mb-0">
-                    <li class="nav-item d-none d-md-block">
-                        <div class="header-search position-relative">
-                            <i class="bi bi-search position-absolute" style="left: 10px; top: 50%; transform: translateY(-50%);"></i>
-                            <input type="text" class="form-control" placeholder="Buscar..." style="padding-left: 35px;">
-                        </div>
-                    </li>
-                    <li class="nav-item position-relative">
-                        <a class="nav-link" href="ciud-notificaciones.html" title="Notificaciones">
-                            <i class="bi bi-bell"></i>
-                            <span class="badge bg-warning text-dark">8</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <button class="nav-link btn btn-link" id="darkModeToggle" title="Cambiar modo de visualización">
-                            <i class="bi bi-moon-fill" id="darkModeIcon"></i>
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ciud-logout.html" title="Cerrar Sesión">
-                            <i class="bi bi-box-arrow-right"></i> Salir
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="container-fluid px-4">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb my-0">
-                        <li class="breadcrumb-item"><a href="ciud-dashboard.html">Inicio</a></li>
-                        <li class="breadcrumb-item"><a href="ciud-nueva-solicitud.html">Nueva Solicitud</a></li>
-                        <li class="breadcrumb-item active"><span>Modificación de Proyecto</span></li>
-                    </ol>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Progress Navigation -->
+          <!-- Progress Navigation -->
         <div class="progress-nav">
-            <div class="container-lg px-4">
+            <div class="container-fluid px-5">
                 <div class="d-flex align-items-center gap-2 overflow-auto">
                     <div class="progress-nav-item" data-section="encabezado">
                         <span class="progress-label">Encabezado</span>
@@ -338,20 +95,25 @@
             </div>
         </div>
 
-        <!-- Body CoreUI -->
-        <div class="body flex-grow-1 py-4">
-            <div class="container-lg px-4">
+        <div class="container-fluid px-5 py-4">
+            <!-- Alert -->
+            <div id="preview-form-header">
+                <div class="alert alert-info mb-4">
+                  <h5 class="alert-heading">Vista Previa del Formulario Ciudadano</h5>
+                  <p class="mb-0">Esta es una previsualización de cómo se verá el formulario para los ciudadanos. Puede hacer scroll y usar la navegación superior para ver todas las secciones.</p>
+                </div>
+
                 <!-- Título principal -->
                 <div class="mb-4">
                     <h2 class="mb-2">Solicitud: Modificación de Proyecto de Edificación - Obra Nueva</h2>
                     <p class="text-body-secondary">Complete todos los campos requeridos del formulario</p>
                 </div>
 
-                <!-- Formulario -->
+            <!-- Formulario -->
                 <form id="formModificacionProyecto">
                     
                     <!-- Encabezado del formulario -->
-                    <div id="section-encabezado"></div>
+                    <div id="encabezado"></div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
                             <div class="row g-3">
@@ -422,7 +184,8 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
+            
                     <!-- ANTECEDENTES PREVIOS -->
                     <div class="section-title">ANTECEDENTES PREVIOS</div>
                     <div class="card border-0 shadow-sm mb-4">
@@ -494,7 +257,7 @@
                     </div>
 
                     <!-- 1.0 DATOS DE LA PROPIEDAD -->
-                    <div id="section-sec1"></div>
+                    <div id="sec1"></div>
                     <div class="section-title">1.0 DATOS DE LA PROPIEDAD</div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
@@ -540,7 +303,7 @@
                     </div>
 
                     <!-- 2.0 DECLARACIÓN JURADA DEL PROPIETARIO -->
-                    <div id="section-sec2"></div>
+                    <div id="sec2"></div>
                     <div class="section-title">2.0 DECLARACIÓN JURADA DEL PROPIETARIO (Según Art. 1.2.2. OGUC)</div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
@@ -630,7 +393,7 @@
                     </div>
 
                     <!-- 3.0 DATOS DEL PROPIETARIO -->
-                    <div id="section-sec3"></div>
+                    <div id="sec3"></div>
                     <div class="section-title">3.0 DATOS DEL PROPIETARIO</div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
@@ -735,7 +498,7 @@
                     </div>
 
                     <!-- 4.0 DATOS DE PROFESIONALES RESPONSABLES -->
-                    <div id="section-sec4"></div>
+                    <div id="sec4"></div>
                     <div class="section-title">4.0 DATOS DE PROFESIONALES RESPONSABLES DE LA MODIFICACIÓN</div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
@@ -1023,7 +786,7 @@
                     </div>
 
                     <!-- 5.0 PARTICIPACIÓN DE REVISORES -->
-                    <div id="section-sec5"></div>
+                    <div id="sec5"></div>
                     <div class="section-title">5.0 PARTICIPACIÓN DE REVISORES EN LA MODIFICACIÓN DEL PROYECTO</div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
@@ -1194,7 +957,7 @@
                     </div>
 
                     <!-- 6.0 CARACTERÍSTICAS PROYECTO -->
-                    <div id="section-sec6"></div>
+                    <div id="sec6"></div>
                     <div class="section-title">6.0 CARACTERÍSTICAS PROYECTO DE OBRA NUEVA MODIFICADO</div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
@@ -2446,7 +2209,7 @@
                     </div>
 
                     <!-- 7.0 OTRAS SOLICITUDES -->
-                    <div id="section-sec7"></div>
+                    <div id="sec7"></div>
                     <div class="section-title">7.0 OTRAS SOLICITUDES</div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
@@ -2526,7 +2289,7 @@
                     </div>
 
                     <!-- 8.0 ANTECEDENTES QUE SE ADJUNTAN -->
-                    <div id="section-sec8"></div>
+                    <div id="sec8"></div>
                     <div class="section-title">8.0 ANTECEDENTES QUE SE ADJUNTAN</div>
                     <div class="card border-0 shadow-sm mb-4">
                         <div class="card-body">
@@ -2681,168 +2444,14 @@
                         </div>
                     </div>
 
-                    <!-- FORM ACTIONS -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <div class="alert alert-info mb-4">
-                                <strong>Importante:</strong> Antes de enviar esta solicitud, asegúrese de que toda la información esté completa y correcta. 
-                                Puede guardar como borrador y continuar editando más tarde.
-                            </div>
-                            <div class="d-flex gap-3 justify-content-end">
-                                <button type="button" class="btn btn-secondary">
-                                    <i class="fas fa-save me-2"></i>Guardar Borrador
-                                </button>
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane me-2"></i>Enviar Solicitud
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
                 </form>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="footer px-4 mt-auto">
-            <div>
-                <a href="https://minvu.gob.cl">MINVU</a>
-                <span class="ms-1">&copy; 2025 Ministerio de Vivienda y Urbanismo.</span>
-            </div>
-        </footer>
-    </div>
-
-    <!-- CoreUI and Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@coreui/coreui@5.4.1/dist/js/coreui.bundle.min.js"></script>
-    <script>
-        // Sidebar toggle functionality
-        const sidebar = document.querySelector('.sidebar');
-        const sidebarToggle = document.getElementById('sidebarToggle');
-        
-        if (sidebarToggle) {
-            sidebarToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('show');
-            });
-        }
-
-        // Auto-hide mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth < 768) {
-                if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
-                    sidebar.classList.remove('show');
-                }
-            }
-        });
-
-        // Progress navigation functionality
-        const progressNavItems = document.querySelectorAll('.progress-nav-item');
-        const sections = {
-            'encabezado': document.getElementById('section-encabezado'),
-            'sec1': document.getElementById('section-sec1'),
-            'sec2': document.getElementById('section-sec2'),
-            'sec3': document.getElementById('section-sec3'),
-            'sec4': document.getElementById('section-sec4'),
-            'sec5': document.getElementById('section-sec5'),
-            'sec6': document.getElementById('section-sec6'),
-            'sec7': document.getElementById('section-sec7'),
-            'sec8': document.getElementById('section-sec8')
-        };
-
-        // Click navigation
-        progressNavItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const sectionId = item.getAttribute('data-section');
-                const section = sections[sectionId];
-                if (section) {
-                    const headerOffset = 120; // Header + progress nav height
-                    const elementPosition = section.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Highlight active section on scroll
-        function updateActiveSection() {
-            const scrollPosition = window.scrollY + 150;
-
-            let currentSection = 'encabezado';
-            
-            for (const [key, section] of Object.entries(sections)) {
-                if (section && section.offsetTop <= scrollPosition) {
-                    currentSection = key;
-                }
-            }
-
-            progressNavItems.forEach(item => {
-                const sectionId = item.getAttribute('data-section');
-                if (sectionId === currentSection) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveSection);
-        updateActiveSection(); // Initial call
-
-        // Dark mode toggle functionality
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const darkModeIcon = document.getElementById('darkModeIcon');
-        const body = document.body;
-
-        // Check for saved dark mode preference
-        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-        if (isDarkMode) {
-            body.classList.add('dark-mode');
-            darkModeIcon.classList.remove('bi-moon-fill');
-            darkModeIcon.classList.add('bi-sun-fill');
-        }
-
-        // Toggle dark mode
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-                darkModeIcon.classList.remove('bi-moon-fill');
-                darkModeIcon.classList.add('bi-sun-fill');
-            } else {
-                localStorage.setItem('darkMode', 'disabled');
-                darkModeIcon.classList.remove('bi-sun-fill');
-                darkModeIcon.classList.add('bi-moon-fill');
-            }
-        });
-
-        // Form validation before submit
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Basic validation
-            const requiredFields = document.querySelectorAll('[required]');
-            let allValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    allValid = false;
-                    field.classList.add('is-invalid');
-                } else {
-                    field.classList.remove('is-invalid');
-                }
-            });
-            
-            if (allValid) {
-                alert('Formulario enviado correctamente. Esta es una versión de demostración.');
-                // Here you would normally send the form data to the server
-            } else {
-                alert('Por favor complete todos los campos requeridos.');
-            }
-        });
-    </script>
-</body>
+    <!-- CoreUI and necessary plugins-->
+    <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
+    <script src="../../_coreui-base/js/main.js"></script>
+    <script src="../../assets/js/pfud.js"></script>
+  </body>
 </html>

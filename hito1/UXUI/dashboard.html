@@ -298,7 +298,7 @@
               <div class="col">
                 <nav title="breadcrumb" class="mb-2">
                   <ol class="breadcrumb my-0 small">
-                    <li class="breadcrumb-item"><a href="dashboard.html" class="mall" title="Dashboard">Dashboard</a></li>
+                    <span class="mall">Dashboard</span>
                   </ol>
                 </nav>
                 <div class="d-flex align-items-baseline flex-wrap">
@@ -311,6 +311,9 @@
             </div>
             <div class="d-flex justify-content-end mt-3">
               <a href="crear-formulario.html" class="btn btn-sm small btn-primary" title="Crear nuevo Formulario">
+                <svg class="icon me-1">
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                </svg>
                 Crear nuevo Formulario
               </a>
             </div>
@@ -436,6 +439,7 @@
                   <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
                     <div class="w-100" class="pfud-min-h-48">
                       <span class="fs-2 fw-semibold" id="counterTiempo">12.2</span>
+                      <span class="mall text-body-secondary">min.</span>
                     </div>
                     <div class="w-100" class="pfud-min-h-32">
                       <span class="fs-6 text-uppercase fw-bold d-block">TIEMPO PROMEDIO</span>
@@ -499,10 +503,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -518,13 +522,10 @@
                                     </svg>
                                     Editar
                                   </a>
-                                  <a
-                                    class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger"
-                                    href="#"
-                                  >
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#eliminarModal" title="Archivar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"
                                       ></use>
                                     </svg>
                                     Archivar
@@ -567,10 +568,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -586,13 +587,10 @@
                                     </svg>
                                     Editar
                                   </a>
-                                  <a
-                                    class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger"
-                                    href="#"
-                                  >
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#eliminarModal" title="Archivar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"
                                       ></use>
                                     </svg>
                                     Archivar
@@ -634,10 +632,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -653,13 +651,10 @@
                                     </svg>
                                     Editar
                                   </a>
-                                  <a
-                                    class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger"
-                                    href="#"
-                                  >
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#eliminarModal" title="Archivar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"
                                       ></use>
                                     </svg>
                                     Archivar
@@ -726,10 +721,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -788,10 +783,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -850,10 +845,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -945,10 +940,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -956,7 +951,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item" href="#" title="Programar Publicación">
+                                  <a class="dropdown-item" href="programar-publicacion.html" title="Programar Publicación">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"
@@ -964,13 +959,10 @@
                                     </svg>
                                     Programar Publicación
                                   </a>
-                                  <a
-                                    class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger"
-                                    href="#"
-                                  >
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#eliminarModal" title="Archivar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"
                                       ></use>
                                     </svg>
                                     Archivar
@@ -1014,10 +1006,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -1025,7 +1017,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item" href="#" title="Programar Publicación">
+                                  <a class="dropdown-item" href="programar-publicacion.html" title="Programar Publicación">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"
@@ -1033,13 +1025,10 @@
                                     </svg>
                                     Programar Publicación
                                   </a>
-                                  <a
-                                    class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger"
-                                    href="#"
-                                  >
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#eliminarModal" title="Archivar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"
                                       ></use>
                                     </svg>
                                     Archivar
@@ -1084,10 +1073,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -1095,7 +1084,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item" href="#" title="Programar Publicación">
+                                  <a class="dropdown-item" href="programar-publicacion.html" title="Programar Publicación">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"
@@ -1103,13 +1092,10 @@
                                     </svg>
                                     Programar Publicación
                                   </a>
-                                  <a
-                                    class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger"
-                                    href="#"
-                                  >
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#eliminarModal" title="Archivar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
-                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"
+                                        xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-folder"
                                       ></use>
                                     </svg>
                                     Archivar
@@ -1180,10 +1166,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -1191,7 +1177,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item" href="#" title="Crear nueva versión">
+                                  <a class="dropdown-item" href="crear-formulario-duplicado.html" title="Crear nueva versión">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"
@@ -1199,7 +1185,7 @@
                                     </svg>
                                     Crear nueva versión
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="publicados-derogar.html">
+                                  <a class="dropdown-item" href="publicados-derogar.html" title="Derogar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"
@@ -1246,10 +1232,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -1257,7 +1243,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item" href="#" title="Crear nueva versión">
+                                  <a class="dropdown-item" href="crear-formulario-duplicado.html" title="Crear nueva versión">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"
@@ -1313,10 +1299,10 @@
                                   aria-expanded="false"
                                   title="Abrir menú de acciones"
                                 >
-                                  <i class="bi bi-three-dots-vertical"></i>
+                                  <svg class="icon"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use></svg>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                  <a class="dropdown-item" href="previsualizar.html" title="Previsualizar">
+                                  <a class="dropdown-item" href="#" data-coreui-toggle="modal" data-coreui-target="#previsualizarModal" title="Previsualizar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"
@@ -1324,7 +1310,7 @@
                                     </svg>
                                     Previsualizar
                                   </a>
-                                  <a class="dropdown-item" href="#" title="Crear nueva versión">
+                                  <a class="dropdown-item" href="crear-formulario-duplicado.html" title="Crear nueva versión">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"
@@ -1332,7 +1318,7 @@
                                     </svg>
                                     Crear nueva versión
                                   </a>
-                                  <a class="dropdown-item d-flex align-items-center gap-2 py-2 px-2 small text-danger" href="publicados-derogar.html">
+                                  <a class="dropdown-item" href="publicados-derogar.html" title="Derogar">
                                     <svg class="align-middle" width="18" height="18" fill="currentColor">
                                       <use
                                         xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"
@@ -1375,6 +1361,65 @@
             </div>
           </div>
         </footer>
+      </div>
+    </div>
+    <!-- Modal de Previsualización -->
+    <div
+      class="modal fade"
+      id="previsualizarModal"
+      tabindex="-1"
+      aria-labelledby="previsualizarModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="previsualizarModalLabel">Iniciar la previsualización</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="modal" title="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <p>Presiona "previsualizar" para abrir una nueva ventana en dónde podrás revisar el formulario.</p>
+            <p class="mb-0">Los datos que ingreses no quedarán registrados en la base del sistema.</p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              onclick="window.location.href='previsualizar.html';"
+              title="Previsualizar"
+            >
+              Previsualizar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eliminarModalLabel">¿Estás seguro de querer archivar este formulario?</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="modal" title="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <p>Al hacerlo, el formulario desaparecerá de tu listado de pendientes de publicación.</p>
+            <p class="mb-0">
+              Solo se mostrarán los formularios disponibles para publicar. Para ver los archivados, utilice el filtro
+              "Archivados".
+            </p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn btn-sm btn-danger"
+              onclick="archivarFormulario()"
+              data-coreui-dismiss="modal"
+              title="Archivar formulario"
+            >
+              Archivar formulario.
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- CoreUI and necessary plugins-->

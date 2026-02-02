@@ -126,6 +126,24 @@
                   <span class="text-body-secondary small me-2 d-none d-lg-inline">Hola,</span>
                   <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
                 </div>
+                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                      type="button"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                      aria-expanded="false"
+                      title="Seleccionar rol"
+                    >
+                      Rol Minvu Normas Aprobador
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item"" href="#" title="MINVU ADM">MINVU ADM</a></li>
+                      <li><a class="dropdown-item"" href="#" title="MINVU NORMAS CREADOR">MINVU NORMAS CREADOR</a></li>
+                      <li><a class="dropdown-item active"" href="#" title="MINVU NORMAS APROBADOR">MINVU NORMAS APROBADOR</a></li>
+                    </ul>
+                  </div>
+                </div>
                 <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
                   <button
                     class="btn btn-outline-secondary btn-sm me-0"
@@ -283,9 +301,6 @@
           <div class="container-fluid px-5 p-3">
             <nav title="breadcrumb" class="mb-2 mt-2">
               <ol class="breadcrumb my-0 small">
-                <li class="breadcrumb-item">
-                  <a href="dashboard.html" class="mall" title="Volver al Dashboard">Dashboard</a>
-                </li>
                 <li class="breadcrumb-item active">
                   <span class="mall">Formularios</span>
                 </li>
@@ -303,8 +318,10 @@
                   href="crear-formulario.html"
                   class="btn btn-sm btn-primary"
                   title="Ir al constructor para crear nuevo formulario"
-                  target="_blank"
-                 title="Crear nuevo Formulario">
+                >
+                  <svg class="icon me-1" width="16" height="16" fill="currentColor">
+                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                  </svg>
                   Crear nuevo Formulario
                 </a>
               </div>
@@ -316,29 +333,33 @@
           <div class="container-fluid px-5">
             <div class="row">
               <div class="col-12">
-                <div class="alert alert-info d-flex align-items-center" role="alert">
-                  <svg class="icon icon-xl me-3 flex-shrink-0">
-                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
-                  </svg>
-                  <div>
-                    No hay formularios pendientes de publicación. Para crear un nuevo formulario, presiona el botón Crear nuevo Formulario
+                <div class="card mb-4">
+                  <div class="card-body p-4">
+                  <div class="alert alert-info d-flex align-items-center" role="alert">
+                    <svg class="icon icon-xl me-3 flex-shrink-0">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                    </svg>
+                    <div>
+                      No hay formularios Publicados. Para crear un nuevo formulario, presiona el botón Crear nuevo Formulario
+                    </div>
                   </div>
-                </div>
-                <div class="alert alert-warning d-flex align-items-center" role="alert">
-                  <svg class="icon icon-xl me-3 flex-shrink-0">
-                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
-                  </svg>
-                  <div>
-                    No hay formularios pendientes de publicación que coincidan con las palabras ingresadas en el buscador.
+                  <div class="alert alert-warning d-flex align-items-center" role="alert">
+                    <svg class="icon icon-xl me-3 flex-shrink-0">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                    </svg>
+                    <div>
+                      No hay formularios Publicados que coincidan con las palabras ingresadas en el buscador.
+                    </div>
                   </div>
-                </div>
-                <div class="alert alert-danger d-flex align-items-center" role="alert">
-                  <svg class="icon icon-xl me-3 flex-shrink-0">
-                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x-circle"></use>
-                  </svg>
-                  <div>
-                    <div class="mb-2">No se ha podido obtener el listado de formularios pendientes de publicación.</div>
-                    <div>Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.</div>
+                  <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <svg class="icon icon-xl me-3 flex-shrink-0">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x-circle"></use>
+                    </svg>
+                    <div>
+                      <div class="mb-2">No se ha podido obtener el listado de formularios Publicados.</div>
+                      <div>Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.</div>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>

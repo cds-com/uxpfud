@@ -12,6 +12,7 @@
     <meta name="theme-color" content="#09132D" />
     <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud.css" />
     <script src="../../_coreui-base/js/config.js"></script>
     <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
@@ -100,21 +101,58 @@
           <p class="text-white-50 mb-0 small">Sistema de gestión de formularios MINVU</p>
         </div>
       </div>
-      <!-- Panel Derecho: Mensaje de Error -->
+      <!-- Panel Derecho: Formulario RUT -->
       <div class="col-md-6 bg-body-tertiary d-flex flex-column align-items-center justify-content-center p-4">
         <div class="col-md-6 mx-auto">
-          <div class="alert alert-warning d-flex align-items-center" role="alert">
-            <svg class="icon icon-xl me-3 flex-shrink-0">
-              <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
-            </svg>
-            <div>
-              <h4 class="alert-heading mb-2">Usuario no existe en PFUD</h4>
-              <p class="mb-2">El RUT ingresado no cuenta con acceso al sistema PFUD.</p>
-              <p class="mb-0">Para obtener o solicitar tu clave PSSIM, debes contactar al administrador de tu institución o al área de soporte técnico de MINVU. La gestión de credenciales no es un proceso automático y requiere validación institucional.</p>
+          <!-- Card: Formulario -->
+          <div class="border rounded bg-white shadow-sm d-flex flex-column justify-content-center login-box">
+            <div class="p-3">
+              <div class="alert alert-warning d-flex align-items-center mb-0" role="alert">
+                <svg class="icon icon-lg me-2 flex-shrink-0">
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                </svg>
+                <div>
+                  <strong>Usuario no existe en PFUD</strong><br>
+                  <small>El RUT ingresado no cuenta con acceso al sistema PFUD. Para obtener o solicitar tu clave PSSIM, debes contactar al administrador de tu institución o al área de soporte técnico de MINVU.</small>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <a href="index.html" class="btn btn-sm btn-outline-primary">Volver</a>
+              </div>
             </div>
           </div>
-          <div class="text-center mt-3">
-            <a href="index.html" class="btn btn-sm small btn-outline-primary" title="Salir">Salir</a>
+          <!-- Mensaje informativo -->
+          <div class="d-flex justify-content-center gap-2 mt-3 mb-3">
+            <button
+              type="button"
+              class="btn btn-outline-info btn-sm"
+              title="Solicitar clave de acceso"
+              data-coreui-toggle="popover"
+              data-coreui-placement="bottom"
+              data-coreui-trigger="focus"
+              data-coreui-content="Para obtener o solicitar tu clave PSSIM, debes contactar al administrador de tu institución o al área de soporte técnico de MINVU. La gestión de credenciales no es un proceso automático y requiere validación institucional."
+              data-coreui-html="true"
+            >
+              <svg class="icon me-1">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+              </svg>
+              Solicitar clave
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm"
+              title="Ver información sobre privacidad"
+              data-coreui-toggle="popover"
+              data-coreui-placement="bottom"
+              data-coreui-trigger="focus"
+              data-coreui-content="Al acceder a este sistema, aceptas que tus datos personales serán procesados conforme a la Ley N° 19.628 sobre Protección de la Vida Privada y utilizados exclusivamente para los fines institucionales de MINVU."
+              data-coreui-html="true"
+            >
+              <svg class="icon me-1">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-shield-alt"></use>
+              </svg>
+              Privacidad
+            </button>
           </div>
         </div>
       </div>
@@ -125,6 +163,7 @@
     </div>
 
     <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/js/popovers.js"></script>
     <script src="../../assets/js/pfud.js"></script>
   </body>
 </html>
