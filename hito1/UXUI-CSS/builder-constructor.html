@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="Portal Ciudadano - MINVU" />
+    <meta name="author" content="MINVU" />
+    <title>Builder/Constructor - Portal Ciudadano MINVU</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
+    <meta name="theme-color" content="#09132D" />
+    <!-- Vendors styles-->
+    <link rel="stylesheet" href="../../_coreui-base/vendors/simplebar/css/simplebar.css" />
+    <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
+    <!-- Main styles for this application-->
+    <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud.css" />
+
+    <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
+    <script src="../../_coreui-base/js/config.js"></script>
+    <script src="../../_coreui-base/js/color-modes.js"></script>
+  </head>
+  <body class="theme-auto theme-auto">
+    <!-- top-->
+    <div class="d-flex flex-column min-vh-100">
+      <header
+        class="header sticky-top p-0 mb-4"
+        
+        
+        
+      >
+        <div class="w-100 bg-body-tertiary border-bottom">
+          <div class="container-fluid px-4">
+            <div class="d-flex flex-row align-items-center justify-content-between gap-2 py-2">
+              <div class="d-flex align-items-center flex-shrink-0">
+                <span class="text-body-secondary small me-2 d-none d-lg-inline">Hola,</span>
+                <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  type="button"
+                  title="Disminuir tamaño de fuente"
+                  onclick="adjustFontSize(-1)"
+                >
+                  <span class="fw-bold">A-</span>
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-sm"
+                  type="button"
+                  title="Aumentar tamaño de fuente"
+                  onclick="adjustFontSize(1)"
+                >
+                  <span class="fw-bold">A+</span>
+                </button>
+                <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-link nav-link py-2 px-2 d-flex align-items-center"
+                    type="button"
+                    aria-expanded="false"
+                    data-coreui-toggle="dropdown"
+                    title="Cambiar tema"
+                  >
+                    <svg class="icon icon-lg theme-icon-active">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center"
+                        type="button"
+                        data-coreui-theme-value="light"
+                          title="Cambiar a modo claro"
+                      >
+                        <svg class="icon icon-lg me-3">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
+                        </svg>
+                        Light
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center"
+                        type="button"
+                        data-coreui-theme-value="dark"
+                          title="Cambiar a modo oscuro"
+                      >
+                        <svg class="icon icon-lg me-3">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
+                        </svg>
+                        Dark
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="dropdown-item d-flex align-items-center active"
+                        type="button"
+                        data-coreui-theme-value="auto"
+                          title="Cambiar a modo automático"
+                      >
+                        <svg class="icon icon-lg me-3">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+                        </svg>
+                        Auto
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
+                <a
+                  class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary"
+                  href="#"
+                  data-coreui-toggle="modal"
+                  data-coreui-target="#closeConstructorModal"
+                  title="Cerrar constructor"
+                >
+                  <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
+                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-x"></use>
+                  </svg>
+                  <span>Cerrar Constructor</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </header>
+        <!-- ============================= FIN TOP ============================= -->
+
+        <!-- ============================= TITULO: Breadcrumb, Icono, Título ============================= -->
+        <div class="container-fluid px-4" id="builderBreadcrumb">
+        <div class="pfud-header-section">
+          <!-- Fila superior: Breadcrumb -->
+          <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb" class="mb-2">
+                <ol class="breadcrumb my-0 small">
+                  <li class="breadcrumb-item">
+                    <a href="dashboard.html" class="small" title="Volver al Dashboard">Home</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Fila inferior: Icono/Título y Botones -->
+          <div class="row align-items-center">
+            <!-- Columna 1: Icono y Título -->
+            <div class="col-auto">
+              <div class="d-flex align-items-baseline">
+                <svg class="me-2" width="28" height="28" fill="currentColor">
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                </svg>
+                <h1 class="h2 mb-0">Builder/Constructor</h1>
+              </div>
+            </div>
+
+            <!-- Columna 2: En blanco -->
+            <div class="col"></div>
+
+            <!-- Columna 3: Botones alineados a la derecha -->
+            <div class="col-auto">
+              <div class="d-flex gap-2">
+            <button
+              class="btn btn-outline-primary btn-sm small"
+              type="button"
+              onclick="window.location.href='previsualizar.html';"
+              title="Previsualizar formulario"
+            >
+              <svg class="me-1" width="16" height="16" fill="currentColor">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-magnifying-glass"></use>
+              </svg>
+              Previsualizar
+            </button>
+            <button
+              class="btn btn-primary btn-sm small"
+              type="button"
+              onclick="guardarCambios()"
+              title="Guardar cambios del formulario"
+            >
+              <svg class="me-1" width="16" height="16" fill="currentColor">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-save"></use>
+              </svg>
+              Guardar
+            </button>
+            <button
+              class="btn btn-success btn-sm small"
+              id="btnSolicitarAprobacion"
+              disabled
+              title="Solicitar aprobación del formulario"
+            >
+              <svg class="me-1" width="16" height="16" fill="currentColor">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check"></use>
+              </svg>
+              Solicitar Aprobación
+            </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- ============================= FIN TITULO ============================= -->
+
+        <!-- ============================= CUERPO: Contenido Principal ============================= -->
+        <div class="body flex-grow-1 bg-body-tertiary">
+          <div class="container-fluid px-4 py-3">
+          <div class="row g-0">
+            <!-- Panel Izquierdo: Elementos -->
+            <aside class="col-3 bg-body border-end d-flex flex-column">
+              <div class="p-3 border-bottom">
+                <input type="search" class="form-control form-control-sm" placeholder="Buscar elementos" />
+              </div>
+              <div class="p-3 border-bottom">
+                <ul class="nav nav-tabs border-0" role="tablist">
+                  <li class="nav-item flex-fill" role="presentation">
+                    <button
+                      class="nav-link active w-100 text-center small"
+                      data-coreui-toggle="tab"
+                      data-coreui-target="#tabCampos"
+                      type="button"
+                      role="tab"
+                      title="Ver campos disponibles"
+                    >
+                      Campos
+                    </button>
+                  </li>
+                  <li class="nav-item flex-fill" role="presentation">
+                    <button
+                      class="nav-link w-100 text-center small"
+                      data-coreui-toggle="tab"
+                      data-coreui-target="#tabComponentes"
+                      type="button"
+                      role="tab"
+                      title="Ver componentes disponibles"
+                    >
+                      Componentes
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content flex-grow-1">
+                <div class="tab-pane fade show active p-3" id="tabCampos" role="tabpanel">
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de texto"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-text"></use></svg>
+                        <small class="text-center text-body-secondary">Texto</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar título"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-header"></use></svg>
+                        <small class="text-center text-body-secondary">Título</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de texto de entrada"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-cursor"></use></svg>
+                        <small class="text-center text-body-secondary">Campo de Texto</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo RUT"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file-text"></use></svg>
+                        <small class="text-center text-body-secondary">RUT</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo ROL"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-shield-alt"></use></svg>
+                        <small class="text-center text-body-secondary">ROL</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de correo electrónico"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-envelope-closed"></use></svg>
+                        <small class="text-center text-body-secondary">E-mail</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de teléfono"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-phone"></use></svg>
+                        <small class="text-center text-body-secondary">Teléfono</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de moneda"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-dollar"></use></svg>
+                        <small class="text-center text-body-secondary">Moneda</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de porcentaje"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-chart-pie"></use></svg>
+                        <small class="text-center text-body-secondary">Porcentaje</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de metros"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-resize-both"></use></svg>
+                        <small class="text-center text-body-secondary">Metros</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo para subir archivos"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-cloud-upload"></use></svg>
+                        <small class="text-center text-body-secondary">Upload</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de fecha"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
+                        <small class="text-center text-body-secondary">Fecha</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo buscador"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-search"></use></svg>
+                        <small class="text-center text-body-secondary">Buscador</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar área de texto"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-paragraph"></use></svg>
+                        <small class="text-center text-body-secondary">Área de Texto</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar campo de nombre"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-badge"></use></svg>
+                        <small class="text-center text-body-secondary">Nombre</small>
+                      </button>
+                    </div>
+                  </div>                  <div class="tab-pane fade" id="tabPropBloque" role="tabpanel">
+                    <p class="text-body-secondary small">Selecciona un bloque en el canvas para ver y editar sus propiedades.</p>
+                  </div>                </div>
+                <div class="tab-pane fade p-3" id="tabComponentes" role="tabpanel">
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar lista desplegable"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-list"></use></svg>
+                        <small class="text-center text-body-secondary">Lista Desplegable</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar checkbox"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-square"></use></svg>
+                        <small class="text-center text-body-secondary">Checkbox</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar radio button"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-media-record"></use></svg>
+                        <small class="text-center text-body-secondary">Radio Button</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar switch"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-toggle-on"></use></svg>
+                        <small class="text-center text-body-secondary">Switch</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar tabla"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-grid"></use></svg>
+                        <small class="text-center text-body-secondary">Tabla</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar comprobante"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use></svg>
+                        <small class="text-center text-body-secondary">Comprobante</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar mensajes"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use></svg>
+                        <small class="text-center text-body-secondary">Mensajes</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar botones"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-apps"></use></svg>
+                        <small class="text-center text-body-secondary">Botones</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar tooltips"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-help-circle"></use></svg>
+                        <small class="text-center text-body-secondary">Tooltips</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar snackbars"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-bell"></use></svg>
+                        <small class="text-center text-body-secondary">Snackbars</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar separador"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-minus"></use></svg>
+                        <small class="text-center text-body-secondary">Separador</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar espaciador"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-fullscreen"></use></svg>
+                        <small class="text-center text-body-secondary">Espaciador</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar imagen"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-image"></use></svg>
+                        <small class="text-center text-body-secondary">Imagen</small>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button
+                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
+                        draggable="true"
+                        title="Agregar contenedor"
+                      >
+                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-square"></use></svg>
+                        <small class="text-center text-body-secondary">Contenedor</small>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+            <!-- Panel Central: Canvas -->
+            <main class="col-6 bg-body-tertiary d-flex flex-column">
+              <div class="d-flex justify-content-center">
+                <div class="bg-body border rounded shadow-sm p-5 w-100 mw-100" id="formCanvas">
+                  <div class="text-center text-body-secondary py-5">
+                    <svg class="icon fs-1 mb-3 d-block opacity-25"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-cursor"></use></svg>
+                    <p class="mb-0">Arrastra elementos aquí para comenzar a construir tu formulario</p>
+                  </div>
+                </div>
+              </div>
+            </main>
+            <!-- Panel Derecho: Propiedades -->
+            <aside class="col-3 bg-body border-start d-flex flex-column">
+              <div class="p-3 border-bottom">
+                <ul class="nav nav-tabs border-0" role="tablist">
+                  <li class="nav-item flex-fill" role="presentation">
+                    <button
+                      class="nav-link active w-100 text-center small"
+                      data-coreui-toggle="tab"
+                      data-coreui-target="#tabPropDocumento"
+                      type="button"
+                      role="tab"
+                      title="Ver propiedades del documento"
+                    >
+                      Documento
+                    </button>
+                  </li>
+                  <li class="nav-item flex-fill" role="presentation">
+                    <button
+                      class="nav-link w-100 text-center small"
+                      data-coreui-toggle="tab"
+                      data-coreui-target="#tabPropBloque"
+                      type="button"
+                      role="tab"
+                      title="Ver propiedades del bloque"
+                    >
+                      Bloque
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content flex-grow-1 overflow-auto">
+                <div class="tab-pane fade show active p-3" id="tabPropDocumento" role="tabpanel">
+                  <h6 class="fw-semibold mb-3">Propiedades del Documento</h6>
+                  <hr />
+                  <div class="mb-3">
+                    <div class="small text-body-secondary mb-1">Nombre del Formulario</div>
+                    <div class="fw-semibold small">Subsidio DS49</div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-body-secondary mb-1">Familia</div>
+                    <div class="fw-semibold small">Subsidios Habitacionales</div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-body-secondary mb-1">Ley que lo Justifica</div>
+                    <div class="fw-semibold small">Decreto Supremo N°49</div>
+                  </div>
+                </div>
+                <div class="tab-pane fade p-3" id="tabPropBloque" role="tabpanel">
+                  <h6 class="fw-semibold mb-3">Propiedades del Bloque</h6>
+                  <hr />
+                  <p class="text-body-secondary small">Ningún bloque seleccionado.</p>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <!-- Scroll to top button -->
+      <button
+        id="scrollTopBtn"
+        class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle"
+        title="Volver arriba"
+      >
+        <svg width="20" height="20" fill="currentColor">
+          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-arrow-top"></use>
+        </svg>
+      </button>
+      <!-- Toast Container -->
+      <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header bg-primary text-white">
+            <svg class="me-2" width="16" height="16" fill="currentColor">
+              <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
+            </svg>
+            <strong class="me-auto">Éxito</strong>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-coreui-dismiss="toast"
+              title="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Cambios guardados con éxito.</div>
+        </div>
+      </div>
+      <!-- Botón scroll to top -->
+      <button
+        type="button"
+        class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle d-none"
+        id="scrollToTop"
+        title="Volver arriba"
+        style="width: 48px; height: 48px; z-index: 1000;"
+      >
+        <svg width="20" height="20" fill="currentColor">
+          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-arrow-top"></use>
+        </svg>
+      </button>
+
+      <!-- Modal Cerrar Constructor -->
+      <div class="modal fade" id="closeConstructorModal" tabindex="-1" aria-labelledby="closeConstructorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="closeConstructorModalLabel">Cerrar Constructor</h5>
+              <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+              <p>¿Deseas guardar los cambios antes de cerrar el constructor?</p>
+              <p class="text-body-secondary small mb-0">Si cierras sin guardar, perderás todos los cambios realizados desde la última vez que guardaste.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" onclick="cerrarSinGuardar()">Cerrar sin guardar</button>
+              <button type="button" class="btn btn-primary" onclick="guardarYCerrar()">Guardar y cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pie-->
+      <footer class="footer border-top px-4">
+        <div class="d-flex justify-content-between align-items-center w-100 small">
+          <div class="small">MINVU © 2025 MINISTERIO DE VIVIENDA Y URBANISMO</div>
+          <div>
+            <span
+              class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center"
+              ><span class="small">VERSIÓN 2.1</span></span
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- CoreUI and necessary plugins-->
+      <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+      <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
+      <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
+      <script src="../../_coreui-base/js/main.js"></script>
+      <script src="../../assets/js/pfud.js"></script>
+      <script>
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.remove('d-none');
+          } else {
+            scrollToTopBtn.classList.add('d-none');
+          }
+        });
+        scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Funciones para cerrar constructor
+        function cerrarSinGuardar() {
+          window.close();
+          // Si window.close() no funciona (navegador bloquea el cierre), redirigir
+          setTimeout(function() {
+            window.location.href = 'dashboard.html';
+          }, 100);
+        }
+
+        function guardarYCerrar() {
+          // Aquí iría la lógica de guardado
+          guardarCambios();
+          // Cerrar después de guardar
+          setTimeout(function() {
+            window.close();
+            // Si window.close() no funciona, redirigir
+            setTimeout(function() {
+              window.location.href = 'dashboard.html';
+            }, 100);
+          }, 500);
+        }
+
+        function guardarCambios() {
+          // Lógica de guardado (simulada)
+          console.log('Guardando cambios...');
+        }
+      </script>
+    </div>
+  </body>
+</html>

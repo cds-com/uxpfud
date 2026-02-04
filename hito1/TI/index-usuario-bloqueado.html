@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="Portal de Formularios - MINVU" />
+    <meta name="author" content="MINVU" />
+    <title>Usuario Bloqueado - PFUD - MINVU</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
+    <meta name="theme-color" content="#09132D" />
+    <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud-dev.css" />
+    <script src="../../_coreui-base/js/config.js"></script>
+    <script src="../../_coreui-base/js/color-modes.js"></script>
+  </head>
+  <body>
+    <!-- Controles de Accesibilidad (posición fija superior derecha) -->
+    <div class="position-fixed top-0 end-0 d-flex align-items-center gap-2 p-3 position-fixed top-0 end-0 p-3">
+      <button
+        class="btn btn-outline-secondary btn-sm me-0"
+        type="button"
+        title="Disminuir tamaño de fuente"
+        onclick="adjustFontSize(-1)"
+      >
+        <span class="fw-bold">A-</span>
+      </button>
+      <button
+        class="btn btn-outline-secondary btn-sm me-0"
+        type="button"
+        title="Aumentar tamaño de fuente"
+        onclick="adjustFontSize(1)"
+      >
+        <span class="fw-bold">A+</span>
+      </button>
+      <div class="vr mx-1 text-body text-opacity-75"></div>
+      <div class="dropdown">
+        <button
+          class="btn btn-link nav-link py-2 px-2 d-flex align-items-center"
+          type="button"
+          data-coreui-toggle="dropdown"
+          title="Cambiar modo de color"
+        >
+          <svg class="icon icon-lg theme-icon-active">
+            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+          </svg>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <button
+              class="dropdown-item d-flex align-items-center"
+              type="button"
+              data-coreui-theme-value="light"
+              title="Cambiar a modo claro"
+            >
+              <svg class="icon icon-lg me-2">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
+              </svg>
+              Claro
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item d-flex align-items-center"
+              type="button"
+              data-coreui-theme-value="dark"
+              title="Cambiar a modo oscuro"
+            >
+              <svg class="icon icon-lg me-2">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
+              </svg>
+              Oscuro
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item d-flex align-items-center active"
+              type="button"
+              data-coreui-theme-value="auto"
+              title="Cambiar a modo automático"
+            >
+              <svg class="icon icon-lg me-2">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+              </svg>
+              Automático
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="d-flex min-vh-100">
+      <!-- Panel Izquierdo: Branding -->
+      <div class="col-md-6 d-none d-md-flex flex-column align-items-center justify-content-start text-white p-4 pfud-login-panel-left" style="padding-top: 10rem !important;">
+        <div class="text-start">
+          <img src="../../assets/img/logos/logo-minvu.png" alt="PFUD Logo" class="mb-3" width="200" />
+          <h2 class="h5 mb-2 fw-light">Portal de Formularios</h2>
+          <p class="text-white-50 mb-0 small">Sistema de gestión de formularios MINVU</p>
+        </div>
+      </div>
+
+      <!-- Panel Derecho: Formulario -->
+      <div class="col-md-6 d-flex flex-column">
+        <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-start p-4" style="padding-top: 10rem !important;">
+          <div class="col-md-8 mx-auto">
+            <div class="border rounded shadow-sm bg-body">
+              <div class="p-3">
+                <div class="d-flex align-items-start mb-3">
+                  <div class="bg-danger text-white rounded-3 p-3 me-3">
+                    <svg class="icon" style="width: 24px; height: 24px;">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
+                    </svg>
+                  </div>
+                  <div class="text-start">
+                    <p class="mb-2 fw-bold">Usuario bloqueado</p>
+                    <p class="mb-0 small">Tu cuenta ha sido bloqueada por razones de seguridad. Por favor, contacta al administrador del sistema para desbloquearla.</p>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <a href="index.html" class="btn btn-primary">Volver</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center gap-2 mt-3">
+              <button
+                type="button"
+                class="btn btn-outline-info btn-sm"
+                title="Solicitar clave de acceso"
+                data-coreui-toggle="popover"
+                data-coreui-placement="bottom"
+                data-coreui-trigger="focus"
+                data-coreui-content="Para obtener o solicitar tu clave PSSIM, debes contactar al administrador de tu institución o al área de soporte técnico de MINVU. La gestión de credenciales no es un proceso automático y requiere validación institucional."
+                data-coreui-html="true"
+              >
+                <svg class="icon me-1">
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+                </svg>
+                Solicitar clave
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm"
+                title="Ver información sobre privacidad"
+                data-coreui-toggle="popover"
+                data-coreui-placement="bottom"
+                data-coreui-trigger="focus"
+                data-coreui-content="Al acceder a este sistema, aceptas que tus datos personales serán procesados conforme a la Ley N° 19.628 sobre Protección de la Vida Privada y utilizados exclusivamente para los fines institucionales de MINVU."
+                data-coreui-html="true"
+              >
+                <svg class="icon me-1">
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-shield-alt"></use>
+                </svg>
+                Privacidad
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer p-3 bg-body-tertiary">
+        <div class="d-flex justify-content-between align-items-center w-100 small">
+          <div class="small">MINVU © 2026 MINISTERIO DE VIVIENDA Y URBANISMO</div>
+          <div>
+            <span
+              class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center"
+            >
+              <span class="small">VERSIÓN 2.1</span>
+            </span>
+          </div>
+        </div>
+      </footer>
+      </div>
+    </div>
+
+    <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/js/popovers.js"></script>
+    <script src="../../assets/js/pfud.js"></script>
+  </body>
+</html>

@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="Portal Ciudadano - MINVU" />
+    <meta name="author" content="MINVU" />
+    <title>Dashboard - Portal Ciudadano MINVU</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
+    <meta name="theme-color" content="#09132D" />
+    <!-- Vendors styles-->
+    <link rel="stylesheet" href="../../_coreui-base/vendors/simplebar/css/simplebar.css" />
+    <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
+    <!-- Main styles for this application-->
+    <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud.css" />
+
+    <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
+    <script src="../../_coreui-base/js/config.js"></script>
+    <script src="../../_coreui-base/js/color-modes.js"></script>
+  </head>
+  <body class="theme-auto theme-auto">
+    <div class="d-flex">
+      <!-- Sidebar-->
+      <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar">
+        <div class="sidebar-header border-bottom">
+          <div class="sidebar-brand">
+            <img src="../../assets/img/logos/minvu.png" alt="MINVU" class="sidebar-brand-full w-75" />
+            <img src="../../assets/img/logos/minvu-icon.png" alt="MINVU" class="sidebar-brand-narrow" />
+          </div>
+          <button
+            class="btn-close d-lg-none"
+            type="button"
+            data-coreui-theme="dark"
+            title="Close"
+            onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()"
+          ></button>
+        </div>
+
+        <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+          <li class="nav-item">
+            <a class="nav-link active" href="dashboard.html" title="Ir a Dashboard">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-title">Formularios</li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="crear-formulario.html" title="Ir a Crear Formulario">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+              </svg>
+              <span>Crear Formulario</span>
+            </a>
+          </li>
+
+          <li class="nav-divider border-top my-2"></li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="en-creacion.html" title="Ir a En Creacion">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
+              </svg>
+              <span>En creación</span>
+              <span class="badge badge-sm bg-secondary ms-auto">12</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="aprobaciones.html" title="Ir a Aprobaciones">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
+              </svg>
+              <span>Pendientes de Aprobación</span>
+              <span class="badge badge-sm bg-secondary ms-auto">2</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="pendientes.html" title="Ir a Pendientes">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
+              </svg>
+              <span>Pendientes de Publicación</span>
+              <span class="badge badge-sm bg-secondary ms-auto">8</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="publicados.html" title="Ir a Publicados">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
+              </svg>
+              <span>Publicados</span>
+              <span class="badge badge-sm bg-secondary ms-auto">3</span>
+            </a>
+          </li>
+        </ul>
+        <div class="sidebar-footer border-top d-none d-md-flex">
+          <button
+            class="sidebar-toggler text-white fs-5 p-2"
+            type="button"
+            data-coreui-toggle="unfoldable"
+            title="Colapsar menú"
+          ></button>
+        </div>
+      </div>
+      <!-- top-->
+      <div class="wrapper flex-grow-1 d-flex flex-column min-vh-100">
+        <header
+          class="header header-sticky p-0 mb-4"
+          data-coreui-theme="auto"
+          data-coreui-theme-dark="bg-dark text-white"
+          data-coreui-theme-light="bg-light text-body"
+        >
+          <div class="w-100 bg-body-tertiary border-bottom position-sticky top-0 z-3">
+            <div class="container-fluid px-5">
+              <div class="d-flex flex-row align-items-center justify-content-between gap-2 py-2">
+                <div class="d-flex align-items-center flex-shrink-0">
+                  <span class="text-body-secondary small me-2 d-none d-lg-inline">Hola,</span>
+                  <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
+                </div>
+                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-secondary btn-sm dropdown-toggle"
+                      type="button"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                      aria-expanded="false"
+                      title="Seleccionar rol"
+                    >
+                      Rol Minvu Normas Aprobador
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item"" href="#" title="MINVU ADM">MINVU ADM</a></li>
+                      <li><a class="dropdown-item"" href="#" title="MINVU NORMAS CREADOR">MINVU NORMAS CREADOR</a></li>
+                      <li><a class="dropdown-item active"" href="#" title="MINVU NORMAS APROBADOR">MINVU NORMAS APROBADOR</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
+                  <button
+                    class="btn btn-outline-secondary btn-sm me-0"
+                    type="button"
+                    title="Disminuir tamaño de fuente"
+                    onclick="adjustFontSize(-1)"
+                  >
+                    <span class="fw-bold">A-</span>
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary btn-sm me-0"
+                    type="button"
+                    title="Aumentar tamaño de fuente"
+                    onclick="adjustFontSize(1)"
+                  >
+                    <span class="fw-bold">A+</span>
+                  </button>
+                  <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-link nav-link py-2 px-2 d-flex align-items-center"
+                      type="button"
+                      aria-expanded="false"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                      title="Cambiar tema"
+                    >
+                      <svg class="icon icon-lg theme-icon-active">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+                      </svg>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li>
+                        <button
+                          class="dropdown-item d-flex align-items-center"
+                          type="button"
+                          title="Cambiar a modo claro" title="Cambiar a modo claro" data-coreui-theme-value="light"
+                        >
+                          <svg class="icon icon-lg me-3">
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
+                          </svg>
+                          Light
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="dropdown-item d-flex align-items-center"
+                          type="button"
+                          title="Cambiar a modo oscuro" title="Cambiar a modo oscuro" data-coreui-theme-value="dark"
+                        >
+                          <svg class="icon icon-lg me-3">
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
+                          </svg>
+                          Dark
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="dropdown-item d-flex align-items-center active"
+                          type="button"
+                          title="Cambiar a modo automático" title="Cambiar a modo automático" data-coreui-theme-value="auto"
+                        >
+                          <svg class="icon icon-lg me-3">
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+                          </svg>
+                          Auto
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
+                  <a
+                    class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary"
+                    href="ayuda.html"
+                    title="Ver ayuda"
+                  >
+                    <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                    </svg>
+                    <span>Ayuda</span>
+                  </a>
+                  <div class="dropdown">
+                    <a
+                      class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle"
+                      href="#"
+                      id="perfilDropdown"
+                      title="Abrir menú de acciones" data-coreui-toggle="dropdown"
+                      aria-expanded="false"
+                      title="Abrir menú de perfil"
+                    >
+                      <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                      </svg>
+                      <span>Mi Perfil</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilDropdown">
+                      <li class="px-3 py-1">
+                        <div class="avatar avatar-xl mb-3">
+                          <img class="avatar-img" src="../../assets/img/perfil.jpg" alt="Foto del usuario" />
+                        </div>
+                      </li>
+
+                      <li class="px-3 py-2">
+                        <div class="mall text-body-secondary">Nombre</div>
+                        <div class="mall">Dominique Chacra Gaete</div>
+                      </li>
+                      <li><hr class="dropdown-divider my-0" /></li>
+                      <li class="px-3 py-2">
+                        <div class="mall text-body-secondary">Rol</div>
+                        <div class="mall">Minvu Normas</div>
+                      </li>
+                      <li><hr class="dropdown-divider my-0" /></li>
+                      <li class="px-3 py-2">
+                        <div class="mall text-body-secondary">E-mail</div>
+                        <div class="mall"><a href="mailto:dchacrag@minvu.cl" title="Enviar correo a dchacrag@minvu.cl" title="Enviar correo a dchacrag@minvu.cl">dchacrag@minvu.cl</a></div>
+                      </li>
+                      <li><hr class="dropdown-divider my-0" /></li>
+                      <li class="px-3 py-2">
+                        <div class="mall text-body-secondary">Teléfono</div>
+                        <div class="mall">+56912345678</div>
+                      </li>
+                      <li><hr class="dropdown-divider my-0" /></li>
+                      <li class="px-3 py-2">
+                        <a
+                          href="mi-perfil.html"
+                          class="btn btn-sm btn-outline-primary w-100"
+                          title="Ir a mi perfil para ver o actualizar datos"
+                        >
+                          <span class="mall">Ver / Actualizar Datos</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a
+                    class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary"
+                    href="#"
+                    data-coreui-toggle="modal"
+                    data-coreui-target="#logoutModal"
+                    title="Cerrar sesión"
+                  >
+                    <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                    </svg>
+                    <span>Salir</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid px-5">
+            <div class="row py-3 bg-body rounded-3 text-body mt-2 align-items-center">
+              <div class="col">
+                <nav title="breadcrumb" class="mb-2">
+                  <ol class="breadcrumb my-0 small">
+                    <span class="mall">Dashboard</span>
+                  </ol>
+                </nav>
+                <div class="d-flex align-items-baseline flex-wrap">
+                  <svg class="me-2" width="28" height="28" fill="currentColor">
+                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+                  </svg>
+                  <h1 class="h2 mb-0 me-3">Dashboard</h1>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+              <a href="crear-formulario.html" class="btn btn-sm small btn-primary" title="Crear nuevo Formulario">
+                <svg class="icon me-1">
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                </svg>
+                Crear nuevo Formulario
+              </a>
+            </div>
+          </div>
+        </header>
+        <!--cuerpo-->
+        <div class="body flex-grow-1 bg-body-tertiary">
+          <div class="container-fluid px-5">
+            <!-- Fila de Métricas KPI -->
+            <div class="row g-3 mb-4">
+              <!-- Métrica 1: Formularios Publicados -->
+              <div class="col-12 col-md-4 col-xl-2">
+                <div class="card h-100">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+                    <!-- Número principal -->
+                    <div class="w-100" class="pfud-min-h-48">
+                      <span class="fs-2 fw-semibold">0</span>
+                    </div>
+                    <!-- Título -->
+                    <div class="w-100" class="pfud-min-h-32">
+                      <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
+                    </div>
+                    <!-- Descripción -->
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
+                      <span class="mall text-body-secondary d-block">No hay datos</span>
+                    </div>
+                    <!-- Icono validación -->
+                    <div class="position-absolute top-0 end-0 m-2">
+                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Métrica 2: Formularios en Proceso -->
+              <div class="col-12 col-md-4 col-xl-2">
+                <div class="card h-100">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+                    <div class="w-100" class="pfud-min-h-48">
+                      <span class="fs-2 fw-semibold">0</span>
+                    </div>
+                    <div class="w-100" class="pfud-min-h-32">
+                      <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
+                    </div>
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
+                      <span class="mall text-body-secondary d-block">No hay datos</span>
+                    </div>
+                    <div class="position-absolute top-0 end-0 m-2">
+                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Métrica 3: Observaciones -->
+              <div class="col-12 col-md-4 col-xl-2">
+                <div class="card h-100">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+                    <div class="w-100" class="pfud-min-h-48">
+                      <span class="fs-2 fw-semibold">0</span>
+                    </div>
+                    <div class="w-100" class="pfud-min-h-32">
+                      <span class="fs-6 text-uppercase fw-bold d-block">Observaciones</span>
+                    </div>
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
+                      <span class="mall text-body-secondary d-block">No hay datos</span>
+                    </div>
+                    <div class="position-absolute top-0 end-0 m-2">
+                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Métrica 4: Ciudadanos -->
+              <div class="col-12 col-md-4 col-xl-2">
+                <div class="card h-100">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+                    <div class="w-100" class="pfud-min-h-48">
+                      <span class="fs-2 fw-semibold">0</span>
+                    </div>
+                    <div class="w-100" class="pfud-min-h-32">
+                      <span class="fs-6 text-uppercase fw-bold d-block">Ciudadanos</span>
+                    </div>
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
+                      <span class="mall text-body-secondary d-block">No hay datos</span>
+                    </div>
+                    <div class="position-absolute top-0 end-0 m-2">
+                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-people"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Métrica 5: Solicitudes -->
+              <div class="col-12 col-md-4 col-xl-2">
+                <div class="card h-100">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+                    <div class="w-100" class="pfud-min-h-48">
+                      <span class="fs-2 fw-semibold">0</span>
+                    </div>
+                    <div class="w-100" class="pfud-min-h-32">
+                      <span class="fs-6 text-uppercase fw-bold d-block">Solicitudes</span>
+                    </div>
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
+                      <span class="mall text-body-secondary d-block">No hay datos</span>
+                    </div>
+                    <div class="position-absolute top-0 end-0 m-2">
+                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-inbox"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Métrica 6: Tiempo Promedio -->
+              <div class="col-12 col-md-4 col-xl-2">
+                <div class="card h-100">
+                  <div class="card-body d-flex flex-column justify-content-between align-items-start p-3">
+                    <div class="w-100" class="pfud-min-h-48">
+                      <span class="fs-2 fw-semibold">0</span>
+                    </div>
+                    <div class="w-100" class="pfud-min-h-32">
+                      <span class="fs-6 text-uppercase fw-bold d-block">TIEMPO PROMEDIO</span>
+                    </div>
+                    <div class="w-100 mb-2" class="pfud-min-h-32">
+                      <span class="mall text-body-secondary d-block">No hay datos</span>
+                    </div>
+                    <div class="position-absolute top-0 end-0 m-2">
+                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- FIN Fila de Métricas KPI -->
+
+            <div class="row g-4 mb-4 bg-body-tertiary">
+              <!-- Tarjeta: Formularios A REVISAR -->
+              <div class="col-12 col-md-6">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="fw-semibold">Formularios en creación</div>
+                    <span class="badge bg-secondary">0 Formularios</span>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="alert alert-info d-flex align-items-center m-3" role="alert">
+                      <svg class="icon icon-xl me-3 flex-shrink-0">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                      </svg>
+                      <div>
+                        No tienes formularios En Creación. Para crear un nuevo formulario, <a href="#">haz click aquí</a>.
+                      </div>
+                    </div>
+                    <div class="alert alert-danger d-flex align-items-center m-3" role="alert">
+                      <svg class="icon icon-xl me-3 flex-shrink-0">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                      </svg>
+                      <div>
+                        No se ha podido obtener el listado de formularios En Creación.<br>
+                        Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Tarjeta: Pendientes de Aprobación -->
+              <div class="col-12 col-md-6">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="fw-semibold">Pendientes de Aprobación</div>
+                    <span class="badge bg-warning">0 Formularios</span>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="alert alert-info d-flex align-items-center m-3" role="alert">
+                      <svg class="icon icon-xl me-3 flex-shrink-0">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                      </svg>
+                      <div>
+                        Excelente, no tienes formularios Pendientes de Aprobación. Si quieres ver los formularios en creación, <a href="#">haz click aquí</a>.
+                      </div>
+                    </div>
+                    <div class="alert alert-danger d-flex align-items-center m-3" role="alert">
+                      <svg class="icon icon-xl me-3 flex-shrink-0">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                      </svg>
+                      <div>
+                        No se ha podido obtener el listado de formularios Pendientes de Aprobación.<br>
+                        Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row g-4 mb-4 bg-body-tertiary">
+              <!-- Tarjeta: Formularios Pendientes -->
+              <div class="col-12 col-md-6">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="fw-semibold">Formularios pendientes de publicación</div>
+                    <span class="badge bg-secondary">0 Formularios</span>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="alert alert-info d-flex align-items-center m-3" role="alert">
+                      <svg class="icon icon-xl me-3 flex-shrink-0">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                      </svg>
+                      <div>
+                        Excelente, no tienes formularios Pendientes de Publicación. Si quieres ver los formularios en creación, <a href="#">haz click aquí</a>.
+                      </div>
+                    </div>
+                    <div class="alert alert-danger d-flex align-items-center m-3" role="alert">
+                      <svg class="icon icon-xl me-3 flex-shrink-0">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                      </svg>
+                      <div>
+                        No se ha podido obtener el listado de formularios Pendientes de Publicación.<br>
+                        Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Tarjeta: Publicados -->
+              <div class="col-12 col-md-6">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="fw-semibold">Formularios publicados</div>
+                    <span class="badge bg-info">0 Formularios</span>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="alert alert-info d-flex align-items-center m-3" role="alert">
+                      <svg class="icon icon-xl me-3 flex-shrink-0">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                      </svg>
+                      <div>
+                        No hay formularios Publicados aún. Para crear un nuevo formulario, <a href="#">haz click aquí</a>
+                      </div>
+                    </div>
+                    <div class="alert alert-danger d-flex align-items-center m-3" role="alert">
+                      <svg class="icon icon-xl me-3 flex-shrink-0">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
+                      </svg>
+                      <div>
+                        No se ha podido obtener el listado de formularios Publicados.<br>
+                        Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pie-->
+        <footer class="footer px-4">
+          <div class="d-flex justify-content-between align-items-center w-100 small">
+            <div class="mall">MINVU © 2025 MINISTERIO DE VIVIENDA Y URBANISMO</div>
+            <div>
+              <span
+                class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center"
+              >
+                <span class="mall">VERSIÓN 2.1</span>
+              </span>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- Modal de Previsualización -->
+    <div
+      class="modal fade"
+      id="previsualizarModal"
+      tabindex="-1"
+      aria-labelledby="previsualizarModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" id="previsualizarModalDialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="previsualizarModalLabel">Iniciar la previsualización</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="modal" title="Cerrar"></button>
+          </div>
+          <div class="modal-body" id="previsualizarModalBody">
+            <p>Presiona "previsualizar" para abrir una nueva ventana en dónde podrás revisar el formulario.</p>
+            <p class="mb-0">Los datos que ingreses no quedarán registrados en la base del sistema.</p>
+          </div>
+          <div class="modal-footer justify-content-center" id="previsualizarModalFooter">
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              onclick="expandirPrevisualizar()"
+              title="Previsualizar"
+            >
+              Previsualizar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="eliminarModal" tabindex="-1" aria-labelledby="eliminarModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="eliminarModalLabel">¿Estás seguro de querer archivar este formulario?</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="modal" title="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <p>Al hacerlo, el formulario desaparecerá de tu listado de pendientes de publicación.</p>
+            <p class="mb-0">
+              Solo se mostrarán los formularios disponibles para publicar. Para ver los archivados, utilice el filtro
+              "Archivados".
+            </p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn btn-sm btn-danger"
+              onclick="archivarFormulario()"
+              data-coreui-dismiss="modal"
+              title="Archivar formulario"
+            >
+              Archivar formulario.
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CoreUI and necessary plugins-->
+    <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
+    <script src="../../_coreui-base/js/main.js"></script>
+    <script src="../../assets/js/pfud.js"></script>
+    <script>
+      function expandirPrevisualizar() {
+        // Obtener elementos del modal
+        const modalDialog = document.getElementById('previsualizarModalDialog');
+        const modalBody = document.getElementById('previsualizarModalBody');
+        const modalFooter = document.getElementById('previsualizarModalFooter');
+        const modalTitle = document.getElementById('previsualizarModalLabel');
+        
+        // Cambiar tamaño del modal a extra grande
+        modalDialog.classList.add('modal-xl');
+        
+        // Cambiar título
+        modalTitle.textContent = 'Previsualización del Formulario';
+        
+        // Reemplazar contenido del body con iframe
+        modalBody.innerHTML = '<iframe src="previsualizar-modal.html" style="width: 100%; height: 70vh; border: none;"></iframe>';
+        
+        // Ocultar footer
+        modalFooter.style.display = 'none';
+      }
+      
+      // Resetear modal al cerrarse
+      document.getElementById('previsualizarModal').addEventListener('hidden.coreui.modal', function () {
+        const modalDialog = document.getElementById('previsualizarModalDialog');
+        const modalBody = document.getElementById('previsualizarModalBody');
+        const modalFooter = document.getElementById('previsualizarModalFooter');
+        const modalTitle = document.getElementById('previsualizarModalLabel');
+        
+        // Restaurar tamaño original
+        modalDialog.classList.remove('modal-xl');
+        
+        // Restaurar título
+        modalTitle.textContent = 'Iniciar la previsualización';
+        
+        // Restaurar contenido original
+        modalBody.innerHTML = '<p>Presiona "previsualizar" para abrir una nueva ventana en dónde podrás revisar el formulario.</p><p class="mb-0">Los datos que ingreses no quedarán registrados en la base del sistema.</p>';
+        
+        // Mostrar footer
+        modalFooter.style.display = 'flex';
+      });
+    </script>
+  </body>
+</html>

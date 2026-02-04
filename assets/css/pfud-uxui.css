@@ -1,0 +1,117 @@
+/* ============================= 
+   PFUD-UXUI - Estilos personalizados para UXUI-CSS
+   Basado en la estructura de TI con sidebar narrow
+   ============================= */
+
+/* ========================================
+   SIDEBAR - Brand
+   ======================================== */
+.sidebar-brand-full {
+  display: block;
+  width: 100%;
+}
+
+.sidebar-brand-narrow {
+  display: none;
+  width: 75px;
+}
+
+/* ========================================
+   SIDEBAR - Narrow width (Make.com style)
+   ======================================== */
+.sidebar.sidebar-narrow {
+  width: 95px;
+  min-width: 95px;
+  --cui-sidebar-padding-x: 0;
+  --cui-sidebar-padding-y: 0;
+  --cui-sidebar-nav-padding-x: 0;
+  --cui-sidebar-nav-padding-y: 0;
+  --cui-sidebar-occupy-start: 0;
+  --cui-sidebar-occupy-end: 0;
+}
+
+.sidebar.sidebar-narrow .sidebar-header {
+  padding: 1rem 0 !important;
+}
+
+.sidebar.sidebar-narrow.sidebar-fixed ~ .wrapper {
+  margin-left: 105px !important;
+}
+
+.sidebar.sidebar-narrow .sidebar-brand-full {
+  display: none;
+}
+
+.sidebar.sidebar-narrow .sidebar-brand-narrow {
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar.sidebar-narrow .nav-link {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  position: relative;
+}
+
+.sidebar.sidebar-narrow .nav-link .nav-icon {
+  margin: 0 0 0.25rem 0;
+  width: 21px;
+  height: 21px;
+}
+
+.sidebar.sidebar-narrow .nav-link span {
+  font-size: 0.70rem;
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  white-space: normal !important;
+}
+
+.sidebar.sidebar-narrow .nav-link span:not(.badge) {
+  width: 100%;
+}
+
+.sidebar.sidebar-narrow .nav-link .badge {
+  position: absolute !important;
+  top: 0.5rem !important;
+  right: 0.5rem !important;
+  margin: 0 !important;
+}
+
+.sidebar.sidebar-narrow .nav-title {
+  display: none;
+}
+
+/* ========================================
+   WRAPPER - Área de contenido principal
+   ======================================== */
+.wrapper .container-fluid {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar.sidebar-narrow.sidebar-fixed ~ .wrapper {
+    margin-left: 95px !important;
+    padding-inline: 0 !important;
+  }
+  
+  .wrapper .container-fluid {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ========================================
+   LAYOUT - Header Section Container
+   ======================================== */
+.pfud-header-section {
+  background-color: var(--cui-body-bg);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: var(--cui-border-width) solid var(--cui-border-color);
+}

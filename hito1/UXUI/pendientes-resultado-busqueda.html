@@ -904,21 +904,21 @@
       aria-labelledby="previsualizarModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog" id="previsualizarModalDialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="previsualizarModalLabel">Iniciar la previsualización</h5>
             <button type="button" class="btn-close" data-coreui-dismiss="modal" title="Cerrar"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" id="previsualizarModalBody">
             <p>Presiona "previsualizar" para abrir una nueva ventana en dónde podrás revisar el formulario.</p>
             <p class="mb-0">Los datos que ingreses no quedarán registrados en la base del sistema.</p>
           </div>
-          <div class="modal-footer justify-content-center">
+          <div class="modal-footer justify-content-center" id="previsualizarModalFooter">
             <button
               type="button"
               class="btn btn-sm btn-primary"
-              onclick="window.location.href='previsualizar.html';"
+              onclick="expandirPrevisualizar()"
               title="Previsualizar"
             >
               Previsualizar
@@ -979,5 +979,27 @@
     <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
     <script src="../../_coreui-base/js/main.js"></script>
     <script src="../../assets/js/pfud.js"></script>
+    <script>
+      function expandirPrevisualizar() {
+        const modalDialog = document.getElementById('previsualizarModalDialog');
+        const modalBody = document.getElementById('previsualizarModalBody');
+        const modalFooter = document.getElementById('previsualizarModalFooter');
+        const modalTitle = document.getElementById('previsualizarModalLabel');
+        modalDialog.classList.add('modal-xl');
+        modalTitle.textContent = 'Previsualización del Formulario';
+        modalBody.innerHTML = '<iframe src="previsualizar-modal.html" style="width: 100%; height: 70vh; border: none;"></iframe>';
+        modalFooter.style.display = 'none';
+      }
+      document.getElementById('previsualizarModal').addEventListener('hidden.coreui.modal', function () {
+        const modalDialog = document.getElementById('previsualizarModalDialog');
+        const modalBody = document.getElementById('previsualizarModalBody');
+        const modalFooter = document.getElementById('previsualizarModalFooter');
+        const modalTitle = document.getElementById('previsualizarModalLabel');
+        modalDialog.classList.remove('modal-xl');
+        modalTitle.textContent = 'Iniciar la previsualización';
+        modalBody.innerHTML = '<p>Presiona "previsualizar" para abrir una nueva ventana en dónde podrás revisar el formulario.</p><p class="mb-0">Los datos que ingreses no quedarán registrados en la base del sistema.</p>';
+        modalFooter.style.display = 'flex';
+      });
+    </script>
   </body>
 </html>

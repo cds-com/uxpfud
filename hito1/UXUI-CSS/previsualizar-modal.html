@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsualizar - Portal Ciudadano MINVU</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
+    <meta name="theme-color" content="#09132D" />
+    <!-- Vendors styles-->
+    <link rel="stylesheet" href="../../_coreui-base/vendors/simplebar/css/simplebar.css" />
+    <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
+    <!-- Main styles for this application-->
+    <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud.css" />
+    <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
+    <script src="../../_coreui-base/js/config.js"></script>
+    <script src="../../_coreui-base/js/color-modes.js"></script>
+    <style>
+        .progress-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            background: white;
+            border-bottom: 1px solid #dee2e6;
+            padding: 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .progress-nav-item {
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .progress-nav-item:hover {
+            background: #f8f9fa;
+        }
+        .progress-nav-item .progress-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        .progress-nav-item.active {
+            background: var(--cui-primary);
+        }
+        .progress-nav-item.active .progress-label {
+            color: white;
+            font-weight: 500;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode .progress-nav {
+            background-color: #2d2d2d;
+            border-color: #404040;
+        }
+        body.dark-mode .progress-nav-item:hover {
+            background-color: #3a3a3a;
+        }
+    </style>
+</head>
+<body>
+          <!-- Progress Navigation -->
+        <div class="progress-nav">
+            <div class="container-fluid px-5">
+                <div class="d-flex align-items-center gap-2 overflow-auto">
+                    <div class="progress-nav-item" data-section="encabezado">
+                        <span class="progress-label">Encabezado</span>
+                    </div>
+                    <div class="progress-nav-item" data-section="sec1">
+                        <span class="progress-label">1. Propiedad</span>
+                    </div>
+                    <div class="progress-nav-item" data-section="sec2">
+                        <span class="progress-label">2. Declaración</span>
+                    </div>
+                    <div class="progress-nav-item" data-section="sec3">
+                        <span class="progress-label">3. Propietario</span>
+                    </div>
+                    <div class="progress-nav-item" data-section="sec4">
+                        <span class="progress-label">4. Profesionales</span>
+                    </div>
+                    <div class="progress-nav-item" data-section="sec5">
+                        <span class="progress-label">5. Revisores</span>
+                    </div>
+                    <div class="progress-nav-item" data-section="sec6">
+                        <span class="progress-label">6. Características</span>
+                    </div>
+                    <div class="progress-nav-item" data-section="sec7">
+                        <span class="progress-label">7. Otras solicitudes</span>
+                    </div>
+                    <div class="progress-nav-item" data-section="sec8">
+                        <span class="progress-label">8. Documentos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid px-5 py-4">
+            <!-- Alert -->
+            <div id="preview-form-header">
+                <div class="alert alert-info mb-4">
+                  <h5 class="alert-heading">Vista Previa del Formulario Ciudadano</h5>
+                  <p class="mb-0">Esta es una previsualización de cómo se verá el formulario para los ciudadanos. Puede hacer scroll y usar la navegación superior para ver todas las secciones.</p>
+                </div>
+
+                <!-- Título principal -->
+                <div class="mb-4">
+                    <h2 class="mb-2">Solicitud: Modificación de Proyecto de Edificación - Obra Nueva</h2>
+                    <p class="text-body-secondary">Complete todos los campos requeridos del formulario</p>
+                </div>
+
+            <!-- Formulario -->
+                <form id="formModificacionProyecto">
+                    
+                    <!-- Encabezado del formulario -->
+                    <div id="encabezado"></div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label class="form-label fw-bold">Dirección de Obras Municipales de:</label>
+                                    <input type="text" class="form-control" name="dom_municipio">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">Número de Solicitud</label>
+                                    <input type="text" class="form-control" name="numero_solicitud" readonly>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Fecha de Ingreso</label>
+                                    <input type="date" class="form-control" name="fecha_ingreso" readonly>
+                                    <div class="form-note">A llenar por la D.O.M</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Región</label>
+                                    <select class="form-select" name="region">
+                                        <option value="">Seleccione región...</option>
+                                        <option value="RM">Región Metropolitana</option>
+                                        <option value="V">Valparaíso</option>
+                                        <option value="VIII">Biobío</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">(*) Código RPI</label>
+                                    <input type="text" class="form-control" name="codigo_rpi">
+                                    <div class="form-note">(*) Registro de Proyecto Inmobiliario - Art 7° D.S. N° 167 de 2016 MTT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Permisos simultáneos -->
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="bg-light border-bottom">
+                            <h6 class="mb-0">(Llenar siguiente recuadro, cuando corresponda)</h6>
+                        </div>
+                        <div class="">
+                            <p class="mb-3">Conjuntamente con la solicitud de MODIFICACIÓN DE PROYECTO, el solicitante tramita los siguientes permisos, adjuntando la documentación correspondiente (Inciso tercero Art. 5.1.4. de la OGUC):</p>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="permiso_alteracion" id="permisoAlteracion">
+                                        <label class="form-check-label" for="permisoAlteracion">
+                                            ALTERACIÓN<br>
+                                            <small class="text-muted">(restauración-remodelación-rehabilitación)</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="permiso_cambio_destino" id="permisoCambioDestino">
+                                        <label class="form-check-label" for="permisoCambioDestino">
+                                            CAMBIO DE DESTINO
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="permiso_demolicion" id="permisoDemolicion">
+                                        <label class="form-check-label" for="permisoDemolicion">
+                                            DEMOLICIÓN
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                    <!-- ANTECEDENTES PREVIOS -->
+                    <div class="section-title">ANTECEDENTES PREVIOS</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Nombre del Proyecto</label>
+                                    <input type="text" class="form-control" name="nombre_proyecto">
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Certificado de Informaciones Previas</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="cip_vigente" id="cipVigente">
+                                        <label class="form-check-label" for="cipVigente">
+                                            Vigente a la fecha de esta solicitud
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">De Fecha</label>
+                                    <input type="date" class="form-control" name="cip_fecha">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="cip_permiso_anterior" id="cipPermisoAnterior">
+                                        <label class="form-check-label" for="cipPermisoAnterior">
+                                            CIP con que se otorgó el permiso (solo si hubo cambios normativos aplicables al predio)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">De Fecha</label>
+                                    <input type="date" class="form-control" name="cip_permiso_fecha">
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Permiso que se solicita modificar</div>
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tipo_modificacion" id="modifTotal" value="total">
+                                        <label class="form-check-label" for="modifTotal">
+                                            MODIFICACIÓN TOTAL
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tipo_modificacion" id="modifParcial" value="parcial">
+                                        <label class="form-check-label" for="modifParcial">
+                                            MODIFICACIÓN PARCIAL
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Sigla y Número</label>
+                                    <input type="text" class="form-control" name="permiso_sigla_numero">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">De Fecha</label>
+                                    <input type="date" class="form-control" name="permiso_fecha">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Superficie Modificada (m²)</label>
+                                    <input type="number" class="form-control" name="superficie_modificada" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1.0 DATOS DE LA PROPIEDAD -->
+                    <div id="sec1"></div>
+                    <div class="section-title">1.0 DATOS DE LA PROPIEDAD</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Dirección - Nombre vía</label>
+                                    <input type="text" class="form-control" name="direccion_via">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="direccion_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N° Local/Of/Depto</label>
+                                    <input type="text" class="form-control" name="direccion_local">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">ROL SII</label>
+                                    <input type="text" class="form-control" name="rol_sii">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Manzana</label>
+                                    <input type="text" class="form-control" name="manzana">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Lote</label>
+                                    <input type="text" class="form-control" name="lote">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Población/Villa/Loteo</label>
+                                    <input type="text" class="form-control" name="poblacion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Localidad</label>
+                                    <input type="text" class="form-control" name="localidad">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Plano de Loteo N°</label>
+                                    <input type="text" class="form-control" name="plano_loteo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.0 DECLARACIÓN JURADA DEL PROPIETARIO -->
+                    <div id="sec2"></div>
+                    <div class="section-title">2.0 DECLARACIÓN JURADA DEL PROPIETARIO (Según Art. 1.2.2. OGUC)</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label">Cédula de Identidad N°</label>
+                                    <input type="text" class="form-control" name="propietario_ci">
+                                </div>
+                                <div class="col-12">
+                                    <p class="mb-2"><strong>DECLARA:</strong></p>
+                                    <p>BAJO SU RESPONSABILIDAD SER PROPIETARIO (O REPRESENTANTE LEGAL DEL PROPIETARIO) DEL BIEN RAÍZ UBICADO EN:</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" name="declaracion_direccion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="declaracion_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Local/Oficina/Depto</label>
+                                    <input type="text" class="form-control" name="declaracion_local">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">ROL del Avalúo N°</label>
+                                    <input type="text" class="form-control" name="declaracion_rol">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">De la Comuna de</label>
+                                    <input type="text" class="form-control" name="declaracion_comuna">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Inscrito a Fojas</label>
+                                    <input type="text" class="form-control" name="inscripcion_fojas">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="inscripcion_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Del Año</label>
+                                    <input type="text" class="form-control" name="inscripcion_año">
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Del Registro de Propiedad del Conservador de Bienes Raíces de</label>
+                                    <input type="text" class="form-control" name="conservador">
+                                </div>
+                                <div class="col-12">
+                                    <p>EN EL CUAL SE EMPLAZA EL PROYECTO PARA EL QUE SE PRESENTA ESTA SOLICITUD.</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Adjunta Plano Topográfico</label>
+                                    <div class="form-note">SOLO EN LA EVENTUALIDAD QUE SE ACOMPAÑE DICHO PLANO. Art. 1.4.8. OGUC</div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="plano_topografico" id="planoSi" value="si">
+                                        <label class="form-check-label" for="planoSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="plano_topografico" id="planoNo" value="no">
+                                        <label class="form-check-label" for="planoNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label">Denominado:</label>
+                                    <input type="text" class="form-control" name="plano_denominacion">
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Elaborado por:</label>
+                                    <input type="text" class="form-control" name="plano_elaborador">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">De Profesión:</label>
+                                    <input type="text" class="form-control" name="plano_profesion">
+                                </div>
+                                <div class="col-12">
+                                    <div class="alert alert-info mb-0">
+                                        <strong>NOTA Puntos 2 y 3:</strong> De existir dos o más propietarios y/o dos o más bienes raíces, se deberá acompañar hoja adjunta con los datos y formas correspondientes.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.0 DATOS DEL PROPIETARIO -->
+                    <div id="sec3"></div>
+                    <div class="section-title">3.0 DATOS DEL PROPIETARIO</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Nombre o Razón Social del Propietario</label>
+                                    <input type="text" class="form-control" name="propietario_nombre">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-bold">R.U.T.</label>
+                                    <input type="text" class="form-control" name="propietario_rut">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-bold">Firma del Propietario</label>
+                                    <div class="border rounded p-3 text-center text-muted" style="min-height: 60px;">
+                                        <small>Área de firma</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Representante Legal del Propietario</label>
+                                    <input type="text" class="form-control" name="representante_nombre">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="representante_rut">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Dirección - Nombre de la vía</label>
+                                    <input type="text" class="form-control" name="propietario_direccion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="propietario_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Local/Of/Depto</label>
+                                    <input type="text" class="form-control" name="propietario_local">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Localidad</label>
+                                    <input type="text" class="form-control" name="propietario_localidad">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Comuna</label>
+                                    <input type="text" class="form-control" name="propietario_comuna">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" name="propietario_email">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Fijo</label>
+                                    <input type="tel" class="form-control" name="propietario_telefono">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Celular</label>
+                                    <input type="tel" class="form-control" name="propietario_celular">
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Personería del Representante Legal</div>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label">Se acredita mediante:</label>
+                                    <input type="text" class="form-control" name="personeria_tipo">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">De Fecha</label>
+                                    <input type="date" class="form-control" name="personeria_fecha1">
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Y Reducida a Escritura Pública</label>
+                                    <input type="text" class="form-control" name="escritura_publica">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Con Fecha</label>
+                                    <input type="date" class="form-control" name="escritura_fecha">
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Ante el Notario Sr(a)</label>
+                                    <input type="text" class="form-control" name="notario">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">O bien, se acredita mediante otro instrumento (Especificar)*:</label>
+                                    <textarea class="form-control" name="otro_instrumento" rows="2"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Otorgado mediante</label>
+                                    <input type="text" class="form-control" name="otorgamiento">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">De Fecha</label>
+                                    <input type="date" class="form-control" name="otorgamiento_fecha">
+                                </div>
+                                <div class="col-12">
+                                    <div class="alert alert-info mb-0">
+                                        <small>(*) Para los efectos de Sociedades constituidas bajo el Régimen Simplificado de la Ley 20.659 de 2013, inscritas en el Registro de Empresas y Sociedades del Ministerio de Economía, Fomento y Turismo, o bien aquellas personerías derivadas de otros actos jurídicos como un mandato especial u otro equivalente.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.0 DATOS DE PROFESIONALES RESPONSABLES -->
+                    <div id="sec4"></div>
+                    <div class="section-title">4.0 DATOS DE PROFESIONALES RESPONSABLES DE LA MODIFICACIÓN</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" name="mantiene_profesionales" id="mantieneProfesionales">
+                                        <label class="form-check-label" for="mantieneProfesionales">
+                                            MANTIENE PROFESIONALES DE LA SOLICITUD DE PERMISO DE EDIFICACIÓN
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="adjunta_comunicacion" id="adjuntaComunicacion">
+                                        <label class="form-check-label" for="adjuntaComunicacion">
+                                            ADJUNTA COMUNICACIÓN DEL PROPIETARIO EN QUE SEÑALE EL CAMBIO DE PROFESIONALES (Conforme Art. 5.1.20. OGUC)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Empresa de Arquitectura</div>
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label class="form-label">Nombre o Razón Social de la Empresa de Arquitectura (cuando corresponda)</label>
+                                    <input type="text" class="form-control" name="empresa_arquitectura">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="empresa_arquitectura_rut">
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Arquitecto</div>
+                            <div class="row g-3">
+                                <div class="col-md-5">
+                                    <label class="form-label fw-bold">Nombre</label>
+                                    <input type="text" class="form-control" name="arquitecto_nombre">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label fw-bold">R.U.T.</label>
+                                    <input type="text" class="form-control" name="arquitecto_rut">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">Firma</label>
+                                    <div class="border rounded p-3 text-center text-muted" style="min-height: 60px;">
+                                        <small>Área de firma</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Dirección - Nombre de la vía</label>
+                                    <input type="text" class="form-control" name="arquitecto_direccion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="arquitecto_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Local/Of/Depto</label>
+                                    <input type="text" class="form-control" name="arquitecto_local">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Comuna</label>
+                                    <input type="text" class="form-control" name="arquitecto_comuna">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" name="arquitecto_email">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Fijo</label>
+                                    <input type="tel" class="form-control" name="arquitecto_telefono">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Celular</label>
+                                    <input type="tel" class="form-control" name="arquitecto_celular">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Patente Profesional</label>
+                                    <input type="text" class="form-control" name="arquitecto_patente">
+                                </div>
+                                <div class="col-12">
+                                    <div class="alert alert-info mb-0">
+                                        <small><strong>NOTA:</strong> DE HABER MÁS DE UN PROFESIONAL RESPONSABLE, ADJUNTAR DOCUMENTO CON FORMATO SIMILAR AL ANTERIOR QUE CONTENGA LOS DATOS NECESARIOS.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Calculista (Cuando corresponda según artículo 5.1.7 OGUC)</div>
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label class="form-label">Nombre o Razón Social del Calculista</label>
+                                    <input type="text" class="form-control" name="calculista_empresa">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="calculista_empresa_rut">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-label">Nombre Profesional Responsable</label>
+                                    <input type="text" class="form-control" name="calculista_nombre">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="calculista_rut">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Firma Calculista</label>
+                                    <div class="border rounded p-3 text-center text-muted" style="min-height: 60px;">
+                                        <small>Área de firma</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Dirección - Nombre calle/pasaje</label>
+                                    <input type="text" class="form-control" name="calculista_direccion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="calculista_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Local/Depto N°</label>
+                                    <input type="text" class="form-control" name="calculista_local">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Comuna</label>
+                                    <input type="text" class="form-control" name="calculista_comuna">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" name="calculista_email">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Fijo</label>
+                                    <input type="tel" class="form-control" name="calculista_telefono">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Celular</label>
+                                    <input type="tel" class="form-control" name="calculista_celular">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Patente Profesional N°</label>
+                                    <input type="text" class="form-control" name="calculista_patente">
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Constructor</div>
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label class="form-label">Nombre o Razón Social del Constructor</label>
+                                    <input type="text" class="form-control" name="constructor_empresa">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="constructor_empresa_rut">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-label">Nombre Profesional Responsable</label>
+                                    <input type="text" class="form-control" name="constructor_nombre">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="constructor_rut">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Firma Constructor</label>
+                                    <div class="border rounded p-3 text-center text-muted" style="min-height: 60px;">
+                                        <small>Área de firma</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Dirección - Nombre calle/pasaje</label>
+                                    <input type="text" class="form-control" name="constructor_direccion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="constructor_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Local/Depto N°</label>
+                                    <input type="text" class="form-control" name="constructor_local">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Comuna</label>
+                                    <input type="text" class="form-control" name="constructor_comuna">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" name="constructor_email">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Fijo</label>
+                                    <input type="tel" class="form-control" name="constructor_telefono">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Celular</label>
+                                    <input type="tel" class="form-control" name="constructor_celular">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Patente Profesional N°</label>
+                                    <input type="text" class="form-control" name="constructor_patente">
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Inspector Técnico de Obra (Según incisos 4 y 5 del art. N° 143 L.G.U.C)</div>
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label class="form-label">Cuenta con Inspector Técnico de Obra</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tiene_ito" id="itoSi" value="si">
+                                        <label class="form-check-label" for="itoSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tiene_ito" id="itoNo" value="no">
+                                        <label class="form-check-label" for="itoNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form-label">Nombre o Razón Social del Inspector Técnico de Obra</label>
+                                    <input type="text" class="form-control" name="ito_empresa">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="ito_empresa_rut">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-label">Nombre Profesional Responsable</label>
+                                    <input type="text" class="form-control" name="ito_nombre">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="ito_rut">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Firma</label>
+                                    <div class="border rounded p-3 text-center text-muted" style="min-height: 60px;">
+                                        <small>Área de firma</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Dirección - Nombre calle/pasaje</label>
+                                    <input type="text" class="form-control" name="ito_direccion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="ito_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Local/Depto N°</label>
+                                    <input type="text" class="form-control" name="ito_local">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Comuna</label>
+                                    <input type="text" class="form-control" name="ito_comuna">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" name="ito_email">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Fijo</label>
+                                    <input type="tel" class="form-control" name="ito_telefono">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Celular</label>
+                                    <input type="tel" class="form-control" name="ito_celular">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Inscripción Registro</label>
+                                    <input type="text" class="form-control" name="ito_registro">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Categoría</label>
+                                    <input type="text" class="form-control" name="ito_categoria">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="ito_numero_registro">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5.0 PARTICIPACIÓN DE REVISORES -->
+                    <div id="sec5"></div>
+                    <div class="section-title">5.0 PARTICIPACIÓN DE REVISORES EN LA MODIFICACIÓN DEL PROYECTO</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="subsection-title">Revisor Independiente</div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Cuenta con Informe Favorable Revisor Independiente (cuando corresponda)</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tiene_revisor_indep" id="revisorIndepSi" value="si">
+                                        <label class="form-check-label" for="revisorIndepSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tiene_revisor_indep" id="revisorIndepNo" value="no">
+                                        <label class="form-check-label" for="revisorIndepNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Número</label>
+                                    <input type="text" class="form-control" name="revisor_indep_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" name="revisor_indep_fecha">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-label">Nombre del Revisor Independiente</label>
+                                    <input type="text" class="form-control" name="revisor_indep_nombre">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="revisor_indep_rut">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Firma</label>
+                                    <div class="border rounded p-3 text-center text-muted" style="min-height: 60px;">
+                                        <small>Área de firma</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Dirección - Nombre de la vía</label>
+                                    <input type="text" class="form-control" name="revisor_indep_direccion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="revisor_indep_numero_dir">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Local/Of/Depto</label>
+                                    <input type="text" class="form-control" name="revisor_indep_local">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Comuna</label>
+                                    <input type="text" class="form-control" name="revisor_indep_comuna">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" name="revisor_indep_email">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Fijo</label>
+                                    <input type="tel" class="form-control" name="revisor_indep_telefono">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Celular</label>
+                                    <input type="tel" class="form-control" name="revisor_indep_celular">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Registro</label>
+                                    <input type="text" class="form-control" name="revisor_indep_registro">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Categoría (*)</label>
+                                    <input type="text" class="form-control" name="revisor_indep_categoria">
+                                </div>
+                                <div class="col-12">
+                                    <div class="alert alert-info mb-0">
+                                        <small>(*) Decreto 177 (V.yU.) de 1996: 1ª Categoría: puede revisar todo tipo de anteproyectos, proyectos y obras; 2ª categoría: puede revisar anteproyectos, proyectos y obras de edificios de uso público cuya superficie total construida no supere los 1.500 m2 y de otros edificios con una superficie total no mayor de 3.000m2; 3ª categoría: puede revisar anteproyectos, proyectos y obras de edificios de uso público cuya superficie total construida no supere los 500 m2 y de otros edificios con una superficie total no mayor de 1.500 m2.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Revisor de Proyecto de Cálculo Estructural</div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Cuenta con Informe de Revisor de Proyecto de Cálculo Estructural (cuando corresponda)</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tiene_revisor_calculo" id="revisorCalculoSi" value="si">
+                                        <label class="form-check-label" for="revisorCalculoSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="tiene_revisor_calculo" id="revisorCalculoNo" value="no">
+                                        <label class="form-check-label" for="revisorCalculoNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Número</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_numero">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Fecha</label>
+                                    <input type="date" class="form-control" name="revisor_calculo_fecha">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Nombre o Razón Social Revisor de Cálculo Estructural</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_nombre">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">R.U.T.</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_rut">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Firma</label>
+                                    <div class="border rounded p-3 text-center text-muted" style="min-height: 60px;">
+                                        <small>Área de firma</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Dirección - Nombre de la vía</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_direccion">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">N°</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_numero_dir">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Local/Of/Depto</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_local">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Comuna</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_comuna">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" name="revisor_calculo_email">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Fijo</label>
+                                    <input type="tel" class="form-control" name="revisor_calculo_telefono">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Teléfono Celular</label>
+                                    <input type="tel" class="form-control" name="revisor_calculo_celular">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Registro</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_registro">
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Categoría (*)</label>
+                                    <input type="text" class="form-control" name="revisor_calculo_categoria">
+                                </div>
+                                <div class="col-12">
+                                    <div class="alert alert-info mb-0">
+                                        <small>(*) Decreto 134 (V.yU.) de 2002: 1ª Categoría: Puede revisar todo tipo de proyectos de obras de edificación, cualquiera sea la cantidad de metros cuadrados calculados. 2ª Categoría: Proyectos de obras de edificación en que la cantidad de metros cuadrados calculados no exceda los 15.000 m2. En el caso de unidades repetidas éstas no deben sobrepasar los 8.000 m2. 3ª Categoría: Proyectos de obras de edificación en que la cantidad de metros cuadrados calculados no exceda los 10.000 m2. En el caso de unidades repetidas éstas no deben sobrepasar los 6.000 m2.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.0 CARACTERÍSTICAS PROYECTO -->
+                    <div id="sec6"></div>
+                    <div class="section-title">6.0 CARACTERÍSTICAS PROYECTO DE OBRA NUEVA MODIFICADO</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold">Edificios de Uso Público (incluida la modificación)</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="uso_publico" id="usoPublicoTodo" value="todo">
+                                        <label class="form-check-label" for="usoPublicoTodo">TODO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="uso_publico" id="usoPublicoParte" value="parte">
+                                        <label class="form-check-label" for="usoPublicoParte">PARTE</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="uso_publico" id="usoPublicoNo" value="no">
+                                        <label class="form-check-label" for="usoPublicoNo">NO ES EDIFICIO DE USO PÚBLICO</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Carga de Ocupación de las Edificaciones (personas) según artículo 4.2.4 OGUC</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Permiso</label>
+                                    <input type="number" class="form-control" name="carga_ocupacion_permiso">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Modificación</label>
+                                    <input type="number" class="form-control" name="carga_ocupacion_modif">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Densidad Ocupación Permiso (personas/hectárea)</label>
+                                    <input type="number" class="form-control" name="densidad_ocupacion_permiso" step="0.01">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Densidad Ocupación Modificación (personas/hectárea)</label>
+                                    <input type="number" class="form-control" name="densidad_ocupacion_modif" step="0.01">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Crecimiento Urbano</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="crecimiento_urbano" id="crecimientoSi" value="si">
+                                        <label class="form-check-label" for="crecimientoSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="crecimiento_urbano" id="crecimientoNo" value="no">
+                                        <label class="form-check-label" for="crecimientoNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Explicitar:</label>
+                                    <input type="text" class="form-control" name="crecimiento_tipo" placeholder="densificación/extensión">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label">Loteo con Construcción Simultánea</label>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="loteo_simultaneo" id="loteoSimSi" value="si">
+                                        <label class="form-check-label" for="loteoSimSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="loteo_simultaneo" id="loteoSimNo" value="no">
+                                        <label class="form-check-label" for="loteoSimNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Loteo DFL 2</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="loteo_dfl2" id="loteoDflSi" value="si">
+                                        <label class="form-check-label" for="loteoDflSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="loteo_dfl2" id="loteoDflNo" value="no">
+                                        <label class="form-check-label" for="loteoDflNo">NO</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Proyecto se desarrolla en etapas:</label>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="en_etapas" id="etapasSi" value="si">
+                                        <label class="form-check-label" for="etapasSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="en_etapas" id="etapasNo" value="no">
+                                        <label class="form-check-label" for="etapasNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Cantidad de etapas</label>
+                                    <input type="number" class="form-control" name="cantidad_etapas">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Etapas EJECUTADAS (indicar)</label>
+                                    <input type="text" class="form-control" name="etapas_ejecutadas">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Etapas por ejecutar</label>
+                                    <input type="text" class="form-control" name="etapas_por_ejecutar">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Etapas con Mitigaciones Parciales a considerar en IMIV, art. 173 LGUC</label>
+                                    <input type="text" class="form-control" name="etapas_mitigacion">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Etapas Art. 9° del DS 167 (MTT) de 2016</label>
+                                    <input type="text" class="form-control" name="etapas_ds167">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.1 SUPERFICIES -->
+                    <div class="section-title">6.1 SUPERFICIES</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label class="form-label fw-bold">LA MODIFICACIÓN MANTIENE LA SUPERFICIE DE PERMISO OTORGADO</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="mantiene_superficie" id="mantSupSi" value="si">
+                                        <label class="form-check-label" for="mantSupSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="mantiene_superficie" id="mantSupNo" value="no">
+                                        <label class="form-check-label" for="mantSupNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">DISMINUYE SUPERFICIE EDIFICADA EN</label>
+                                    <input type="number" class="form-control" name="disminuye_superficie" step="0.01" placeholder="m²">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">AUMENTA SUPERFICIE EDIFICADA EN</label>
+                                    <input type="number" class="form-control" name="aumenta_superficie" step="0.01" placeholder="m²">
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Superficies Generales</div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th rowspan="2"></th>
+                                            <th colspan="2" class="text-center">ÚTIL (m²)</th>
+                                            <th colspan="2" class="text-center">COMÚN (m²)</th>
+                                            <th colspan="2" class="text-center">SUPERFICIE PROYECTO MODIFICADO</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>S. EDIFICADA SUBTERRÁNEO</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sub_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sub_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sub_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sub_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sub_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sub_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>S.EDIFICADA SOBRE TERRENO (1er piso + pisos superiores)</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sobre_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sobre_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sobre_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sobre_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sobre_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_sobre_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr class="table-primary">
+                                            <td><strong>S. EDIFICADA TOTAL</strong></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_total_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_total_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_total_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_total_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sup_total_modif" step="0.01"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row g-3 mt-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">SUPERFICIE OCUPACIÓN SOLO EN PRIMER PISO CON PERMISO (m²)</label>
+                                    <input type="number" class="form-control" name="sup_ocupacion_permiso" step="0.01">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">SUPERFICIE TOTAL PROYECTO MODIFICADO (m²)</label>
+                                    <input type="number" class="form-control" name="sup_ocupacion_modificado" step="0.01">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label">SUPERFICIE TOTAL DEL TERRENO (m²)</label>
+                                    <input type="number" class="form-control" name="sup_total_terreno" step="0.01">
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">S. EDIFICADA SUBTERRÁNEO(S) que se modifica <small class="text-muted">(agregar hoja adicional si hubiere más subterráneos)</small></div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th rowspan="2">S. Edificada por nivel o piso</th>
+                                            <th colspan="2" class="text-center">ÚTIL (m²)</th>
+                                            <th colspan="2" class="text-center">COMÚN (m²)</th>
+                                            <th colspan="2" class="text-center">TOTAL (m²)</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>nivel o piso -1.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n1_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n1_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n1_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n1_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n1_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n1_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso -2.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n2_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n2_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n2_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n2_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n2_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n2_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso -3.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n3_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n3_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n3_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n3_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n3_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n3_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso -4.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n4_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n4_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n4_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n4_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n4_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n4_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso -5.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n5_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n5_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n5_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n5_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n5_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_n5_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr class="table-primary">
+                                            <td><strong>TOTAL</strong></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_total_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_total_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_total_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_total_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_total_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sub_total_total_modif" step="0.01"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="subsection-title mt-4">S. EDIFICADA SOBRE TERRENO que se modifica <small class="text-muted">(agregar hoja adicional si hubiere más pisos sobre el nivel de suelo natural)</small></div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th rowspan="2">S. Edificada por nivel o piso</th>
+                                            <th colspan="2" class="text-center">ÚTIL (m²)</th>
+                                            <th colspan="2" class="text-center">COMÚN (m²)</th>
+                                            <th colspan="2" class="text-center">TOTAL (m²)</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                            <th class="text-center">Permiso Otorgado</th>
+                                            <th class="text-center">Permiso Modificado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>nivel o piso 1.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p1_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p1_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p1_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p1_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p1_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p1_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 2.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p2_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p2_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p2_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p2_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p2_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p2_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 3.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p3_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p3_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p3_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p3_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p3_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p3_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 4.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p4_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p4_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p4_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p4_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p4_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p4_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 5.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p5_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p5_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p5_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p5_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p5_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p5_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 6.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p6_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p6_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p6_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p6_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p6_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p6_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 7.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p7_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p7_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p7_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p7_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p7_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p7_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 8.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p8_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p8_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p8_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p8_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p8_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p8_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 9.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p9_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p9_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p9_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p9_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p9_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p9_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>nivel o piso 10.0</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p10_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p10_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p10_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p10_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p10_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_p10_total_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr class="table-primary">
+                                            <td><strong>TOTAL</strong></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_total_util_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_total_util_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_total_comun_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_total_comun_modif" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_total_total_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="sobre_total_total_modif" step="0.01"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="subsection-title mt-4">S. EDIFICADA POR DESTINO</div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>DESTINO(S) CONTEMPLADO(S)</th>
+                                            <th class="text-center">Residencial<br><small>ART 2.1.25. OGUC</small></th>
+                                            <th class="text-center">Equipamiento<br><small>ART. 2.1.33. OGUC</small></th>
+                                            <th class="text-center">Act. Productivas<br><small>ART 2.1.28. OGUC</small></th>
+                                            <th class="text-center">Infraestructura<br><small>ART 2.1.29. OGUC</small></th>
+                                            <th class="text-center">Área verde<br><small>ART 2.1.31. OGUC</small></th>
+                                            <th class="text-center">Espacio Público<br><small>ART 2.1.30. OGUC</small></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>SUPERFICIE PERMISO</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_perm_residencial" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_perm_equipamiento" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_perm_productivas" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_perm_infraestructura" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_perm_area_verde" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_perm_esp_publico" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>SUPERFICIE MODIFICACIÓN</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_modif_residencial" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_modif_equipamiento" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_modif_productivas" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_modif_infraestructura" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_modif_area_verde" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="dest_modif_esp_publico" step="0.01"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.2 NORMAS URBANÍSTICAS -->
+                    <div class="section-title">6.2 NORMAS URBANÍSTICAS</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">SE ACOGE A NUEVAS NORMAS (ART. 5.1.18. O.G.U.C)</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="nuevas_normas" id="nuevasNormasSi" value="si">
+                                        <label class="form-check-label" for="nuevasNormasSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="nuevas_normas" id="nuevasNormasNo" value="no">
+                                        <label class="form-check-label" for="nuevasNormasNo">NO</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">PREDIO(S) EMPLAZADO(S) EN ÁREA DE RIESGO</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="area_riesgo" id="areaRiesgoNo" value="no">
+                                        <label class="form-check-label" for="areaRiesgoNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="area_riesgo" id="areaRiesgoSi" value="si">
+                                        <label class="form-check-label" for="areaRiesgoSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="area_riesgo" id="areaRiesgoParcial" value="parcial">
+                                        <label class="form-check-label" for="areaRiesgoParcial">PARCIAL</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="subsection-title mt-4">Cuadro de Normas Urbanísticas</div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>NORMAS URBANÍSTICAS</th>
+                                            <th class="text-center">PERMISO OTORGADO</th>
+                                            <th class="text-center">PERMITIDO</th>
+                                            <th class="text-center">PERMISO MODIFICADO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DENSIDAD</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_densidad_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_densidad_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_densidad_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>COEFICIENTE DE OCUPACIÓN PISOS SUPERIORES (sobre 1er piso)</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_cop_superior_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_cop_superior_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_cop_superior_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>COEFICIENTE DE OCUPACIÓN DE SUELO (1er piso)</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_cos_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_cos_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_cos_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>COEFICIENTE DE CONSTRUCTIBILIDAD</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_constructibilidad_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_constructibilidad_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_constructibilidad_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>DISTANCIAMIENTOS</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_distanciamiento_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_distanciamiento_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_distanciamiento_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>RASANTE</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_rasante_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_rasante_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_rasante_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>SISTEMA DE AGRUPAMIENTO</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_agrupamiento_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_agrupamiento_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_agrupamiento_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ADOSAMIENTO</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_adosamiento_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_adosamiento_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_adosamiento_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ANTEJARDÍN</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_antejardin_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_antejardin_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_antejardin_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ALTURA EN METROS Y/O PISOS</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_altura_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_altura_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_altura_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ESTACIONAMIENTOS AUTOMÓVILES</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_auto_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_auto_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_auto_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ESTACIONAMIENTOS BICICLETAS</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_bici_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_bici_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_bici_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ESTACIONAMIENTOS OTROS VEHÍCULOS (ESPECIFICAR)</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_otros_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_otros_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_otros_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ESTACIONAMIENTOS PARA PERSONAS CON DISCAPACIDAD</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_discap_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_discap_permit"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="norma_estac_discap_modif"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row g-3 mt-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">DESCUENTO ESTACIONAMIENTO PARA AUTOMÓVILES POR ESTACIONAMIENTO PARA BICICLETAS</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="descuento_estac" id="descuentoEstacSi" value="si">
+                                        <label class="form-check-label" for="descuentoEstacSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="descuento_estac" id="descuentoEstacNo" value="no">
+                                        <label class="form-check-label" for="descuentoEstacNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Cantidad Descontada</label>
+                                    <input type="number" class="form-control" name="cantidad_descontada">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.3 USO DE SUELO Y DESTINO -->
+                    <div class="section-title">6.3 USO DE SUELO Y DESTINO(S) CONTEMPLADO(S) EN TODO O PARTE MODIFICADA</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label class="form-label fw-bold">CAMBIO DE DESTINO RESPECTO AL PERMISO OTORGADO</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="cambio_destino" id="cambioDestinoSi" value="si">
+                                        <label class="form-check-label" for="cambioDestinoSi">SÍ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="cambio_destino" id="cambioDestinoNo" value="no">
+                                        <label class="form-check-label" for="cambioDestinoNo">NO</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>TIPO DE USO</th>
+                                            <th class="text-center">Residencial<br><small>ART 2.1.25. OGUC</small></th>
+                                            <th class="text-center">Equipamiento<br><small>ART. 2.1.33. OGUC</small></th>
+                                            <th class="text-center">Act. Productivas<br><small>ART 2.1.28. OGUC</small></th>
+                                            <th class="text-center">Infraestructura<br><small>ART 2.1.29. OGUC</small></th>
+                                            <th class="text-center">Área verde<br><small>ART 2.1.31. OGUC</small></th>
+                                            <th class="text-center">Espacio Público<br><small>ART 2.1.30. OGUC</small></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CLASE / DESTINO PERMISO</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_perm_resid"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_perm_equip"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_perm_prod"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_perm_infra"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_perm_verde"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_perm_publico"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CLASE / DESTINO MODIFICACIÓN</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_modif_resid"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_modif_equip"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_modif_prod"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_modif_infra"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_modif_verde"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="clase_modif_publico"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ACTIVIDAD PERMISO</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_perm_resid"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_perm_equip"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_perm_prod"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_perm_infra"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_perm_verde"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_perm_publico"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ACTIVIDAD MODIFICACIÓN</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_modif_resid"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_modif_equip"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_modif_prod"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_modif_infra"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_modif_verde"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="activ_modif_publico"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ESCALA PERMISO<br><small>(Art. 2.1.36. OGUC)</small></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_perm_resid"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_perm_equip"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_perm_prod"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_perm_infra"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_perm_verde"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_perm_publico"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ESCALA MODIFICACIÓN<br><small>(Art. 2.1.36. OGUC)</small></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_modif_resid"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_modif_equip"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_modif_prod"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_modif_infra"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_modif_verde"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="escala_modif_publico"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.4 PROTECCIONES OFICIALES -->
+                    <div class="section-title">6.4 PROTECCIONES OFICIALES: Predio o Inmueble con Protección Oficial (información del CIP)</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="protec_no" id="protecNo">
+                                        <label class="form-check-label" for="protecNo">NO</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="protec_si" id="protecSi">
+                                        <label class="form-check-label" for="protecSi">SÍ, especificar</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="protec_zch" id="protecZch">
+                                        <label class="form-check-label" for="protecZch">ZCH</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="protec_ich" id="protecIch">
+                                        <label class="form-check-label" for="protecIch">ICH</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="protec_zoit" id="protecZoit">
+                                        <label class="form-check-label" for="protecZoit">ZOIT</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">OTRO; especificar</label>
+                                    <input type="text" class="form-control" name="protec_otro">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label">MONUMENTO NACIONAL:</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="monum_zt" id="monumZt">
+                                        <label class="form-check-label" for="monumZt">ZT</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="monum_mh" id="monumMh">
+                                        <label class="form-check-label" for="monumMh">MH</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="monum_santuario" id="monumSantuario">
+                                        <label class="form-check-label" for="monumSantuario">SANTUARIO DE LA NATURALEZA</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label">OBSERVACIONES MODIFICACIÓN</label>
+                                    <textarea class="form-control" name="observaciones_modificacion" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.5 FORMA DE CUMPLIMIENTO ART. 70 LGUC -->
+                    <div class="section-title">6.5 FORMA DE CUMPLIMIENTO DEL ARTÍCULO 70 DE LA LGUC</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="art70_forma" id="art70Cesion" value="cesion">
+                                        <label class="form-check-label" for="art70Cesion">Cesión</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="art70_forma" id="art70Aporte" value="aporte">
+                                        <label class="form-check-label" for="art70Aporte">Aporte</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="art70_forma" id="art70Otro" value="otro">
+                                        <label class="form-check-label" for="art70Otro">Otro</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Especificar OTRO</label>
+                                    <input type="text" class="form-control" name="art70_otro_especificar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.6 CÁLCULO PORCENTAJE CESIÓN -->
+                    <div class="section-title">6.6 CÁLCULO DEL PORCENTAJE DE CESIÓN (Art. 70 LGUC y Art 3.2.4 OGUC)</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="subsection-title">FÓRMULAS:</div>
+                            <div class="mb-3">
+                                <p class="form-note mb-2"><strong>% CESIÓN = ((Dc x 25 x Sp) - ST) / ST)</strong></p>
+                                <p class="form-note mb-2">Donde:</p>
+                                <ul class="form-note">
+                                    <li>Dc = DENSIDAD BRUTA MÁXIMA PERMITIDA POR EL PLANO REGULADOR COMUNAL O SECCIONAL</li>
+                                    <li>Sp = SUPERFICIE DEL PREDIO</li>
+                                    <li>ST = SUPERFICIE TOTAL TERRENO</li>
+                                </ul>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label">DENSIDAD MÁXIMA PERMITIDA POR PR (hab/há)</label>
+                                    <input type="number" class="form-control" name="cesion_densidad" step="0.01">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">SUPERFICIE DEL PREDIO (m²)</label>
+                                    <input type="number" class="form-control" name="cesion_sup_predio" step="0.01">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">SUPERFICIE TOTAL TERRENO (m²)</label>
+                                    <input type="number" class="form-control" name="cesion_sup_total" step="0.01">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">% CESIÓN CALCULADO</label>
+                                    <input type="number" class="form-control" name="cesion_porcentaje" step="0.01">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">SUPERFICIE CESIÓN (m²)</label>
+                                    <input type="number" class="form-control" name="cesion_superficie" step="0.01">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">% CESIÓN O APORTE OTORGADO EN PERMISO</label>
+                                    <input type="number" class="form-control" name="cesion_otorgado" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.7 CÁLCULO DEL APORTE -->
+                    <div class="section-title">6.7 CÁLCULO DEL APORTE (en dinero o en obras en espacios públicos) ARTÍCULO 72 LGUC</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="subsection-title">FÓRMULAS:</div>
+                            <div class="mb-3">
+                                <p class="form-note mb-2"><strong>% APORTE = ((C x VF) / VF) x 100</strong></p>
+                                <p class="form-note mb-2"><strong>MONTO APORTE = (C x VF)</strong></p>
+                                <p class="form-note mb-2">Donde:</p>
+                                <ul class="form-note">
+                                    <li>C = BENEFICIO DE CONSTRUCTIBILIDAD (m²) = CONSTRUCTIBILIDAD PROYECTO – CONSTRUCTIBILIDAD NORMA IPR</li>
+                                    <li>VF = VALOR FISCAL UNITARIO DEL TERRENO ($/m²)</li>
+                                </ul>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">BENEFICIO DE CONSTRUCTIBILIDAD (m²)</label>
+                                    <input type="number" class="form-control" name="aporte_beneficio" step="0.01">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">AVALÚO FISCAL UNITARIO DEL TERRENO ($/m²)</label>
+                                    <input type="number" class="form-control" name="aporte_avaluo" step="0.01">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">% DE APORTE</label>
+                                    <input type="number" class="form-control" name="aporte_porcentaje" step="0.01">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">MONTO APORTE EN DINERO O COSTO VALOR OBRAS ($)</label>
+                                    <input type="number" class="form-control" name="aporte_monto" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.8 INCENTIVOS NORMATIVOS IPT -->
+                    <div class="section-title">6.8 INCENTIVOS NORMATIVOS IPT (OGUC Art. 3.3.6)</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">BENEFICIO</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">CONDICIÓN</label>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_ben_cop" id="iptBenCop">
+                                        <label class="form-check-label" for="iptBenCop">COP (aumento hasta en un 10%)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_cond_coppia" id="iptCondCoppia">
+                                        <label class="form-check-label" for="iptCondCoppia">COP pisos sup en el % total Const</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_ben_const" id="iptBenConst">
+                                        <label class="form-check-label" for="iptBenConst">CONSTRUCTIBILIDAD (aumento hasta en un 30%)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_cond_copsuelo" id="iptCondCopsuelo">
+                                        <label class="form-check-label" for="iptCondCopsuelo">COP suelo en el % total Const</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_ben_alt" id="iptBenAlt">
+                                        <label class="form-check-label" for="iptBenAlt">ALTURA (aumento hasta en un 20%)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_cond_rasante" id="iptCondRasante">
+                                        <label class="form-check-label" for="iptCondRasante">Rasante en el % total Const</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_ben_dist" id="iptBenDist">
+                                        <label class="form-check-label" for="iptBenDist">DISTANCIAMIENTOS (disminución hasta en un 20%)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_cond_ant" id="iptCondAnt">
+                                        <label class="form-check-label" for="iptCondAnt">Antejardín en el % total Const</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_ben_estac" id="iptBenEstac">
+                                        <label class="form-check-label" for="iptBenEstac">ESTACIONAMIENTOS (disminución hasta en un 50%)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_cond_averde" id="iptCondAverde">
+                                        <label class="form-check-label" for="iptCondAverde">Áreas verdes en el % total Const</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_ben_averde" id="iptBenAverde">
+                                        <label class="form-check-label" for="iptBenAverde">ÁREAS VERDES (disminución hasta en un 30%)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="ipt_cond_otro" id="iptCondOtro">
+                                        <label class="form-check-label" for="iptCondOtro">Otro (especificar)</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" name="ipt_cond_otro_text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.9 DISPOSICIONES ESPECIALES -->
+                    <div class="section-title">6.9 DISPOSICIONES ESPECIALES</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="disp_dfl2" id="dispDfl2">
+                                        <label class="form-check-label" for="dispDfl2">SE ACOGE A DFL-2 DE VIVIENDA (ART. 5.1.1. OGUC)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="disp_armonico" id="dispArmonico">
+                                        <label class="form-check-label" for="dispArmonico">CONJUNTO ARMÓNICO (ART. 2.6.3. OGUC)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="disp_sombras" id="dispSombras">
+                                        <label class="form-check-label" for="dispSombras">PROYECCIÓN DE SOMBRAS (ART. 2.6.1. OGUC)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="disp_segunda" id="dispSegunda">
+                                        <label class="form-check-label" for="dispSegunda">SEGUNDA VIVIENDA (ART. 5.1.9. OGUC)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="disp_copropiedad" id="dispCopropiedad">
+                                        <label class="form-check-label" for="dispCopropiedad">SE RIGE POR LA LEY DE COPROPIEDAD</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="disp_accesibilidad" id="dispAccesibilidad">
+                                        <label class="form-check-label" for="dispAccesibilidad">ACCESIBILIDAD UNIVERSAL (DS 50 - TÍTULO 4 CAPÍTULO 2)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="disp_eficiencia" id="dispEficiencia">
+                                        <label class="form-check-label" for="dispEficiencia">EFICIENCIA ENERGÉTICA (ART. 4.1.10. OGUC)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="disp_otro" id="dispOtro">
+                                        <label class="form-check-label" for="dispOtro">OTRO (especificar)</label>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm mt-2" name="disp_otro_text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.10 AUTORIZACIONES ESPECIALES LGUC -->
+                    <div class="section-title">6.10 AUTORIZACIONES ESPECIALES (LGUC) - SEGÚN ARTÍCULO</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="aut_art121" id="autArt121">
+                                        <label class="form-check-label" for="autArt121">ART. 121 Saliente sobre rasante</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="aut_art122" id="autArt122">
+                                        <label class="form-check-label" for="autArt122">ART. 122 Volúmenes sobre rasante</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="aut_art123" id="autArt123">
+                                        <label class="form-check-label" for="autArt123">ART. 123 Obras bajo suelo público</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="aut_art124" id="autArt124">
+                                        <label class="form-check-label" for="autArt124">ART. 124 Ensanche aceras</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="aut_art55" id="autArt55">
+                                        <label class="form-check-label" for="autArt55">ART. 55 Inc. 2 LGUC</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="aut_art59bis" id="autArt59bis">
+                                        <label class="form-check-label" for="autArt59bis">ART. 59 Bis LGUC</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="form-label">OTRAS AUTORIZACIONES (especificar)</label>
+                                    <textarea class="form-control" name="aut_otras" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.11 NÚMERO DE UNIDADES POR DESTINO -->
+                    <div class="section-title">6.11 NÚMERO DE UNIDADES TOTALES POR DESTINO</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>TIPO DE UNIDAD</th>
+                                            <th class="text-center">NÚMERO PERMISO OTORGADO</th>
+                                            <th class="text-center">NÚMERO PERMISO MODIFICADO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>NÚMERO DE VIVIENDAS</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_viviendas_otorg"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_viviendas_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>NÚMERO DE BODEGAS</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_bodegas_otorg"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_bodegas_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>NÚMERO DE OFICINAS</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_oficinas_otorg"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_oficinas_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>NÚMERO DE LOCALES COMERCIALES</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_locales_otorg"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_locales_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>NÚMERO DE ESTACIONAMIENTOS</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_estacionamientos_otorg"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_estacionamientos_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>OTROS (especificar tipo)</td>
+                                            <td><input type="text" class="form-control form-control-sm" name="unid_otros_tipo_otorg"></td>
+                                            <td><input type="text" class="form-control form-control-sm" name="unid_otros_tipo_modif"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CANTIDAD OTROS</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_otros_cant_otorg"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="unid_otros_cant_modif"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.12 PROYECTOS DE CONDOMINIO TIPO B -->
+                    <div class="section-title">6.12 PROYECTOS DE CONDOMINIO TIPO B (LGUC Art. 86)</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">SUPERFICIE TERRENO CONDOMINIO (m²)</label>
+                                    <input type="number" class="form-control" name="cond_sup_terreno" step="0.01">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">NÚMERO DE SITIOS</label>
+                                    <input type="number" class="form-control" name="cond_num_sitios">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.13 CLASIFICACIÓN CONSTRUCCIONES PREDOMINANTES -->
+                    <div class="section-title">6.13 CLASIFICACIÓN DE LAS CONSTRUCCIONES PREDOMINANTES (según tasación fiscal vigente S.I.I.)</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>CLASIFICACIÓN</th>
+                                            <th class="text-center">m² PERMISO OTORGADO</th>
+                                            <th class="text-center">m² PERMISO MODIFICADO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CONSTRUCCIÓN CLASE A</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_a_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_a_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CONSTRUCCIÓN CLASE B</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_b_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_b_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CONSTRUCCIÓN CLASE C</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_c_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_c_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CONSTRUCCIÓN CLASE D</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_d_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_d_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CONSTRUCCIÓN CLASE E</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_e_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_e_modif" step="0.01"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>CONSTRUCCIÓN CLASE F</td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_f_otorg" step="0.01"></td>
+                                            <td><input type="number" class="form-control form-control-sm" name="clasif_f_modif" step="0.01"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7.0 OTRAS SOLICITUDES -->
+                    <div id="sec7"></div>
+                    <div class="section-title">7.0 OTRAS SOLICITUDES</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <label class="form-label fw-bold">Marcas las solicitudes adicionales que desea realizar:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="otra_demolicion" id="otraDemolicion">
+                                        <label class="form-check-label" for="otraDemolicion">DEMOLICIÓN</label>
+                                    </div>
+                                    <div class="row g-2 mt-1">
+                                        <div class="col-md-6">
+                                            <label class="form-label form-label-sm">N° Solicitud</label>
+                                            <input type="text" class="form-control form-control-sm" name="otra_demolicion_num">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label form-label-sm">Fecha</label>
+                                            <input type="date" class="form-control form-control-sm" name="otra_demolicion_fecha">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="otra_faenas" id="otraFaenas">
+                                        <label class="form-check-label" for="otraFaenas">INSTALACIÓN DE FAENAS</label>
+                                    </div>
+                                    <div class="row g-2 mt-1">
+                                        <div class="col-md-6">
+                                            <label class="form-label form-label-sm">N° Solicitud</label>
+                                            <input type="text" class="form-control form-control-sm" name="otra_faenas_num">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label form-label-sm">Fecha</label>
+                                            <input type="date" class="form-control form-control-sm" name="otra_faenas_fecha">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="otra_gruas" id="otraGruas">
+                                        <label class="form-check-label" for="otraGruas">INSTALACIÓN DE GRÚAS</label>
+                                    </div>
+                                    <div class="row g-2 mt-1">
+                                        <div class="col-md-6">
+                                            <label class="form-label form-label-sm">N° Solicitud</label>
+                                            <input type="text" class="form-control form-control-sm" name="otra_gruas_num">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label form-label-sm">Fecha</label>
+                                            <input type="date" class="form-control form-control-sm" name="otra_gruas_fecha">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="otra_excavaciones" id="otraExcavaciones">
+                                        <label class="form-check-label" for="otraExcavaciones">EXCAVACIONES Y ENTIBACIONES</label>
+                                    </div>
+                                    <div class="row g-2 mt-1">
+                                        <div class="col-md-6">
+                                            <label class="form-label form-label-sm">N° Solicitud</label>
+                                            <input type="text" class="form-control form-control-sm" name="otra_excavaciones_num">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label form-label-sm">Fecha</label>
+                                            <input type="date" class="form-control form-control-sm" name="otra_excavaciones_fecha">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8.0 ANTECEDENTES QUE SE ADJUNTAN -->
+                    <div id="sec8"></div>
+                    <div class="section-title">8.0 ANTECEDENTES QUE SE ADJUNTAN</div>
+                    <div class="bg-body rounded-3 mb-4">
+                        <div class="">
+                            <p class="form-note">Marque los documentos que adjuntará con esta solicitud:</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th style="width: 80px;" class="text-center">INCLUYE</th>
+                                            <th>DOCUMENTO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_cip" id="docCip">
+                                                </div>
+                                            </td>
+                                            <td>FOTOCOPIA DEL CERTIFICADO DE INFORMACIONES PREVIAS VIGENTE (CIP)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_lista" id="docLista">
+                                                </div>
+                                            </td>
+                                            <td>LISTA DE LAS MODIFICACIONES (indicar modificaciones de fondo y forma)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_planos" id="docPlanos">
+                                                </div>
+                                            </td>
+                                            <td>PLANOS FIRMADOS POR ARQUITECTO (plantas, cortes, elevaciones, emplazamiento)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_cuadro" id="docCuadro">
+                                                </div>
+                                            </td>
+                                            <td>CUADRO DE SUPERFICIES firmado por arquitecto</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_especif" id="docEspecif">
+                                                </div>
+                                            </td>
+                                            <td>ESPECIFICACIONES TÉCNICAS (memoria de arquitectura, cálculo, instalaciones)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_presupuesto" id="docPresupuesto">
+                                                </div>
+                                            </td>
+                                            <td>PRESUPUESTO DE LAS OBRAS (si corresponde)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_permiso_ant" id="docPermisoAnt">
+                                                </div>
+                                            </td>
+                                            <td>FOTOCOPIA DEL PERMISO DE EDIFICACIÓN A MODIFICAR</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_informe_rev" id="docInformeRev">
+                                                </div>
+                                            </td>
+                                            <td>INFORME DEL REVISOR INDEPENDIENTE (si corresponde)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_telecom" id="docTelecom">
+                                                </div>
+                                            </td>
+                                            <td>PLANOS DE INSTALACIONES DE TELECOMUNICACIONES</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_calc_estr" id="docCalcEstr">
+                                                </div>
+                                            </td>
+                                            <td>PROYECTO DE CÁLCULO ESTRUCTURAL (memoria + planos firmados por calculista)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_rev_calc" id="docRevCalc">
+                                                </div>
+                                            </td>
+                                            <td>INFORME DEL REVISOR DE CÁLCULO ESTRUCTURAL (si corresponde)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_ascensores" id="docAscensores">
+                                                </div>
+                                            </td>
+                                            <td>ESTUDIO DE ASCENSORES Y MONTACARGAS (si corresponde)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_accesibilidad" id="docAccesibilidad">
+                                                </div>
+                                            </td>
+                                            <td>PLANO DE ACCESIBILIDAD UNIVERSAL (cuando corresponda)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_patentes" id="docPatentes">
+                                                </div>
+                                            </td>
+                                            <td>FOTOCOPIA DE PATENTES PROFESIONALES DE ARQUITECTO, CALCULISTA, CONSTRUCTOR</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_cert_rev" id="docCertRev">
+                                                </div>
+                                            </td>
+                                            <td>CERTIFICADOS DE INSCRIPCIÓN DE REVISORES (cuando corresponda)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+                                                <div class="form-check d-flex justify-content-center">
+                                                    <input class="form-check-input" type="checkbox" name="doc_otros" id="docOtros">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-md-3"><strong>OTROS:</strong></div>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control form-control-sm" name="doc_otros_text" placeholder="Especificar otros documentos">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    <!-- CoreUI and necessary plugins-->
+    <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
+    <script src="../../_coreui-base/js/main.js"></script>
+    <script src="../../assets/js/pfud.js"></script>
+  </body>
+</html>

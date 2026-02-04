@@ -1,7 +1,25 @@
+// Forzar recarga de CSS y JS añadiendo timestamp
+(function() {
+  const timestamp = new Date().getTime();
+  document.querySelectorAll('link[rel="stylesheet"][href*="pfud"]').forEach(link => {
+    const url = new URL(link.href);
+    url.searchParams.set('v', timestamp);
+    link.href = url.toString();
+  });
+})();
+
 // Función global para ajuste de tamaño de fuente
-// Cargar el tamaño guardado de localStorage o usar 90% por defecto
-let currentFontSize = parseInt(localStorage.getItem('fontSizePreference')) || 90;
+// Cargar el tamaño guardado de localStorage o usar 100% por defecto
+let currentFontSize = parseInt(localStorage.getItem('fontSizePreference')) || 100;
 document.documentElement.style.fontSize = currentFontSize + '%';
+
+// Actualizar indicador si existe
+function updateFontSizeIndicator() {
+  const indicator = document.getElementById('fontSizeIndicator');
+  if (indicator) {
+    indicator.textContent = currentFontSize + '%';
+  }
+}
 
 function adjustFontSize(delta) {
   currentFontSize += delta * 10; // cambio de 10% cada vez
@@ -11,6 +29,9 @@ function adjustFontSize(delta) {
   
   // Guardar la preferencia en localStorage
   localStorage.setItem('fontSizePreference', currentFontSize);
+  
+  // Actualizar indicador visual
+  updateFontSizeIndicator();
 }
 
 // Animador de números enteros con easing
@@ -53,6 +74,10 @@ function animateDecimalCounter(id, start, end, duration) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Inicializar indicador de tamaño de fuente
+  updateFontSizeIndicator();
+  
+  // Animadores de contadores
   animateCounter('counterPublicados', 0, 24, 1800);
   animateCounter('counterProceso', 0, 12, 1800);
   animateCounter('counterObservaciones', 0, 47, 1800);
@@ -223,12 +248,12 @@ function initPasswordToggle() {
   toggleButton.addEventListener("click", function () {
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
-      eyeIcon.classList.remove("bi-eye");
-      eyeIcon.classList.add("bi-eye-slash");
-    } else {
-      passwordInput.type = "password";
       eyeIcon.classList.remove("bi-eye-slash");
       eyeIcon.classList.add("bi-eye");
+    } else {
+      passwordInput.type = "password";
+      eyeIcon.classList.remove("bi-eye");
+      eyeIcon.classList.add("bi-eye-slash");
     }
   });
 }
@@ -402,5 +427,47 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.add('active');
       }
     });
+  });
+});
+
+// Dropdowns con hover
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('[data-coreui-toggle="dropdown"]');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    
+    if (button && menu) {
+      let closeTimeout;
+      
+      const openMenu = () => {
+        if (!menu.classList.contains('show')) {
+          button.click();
+        }
+      };
+      
+      const scheduleClose = () => {
+        closeTimeout = setTimeout(() => {
+          if (menu.classList.contains('show')) {
+            button.click();
+          }
+        }, 150);
+      };
+      
+      const cancelClose = () => {
+        clearTimeout(closeTimeout);
+      };
+      
+      dropdown.addEventListener('mouseenter', () => {
+        cancelClose();
+        openMenu();
+      });
+      
+      dropdown.addEventListener('mouseleave', scheduleClose);
+      
+      menu.addEventListener('mouseenter', cancelClose);
+      menu.addEventListener('mouseleave', scheduleClose);
+    }
   });
 });
