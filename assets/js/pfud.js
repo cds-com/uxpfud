@@ -471,3 +471,71 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Scroll to top button
+window.addEventListener('DOMContentLoaded', function() {
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove('d-none');
+      } else {
+        scrollToTopBtn.classList.add('d-none');
+      }
+    });
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+
+// Funciones para cerrar constructor
+function cerrarSinGuardar() {
+  window.close();
+  // Si window.close() no funciona (navegador bloquea el cierre), redirigir
+  setTimeout(function() {
+    window.location.href = 'dashboard.html';
+  }, 100);
+}
+
+function guardarYCerrar() {
+  // Aquí iría la lógica de guardado
+  guardarCambios();
+  // Cerrar después de guardar
+  setTimeout(function() {
+    window.close();
+    // Si window.close() no funciona, redirigir
+    setTimeout(function() {
+      window.location.href = 'dashboard.html';
+    }, 100);
+  }, 500);
+}
+
+function guardarCambios() {
+  // Lógica de guardado (simulada)
+  console.log('Guardando cambios...');
+}
+
+// Toggle para habilitar/deshabilitar edición en offcanvas de detalles
+let isEditMode = false;
+
+function toggleEditMode() {
+  const btn = document.getElementById('toggleEditMode');
+  const inputs = document.querySelectorAll('#offcanvasDetalles input, #offcanvasDetalles select, #offcanvasDetalles textarea');
+  
+  isEditMode = !isEditMode;
+  
+  inputs.forEach(input => {
+    input.disabled = !isEditMode;
+  });
+  
+  if (isEditMode) {
+    btn.innerHTML = '<i class="bi bi-lock me-1"></i>Bloquear Edición';
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add('btn-outline-primary');
+  } else {
+    btn.innerHTML = '<i class="bi bi-pencil me-1"></i>Habilitar Edición';
+    btn.classList.remove('btn-outline-primary');
+    btn.classList.add('btn-outline-secondary');
+  }
+}

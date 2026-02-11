@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
     <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="../../assets/css/pfud-dev.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud-dev.css?v=158" />
     <script src="../../_coreui-base/js/config.js"></script>
     <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
@@ -94,12 +94,12 @@
       <!-- ============================= FIN COLUMNA 1: SIDEBAR ============================= -->
 
       <!-- ============================= COLUMNA 2: CONTENIDO ============================= -->
-      <div class="wrapper d-flex flex-column min-vh-100 flex-grow-1 p-0">
+      <div class="wrapper d-flex flex-column min-vh-100 flex-grow-1 p-0 bg-body">
 
         <!-- ============================= TOP: BARRA SUPERIOR ============================= -->
-        <header class="header header-sticky p-0 mb-4">
-          <div class="w-100 bg-body-tertiary border-bottom">
-            <div class="container-fluid px-4">
+        <header class="header header-sticky p-0 mb-2 border-0">
+          <div class="w-100 bg-white border-bottom">
+            <div class="container-fluid px-5">
               <div class="d-flex flex-row align-items-center justify-content-between gap-2 py-2">
                 
                 <!-- Saludo -->
@@ -126,10 +126,10 @@
                 <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
                   
                   <!-- Botones A- y A+ -->
-                  <button class="btn btn-outline-secondary btn-sm" type="button" title="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)">
+                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" title="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)">
                     <span class="fw-bold">A-</span>
                   </button>
-                  <button class="btn btn-outline-secondary btn-sm" type="button" title="Aumentar tamaño de fuente" onclick="adjustFontSize(1)">
+                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" title="Aumentar tamaño de fuente" onclick="adjustFontSize(1)">
                     <span class="fw-bold">A+</span>
                   </button>
 
@@ -216,9 +216,9 @@
                         <div class="small text-nowrap">+56912345678</div>
                       </li>
                       <li><hr class="dropdown-divider my-0" /></li>
-                      <li class="px-3 py-2">
+                      <li class="px-3 pt-2 pb-1">
                         <a href="mi-perfil.html" class="btn btn-sm btn-outline-primary w-100" title="Ver/actualizar datos">
-                          <span class="small">Ver / Actualizar Datos</span>
+                          Ver / Actualizar Datos
                         </a>
                       </li>
                     </ul>
@@ -240,18 +240,18 @@
         <!-- ============================= FIN TOP ============================= -->
 
         <!-- ============================= TITULO: Breadcrumb, Icono, Título, Botón ============================= -->
-        <div class="container-fluid px-4">
-          <div class="bg-body border rounded-3 p-3 mb-3">
+        <div class="container-fluid px-5">
+          <div class="pfud-header-section">
             <!-- Fila superior: Breadcrumb -->
             <div class="row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="mb-2">
-                  <ol class="breadcrumb my-0 small">
+                  <ol class="breadcrumb my-0">
                     <li class="breadcrumb-item">
-                      <span class="small">Formularios</span>
+                      <span>Formularios</span>
                     </li>
                     <li class="breadcrumb-item active">
-                      <span class="small">Crear Formulario</span>
+                      <span>Crear Formulario</span>
                     </li>
                   </ol>
                 </nav>
@@ -262,10 +262,12 @@
             <div class="row align-items-center">
               <!-- Columna 1: Icono y Título -->
               <div class="col-auto">
-                <div class="d-flex align-items-baseline">
-                  <svg class="me-2" width="28" height="28" fill="currentColor">
-                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-                  </svg>
+                <div class="d-flex align-items-center">
+                  <div class="pfud-icon-circle bg-sidebar-dark">
+                    <svg width="28" height="28" fill="currentColor">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                    </svg>
+                  </div>
                   <h1 class="h2 mb-0">Nuevo Formulario desde Cero</h1>
                 </div>
               </div>
@@ -275,25 +277,25 @@
         <!-- ============================= FIN TITULO ============================= -->
 
         <!-- ============================= CUERPO: Contenido Principal ============================= -->
-        <div class="body flex-grow-1 bg-body-tertiary">
-          <div class="container-fluid px-4">
+        <div class="body flex-grow-1">
+          <div class="container-fluid px-5">
             <div class="row">
               <div class="col-12">
-                <div class="bg-body border rounded-3 p-4">
-                  <div class="row g-4">
-                    <div class="col-12">
-                      <label for="nombreFormularioNuevo" class="form-label fw-semibold text-uppercase small text-body-secondary">
+                <div class="bg-white rounded-3 p-4">
+                  <div class="row g-5">
+                    <div class="col-md-8">
+                      <label for="nombreFormularioNuevo" class="form-label">
                         Nombre del nuevo formulario
                       </label>
-                      <input type="text" class="form-control" id="nombreFormularioNuevo" />
+                      <input type="text" class="form-control" id="nombreFormularioNuevo" placeholder="Ej: Formulario de Permiso de Edificación" />
                     </div>
 
-                    <div class="col-md-6">
-                      <label for="grupoFormularioNuevo" class="form-label fw-semibold text-uppercase small text-body-secondary">
+                    <div class="col-md-4">
+                      <label for="grupoFormularioNuevo" class="form-label">
                         Grupo al que pertenece el formulario
                       </label>
                       <select class="form-select" id="grupoFormularioNuevo">
-                        <option selected value="">Selecciona un Grupo</option>
+                        <option selected value="">Selecciona un grupo</option>
                         <option value="1">1 – Formularios de Permisos de Obra Menor</option>
                         <option value="2">2 – Formularios de Permisos de Edificación</option>
                         <option value="3">3 – Formularios Subdivisión y Urbanización</option>
@@ -304,8 +306,8 @@
                       </select>
                     </div>
 
-                    <div class="col-md-6">
-                      <label for="familiaFormularioNuevo" class="form-label fw-semibold text-uppercase small text-body-secondary">
+                    <div class="col-md-4">
+                      <label for="familiaFormularioNuevo" class="form-label">
                         Familia a la que pertenece el formulario
                       </label>
                       <select class="form-select" id="familiaFormularioNuevo">
@@ -317,16 +319,16 @@
                       </select>
                     </div>
 
-                    <div class="col-md-6">
-                      <label for="normaFormularioNuevo" class="form-label fw-semibold text-uppercase small text-body-secondary">
-                        Indica la Norma que justifica este documento.
+                    <div class="col-md-4">
+                      <label for="normaFormularioNuevo" class="form-label">
+                        Indica la Norma que justifica este documento
                       </label>
-                      <input type="text" class="form-control" id="normaFormularioNuevo" />
+                      <input type="text" class="form-control" id="normaFormularioNuevo" placeholder="Ej: Ley 20.671" />
                     </div>
 
-                    <div class="col-md-6">
-                      <label class="form-label fw-semibold text-uppercase small text-body-secondary">Vigencia del formulario</label>
-                      <div class="d-flex align-items-center gap-3">
+                    <div class="col-md-4">
+                      <label class="form-label">Vigencia del formulario</label>
+                      <div class="d-flex align-items-start gap-3">
                         <div class="form-check">
                           <input class="form-check-input" type="checkbox" id="vigenciaFija" />
                           <label class="form-check-label" for="vigenciaFija">Formulario tiene vigencia fija.</label>
@@ -341,18 +343,18 @@
                     </div>
                   </div>
 
-                  <div class="alert alert-info mt-4 mb-4">
+                  <div class="alert alert-info mt-5 mb-4">
                     <strong>Importante:</strong>
                     Al hacer click en Crear formulario, abriremos el editor de formularios en una ventana nueva.
                   </div>
 
                   <div class="d-flex gap-2 justify-content-end mt-4 pt-3 border-top">
-                    <a href="crear-formulario.html" class="btn btn-sm small btn-secondary" title="Volver">
+                    <a href="crear-formulario.html" class="btn btn-secondary" title="Volver">
                       Volver
                     </a>
                     <button
                       type="button"
-                      class="btn btn-sm small btn-primary"
+                      class="btn btn-primary"
                       onclick="window.open('builder-constructor.html', '_blank')"
                     >
                       Crear formulario
@@ -369,7 +371,10 @@
         <footer class="footer px-4">
           <div class="d-flex justify-content-between align-items-center w-100 small">
             <div class="small">MINVU © 2026 MINISTERIO DE VIVIENDA Y URBANISMO</div>
-            <div>
+            <div class="d-flex gap-2">
+              <span class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center">
+                <span class="small" id="fontSizeIndicator">100%</span>
+              </span>
               <span class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center">
                 <span class="small">VERSIÓN 2.1</span>
               </span>

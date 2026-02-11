@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
     <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="../../assets/css/pfud-dev.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud-dev.css?v=158" />
     <script src="../../_coreui-base/js/config.js"></script>
     <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
@@ -94,12 +94,12 @@
       <!-- ============================= FIN COLUMNA 1: SIDEBAR ============================= -->
 
       <!-- ============================= COLUMNA 2: CONTENIDO ============================= -->
-      <div class="wrapper d-flex flex-column min-vh-100 flex-grow-1 p-0">
+      <div class="wrapper d-flex flex-column min-vh-100 flex-grow-1 p-0 bg-body">
 
         <!-- ============================= TOP: BARRA SUPERIOR ============================= -->
-        <header class="header header-sticky p-0 mb-4">
-          <div class="w-100 bg-body-tertiary border-bottom">
-            <div class="container-fluid px-4">
+        <header class="header header-sticky p-0 mb-2 border-0">
+          <div class="w-100 bg-white border-bottom">
+            <div class="container-fluid px-5">
               <div class="d-flex flex-row align-items-center justify-content-between gap-2 py-2">
                 
                 <!-- Saludo -->
@@ -216,9 +216,9 @@
                         <div class="small text-nowrap">+56912345678</div>
                       </li>
                       <li><hr class="dropdown-divider my-0" /></li>
-                      <li class="px-3 py-2">
+                      <li class="px-3 pt-2 pb-1">
                         <a href="mi-perfil.html" class="btn btn-sm btn-outline-primary w-100" title="Ver/actualizar datos">
-                          <span class="small">Ver / Actualizar Datos</span>
+                          Ver / Actualizar Datos
                         </a>
                       </li>
                     </ul>
@@ -240,13 +240,13 @@
         <!-- ============================= FIN TOP ============================= -->
 
         <!-- ============================= TITULO: Breadcrumb, Icono, Título, Botón ============================= -->
-        <div class="container-fluid px-4">
-          <div class="bg-body border rounded-3 p-3 mb-3">
+        <div class="container-fluid px-5">
+          <div class="pfud-header-section">
             <!-- Fila superior: Breadcrumb -->
             <div class="row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="mb-2">
-                  <ol class="breadcrumb my-0 small">
+                  <ol class="breadcrumb my-0">
                     <li class="breadcrumb-item active">Dashboard</li>
                   </ol>
                 </nav>
@@ -257,10 +257,12 @@
             <div class="row align-items-center">
               <!-- Columna 1: Icono y Título -->
               <div class="col-auto">
-                <div class="d-flex align-items-baseline">
-                  <svg class="me-2" width="28" height="28" fill="currentColor">
-                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
-                  </svg>
+                <div class="d-flex align-items-center">
+                  <div class="pfud-icon-circle bg-sidebar-dark">
+                    <svg width="28" height="28" fill="currentColor">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+                    </svg>
+                  </div>
                   <h1 class="h2 mb-0">Dashboard</h1>
                 </div>
               </div>
@@ -283,25 +285,25 @@
         <!-- ============================= FIN TITULO ============================= -->
 
         <!-- ============================= CUERPO: Contenido Principal ============================= -->
-        <div class="body flex-grow-1 bg-body-tertiary">
-          <div class="container-fluid px-4">
+        <div class="body flex-grow-1">
+          <div class="container-fluid px-5">
 
             <!-- Métricas KPI -->
-            <div class="row g-3 mb-4">
+            <div class="row g-3 mb-5">
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="static-counterPublicados">0</span>
+                      <span class="pfud-kpi-number" id="static-counterPublicados">0</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
+                      <span class="pfud-kpi-title d-block">Formularios</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">No hay datos</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">No hay datos</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-success opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
                       </svg>
                     </div>
@@ -310,19 +312,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="static-counterProceso">0</span>
+                      <span class="pfud-kpi-number" id="static-counterProceso">0</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
+                      <span class="pfud-kpi-title d-block">Formularios</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">No hay datos</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">No hay datos</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-warning opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
                       </svg>
                     </div>
@@ -331,19 +333,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="static-counterObservaciones">0</span>
+                      <span class="pfud-kpi-number" id="static-counterObservaciones">0</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Observaciones</span>
+                      <span class="pfud-kpi-title d-block">Observaciones</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">No hay datos</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">No hay datos</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-danger opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
                       </svg>
                     </div>
@@ -352,19 +354,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="static-counterCiudadanos">0</span>
+                      <span class="pfud-kpi-number" id="static-counterCiudadanos">0</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Ciudadanos</span>
+                      <span class="pfud-kpi-title d-block">Ciudadanos</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">No hay datos</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">No hay datos</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-info opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-people"></use>
                       </svg>
                     </div>
@@ -373,19 +375,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="static-counterSolicitudes">0</span>
+                      <span class="pfud-kpi-number" id="static-counterSolicitudes">0</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Solicitudes</span>
+                      <span class="pfud-kpi-title d-block">Solicitudes</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">No hay datos</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">No hay datos</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-primary opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-inbox"></use>
                       </svg>
                     </div>
@@ -394,19 +396,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="static-counterTiempo">0</span>
+                      <span class="pfud-kpi-number" id="static-counterTiempo">0</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">TIEMPO PROMEDIO</span>
+                      <span class="pfud-kpi-title d-block">TIEMPO PROMEDIO</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">No hay datos</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">No hay datos</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-secondary opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
                       </svg>
                     </div>
@@ -416,28 +418,30 @@
             </div>
 
             <!-- Tarjetas de Formularios -->
-            <div class="row g-4 mb-4">
+            <div class="row g-5 mb-5">
               
               <!-- Formularios en creación -->
               <div class="col-12 col-md-6">
-                <div class="bg-body border rounded-3">
-                  <div class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Formularios en creación</div>
-                    <span class="badge bg-secondary">0 Formularios</span>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header p-3 d-flex justify-content-between align-items-center">
+                    <div class="pfud-section-title">Formularios en creación</div>
+                    <span class="badge badge-primary">0 Formularios</span>
                   </div>
                   <div class="p-0">
-                    <div class="alert alert-info d-flex align-items-center m-3" role="alert">
+                    <div class="alert alert-info alert-dismissible fade show d-flex align-items-start m-3" role="alert">
                       <svg class="icon icon-xl me-3 flex-shrink-0">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
                       </svg>
                       <div>No tienes formularios En Creación. Para crear un nuevo formulario, <a href="#">haz click aquí</a>.</div>
+                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <div class="alert alert-danger d-flex align-items-center m-3" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade show d-flex align-items-start m-3" role="alert">
                       <svg class="icon icon-xl me-3 flex-shrink-0">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
                       </svg>
                       <div>No se ha podido obtener el listado de formularios En Creación.<br>
                         Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.</div>
+                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                     </div>
                   </div>
                 </div>
@@ -445,24 +449,26 @@
 
               <!-- Pendientes de Aprobación -->
               <div class="col-12 col-md-6">
-                <div class="bg-body border rounded-3">
-                  <div class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Pendientes de Aprobación</div>
-                    <span class="badge bg-warning">0 Formularios</span>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header p-3 d-flex justify-content-between align-items-center">
+                    <div class="pfud-section-title">Pendientes de Aprobación</div>
+                    <span class="badge badge-primary">0 Formularios</span>
                   </div>
                   <div class="p-0">
-                    <div class="alert alert-info d-flex align-items-center m-3" role="alert">
+                    <div class="alert alert-info alert-dismissible fade show d-flex align-items-start m-3" role="alert">
                       <svg class="icon icon-xl me-3 flex-shrink-0">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
                       </svg>
                       <div>Excelente, no tienes formularios Pendientes de Aprobación. Si quieres ver los formularios en creación, <a href="#">haz click aquí</a>.</div>
+                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <div class="alert alert-danger d-flex align-items-center m-3" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade show d-flex align-items-start m-3" role="alert">
                       <svg class="icon icon-xl me-3 flex-shrink-0">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
                       </svg>
                       <div>No se ha podido obtener el listado de formularios Pendientes de Aprobación.<br>
                         Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.</div>
+                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                     </div>
                   </div>
                 </div>
@@ -470,27 +476,29 @@
 
             </div>
 
-            <div class="row g-4 mb-4">
+            <div class="row g-5 mb-5">
               <!-- Pendientes de Publicación -->
               <div class="col-12 col-md-6">
-                <div class="bg-body border rounded-3">
-                  <div class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Formularios pendientes de publicación</div>
-                    <span class="badge bg-secondary">0 Formularios</span>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header p-3 d-flex justify-content-between align-items-center">
+                    <div class="pfud-section-title">Pendientes de Publicación</div>
+                    <span class="badge badge-primary">0 Formularios</span>
                   </div>
                   <div class="p-0">
-                    <div class="alert alert-info d-flex align-items-center m-3" role="alert">
+                    <div class="alert alert-info alert-dismissible fade show d-flex align-items-start m-3" role="alert">
                       <svg class="icon icon-xl me-3 flex-shrink-0">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
                       </svg>
                       <div>Excelente, no tienes formularios Pendientes de Publicación. Para crear un nuevo formulario, <a href="#">haz click aquí</a>.</div>
+                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <div class="alert alert-danger d-flex align-items-center m-3" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade show d-flex align-items-start m-3" role="alert">
                       <svg class="icon icon-xl me-3 flex-shrink-0">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
                       </svg>
                       <div>No se ha podido obtener el listado de formularios Pendientes de Publicación.<br>
                         Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.</div>
+                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                     </div>
                   </div>
                 </div>
@@ -498,23 +506,25 @@
 
               <!-- Publicados -->
               <div class="col-12 col-md-6">
-                <div class="bg-body border rounded-3">
-                  <div class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Formularios publicados</div>
-                    <span class="badge bg-info">0 Formularios</span>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header p-3 d-flex justify-content-between align-items-center">
+                    <div class="pfud-section-title">Publicados</div>
+                    <span class="badge badge-primary">0 Formularios</span>
                   </div>
                   <div class="p-0">
-                    <div class="alert alert-info d-flex align-items-center m-3" role="alert">
+                    <div class="alert alert-info alert-dismissible fade show d-flex align-items-start m-3" role="alert">
                       <svg class="icon icon-xl me-3 flex-shrink-0">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
                       </svg>
                       <div>No hay formularios Publicados. Para crear un nuevo formulario, presiona el botón Crear nuevo Formulario</div>
+                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <div class="alert alert-danger d-flex align-items-center m-3" role="alert">
+                    <div class="alert alert-danger alert-dismissible fade show d-flex align-items-start m-3" role="alert">
                       <svg class="icon icon-xl me-3 flex-shrink-0">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
                       </svg>
                       <div>No se ha podido obtener el listado de formularios publicados. Reinténtalo nuevamente en unos minutos. Si el problema persiste, contacta al equipo de soporte Minvu en el menú Ayuda.</div>
+                      <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                     </div>
                   </div>
                 </div>
@@ -529,7 +539,10 @@
         <footer class="footer px-4">
           <div class="d-flex justify-content-between align-items-center w-100 small">
             <div class="small">MINVU © 2026 MINISTERIO DE VIVIENDA Y URBANISMO</div>
-            <div>
+            <div class="d-flex gap-2">
+              <span class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center">
+                <span class="small" id="fontSizeIndicator">100%</span>
+              </span>
               <span class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center">
                 <span class="small">VERSIÓN 2.1</span>
               </span>
@@ -619,7 +632,7 @@
         
         modalDialog.classList.add('modal-xl');
         modalTitle.textContent = 'Previsualización del Formulario';
-        modalBody.innerHTML = '<iframe src="previsualizar-modal.html" style="width: 100%; height: 70vh; border: none;"></iframe>';
+        modalBody.innerHTML = '<iframe src="previsualizar-modal.html" class="pfud-modal-iframe"></iframe>';
         modalFooter.style.display = 'none';
       }
       

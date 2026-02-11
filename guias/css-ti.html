@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PFUD MINVU TI – Componentes Utilizados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../_coreui-base/css/style.min.css" />
+    <link rel="stylesheet" href="../assets/css/pfud-minvu-general.css" />
+    <style>
+      :root {
+        --color-text: #222;
+        --color-muted: #637183;
+        --font-main: system-ui, sans-serif;
+        --font-size-base: 0.97rem;
+        --font-weight-light: 300;
+        --font-weight-regular: 400;
+        --font-weight-bold: 700;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        font-family: var(--font-main);
+        font-weight: var(--font-weight-light);
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+        color: var(--color-text);
+      }
+      /* Menú lateral */
+      .sidebar a {
+        position: relative;
+        color: #6b6b6b;
+        font-weight: 400;
+        text-decoration: none;
+      }
+      .sidebar a::before {
+        content: "›";
+        font-size: 12px;
+        margin-right: 6px;
+        opacity: 0.4;
+      }
+      .sidebar a.disabled {
+        opacity: 0.4;
+        pointer-events: none;
+        text-decoration: line-through;
+      }
+      /* Estado activo por target */
+      body:has(#inicio:target) .sidebar a[href="#inicio"],
+      body:has(#tipografia:target) .sidebar a[href="#tipografia"],
+      body:has(#colores:target) .sidebar a[href="#colores"],
+      body:has(#formularios:target) .sidebar a[href="#formularios"],
+      body:has(#checkbox:target) .sidebar a[href="#checkbox"],
+      body:has(#radiobutton:target) .sidebar a[href="#radiobutton"],
+      body:has(#tooltip:target) .sidebar a[href="#tooltip"],
+      body:has(#botones:target) .sidebar a[href="#botones"],
+      body:has(#cards:target) .sidebar a[href="#cards"],
+      body:has(#chips:target) .sidebar a[href="#chips"],
+      body:has(#estados:target) .sidebar a[href="#estados"],
+      body:has(#componentes-pfud:target) .sidebar a[href="#componentes-pfud"] {
+        color: #1e1e1e;
+        font-weight: 600;
+      }
+      body:has(#inicio:target) .sidebar a[href="#inicio"]::before,
+      body:has(#tipografia:target) .sidebar a[href="#tipografia"]::before,
+      body:has(#colores:target) .sidebar a[href="#colores"]::before,
+      body:has(#formularios:target) .sidebar a[href="#formularios"]::before,
+      body:has(#checkbox:target) .sidebar a[href="#checkbox"]::before,
+      body:has(#radiobutton:target) .sidebar a[href="#radiobutton"]::before,
+      body:has(#tooltip:target) .sidebar a[href="#tooltip"]::before,
+      body:has(#botones:target) .sidebar a[href="#botones"]::before,
+      body:has(#cards:target) .sidebar a[href="#cards"]::before,
+      body:has(#chips:target) .sidebar a[href="#chips"]::before,
+      body:has(#estados:target) .sidebar a[href="#estados"]::before,
+      body:has(#componentes-pfud:target) .sidebar a[href="#componentes-pfud"]::before {
+        opacity: 1;
+      }
+      /* Estado inicial */
+      body:not(:has(:target)) .sidebar a[href="#inicio"] {
+        color: #1e1e1e;
+        font-weight: 600;
+      }
+      body:not(:has(:target)) .sidebar a[href="#inicio"]::before {
+        opacity: 1;
+      }
+      .layout {
+        display: flex;
+        min-height: 100vh;
+      }
+      .sidebar {
+        width: 220px;
+        border-right: 1px solid #ececec;
+        padding: 32px 16px 0 16px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        background: #fafbfd;
+      }
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .sidebar li {
+        margin-bottom: 10px;
+      }
+      .sidebar a {
+        text-decoration: none;
+        color: #333;
+        font-size: 0.92rem;
+        font-weight: var(--font-weight-light);
+      }
+      .main-content {
+        flex: 1;
+        padding: 32px;
+        padding-top: 0;
+        background: #fafbfd;
+      }
+      .section-demo {
+        margin-bottom: 54px;
+      }
+      .section-title {
+        font-size: 1.28rem;
+        font-weight: var(--font-weight-bold);
+        margin: 2.2em 0 0.8em 0;
+      }
+      .section-desc {
+        font-size: 14px;
+        line-height: 1.28;
+        font-weight: 400;
+        color: #000000;
+        margin-bottom: 32px;
+      }
+      .example-box {
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 32px;
+        background: #fff;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .disabled-section {
+        opacity: 0.5;
+        pointer-events: none;
+        position: relative;
+      }
+      hr {
+        margin: 40px 0;
+        border: 0;
+        border-top: 1px solid #e0e0e0;
+      }
+      .pfud-meta {
+        font-size: 14px;
+        line-height: 1.28;
+        font-weight: 400;
+        color: #000000;
+      }
+      @media (max-width: 900px) {
+        .layout {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid #ececec;
+          height: auto;
+        }
+        .main-content {
+          padding: 22px 12px 40px 12px;
+          padding-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body id="inicio">
+    <div style="width: 100vw; background: #f5f8fb; border-bottom: 1px solid #e0e0e0; padding: 40px 0 28px 0; margin: 0">
+      <div style="padding-left: 252px; padding-right: 32px">
+        <div class="page-title" style="margin-top: 0; margin-bottom: 0.2em; font-size: 2rem; font-weight: 500">
+          PFUD TI — Componentes utilizados en el proyecto
+        </div>
+        <div class="page-desc pfud-meta" style="max-width: none; margin-bottom: 0; font-size: 0.91rem; color: #6b7280">
+          Guía visual de los componentes y estilos utilizados en hito1/TI. Los componentes marcados como "NO USADO EN TI" están presentes en la guía general pero no se utilizan en este proyecto específico.
+        </div>
+      </div>
+    </div>
+    <div class="layout">
+      <nav class="sidebar" aria-label="Navegación de componentes">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#tipografia">Tipografía</a></li>
+          <li><a href="#colores">Colores</a></li>
+          <li><a href="#formularios">Formularios base</a></li>
+          <li><a href="#checkbox">Checkbox</a></li>
+          <li><a href="#radiobutton" class="disabled">Radiobutton ✗</a></li>
+          <li><a href="#tooltip" class="disabled">Tooltip ✗</a></li>
+          <li><a href="#botones">Botones</a></li>
+          <li><a href="#cards">Cards</a></li>
+          <li><a href="#chips">Chips / Badges</a></li>
+          <li><a href="#upload" class="disabled">Upload archivo ✗</a></li>
+          <li><a href="#estados">Estados generales</a></li>
+          <li><a href="#componentes-pfud">Componentes PFUD</a></li>
+          <li><a href="#buscador" class="disabled">- Buscador ✗</a></li>
+          <li><a href="#separador" class="disabled">- Separador ✗</a></li>
+          <li><a href="#tabla">- Tabla</a></li>
+          <li><a href="#glosario" class="disabled">- Glosario ✗</a></li>
+          <li><a href="#dropdown-siglas" class="disabled">- Dropdown Siglas ✗</a></li>
+          <li><a href="#collapse-legal" class="disabled">- Collapse Legal ✗</a></li>
+          <li><a href="#alerts">- Alerts</a></li>
+          <li><a href="#pagination" class="disabled">- Pagination ✗</a></li>
+          <li><a href="#breadcrumb">- Breadcrumb</a></li>
+          <li><a href="#forms-autosizing" class="disabled">- Forms Auto-sizing ✗</a></li>
+          <li><a href="#comprobante" class="disabled">- Comprobante ✗</a></li>
+          <li><a href="#stepper" class="disabled">- Stepper ✗</a></li>
+          <li><a href="#snackbar" class="disabled">- Snackbar ✗</a></li>
+          <li><a href="#switches" class="disabled">- Switches ✗</a></li>
+          <li><a href="#skeleton" class="disabled">- Skeleton ✗</a></li>
+        </ul>
+      </nav>
+      <main class="main-content" style="padding-top: 0">
+        <!-- Tipografía -->
+        <section class="section-demo" id="tipografia">
+          <div class="section-title">Tipografía</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            La tipografía define la jerarquía visual y la legibilidad del sistema PFUD. Los estilos presentados
+            corresponden a los headings realmente utilizados en TI. Fuentes:
+            <strong>Roboto Slab</strong>
+            y
+            <strong>Roboto Sans</strong>
+            .
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+              margin-bottom: 42px;
+            "
+          >
+            <div
+              style="
+                display: grid;
+                grid-template-columns: minmax(110px, 380px) minmax(230px, 1fr);
+                align-items: center;
+                padding: 10px 0 10px 20px;
+                border-bottom: 1px solid #eee;
+              "
+            >
+              <h2 class="h2" style="margin: 0">Heading-L (h2)</h2>
+              <span class="pfud-meta">
+                <strong>Fuente:</strong>
+                Roboto Slab
+                <br />
+                font-size: 36px (2.25rem) / line-height: 1.36
+                <br />
+                párrafo: 18px (1.15rem) / font-weight: Medium 500
+                <br />
+                <strong>Clase CoreUI:</strong>
+                .h2, h2
+                <br />
+                <strong>Uso en TI:</strong>
+                &lt;h1 class="h2"&gt; Dashboard, Builder, Crear Formulario
+              </span>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: minmax(110px, 380px) minmax(230px, 1fr);
+                align-items: center;
+                padding: 10px 0 10px 20px;
+                border-bottom: 1px solid #eee;
+              "
+            >
+              <h3 class="h3" style="margin: 0">Heading-M (h3)</h3>
+              <span class="pfud-meta">
+                <strong>Fuente:</strong>
+                Roboto Slab
+                <br />
+                font-size: 31px (2rem) / line-height: 1.25
+                <br />
+                párrafo: 18px (1.15rem) / font-weight: Medium 500
+                <br />
+                <strong>Clase CoreUI:</strong>
+                .h3, h3
+                <br />
+                <strong>Uso en TI:</strong>
+                &lt;h1 class="h3"&gt; Mapa del Sitio
+              </span>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: minmax(110px, 380px) minmax(230px, 1fr);
+                align-items: center;
+                padding: 10px 0 10px 20px;
+              "
+            >
+              <h5 class="h5" style="margin: 0">Heading-XS (h5)</h5>
+              <span class="pfud-meta">
+                <strong>Fuente:</strong>
+                Roboto Slab
+                <br />
+                font-size: 20px (1.25rem) / line-height: 1.2
+                <br />
+                párrafo: 14px (0.9rem) / font-weight: Medium 500
+                <br />
+                <strong>Clase CoreUI:</strong>
+                .h5, h5
+                <br />
+                <strong>Uso en TI:</strong>
+                &lt;h2 class="h5"&gt; Portal de Formularios, &lt;h5&gt; Nombre formulario builder, Títulos modales
+              </span>
+            </div>
+          </div>
+          <div class="pfud-meta" style="margin-bottom: 12px; color: #637183">
+            <strong>Texto base:</strong>
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div
+              style="
+                display: grid;
+                grid-template-columns: minmax(110px, 380px) minmax(230px, 1fr);
+                align-items: center;
+                padding: 10px 0 10px 20px;
+                border-bottom: 1px solid #eee;
+              "
+            >
+              <span class="text-base">Texto base de párrafo</span>
+              <span class="pfud-meta">
+                <strong>Fuente:</strong>
+                Roboto Sans
+                <br />
+                font-size: 16px (1rem) / line-height: 1.6
+                <br />
+                font-weight: Regular 400
+                <br />
+                <strong>Uso en TI:</strong>
+                Contenido general, labels, descripciones
+              </span>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: minmax(110px, 380px) minmax(230px, 1fr);
+                align-items: center;
+                padding: 10px 0 10px 20px;
+                border-bottom: 1px solid #eee;
+              "
+            >
+              <span class="text-body">Texto body (text-body)</span>
+              <span class="pfud-meta">
+                <strong>Fuente:</strong>
+                Roboto Sans
+                <br />
+                font-size: 16px (1rem) / line-height: 1.6
+                <br />
+                font-weight: Regular 400
+                <br />
+                <strong>Clase CoreUI:</strong>
+                .text-body
+                <br />
+                <strong>Uso en TI:</strong>
+                Headers, títulos "Iniciar Sesión"
+              </span>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: minmax(110px, 380px) minmax(230px, 1fr);
+                align-items: center;
+                padding: 10px 0 10px 20px;
+                border-bottom: 1px solid #eee;
+              "
+            >
+              <small class="text-body-secondary">Texto secundario (text-body-secondary)</small>
+              <span class="pfud-meta">
+                <strong>Fuente:</strong>
+                Roboto Sans
+                <br />
+                font-size: 14px / line-height: 1.28
+                <br />
+                font-weight: Regular 400 / color: secundario
+                <br />
+                <strong>Clase CoreUI:</strong>
+                .text-body-secondary
+                <br />
+                <strong>Uso en TI:</strong>
+                "Hola, Nombre", separadores, descripciones perfil, KPI descripciones
+              </span>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: minmax(110px, 380px) minmax(230px, 1fr);
+                align-items: center;
+                padding: 10px 0 10px 20px;
+                border-bottom: 1px solid #eee;
+              "
+            >
+              <small class="text-muted">Texto muted (text-muted)</small>
+              <span class="pfud-meta">
+                <strong>Fuente:</strong>
+                Roboto Sans
+                <br />
+                font-size: 14px / line-height: 1.28
+                <br />
+                font-weight: Regular 400 / color: #97989a
+                <br />
+                <strong>Clase CoreUI:</strong>
+                .text-muted
+                <br />
+                <strong>Uso en TI:</strong>
+                Sitemap (nombres de archivos), textos de ayuda, labels secundarias
+              </span>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: minmax(110px, 380px) minmax(230px, 1fr);
+                align-items: center;
+                padding: 10px 0 10px 20px;
+              "
+            >
+              <small class="text-secondary">Texto secondary (text-secondary)</small>
+              <span class="pfud-meta">
+                <strong>Fuente:</strong>
+                Roboto Sans
+                <br />
+                font-size: 14px / line-height: 1.28
+                <br />
+                font-weight: Regular 400 / color: secundario
+                <br />
+                <strong>Clase CoreUI:</strong>
+                .text-secondary
+                <br />
+                <strong>Uso en TI:</strong>
+                Botones de dropdown footer, textos de ayuda
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Colores -->
+        <section class="section-demo" id="colores">
+          <div class="section-title">Colores</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            Paleta institucional MINVU aplicada en el proyecto TI. Solo se muestran los colores utilizados.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px">
+              <div style="display: flex; align-items: center; gap: 16px">
+                <div
+                  class="color-sample bg-primary"
+                  style="width: 42px; height: 42px; border-radius: 6px; border: 1px solid #e0e0e0"
+                ></div>
+                <div>
+                  <div>
+                    Primario
+                    <br />
+                    <span class="pfud-meta">.bg-primary</span>
+                  </div>
+                  <div class="pfud-meta">#0051A8</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px">
+                <div
+                  class="color-sample bg-secondary"
+                  style="width: 42px; height: 42px; border-radius: 6px; border: 1px solid #e0e0e0"
+                ></div>
+                <div>
+                  <div>
+                    Secundario
+                    <br />
+                    <span class="pfud-meta">.bg-secondary</span>
+                  </div>
+                  <div class="pfud-meta">#98AABB</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px">
+                <div
+                  class="color-sample bg-danger"
+                  style="width: 42px; height: 42px; border-radius: 6px; border: 1px solid #e0e0e0"
+                ></div>
+                <div>
+                  <div>
+                    Peligro
+                    <br />
+                    <span class="pfud-meta">.bg-danger</span>
+                  </div>
+                  <div class="pfud-meta">#E55353</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px">
+                <div
+                  class="color-sample bg-light"
+                  style="width: 42px; height: 42px; border-radius: 6px; border: 1px solid #e0e0e0"
+                ></div>
+                <div>
+                  <div>
+                    Blanco
+                    <br />
+                    <span class="pfud-meta">.bg-light</span>
+                  </div>
+                  <div class="pfud-meta">#FFFFFF</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px">
+                <div
+                  class="color-sample bg-dark"
+                  style="width: 42px; height: 42px; border-radius: 6px; border: 1px solid #e0e0e0"
+                ></div>
+                <div>
+                  <div>
+                    Negro
+                    <br />
+                    <span class="pfud-meta">.bg-dark</span>
+                  </div>
+                  <div class="pfud-meta">#212631</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Formularios base -->
+        <section class="section-demo" id="formularios">
+          <div class="section-title">Formularios base</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            Campos de formulario utilizados en la interfaz TI: texto, contraseña, búsqueda, fecha y selección.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px">
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">Campo de texto</div>
+                <div class="example mb-3">
+                  <input type="text" class="form-control" placeholder="Ingrese texto" />
+                </div>
+                <p class="pfud-meta">.form-control[type=text]</p>
+              </section>
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">Campo de contraseña</div>
+                <div class="example mb-3">
+                  <input type="password" class="form-control" placeholder="Contraseña" />
+                </div>
+                <p class="pfud-meta">.form-control[type=password]</p>
+              </section>
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">Campo de búsqueda</div>
+                <div class="example mb-3">
+                  <input type="search" class="form-control form-control-sm" placeholder="Buscar campos" />
+                </div>
+                <p class="pfud-meta">.form-control.form-control-sm[type=search]</p>
+              </section>
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">Campo de fecha</div>
+                <div class="example mb-3">
+                  <input type="date" class="form-control" />
+                </div>
+                <p class="pfud-meta">.form-control[type=date]</p>
+              </section>
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">Lista desplegable</div>
+                <div class="example mb-3">
+                  <select class="form-select">
+                    <option selected>Seleccione una opción</option>
+                    <option>Opción 1</option>
+                    <option>Opción 2</option>
+                  </select>
+                </div>
+                <p class="pfud-meta">.form-select</p>
+              </section>
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">Campo deshabilitado</div>
+                <div class="example mb-3">
+                  <input type="text" class="form-control" placeholder="Deshabilitado" disabled />
+                </div>
+                <p class="pfud-meta">.form-control:disabled</p>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Checkbox -->
+        <section class="section-demo" id="checkbox">
+          <div class="section-title">Checkbox</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            Componentes de selección múltiple utilizados en formularios de creación TI.
+          </div>
+          <div style="border: 1px solid #e0e0e0; border-radius: 6px; padding: 32px; background: #fff">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 40px">
+              <div style="display: grid; grid-template-columns: 20px 1fr; gap: 12px">
+                <input type="checkbox" class="form-check-input" />
+                <div>
+                  <div class="pfud-meta">Checkbox por defecto</div>
+                  <div class="pfud-meta">.form-check</div>
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 20px 1fr; gap: 12px">
+                <input type="checkbox" class="form-check-input" checked />
+                <div>
+                  <div class="pfud-meta">Checkbox activo</div>
+                  <div class="pfud-meta">checked</div>
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 20px 1fr; gap: 12px">
+                <input type="checkbox" class="form-check-input" disabled />
+                <div>
+                  <div class="pfud-meta">Checkbox deshabilitado</div>
+                  <div class="pfud-meta">disabled</div>
+                </div>
+              </div>
+            </div>
+            <div style="padding: 20px; border: 1px solid #dcdfe3; border-radius: 6px">
+              <div class="pfud-meta" style="margin-bottom: 16px">Ejemplo de uso en TI: Crear formulario</div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check-ti" />
+                <label class="form-check-label" for="check-ti">Formulario tiene vigencia fija</label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Radio Button - DISABLED -->
+        <section class="section-demo disabled-section" id="radiobutton">
+          <div class="section-title">Radio Button</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            No utilizado en el proyecto TI. Los radiobuttons no aparecen en ningún archivo de hito1/TI.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px">
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">Radio buttons básicos</div>
+                <div class="example mb-3">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="demo_radio" id="radio1" />
+                    <label class="form-check-label" for="radio1">Opción 1</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="demo_radio" id="radio2" checked />
+                    <label class="form-check-label" for="radio2">Opción 2</label>
+                  </div>
+                </div>
+                <p class="pfud-meta">.form-check .form-check-input[type=radio]</p>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Tooltip - DISABLED -->
+        <section class="section-demo disabled-section" id="tooltip">
+          <div class="section-title">Tooltip</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            No utilizado en el proyecto TI. El atributo data-coreui-toggle="tooltip" no aparece en ningún archivo.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 58px 32px 32px 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div class="d-flex flex-wrap">
+              <button
+                type="button"
+                class="btn btn-outline"
+                data-coreui-toggle="tooltip"
+                data-coreui-placement="top"
+                title="Tooltip superior"
+                style="margin-right: 48px; margin-bottom: 32px"
+              >
+                Tooltip arriba
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline"
+                data-coreui-toggle="tooltip"
+                data-coreui-placement="bottom"
+                title="Tooltip inferior"
+                style="margin-right: 48px; margin-bottom: 32px"
+              >
+                Tooltip abajo
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Botones -->
+        <section class="section-demo" id="botones">
+          <div class="section-title">Botones</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            Elementos de acción directa con estados y jerarquías definidas. Solo se muestran las variantes utilizadas en TI.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div class="pfud-meta" style="margin-bottom: 12px">
+              Botones sólidos: Acción principal y secundaria, colores institucionales.
+            </div>
+            <button class="btn btn-primary">Primario</button>
+            <button class="btn btn-secondary">Secundario</button>
+            <button class="btn btn-danger">Peligro</button>
+            <hr />
+            <div class="pfud-meta" style="margin-bottom: 12px">
+              Botones outline: Versión alternativa sin relleno de fondo.
+            </div>
+            <button class="btn btn-outline-primary">Outline Primario</button>
+            <button class="btn btn-outline-secondary">Outline Secundario</button>
+            <hr />
+            <div class="pfud-meta" style="margin-bottom: 12px">
+              Botones de tamaño: Ejemplo de variante pequeña (btn-sm) utilizada en builder.
+            </div>
+            <button class="btn btn-primary btn-sm">Pequeño</button>
+            <hr />
+            <div class="pfud-meta" style="margin-bottom: 12px">
+              Botones con iconos: Utilizados en builder-constructor para acciones principales.
+            </div>
+            <button class="btn btn-primary btn-sm">
+              <svg class="me-1" width="16" height="16" fill="currentColor">
+                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-save"></use>
+              </svg>
+              Guardar y continuar
+            </button>
+            <button class="btn btn-outline-primary btn-sm" style="margin-left: 8px">
+              <svg class="me-1" width="16" height="16" fill="currentColor">
+                <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check"></use>
+              </svg>
+              Solicitar aprobación
+            </button>
+            <hr />
+            <div class="pfud-meta" style="margin-bottom: 12px">
+              Botones especiales: Link, Ghost y Close utilizados en TI.
+            </div>
+            <button class="btn btn-link">Link</button>
+            <button class="btn btn-ghost-secondary">Ghost Secondary</button>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Cards -->
+        <section class="section-demo" id="cards">
+          <div class="section-title">Cards</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            Contenedores visuales con agrupación de contenido y acciones relacionadas. Utilizados en dashboard y vistas principales.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px">
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">
+                  Card con section-header. Uso en dashboard TI.
+                </div>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header" style="padding: 0.75rem 1rem">
+                    <div class="pfud-section-title">Formularios en creación</div>
+                  </div>
+                  <div style="padding: 1rem">
+                    <p class="mb-0">Contenido de la card</p>
+                  </div>
+                </div>
+                <p class="pfud-meta">.bg-white .section-header .pfud-section-title</p>
+              </section>
+              <section class="mb-5">
+                <div class="pfud-meta" style="margin-bottom: 4px">
+                  Card KPI. Uso para números destacados.
+                </div>
+                <div class="bg-white rounded-3 h-100">
+                  <div style="padding: 1.5rem">
+                    <span class="pfud-kpi-number">24</span>
+                    <span class="pfud-kpi-title d-block">Formularios</span>
+                    <span class="pfud-kpi-desc text-body-secondary d-block">Publicados</span>
+                  </div>
+                </div>
+                <p class="pfud-meta">.pfud-kpi-number .pfud-kpi-title .pfud-kpi-desc</p>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Badges -->
+        <section class="section-demo" id="chips">
+          <div class="section-title">Chips / Badges</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            Indicadores visuales compactos que representan estados, códigos de formulario y filtros.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div class="pfud-meta" style="margin-bottom: 12px">Badges de estados:</div>
+            <div style="display: flex; gap: 14px; margin-bottom: 24px">
+              <span class="badge badge-primary">12 Formularios</span>
+              <span class="badge bg-success">Aprobado</span>
+              <span class="badge bg-warning">Pendiente</span>
+              <span class="badge bg-danger">Rechazado</span>
+            </div>
+            <div class="pfud-meta" style="margin-bottom: 12px; padding-top: 40px">
+              Badges para códigos de formulario (bg-form1 a bg-form4):
+            </div>
+            <div style="display: flex; gap: 14px; margin-bottom: 24px">
+              <span class="badge bg-form1">2-5.2</span>
+              <span class="badge bg-form2">3-2.1</span>
+              <span class="badge bg-form3">5-1.3</span>
+              <span class="badge bg-form4">4-3.1</span>
+            </div>
+            <div class="pfud-meta" style="margin-bottom: 12px; padding-top: 40px">
+              Badge rounded-pill:
+            </div>
+            <div style="display: flex; gap: 14px">
+              <span class="badge rounded-pill bg-secondary">Pill badge</span>
+            </div>
+            <p class="pfud-meta mt-3">
+              <strong>Clases utilizadas:</strong>
+              .badge, .badge-primary, .bg-form1, .bg-form2, .bg-form3, .bg-form4, .bg-success, .bg-warning, .bg-danger, .rounded-pill
+            </p>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Upload archivo - DISABLED -->
+        <section class="section-demo disabled-section" id="upload">
+          <div class="section-title">Upload archivo</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            No utilizado en el proyecto TI.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <input type="file" class="form-control">
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Estados generales -->
+        <section class="section-demo" id="estados">
+          <div class="section-title">Estados generales</div>
+          <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+            Estilos visuales aplicados a los componentes según su estado: éxito, error, advertencia o información.
+          </div>
+          <div
+            style="
+              border: 1px solid #e0e0e0;
+              border-radius: 5px;
+              padding: 32px;
+              background: #fff;
+              width: 100%;
+              box-sizing: border-box;
+            "
+          >
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; align-items: start">
+              <div>
+                <div class="pfud-meta" style="margin-bottom: 8px">Error</div>
+                <input type="email" class="form-control is-invalid" placeholder="correo@dominio.cl" />
+                <div class="invalid-feedback" style="display: block">Debe ingresar un correo válido</div>
+              </div>
+              <div>
+                <div class="pfud-meta" style="margin-bottom: 8px">Éxito</div>
+                <button class="btn btn-primary" type="button" disabled style="margin-bottom: 10px">Guardar</button>
+                <div>
+                  <span class="text-success" style="font-size: 16px">Datos guardados correctamente</span>
+                </div>
+              </div>
+              <div>
+                <div class="pfud-meta" style="margin-bottom: 8px">Muted / ayuda secundaria</div>
+                <input type="text" class="form-control" placeholder="Nombre" />
+                <small class="form-text text-muted">Ejemplo: Nombre completo del solicitante</small>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr />
+
+        <!-- Componentes PFUD -->
+        <section class="section-demo" id="componentes-pfud">
+          <div class="section-title">Componentes PFUD</div>
+          <div class="section-desc">
+            Componentes funcionales específicos del sistema PFUD utilizados en el proyecto TI.
+          </div>
+        </section>
+
+        <!-- Buscador - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="buscador">Buscador</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Buscar" />
+            <button class="btn btn-light" type="button">BUSCAR</button>
+          </div>
+          <div class="form-text">.input-group .form-control .btn</div>
+        </div>
+
+        <!-- Separador - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="separador">Separador</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <hr />
+          <div class="form-text">hr</div>
+        </div>
+
+        <!-- Tabla -->
+        <hr />
+        <div class="section-title" id="tabla">Tabla</div>
+        <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          Visualización tabular de múltiples registros. Utilizada en dashboard.html para listados de formularios.
+        </div>
+        <div
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge bg-form1">2-5.2</span></td>
+                <td>Solicitud de Modificación de Proyecto</td>
+                <td><span class="badge bg-success">Aprobado</span></td>
+                <td>
+                  <button class="btn btn-link btn-sm p-0">
+                    <svg width="16" height="16" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="badge bg-form2">3-2.1</span></td>
+                <td>Permiso de Edificación</td>
+                <td><span class="badge bg-warning">Pendiente</span></td>
+                <td>
+                  <button class="btn btn-link btn-sm p-0">
+                    <svg width="16" height="16" fill="currentColor">
+                      <use xlink:href="../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-options"></use>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="form-text">.table thead tbody</div>
+        </div>
+
+        <!-- Glosario - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="glosario">Glosario</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>Término A</strong><br />Definición breve del concepto.
+            </li>
+            <li class="list-group-item">
+              <strong>Término B</strong><br />Definición breve del concepto.
+            </li>
+          </ul>
+          <div class="form-text">.list-group .list-group-item</div>
+        </div>
+
+        <!-- Dropdown Siglas - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="dropdown-siglas">Dropdown Siglas</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-coreui-toggle="dropdown">
+              Glosario de siglas
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><strong>D.F.L:</strong> Decreto con Fuerza de Ley</a></li>
+              <li><a class="dropdown-item" href="#"><strong>MINVU:</strong> Ministerio de Vivienda y Urbanismo</a></li>
+            </ul>
+          </div>
+          <div class="form-text">.dropdown .btn.dropdown-toggle .dropdown-menu</div>
+        </div>
+
+        <!-- Collapse Legal - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="collapse-legal">Collapse Legal</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="card">
+            <div class="card-header" data-coreui-toggle="collapse" data-coreui-target="#collapseExample">
+              Condiciones y Restricciones
+            </div>
+            <div id="collapseExample" class="collapse">
+              <div class="card-body">Contenido colapsable.</div>
+            </div>
+          </div>
+          <div class="form-text">.card .card-header[data-coreui-toggle="collapse"]</div>
+        </div>
+
+        <!-- Alerts -->
+        <hr />
+        <div class="section-title" id="alerts">Alerts</div>
+        <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          Mensajes de confirmación e información. Utilizados en index pages (error de login, usuario bloqueado, etc).
+        </div>
+        <div
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="pfud-meta" style="margin-bottom: 12px">Alert Info con dismissible:</div>
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            Usuario no encontrado en el sistema
+            <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="pfud-meta" style="margin-top: 24px; margin-bottom: 12px">Alert Danger con dismissible:</div>
+          <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+            Usuario o contraseña incorrectos
+            <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="form-text mt-3">.alert.alert-info / .alert.alert-danger / .alert-dismissible .btn-close</div>
+        </div>
+
+        <!-- Pagination - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="pagination">Pagination</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI. La paginación no aparece en ningún archivo de hito1/TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <nav aria-label="Paginación">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <span class="page-link">Anterior</span>
+              </li>
+              <li class="page-item active">
+                <span class="page-link">1</span>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="form-text">.pagination .page-item .page-link</div>
+        </div>
+
+        <!-- Breadcrumb -->
+        <hr />
+        <div class="section-title" id="breadcrumb">Breadcrumb</div>
+        <div class="section-desc" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          Jerarquía de navegación. Utilizado en todas las páginas del proyecto TI.
+        </div>
+        <div
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><span>Formularios</span></li>
+              <li class="breadcrumb-item"><span>Crear</span></li>
+              <li class="breadcrumb-item active" aria-current="page"><span>Nuevo Formulario</span></li>
+            </ol>
+          </nav>
+          <div class="form-text">.breadcrumb .breadcrumb-item span</div>
+        </div>
+
+        <!-- Forms Auto-sizing - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="forms-autosizing">Forms Auto-sizing</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <form class="row gy-2 gx-3 align-items-center">
+            <div class="col-auto">
+              <input type="text" class="form-control" placeholder="Nombre" />
+            </div>
+            <div class="col-auto">
+              <select class="form-select">
+                <option>Seleccionar…</option>
+              </select>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </form>
+          <div class="form-text">Grid + col-auto</div>
+        </div>
+
+        <!-- Comprobante - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="comprobante">Comprobante de ingreso</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="border rounded p-4 bg-white">
+            <div class="h5 mb-1">Comprobante de ingreso</div>
+            <div class="text-muted">Solicitud registrada correctamente</div>
+          </div>
+          <div class="form-text">.border .rounded .p-4</div>
+        </div>
+
+        <!-- Stepper - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="stepper">Stepper</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="d-flex gap-3">
+            <div class="badge bg-primary rounded-circle" style="width: 32px; height: 32px; line-height: 32px">1</div>
+            <div class="badge bg-secondary rounded-circle" style="width: 32px; height: 32px; line-height: 32px">2</div>
+            <div class="badge bg-secondary rounded-circle" style="width: 32px; height: 32px; line-height: 32px">3</div>
+          </div>
+          <div class="form-text">Stepper steps</div>
+        </div>
+
+        <!-- Snackbar - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="snackbar">Snackbar</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="toast show" role="alert">
+            <div class="toast-body">Mensaje de notificación</div>
+          </div>
+          <div class="form-text">.toast</div>
+        </div>
+
+        <!-- Skeleton - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="skeleton">Skeleton</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="placeholder-glow">
+            <div class="placeholder col-12 mb-2"></div>
+            <div class="placeholder col-10 mb-2"></div>
+            <div class="placeholder col-8"></div>
+          </div>
+          <div class="form-text">.placeholder .placeholder-glow</div>
+        </div>
+
+        <!-- Switches - DISABLED -->
+        <hr />
+        <div class="section-title disabled-section" id="switches">Switches</div>
+        <div class="section-desc disabled-section" style="color: #637183; font-size: 0.97rem; margin-bottom: 32px">
+          No utilizado en el proyecto TI. La clase form-switch no aparece en ningún archivo.
+        </div>
+        <div
+          class="disabled-section"
+          style="border: 1px solid #e0e0e0; border-radius: 5px; padding: 32px; background: #fff; margin-bottom: 24px"
+        >
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="switch1" />
+            <label class="form-check-label" for="switch1">Switch checkbox</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="switch2" checked />
+            <label class="form-check-label" for="switch2">Switch activo</label>
+          </div>
+          <div class="form-text mt-3">.form-check.form-switch .form-check-input</div>
+        </div>
+      </main>
+    </div>
+    <script src="../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../_coreui-base/js/tooltips.js"></script>
+  </body>
+</html>

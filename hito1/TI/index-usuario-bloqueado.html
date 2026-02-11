@@ -12,11 +12,11 @@
     <meta name="theme-color" content="#09132D" />
     <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="../../assets/css/pfud-dev.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud-dev.css?v=158" />
     <script src="../../_coreui-base/js/config.js"></script>
     <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
-  <body>
+  <body class="theme-auto">
     <!-- Controles de Accesibilidad (posición fija superior derecha) -->
     <div class="position-fixed top-0 end-0 d-flex align-items-center gap-2 p-3 position-fixed top-0 end-0 p-3">
       <button
@@ -92,9 +92,9 @@
     </div>
 
     <!-- Main Content -->
-    <div class="d-flex min-vh-100">
+    <div class="d-flex min-vh-100 bg-body">
       <!-- Panel Izquierdo: Branding -->
-      <div class="col-md-6 d-none d-md-flex flex-column align-items-center justify-content-start text-white p-4 pfud-login-panel-left" style="padding-top: 10rem !important;">
+      <div class="col-md-6 d-none d-md-flex flex-column align-items-center justify-content-start text-white p-4 pfud-login-panel-left pfud-login-pt">
         <div class="text-start">
           <img src="../../assets/img/logos/logo-minvu.png" alt="PFUD Logo" class="mb-3" width="200" />
           <h2 class="h5 mb-2 fw-light">Portal de Formularios</h2>
@@ -104,19 +104,19 @@
 
       <!-- Panel Derecho: Formulario -->
       <div class="col-md-6 d-flex flex-column">
-        <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-start p-4" style="padding-top: 10rem !important;">
+        <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-start p-4 pfud-login-pt">
           <div class="col-md-8 mx-auto">
-            <div class="border rounded shadow-sm bg-body">
+            <div class="border rounded shadow-sm bg-white">
               <div class="p-3">
                 <div class="d-flex align-items-start mb-3">
                   <div class="bg-danger text-white rounded-3 p-3 me-3">
-                    <svg class="icon" style="width: 24px; height: 24px;">
+                    <svg class="icon pfud-icon-24">
                       <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-ban"></use>
                     </svg>
                   </div>
                   <div class="text-start">
                     <p class="mb-2 fw-bold">Usuario bloqueado</p>
-                    <p class="mb-0 small">Tu cuenta ha sido bloqueada por razones de seguridad. Por favor, contacta al administrador del sistema para desbloquearla.</p>
+                    <p class="mb-0">Tu cuenta ha sido bloqueada por razones de seguridad. Por favor, contacta al administrador del sistema para desbloquearla.</p>
                   </div>
                 </div>
                 <div class="text-center">
@@ -125,46 +125,35 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-center gap-2 mt-3">
-              <button
-                type="button"
-                class="btn btn-outline-info btn-sm"
-                title="Solicitar clave de acceso"
-                data-coreui-toggle="popover"
-                data-coreui-placement="bottom"
-                data-coreui-trigger="focus"
-                data-coreui-content="Para obtener o solicitar tu clave PSSIM, debes contactar al administrador de tu institución o al área de soporte técnico de MINVU. La gestión de credenciales no es un proceso automático y requiere validación institucional."
-                data-coreui-html="true"
-              >
-                <svg class="icon me-1">
-                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
-                </svg>
-                Solicitar clave
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-secondary btn-sm"
+            <div class="d-flex justify-content-center gap-3 mt-5 align-items-center">
+              <a href="#" class="link-primary text-decoration-none">Desbloquear Clave</a>
+              <span class="text-body-secondary opacity-50">|</span>
+              <a href="#" class="link-primary text-decoration-none">Recuperar Usuario</a>
+              <span class="text-body-secondary opacity-50">|</span>
+              <a
+                href="#"
+                class="link-primary text-decoration-none"
                 title="Ver información sobre privacidad"
                 data-coreui-toggle="popover"
                 data-coreui-placement="bottom"
                 data-coreui-trigger="focus"
                 data-coreui-content="Al acceder a este sistema, aceptas que tus datos personales serán procesados conforme a la Ley N° 19.628 sobre Protección de la Vida Privada y utilizados exclusivamente para los fines institucionales de MINVU."
                 data-coreui-html="true"
-              >
-                <svg class="icon me-1">
-                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-shield-alt"></use>
-                </svg>
-                Privacidad
-              </button>
+              >Privacidad</a>
             </div>
           </div>
         </div>
 
         <!-- Footer -->
-        <footer class="footer p-3 bg-body-tertiary">
+        <footer class="footer p-3 bg-body">
         <div class="d-flex justify-content-between align-items-center w-100 small">
           <div class="small">MINVU © 2026 MINISTERIO DE VIVIENDA Y URBANISMO</div>
-          <div>
+          <div class="d-flex gap-2">
+            <span
+              class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center"
+            >
+              <span class="small" id="fontSizeIndicator">100%</span>
+            </span>
             <span
               class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center"
             >

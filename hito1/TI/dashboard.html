@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
     <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="../../assets/css/pfud-dev.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud-dev.css?v=158" />
     <script src="../../_coreui-base/js/config.js"></script>
     <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
@@ -94,12 +94,12 @@
       <!-- ============================= FIN COLUMNA 1: SIDEBAR ============================= -->
 
       <!-- ============================= COLUMNA 2: CONTENIDO ============================= -->
-      <div class="wrapper d-flex flex-column min-vh-100 flex-grow-1 p-0">
+      <div class="wrapper d-flex flex-column min-vh-100 flex-grow-1 p-0 bg-body">
 
         <!-- ============================= TOP: BARRA SUPERIOR ============================= -->
-        <header class="header header-sticky p-0 mb-4">
-          <div class="w-100 bg-body-tertiary border-bottom">
-            <div class="container-fluid px-4">
+        <header class="header header-sticky p-0 mb-2 border-0">
+          <div class="w-100 bg-white border-bottom">
+            <div class="container-fluid px-5">
               <div class="d-flex flex-row align-items-center justify-content-between gap-2 py-2">
                 
                 <!-- Saludo -->
@@ -216,9 +216,9 @@
                         <div class="small text-nowrap">+56912345678</div>
                       </li>
                       <li><hr class="dropdown-divider my-0" /></li>
-                      <li class="px-3 py-2">
+                      <li class="px-3 pt-2 pb-1">
                         <a href="mi-perfil.html" class="btn btn-sm btn-outline-primary w-100" title="Ver/actualizar datos">
-                          <span class="small">Ver / Actualizar Datos</span>
+                          Ver / Actualizar Datos
                         </a>
                       </li>
                     </ul>
@@ -240,13 +240,13 @@
         <!-- ============================= FIN TOP ============================= -->
 
         <!-- ============================= TITULO: Breadcrumb, Icono, Título, Botón ============================= -->
-        <div class="container-fluid px-4">
-          <div class="bg-body border rounded-3 p-3 mb-3">
+        <div class="container-fluid px-5">
+          <div class="pfud-header-section">
             <!-- Fila superior: Breadcrumb -->
             <div class="row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="mb-2">
-                  <ol class="breadcrumb my-0 small">
+                  <ol class="breadcrumb my-0">
                     <li class="breadcrumb-item active">Dashboard</li>
                   </ol>
                 </nav>
@@ -257,10 +257,12 @@
             <div class="row align-items-center">
               <!-- Columna 1: Icono y Título -->
               <div class="col-auto">
-                <div class="d-flex align-items-baseline">
-                  <svg class="me-2" width="28" height="28" fill="currentColor">
-                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
-                  </svg>
+                <div class="d-flex align-items-center">
+                  <div class="pfud-icon-circle bg-sidebar-dark">
+                    <svg width="28" height="28" fill="currentColor">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+                    </svg>
+                  </div>
                   <h1 class="h2 mb-0">Dashboard</h1>
                 </div>
               </div>
@@ -270,7 +272,7 @@
               
               <!-- Columna 3: Botón alineado a la derecha -->
               <div class="col-auto">
-                <a href="crear-formulario.html" class="btn btn-primary" title="Crear nuevo Formulario">
+                <a href="crear-formulario.html" class="btn btn-primary btn-sm" title="Crear nuevo Formulario">
                   <svg class="icon me-1">
                     <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
                   </svg>
@@ -283,25 +285,25 @@
         <!-- ============================= FIN TITULO ============================= -->
 
         <!-- ============================= CUERPO: Contenido Principal ============================= -->
-        <div class="body flex-grow-1 bg-body-tertiary">
-          <div class="container-fluid px-4">
+        <div class="body flex-grow-1">
+          <div class="container-fluid px-5">
 
             <!-- Métricas KPI -->
-            <div class="row g-3 mb-4">
+            <div class="row g-3 mb-5">
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="pfud-kpi-card">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="counterPublicados">24</span>
+                      <span class="pfud-kpi-number" id="counterPublicados">24</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
+                      <span class="pfud-kpi-title d-block">Formularios</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">Publicados al 31/01/2026</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">Publicados al 31/01/2026</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-success opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
                       </svg>
                     </div>
@@ -310,19 +312,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="pfud-kpi-card">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="counterProceso">12</span>
+                      <span class="pfud-kpi-number" id="counterProceso">12</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Formularios</span>
+                      <span class="pfud-kpi-title d-block">Formularios</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">En proceso de creación.</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">En proceso de creación.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-warning opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
                       </svg>
                     </div>
@@ -331,19 +333,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="pfud-kpi-card">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="counterObservaciones">47</span>
+                      <span class="pfud-kpi-number" id="counterObservaciones">47</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Observaciones</span>
+                      <span class="pfud-kpi-title d-block">Observaciones</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">Sin resolver en formularios.</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">Sin resolver en formularios.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-danger opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-warning"></use>
                       </svg>
                     </div>
@@ -352,19 +354,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="counterCiudadanos">156</span>
+                      <span class="pfud-kpi-number" id="counterCiudadanos">156</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Ciudadanos</span>
+                      <span class="pfud-kpi-title d-block">Ciudadanos</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">Han ingresado al sistema.</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">Han ingresado al sistema.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-info opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-people"></use>
                       </svg>
                     </div>
@@ -373,19 +375,19 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="counterSolicitudes">240</span>
+                      <span class="pfud-kpi-number" id="counterSolicitudes">240</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">Solicitudes</span>
+                      <span class="pfud-kpi-title d-block">Solicitudes</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">Ingresadas durante el último mes.</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">Ingresadas durante el último mes.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-primary opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-inbox"></use>
                       </svg>
                     </div>
@@ -394,20 +396,20 @@
               </div>
 
               <div class="col-12 col-md-4 col-xl-2">
-                <div class="bg-body border rounded-3 h-100">
-                  <div class="d-flex flex-column justify-content-between align-items-start p-3">
+                <div class="bg-white rounded-3 h-100">
+                  <div class="d-flex flex-column justify-content-between align-items-start p-3 position-relative">
                     <div class="w-100">
-                      <span class="fs-2 fw-semibold" id="counterTiempo">12.2</span>
-                      <span class="small text-body-secondary">min.</span>
+                      <span class="pfud-kpi-number" id="counterTiempo">12.2</span>
+                      <span class="pfud-kpi-desc text-body-secondary">min.</span>
                     </div>
                     <div class="w-100">
-                      <span class="fs-6 text-uppercase fw-bold d-block">TIEMPO PROMEDIO</span>
+                      <span class="pfud-kpi-title d-block">TIEMPO PROMEDIO</span>
                     </div>
                     <div class="w-100 mb-2">
-                      <span class="small text-body-secondary d-block">De usuarios por sesión.</span>
+                      <span class="pfud-kpi-desc text-body-secondary d-block">De usuarios por sesión.</span>
                     </div>
                     <div class="position-absolute top-0 end-0 m-2">
-                      <svg class="text-body-secondary opacity-50" width="32" height="32" fill="currentColor">
+                      <svg class="text-secondary opacity-50" width="24" height="24" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
                       </svg>
                     </div>
@@ -417,14 +419,14 @@
             </div>
 
             <!-- Tarjetas de Formularios -->
-            <div class="row g-4 mb-4">
+            <div class="row g-5 mb-5">
               
               <!-- Formularios en creación -->
               <div class="col-12 col-md-6">
-                <div class="bg-body border rounded-3">
-                  <div class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Formularios en creación</div>
-                    <span class="badge bg-secondary">12 Formularios</span>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header p-3 d-flex justify-content-between align-items-center">
+                    <div class="pfud-section-title">Formularios en creación</div>
+                    <span class="badge badge-primary">12 Formularios</span>
                   </div>
                   <div class="p-0">
                     <div>
@@ -434,10 +436,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-primary">2-5.2</span>
+                                  <span class="badge bg-form1">2-5.2</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Solicitud de Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2
                                   </div>
                                   <div class="small text-body-secondary">
@@ -486,10 +488,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-primary">3-2.1</span>
+                                  <span class="badge bg-form1">3-2.1</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Certificado de Informaciones Previas para Subdivisión de Terrenos
                                   </div>
                                   <div class="small text-body-secondary">
@@ -538,10 +540,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-primary">5-1.3</span>
+                                  <span class="badge bg-form1">5-1.3</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Solicitud de Permiso de Demolición Total de Edificación
                                   </div>
                                   <div class="small text-body-secondary">
@@ -591,17 +593,17 @@
                     </div>
                   </div>
                   <div class="border-top p-3 text-end">
-                    <a href="en-creacion.html" class="btn btn-primary" title="Ver todos">Ver Todos</a>
+                    <a href="en-creacion.html" class="btn btn-primary btn-sm" title="Ver todos">Ver Todos</a>
                   </div>
                 </div>
               </div>
 
               <!-- Pendientes de Aprobación -->
               <div class="col-12 col-md-6">
-                <div class="bg-body border rounded-3">
-                  <div class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Pendientes de Aprobación</div>
-                    <span class="badge bg-warning">3 Formularios</span>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header p-3 d-flex justify-content-between align-items-center">
+                    <div class="pfud-section-title">Pendientes de Aprobación</div>
+                    <span class="badge badge-primary">3 Formularios</span>
                   </div>
                   <div class="p-0">
                     <div>
@@ -611,10 +613,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-warning">4-3.1</span>
+                                  <span class="badge bg-form2">4-3.1</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación
                                   </div>
                                   <div class="small text-body-secondary">
@@ -656,10 +658,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-warning">2-4.5</span>
+                                  <span class="badge bg-form2">2-4.5</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Solicitud de Ampliación de Plazo de Inicio de Obras
                                   </div>
                                   <div class="small text-body-secondary">
@@ -701,10 +703,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-warning">6-2.8</span>
+                                  <span class="badge bg-form2">6-2.8</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Declaración de Conformidad de Instalaciones de Gas
                                   </div>
                                   <div class="small text-body-secondary">
@@ -747,20 +749,20 @@
                     </div>
                   </div>
                   <div class="border-top p-3 text-end">
-                    <a href="aprobaciones.html" class="btn btn-primary" title="Ver todos">Ver Todos</a>
+                    <a href="aprobaciones.html" class="btn btn-primary btn-sm" title="Ver todos">Ver Todos</a>
                   </div>
                 </div>
               </div>
 
             </div>
 
-            <div class="row g-4 mb-4">
+            <div class="row g-5 mb-5">
               <!-- Pendientes de Publicación -->
               <div class="col-12 col-md-6">
-                <div class="bg-body border rounded-3">
-                  <div class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Formularios pendientes de publicación</div>
-                    <span class="badge bg-secondary">8 Formularios</span>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header p-3 d-flex justify-content-between align-items-center">
+                    <div class="pfud-section-title">Formularios pendientes de publicación</div>
+                    <span class="badge badge-primary">8 Formularios</span>
                   </div>
                   <div class="p-0">
                     <div>
@@ -770,10 +772,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-primary">2-8.2</span>
+                                  <span class="badge bg-form3">2-8.2</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2
                                   </div>
                                   <div class="small text-body-secondary">
@@ -825,10 +827,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-primary">1-6.4</span>
+                                  <span class="badge bg-form3">1-6.4</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Solicitud de Permiso Municipal de Obra Nueva hasta 200 m2
                                   </div>
                                   <div class="small text-body-secondary">
@@ -880,10 +882,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-primary">7-1.2</span>
+                                  <span class="badge bg-form3">7-1.2</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Solicitud de Recepción Final de Obras Menores
                                   </div>
                                   <div class="small text-body-secondary">
@@ -936,17 +938,17 @@
                     </div>
                   </div>
                   <div class="border-top p-3 text-end">
-                    <a href="pendientes.html" class="btn btn-primary" title="Ver todos">Ver Todos</a>
+                    <a href="pendientes.html" class="btn btn-primary btn-sm" title="Ver todos">Ver Todos</a>
                   </div>
                 </div>
               </div>
 
               <!-- Publicados -->
               <div class="col-12 col-md-6">
-                <div class="bg-body border rounded-3">
-                  <div class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <div class="fw-semibold">Formularios publicados</div>
-                    <span class="badge bg-info">3 Formularios</span>
+                <div class="bg-white border rounded-3">
+                  <div class="section-header p-3 d-flex justify-content-between align-items-center">
+                    <div class="pfud-section-title">Formularios publicados</div>
+                    <span class="badge badge-primary">3 Formularios</span>
                   </div>
                   <div class="p-0">
                     <div>
@@ -956,10 +958,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-success">2-7.2</span>
+                                  <span class="badge bg-form4">2-7.2</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Solicitud de Recepción Definitiva de Obras de Edificación, Ampliación Mayor a 100 m2
                                   </div>
                                   <div class="small text-body-secondary">
@@ -1011,10 +1013,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-success">3-5.1</span>
+                                  <span class="badge bg-form4">3-5.1</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Certificado de Informaciones Previas para Construcción en Zonas Rurales
                                   </div>
                                   <div class="small text-body-secondary">
@@ -1066,10 +1068,10 @@
                             <td>
                               <div class="d-flex align-items-start gap-3">
                                 <div class="flex-shrink-0">
-                                  <span class="badge bg-success">8-3.4</span>
+                                  <span class="badge bg-form4">8-3.4</span>
                                 </div>
                                 <div class="flex-grow-1 overflow-hidden">
-                                  <div class="fw-semibold small pfud-text-truncate-2">
+                                  <div class="pfud-text-truncate-2">
                                     Solicitud de Autorización para Instalación de Ascensores
                                   </div>
                                   <div class="small text-body-secondary">
@@ -1122,7 +1124,7 @@
                     </div>
                   </div>
                   <div class="border-top p-3 text-end">
-                    <a href="publicados.html" class="btn btn-primary" title="Ver todos">Ver Todos</a>
+                    <a href="publicados.html" class="btn btn-primary btn-sm" title="Ver todos">Ver Todos</a>
                   </div>
                 </div>
               </div>
@@ -1229,7 +1231,7 @@
         
         modalDialog.classList.add('modal-xl');
         modalTitle.textContent = 'Previsualización del Formulario';
-        modalBody.innerHTML = '<iframe src="previsualizar-modal.html" style="width: 100%; height: 70vh; border: none;"></iframe>';
+        modalBody.innerHTML = '<iframe src="previsualizar-modal.html" class="pfud-modal-iframe"></iframe>';
         modalFooter.style.display = 'none';
       }
       

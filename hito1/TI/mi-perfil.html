@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta name="description" content="Portal Ciudadano - MINVU" />
     <meta name="author" content="MINVU" />
-    <title>Crear Formulario Duplicado - PFUD - MINVU</title>
+    <title>Mi Perfil - PFUD - MINVU</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
     <meta name="theme-color" content="#09132D" />
@@ -44,7 +44,7 @@
           <li class="nav-title">Formularios</li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="crear-formulario.html" title="Ir a Crear Formulario">
+            <a class="nav-link" href="crear-formulario.html" title="Ir a Crear Formulario">
               <svg class="nav-icon">
                 <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
               </svg>
@@ -182,7 +182,7 @@
 
                   <!-- Mi Perfil -->
                   <div class="dropdown">
-                    <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false" title="Abrir menú de perfil">
+                    <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle active" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false" title="Abrir menú de perfil">
                       <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
                         <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
                       </svg>
@@ -239,7 +239,7 @@
         </header>
         <!-- ============================= FIN TOP ============================= -->
 
-        <!-- ============================= TITULO: Breadcrumb, Icono, Título, Botón ============================= -->
+        <!-- ============================= TITULO: Breadcrumb, Icono, Título ============================= -->
         <div class="container-fluid px-5">
           <div class="pfud-header-section">
             <!-- Fila superior: Breadcrumb -->
@@ -247,28 +247,25 @@
               <div class="col">
                 <nav aria-label="breadcrumb" class="mb-2">
                   <ol class="breadcrumb my-0">
-                    <li class="breadcrumb-item">
-                      <span>Formularios</span>
-                    </li>
                     <li class="breadcrumb-item active">
-                      <span>Crear Formulario</span>
+                      <span>Mi Perfil</span>
                     </li>
                   </ol>
                 </nav>
               </div>
             </div>
             
-            <!-- Fila inferior: Icono/Título -->
+            <!-- Fila inferior: Icono y Título -->
             <div class="row align-items-center">
               <!-- Columna 1: Icono y Título -->
               <div class="col-auto">
                 <div class="d-flex align-items-center">
                   <div class="pfud-icon-circle bg-sidebar-dark">
                     <svg width="28" height="28" fill="currentColor">
-                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
                     </svg>
                   </div>
-                  <h1 class="h2 mb-0">Nuevo Formulario a partir de uno ya publicado</h1>
+                  <h1 class="h2 mb-0">Mi perfil</h1>
                 </div>
               </div>
             </div>
@@ -279,124 +276,95 @@
         <!-- ============================= CUERPO: Contenido Principal ============================= -->
         <div class="body flex-grow-1">
           <div class="container-fluid px-5">
+            <!-- Perfil de Usuario -->
             <div class="row">
-              <div class="col-12">
-                <div class="bg-white rounded-3 p-4">
-                  <div class="row g-5">
-                    <div class="col-12">
-                      <label for="formularioBase" class="form-label">
-                        Formulario al que le crearás una nueva versión
-                      </label>
-                      <select class="form-select" id="formularioBase">
-                        <option value="" selected>Selecciona un formulario</option>
-                        <option value="2-1.1">2-1.1 - Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Obra Nueva</option>
-                        <option value="2-1.2">2-1.2 - Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Ampliación Mayor a 100 m2</option>
-                        <option value="2-1.4">2-1.4 - Solicitud de Aprobación de Anteproyecto de Obras de Edificación, Reconstrucción</option>
-                        <option value="2-2.3">2-2.3 - Resolución de Aprobación de Anteproyecto de Obras de Edificación, Alteración</option>
-                        <option value="2-3.5">2-3.5 - Solicitud de Permiso de Edificación, Reparación</option>
-                        <option value="2-5.2">2-5.2 - Solicitud de Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2</option>
-                        <option value="2-5.4">2-5.4 - Solicitud de Modificación de Proyecto de Reconstrucción de Edificación</option>
-                        <option value="2-6.2">2-6.2 - Resolución Aprueba Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2</option>
-                        <option value="2-6.4">2-6.4 - Resolución Aprueba Modificación de Proyecto de Edificación, Reconstrucción</option>
-                        <option value="2-7.1">2-7.1 - Solicitud de Recepción Definitiva de Obras de Edificación, Obra nueva</option>
-                        <option value="2-7.4">2-7.4 - Solicitud de Recepción Definitiva de Obras de Edificación, Reconstrucción</option>
-                        <option value="2-8.1">2-8.1 - Certificado de Recepción Definitiva de Obras de Edificación, Obra nueva</option>
-                        <option value="2-8.2">2-8.2 - Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2</option>
-                        <option value="2-8.4">2-8.4 - Certificado de Recepción Definitiva de Obras de Reconstrucción de Edificación</option>
-                        <option value="3-1.5">3-1.5 - Certificado de Recepción Definitiva de Obras de Reconstrucción de Edificación</option>
-                        <option value="4-3.1">4-3.1 - Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2</option>
-                        <option value="5-2.3">5-2.3 - Resolución Aprueba Modificación de Proyecto de Edificación, Reconstrucción</option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-8">
-                      <label for="nombreFormularioVersion" class="form-label">
-                        Nombre del nuevo formulario
-                      </label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="nombreFormularioVersion"
-                        value="Certificado de Cumplimiento de Condiciones de Seguridad de Uso de Edificación, Ampliación Mayor a 100 m2"
-                        disabled
-                      />
-                    </div>
-
-                    <div class="col-md-4">
-                      <label for="grupoFormularioVersion" class="form-label">
-                        Grupo al que pertenece el formulario
-                      </label>
-                      <select class="form-select" id="grupoFormularioVersion" disabled>
-                        <option value="1">1 – Formularios de Permisos de Obra Menor</option>
-                        <option value="2" selected>2 – Formularios de Permisos de Edificación</option>
-                        <option value="3">3 – Formularios Subdivisión y Urbanización</option>
-                        <option value="4">4 – Formularios División del Suelo y Condominios con afectación a Utilidad Pública</option>
-                        <option value="5">5 – Formularios de Solicitudes y Certificaciones Varias</option>
-                        <option value="6">6 – Formularios de Regularización de Viviendas Sociales (Ley 20.671 y sus modificaciones)</option>
-                        <option value="7">7 – Encuesta Edificación INE</option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-4">
-                      <label for="familiaFormularioVersion" class="form-label">
-                        Familia a la que pertenece el formulario
-                      </label>
-                      <select class="form-select" id="familiaFormularioVersion" disabled>
-                        <option selected value="proyecto">Proyecto</option>
-                        <option value="anteproyecto">Anteproyecto</option>
-                        <option value="modificacion">Modificación del Proyecto</option>
-                        <option value="recepcion">Recepción Definitiva</option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-4">
-                      <label for="normaFormularioVersion" class="form-label">
-                        Indica la Norma que justifica este documento
-                      </label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="normaFormularioVersion"
-                        value="Reglamento de Ley N° 99.9999, publicado el 03/03/2025"
-                        placeholder="Ej: Ley 20.671"
-                      />
-                    </div>
-
-                    <div class="col-md-4">
-                      <label class="form-label">Vigencia del formulario</label>
-                      <div class="d-flex align-items-start gap-3">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="vigenciaFijaVersion" />
-                          <label class="form-check-label" for="vigenciaFijaVersion">Formulario tiene vigencia fija.</label>
-                        </div>
-                        <input
-                          type="date"
-                          class="form-control pfud-max-w-200"
-                          id="fechaTermino"
-                          title="Fecha término de vigencia"
+              <!-- Card 1: Foto de Perfil -->
+              <div class="col-lg-4 mb-4">
+                <div class="bg-white rounded-3 p-4 h-100">
+                  <div class="text-center">
+                    <div class="mb-4">
+                      <div class="mx-auto mb-3">
+                        <img
+                          class="rounded-circle object-fit-cover"
+                          width="180"
+                          height="180"
+                          src="../../assets/img/perfil.jpg"
+                          alt="Foto del usuario"
                         />
                       </div>
+                      <h5 class="mb-1">Dominique Chacra Gaete</h5>
+                      <p class="text-body-secondary mb-3">dchacrag@minvu.cl</p>
+                      <button class="btn btn-outline-primary btn-sm" title="Cambiar foto de perfil">
+                        <svg class="icon me-1" width="14" height="14" fill="currentColor">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-camera"></use>
+                        </svg>
+                        Cambiar Foto
+                      </button>
                     </div>
                   </div>
+                </div>
+              </div>
 
-                  <div class="alert alert-info mt-5 mb-4">
-                    <strong>Importante:</strong>
-                    Al hacer click en Crear Formulario, abriremos el editor de formularios, en una ventana nueva. En caso que esta nueva versión de formulario sea aprobada y publicada, reemplazará al formulario [ID 2.5.1-0001].
-                  </div>
-
-                  <div class="d-flex gap-2 justify-content-end mt-4 pt-3 border-top">
-                    <a href="crear-formulario.html" class="btn btn-secondary" title="Volver">
-                      Volver
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      onclick="window.open('builder-constructor.html', '_blank')"
-                    >
-                      Crear versión
-                    </button>
+              <!-- Card 2: Información Personal -->
+              <div class="col-lg-8 mb-4">
+                <div class="bg-white rounded-3 p-4 h-100">
+                  <div>
+                    <form>
+                      <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <label for="nombres" class="form-label">Nombres</label>
+                          <input type="text" class="form-control" id="nombres" value="Dominique" disabled />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="apellidos" class="form-label">Apellidos</label>
+                          <input type="text" class="form-control" id="apellidos" value="Chacra Gaete" disabled />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <label for="rut" class="form-label">RUT</label>
+                          <input type="text" class="form-control" id="rut" value="12.345.678-9" disabled />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="email" value="dchacrag@minvu.cl" />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-md-6">
+                          <label for="telefono" class="form-label">Teléfono</label>
+                          <input type="tel" class="form-control" id="telefono" value="+56 9 1234 5678" />
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-sm btn-primary" title="Guardar cambios de perfil">
+                          <svg class="icon me-1" width="14" height="14" fill="currentColor">
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-save"></use>
+                          </svg>
+                          Guardar Cambios
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
+              </div>
+              <!-- Mensaje informativo tipo Snackbar -->
+              <div
+                class="alert d-flex align-items-center mb-4 w-100 border-start border-info bg-transparent"
+                role="alert"
+              >
+                <svg class="me-2 text-info" width="20" height="20" aria-hidden="true">
+                  <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                </svg>
+                <span class="small text-body">
+                  Los datos presentados en esta sección son administrados centralizadamente, por lo que no pueden ser
+                  modificados a través de este portal. Si necesitas realizar alguna actualización a estos datos,
+                  contacta al equipo de soporte PSSIM al teléfono
+                  <a href="tel:+56012345678" title="Llamar a +56012345678" class="text-decoration-underline">+56 01 2345 678</a>
+                  o al correo electrónico
+                  <a href="mailto:soporte.pssim@minvu.cl" title="Enviar correo a soporte.pssim@minvu.cl" class="text-decoration-underline">soporte.pssim@minvu.cl</a>
+                  .
+                </span>
               </div>
             </div>
           </div>
