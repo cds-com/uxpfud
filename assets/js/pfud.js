@@ -539,3 +539,32 @@ function toggleEditMode() {
     btn.classList.add('btn-outline-secondary');
   }
 }
+
+// Builder action bindings (no inline JS)
+document.addEventListener('DOMContentLoaded', () => {
+  const actionHandlers = {
+    'guardar-cambios': guardarCambios,
+    'toggle-edit-mode': toggleEditMode,
+    'cerrar-sin-guardar': cerrarSinGuardar,
+    'guardar-y-cerrar': guardarYCerrar
+  };
+
+  Object.entries(actionHandlers).forEach(([action, handler]) => {
+    document.querySelectorAll(`[data-action="${action}"]`).forEach((element) => {
+      element.addEventListener('click', (event) => {
+        event.preventDefault();
+        handler();
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-adjust-font]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      const delta = Number(button.getAttribute('data-adjust-font')) || 0;
+      if (delta) {
+        adjustFontSize(delta);
+      }
+    });
+  });
+});

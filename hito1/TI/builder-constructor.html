@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta name="description" content="Portal Ciudadano - MINVU" />
     <meta name="author" content="MINVU" />
-    <title>Builder/Constructor - Portal Ciudadano MINVU</title>
+    <title>Builder/Constructor (Versión 2) - Portal Ciudadano MINVU</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
     <meta name="theme-color" content="#09132D" />
@@ -16,18 +16,18 @@
     <!-- Main styles for this application-->
     <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="../../assets/css/pfud-dev.css?v=158" />
+    <link rel="stylesheet" href="../../assets/css/pfud-dev.css?v=160" />
 
     <!-- Using CoreUI utilities from _coreui-base/css/style.css; no inline CSS allowed -->
     <script src="../../_coreui-base/js/config.js"></script>
     <script src="../../_coreui-base/js/color-modes.js"></script>
   </head>
   <body class="flex-grow-1">
-    <!-- top-->
     <div class="d-flex flex-column min-vh-100 bg-body">
+      <!-- top -->
       <header class="header header-sticky p-0 border-0">
         <div class="w-100 bg-white border-bottom">
-          <div class="container-fluid px-5">
+          <div class="container-fluid px-3">
             <div class="d-flex flex-row align-items-center justify-content-between gap-2 py-2">
               <div class="d-flex align-items-center gap-2 flex-shrink-0">
                 <div class="pfud-icon-circle-builder bg-sidebar-dark">
@@ -43,21 +43,20 @@
                 <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
               </div>
               <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
-                <button
+                <a
                   class="btn btn-outline-primary btn-sm"
-                  type="button"
-                  onclick="window.location.href='previsualizar.html';"
+                  href="#"
                   title="Guardar y continuar editando"
                 >
                   <svg class="me-1" width="16" height="16" fill="currentColor">
                     <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-save"></use>
                   </svg>
                   Guardar y continuar
-                </button>
+                </a>
                 <button
                   class="btn btn-primary btn-sm"
                   type="button"
-                  onclick="guardarCambios()"
+                  data-action="guardar-cambios"
                   title="Solicitar aprobación del formulario"
                 >
                   <svg class="me-1" width="16" height="16" fill="currentColor">
@@ -70,7 +69,7 @@
                   class="btn btn-outline-secondary btn-sm me-0"
                   type="button"
                   title="Disminuir tamaño de fuente"
-                  onclick="adjustFontSize(-1)"
+                  data-adjust-font="-1"
                 >
                   <span class="fw-bold">A-</span>
                 </button>
@@ -78,7 +77,7 @@
                   class="btn btn-outline-secondary btn-sm me-0"
                   type="button"
                   title="Aumentar tamaño de fuente"
-                  onclick="adjustFontSize(1)"
+                  data-adjust-font="1"
                 >
                   <span class="fw-bold">A+</span>
                 </button>
@@ -155,19 +154,18 @@
           </div>
         </div>
       </header>
-      <!-- ============================= FIN TOP ============================= -->
 
-      <!-- ============================= CUERPO: Contenido Principal ============================= -->
-      <div class="body flex-grow-1 pt-3">
+      <div id="contenido" class="body flex-grow-1 pt-3 bg-body">
         <div class="container-fluid p-0">
           <div class="row g-0">
-            <!-- Panel Izquierdo: Elementos -->
-            <aside class="col-2 border-end d-flex flex-column overflow-auto">
-              <div class="p-3">
-                <ul class="nav nav-tabs border-0 flex-nowrap" role="tablist">
+          <!-- Panel Izquierdo: Elementos -->
+          <aside class="col-2 border-end builder-column-fixed">
+            <div class="d-flex flex-column h-100 overflow-hidden">
+              <div class="p-3 border-bottom bg-body">
+                <ul class="nav nav-tabs border-0 flex-nowrap pfud-tab-muted" role="tablist">
                   <li class="nav-item flex-fill" role="presentation">
                     <button
-                      class="nav-link active w-100 text-center"
+                        class="nav-link active w-100 text-center"
                       id="tabBloqCampos-tab"
                       data-coreui-toggle="tab"
                       data-coreui-target="#tabBloqCampos"
@@ -181,7 +179,7 @@
                   </li>
                   <li class="nav-item flex-fill" role="presentation">
                     <button
-                      class="nav-link w-100 text-center"
+                        class="nav-link w-100 text-center"
                       id="tabBloqComponentes-tab"
                       data-coreui-toggle="tab"
                       data-coreui-target="#tabBloqComponentes"
@@ -193,24 +191,18 @@
                       <small>Grupos</small>
                     </button>
                   </li>
-                </ul>
+                  </ul>
               </div>
-              <div class="tab-content flex-fill overflow-auto">
+              <div class="tab-content flex-grow-1 overflow-auto">
                 <div
-                  class="tab-pane fade show active p-3"
+                  class="tab-pane fade show active p-3 overflow-auto h-100"
                   id="tabBloqCampos"
                   role="tabpanel"
                   aria-labelledby="tabBloqCampos-tab"
                 >
                   <div class="mb-3">
-                    <input
-                      type="search"
-                      class="form-control form-control-sm"
-                      placeholder="Buscar elemento..."
-                    />
+                    <input type="search" class="form-control form-control-sm" placeholder="Buscar elemento..." />
                   </div>
-
-                  <!-- CAMPOS DE TEXTO -->
                   <h6 class="small text-body-secondary mb-3">Campos de Texto</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
@@ -231,8 +223,6 @@
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- CAMPOS ESPECIALIZADOS -->
                   <h6 class="small text-body-secondary mb-3">Campos Especializados</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
@@ -252,486 +242,607 @@
                       </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar campo de correo electrónico"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-envelope-closed"></use></svg>
-                        <small class="text-center text-body-secondary">E-mail</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar campo de correo electrónico">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-envelope-closed"></use></svg>
+                          <small class="text-center text-body-secondary">E-mail</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar campo de teléfono"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-phone"></use></svg>
-                        <small class="text-center text-body-secondary">Teléfono</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar campo de teléfono">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-phone"></use></svg>
+                          <small class="text-center text-body-secondary">Teléfono</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- CAMPOS NUMÉRICOS Y MEDIDAS -->
                   <h6 class="small text-body-secondary mb-3">Campos Numéricos y Medidas</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar campo de moneda"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-dollar"></use></svg>
-                        <small class="text-center text-body-secondary">Moneda</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar campo de moneda">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-dollar"></use></svg>
+                          <small class="text-center text-body-secondary">Moneda</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar campo de metros"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-resize-both"></use></svg>
-                        <small class="text-center text-body-secondary">Metros</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar campo de metros">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-resize-both"></use></svg>
+                          <small class="text-center text-body-secondary">Metros</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- CAMPOS DE FECHA -->
                   <h6 class="small text-body-secondary mb-3">Campos de Fecha</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar campo de fecha"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
-                        <small class="text-center text-body-secondary">Fecha</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar campo de fecha">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
+                          <small class="text-center text-body-secondary">Fecha</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar rango de fechas"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
-                        <small class="text-center text-body-secondary">Fecha Desde/Hasta</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar rango de fechas">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use></svg>
+                          <small class="text-center text-body-secondary">Fecha Desde/Hasta</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- CAMPOS DE UBICACIÓN -->
                   <h6 class="small text-body-secondary mb-3">Campos de Ubicación</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar selector de regiones"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use></svg>
-                        <small class="text-center text-body-secondary">Regiones</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar selector de regiones">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use></svg>
+                          <small class="text-center text-body-secondary">Regiones</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar selector de comunas"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-map"></use></svg>
-                        <small class="text-center text-body-secondary">Comunas</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar selector de comunas">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-map"></use></svg>
+                          <small class="text-center text-body-secondary">Comunas</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- CAMPOS DE SELECCIÓN -->
                   <h6 class="small text-body-secondary mb-3">Campos de Selección</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar lista desplegable"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-list"></use></svg>
-                        <small class="text-center text-body-secondary">Lista Desplegable</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar lista desplegable">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-list"></use></svg>
+                          <small class="text-center text-body-secondary">Lista Desplegable</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar checkbox"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-square"></use></svg>
-                        <small class="text-center text-body-secondary">Checkbox</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar checkbox">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-square"></use></svg>
+                          <small class="text-center text-body-secondary">Checkbox</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar radio button"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-media-record"></use></svg>
-                        <small class="text-center text-body-secondary">Radio Button</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar radio button">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-media-record"></use></svg>
+                          <small class="text-center text-body-secondary">Radio Button</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar switch"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-toggle-on"></use></svg>
-                        <small class="text-center text-body-secondary">Switch</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar switch">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-toggle-on"></use></svg>
+                          <small class="text-center text-body-secondary">Switch</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- CONTENEDORES -->
                   <h6 class="small text-body-secondary mb-3">Contenedores</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar contenedor de sección"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-window"></use></svg>
-                        <small class="text-center text-body-secondary">Contenedor Sección</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar contenedor de sección">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-window"></use></svg>
+                          <small class="text-center text-body-secondary">Contenedor Sección</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar contenedor"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-apps"></use></svg>
-                        <small class="text-center text-body-secondary">Contenedor</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar contenedor">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-apps"></use></svg>
+                          <small class="text-center text-body-secondary">Contenedor</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- ELEMENTOS DE DISEÑO -->
                   <h6 class="small text-body-secondary mb-3">Elementos de Diseño</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar separador"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-minus"></use></svg>
-                        <small class="text-center text-body-secondary">Separador</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar separador">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-minus"></use></svg>
+                          <small class="text-center text-body-secondary">Separador</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar espaciador"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-fullscreen"></use></svg>
-                        <small class="text-center text-body-secondary">Espaciador</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar espaciador">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-fullscreen"></use></svg>
+                          <small class="text-center text-body-secondary">Espaciador</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- ELEMENTOS DE AYUDA -->
                   <h6 class="small text-body-secondary mb-3">Elementos de Ayuda</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar mensaje de ayuda"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use></svg>
-                        <small class="text-center text-body-secondary">Mensaje de Ayuda</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar mensaje de ayuda">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use></svg>
+                          <small class="text-center text-body-secondary">Mensaje de Ayuda</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar tooltip"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-comment-square"></use></svg>
-                        <small class="text-center text-body-secondary">Tooltip</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar tooltip">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-comment-square"></use></svg>
+                          <small class="text-center text-body-secondary">Tooltip</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- ELEMENTOS COMPLEJOS -->
                   <h6 class="small text-body-secondary mb-3">Elementos Complejos</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar tabla"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-grid"></use></svg>
-                        <small class="text-center text-body-secondary">Tabla</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar tabla">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-grid"></use></svg>
+                          <small class="text-center text-body-secondary">Tabla</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="tab-pane fade p-3"
+                  class="tab-pane fade p-3 overflow-auto h-100"
                   id="tabBloqComponentes"
                   role="tabpanel"
                   aria-labelledby="tabBloqComponentes-tab"
                 >
                   <div class="mb-3">
-                    <input
-                      type="search"
-                      class="form-control form-control-sm"
-                      placeholder="Buscar grupo..."
-                    />
+                    <input type="search" class="form-control form-control-sm" placeholder="Buscar grupo..." />
                   </div>
-                  
-                  <!-- DOCUMENTOS Y VALIDACIÓN -->
                   <h6 class="small text-body-secondary mb-3">Documentos y Validación</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar comprobante"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use></svg>
-                        <small class="text-center text-body-secondary">Comprobante</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar comprobante">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use></svg>
+                          <small class="text-center text-body-secondary">Comprobante</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar timbre y firma DOM"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-badge"></use></svg>
-                        <small class="text-center text-body-secondary">Timbre y Firma DOM</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar timbre y firma DOM">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-badge"></use></svg>
+                          <small class="text-center text-body-secondary">Timbre y Firma DOM</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- INFORMACIÓN Y AYUDA -->
                   <h6 class="small text-body-secondary mb-3">Información y Ayuda</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar glosario"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-book"></use></svg>
-                        <small class="text-center text-body-secondary">Glosario</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar glosario">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-book"></use></svg>
+                          <small class="text-center text-body-secondary">Glosario</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- DATOS DE PERSONAS -->
                   <h6 class="small text-body-secondary mb-3">Datos de Personas</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar datos personales"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use></svg>
-                        <small class="text-center text-body-secondary">Datos personales</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar datos personales">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use></svg>
+                          <small class="text-center text-body-secondary">Datos personales</small>
+                        </div>
+                      </div>
                     </div>
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar datos de intervinientes"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-people"></use></svg>
-                        <small class="text-center text-body-secondary">Datos de intervinientes</small>
-                      </button>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar datos de intervinientes">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-people"></use></svg>
+                          <small class="text-center text-body-secondary">Datos de intervinientes</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <hr class="my-3" />
-
-                  <!-- DATOS DE INMUEBLES -->
                   <h6 class="small text-body-secondary mb-3">Datos de Inmuebles</h6>
                   <div class="row g-2 mb-3">
                     <div class="col-6">
-                      <button
-                        class="btn btn-ghost-secondary w-100 d-flex flex-column align-items-center justify-content-center p-2"
-                        draggable="true"
-                        title="Agregar datos de la propiedad"
-                      >
-                        <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use></svg>
-                        <small class="text-center text-body-secondary">Datos de la propiedad</small>
+                      <div class="card border-0 shadow-sm" draggable="true" title="Agregar datos de la propiedad">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center p-2 text-center">
+                          <svg class="icon text-primary fs-5 mb-1"><use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use></svg>
+                          <small class="text-center text-body-secondary">Datos de la propiedad</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Panel Central: Canvas -->
+          <main class="col-8 d-flex flex-column p-3 overflow-auto builder-main-scroll">
+            <div class="bg-white border-bottom rounded-3 p-4 mb-5">
+              <div class="d-flex align-items-center justify-content-between gap-3">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="badge bg-form1">2-5.2</span>
+                  <h6 class="fw-semibold mb-0">Solicitud de Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2 </h6>
+                </div>
+                <div class="d-flex gap-2">
+                  <button
+                    class="badge bg-primary rounded-pill text-nowrap border-0"
+                    data-coreui-toggle="offcanvas"
+                    data-coreui-target="#offcanvasDetalles"
+                    title="Ver detalles del formulario"
+                  >
+                    <i class="bi bi-info-circle"></i> Detalles
+                  </button>
+                  <button
+                    class="btn btn-sm rounded-pill bg-body-secondary text-body text-nowrap"
+                    data-coreui-toggle="offcanvas"
+                    data-coreui-target="#offcanvasComentarios"
+                    title="Ver comentarios"
+                  >
+                    <i class="bi bi-chat-dots text-danger"></i> 4 Comentarios
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center flex-column">
+              <div class="bg-white border rounded shadow-sm p-3 w-100 mw-100 position-relative mb-4" id="formCanvas">
+                <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                  <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                    <i class="bi bi-grip-vertical"></i>
+                  </button>
+                  <div class="btn-group btn-group-sm shadow-sm">
+                    <button type="button" class="btn btn-white" title="Duplicar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                      </svg>
+                    </button>
+                    <button type="button" class="btn btn-white" title="Comentar">
+                      <i class="bi bi-chat-dots fs-6"></i>
+                    </button>
+                    <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="mb-3 mt-4">
+                  <div class="border rounded bg-body-secondary py-2 px-3">
+                    <h6 class="mb-0 fw-normal text-uppercase">Sección 1</h6>
+                  </div>
+                </div>
+                <div class="border rounded p-3 mt-4 position-relative">
+                  <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                      <i class="bi bi-grip-vertical"></i>
+                    </button>
+                    <div class="btn-group btn-group-sm shadow-sm">
+                      <button type="button" class="btn btn-white" title="Duplicar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="btn btn-white" title="Comentar">
+                        <i class="bi bi-chat-dots fs-6"></i>
+                      </button>
+                      <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                        </svg>
                       </button>
                     </div>
                   </div>
-                </div>
-              </div>
-            </aside>
-            <!-- Panel Central: Canvas -->
-            <main class="col-8 d-flex flex-column p-3">
-              <div class="bg-white border-bottom rounded-3 p-4 mb-3">
-                <div class="d-flex align-items-center justify-content-between gap-3">
-                  <div class="d-flex align-items-center gap-3">
-                    <span class="badge bg-form1">2-5.2</span>
-                    <h6 class="fw-semibold mb-0">Solicitud de Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2 </h6>
-                  </div>
-                  <div class="d-flex gap-2">
-                    <button 
-                      class="badge bg-primary rounded-pill text-nowrap border-0" 
-                      data-coreui-toggle="offcanvas" 
-                      data-coreui-target="#offcanvasDetalles"
-                      title="Ver detalles del formulario"
-                    >
-                      <i class="bi bi-info-circle"></i> Detalles
-                    </button>
-                    <button 
-                      class="btn btn-sm rounded-pill bg-body-secondary text-body text-nowrap" 
-                      data-coreui-toggle="offcanvas" 
-                      data-coreui-target="#offcanvasComentarios"
-                      title="Ver comentarios"
-                    >
-                      <i class="bi bi-chat-dots text-danger"></i> 4 Comentarios
-                    </button>
+                  <div>
+                    <h6 class="mb-3 fw-normal">Área de texto</h6>
+                    <textarea class="form-control bg-body-secondary" rows="4" placeholder="Ingrese texto"></textarea>
                   </div>
                 </div>
               </div>
-              <div class="d-flex justify-content-center flex-column">
-                <div class="bg-white border rounded shadow-sm p-3 w-100 mw-100" id="formCanvas">
-                  <!-- Área de construcción del formulario -->
-                  <div class="border rounded mb-3">
-                    <div class="text-center bg-body-secondary py-2">
-                      <h6 class="mb-0 fw-normal text-uppercase">Sección 1</h6>
-                    </div>
-                  </div>
-                  <div class="border rounded p-3">
-                    <div>
-                      <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h6 class="mb-0 fw-normal">Área de texto</h6>
-                        <div class="d-flex gap-2">
-                          <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
-                            <i class="bi bi-grip-vertical"></i>
-                          </button>
-                          <div class="btn-group btn-group-sm shadow-sm">
-                            <button type="button" class="btn btn-white" title="Duplicar">
-                              <svg class="icon">
-                                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
-                              </svg>
-                            </button>
-                            <button type="button" class="btn btn-white" title="Comentar">
-                              <i class="bi bi-chat-dots fs-6"></i>
-                            </button>
-                            <button type="button" class="btn btn-white text-danger" title="Eliminar">
-                              <svg class="icon">
-                                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <textarea class="form-control bg-body-secondary" rows="4" placeholder="Ingrese texto"></textarea>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-3 my-4">
-                  <hr class="flex-grow-1" />
-                  <button class="btn btn-outline-primary btn-sm">
-                    <svg class="icon me-1" width="16" height="16" fill="currentColor">
-                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
-                    </svg>
-                    AGREGAR NUEVA SECCIÓN
+
+              <div class="bg-white border rounded shadow-sm p-3 w-100 mw-100 position-relative mb-4">
+                <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                  <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                    <i class="bi bi-grip-vertical"></i>
                   </button>
-                  <hr class="flex-grow-1" />
-                </div>
-              </div>
-            </main>
-            <!-- Panel Derecho: Propiedades -->
-            <aside class="col-2 border-start d-flex flex-column">
-              <div class="p-3">
-                <ul class="nav nav-tabs border-0 flex-nowrap" role="tablist">
-                  <li class="nav-item flex-fill" role="presentation">
-                    <button
-                      class="nav-link active w-100 text-center small"
-                      data-coreui-toggle="tab"
-                      data-coreui-target="#tabPropDocumento"
-                      type="button"
-                      role="tab"
-                      title="Ver propiedades del documento"
-                    >
-                      Propiedades
+                  <div class="btn-group btn-group-sm shadow-sm">
+                    <button type="button" class="btn btn-white" title="Duplicar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                      </svg>
                     </button>
-                  </li>
-                </ul>
-              </div>
-              <div class="tab-content flex-grow-1 overflow-auto">
-                <div class="tab-pane fade show active p-3" id="tabPropDocumento" role="tabpanel">
-                  <div class="mb-3">
-                    <label for="nombreStepper" class="form-label small text-body-secondary">
-                      Nombre en Stepper
-                    </label>
-                    <input type="text" class="form-control form-control-sm" id="nombreStepper" value="SECCIÓN 1" placeholder="Máximo de caracteres Altas y Bajas" />
+                    <button type="button" class="btn btn-white" title="Comentar">
+                      <i class="bi bi-chat-dots fs-6"></i>
+                    </button>
+                    <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                      </svg>
+                    </button>
                   </div>
-                  
-                  <div class="mb-3">
-                    <label for="descripcionSeccion" class="form-label small text-body-secondary">
-                      Descripción
-                    </label>
-                    <textarea class="form-control form-control-sm" id="descripcionSeccion" rows="3" placeholder="Solo se registra, no se publica en ninguna parte.">Breve descripción de la sección, qué hace y para qué sirve.</textarea>
+                </div>
+                <div class="mb-3 mt-4">
+                  <div class="border rounded bg-body-secondary py-2 px-3">
+                    <h6 class="mb-0 fw-normal text-uppercase">Sección 2</h6>
+                  </div>
+                </div>
+                <div class="border rounded p-3 mt-4 position-relative">
+                  <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                      <i class="bi bi-grip-vertical"></i>
+                    </button>
+                    <div class="btn-group btn-group-sm shadow-sm">
+                      <button type="button" class="btn btn-white" title="Duplicar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="btn btn-white" title="Comentar">
+                        <i class="bi bi-chat-dots fs-6"></i>
+                      </button>
+                      <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <h6 class="mb-3 fw-normal">Área de texto</h6>
+                    <textarea class="form-control bg-body-secondary" rows="4" placeholder="Ingrese texto"></textarea>
                   </div>
                 </div>
               </div>
-            </aside>
-          </div>
+
+              <div class="bg-white border rounded shadow-sm p-3 w-100 mw-100 position-relative mb-4">
+                <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                  <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                    <i class="bi bi-grip-vertical"></i>
+                  </button>
+                  <div class="btn-group btn-group-sm shadow-sm">
+                    <button type="button" class="btn btn-white" title="Duplicar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                      </svg>
+                    </button>
+                    <button type="button" class="btn btn-white" title="Comentar">
+                      <i class="bi bi-chat-dots fs-6"></i>
+                    </button>
+                    <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="mb-3 mt-4">
+                  <div class="border rounded bg-body-secondary py-2 px-3">
+                    <h6 class="mb-0 fw-normal text-uppercase">Sección 3</h6>
+                  </div>
+                </div>
+                <div class="border rounded p-3 mt-4 position-relative">
+                  <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                      <i class="bi bi-grip-vertical"></i>
+                    </button>
+                    <div class="btn-group btn-group-sm shadow-sm">
+                      <button type="button" class="btn btn-white" title="Duplicar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="btn btn-white" title="Comentar">
+                        <i class="bi bi-chat-dots fs-6"></i>
+                      </button>
+                      <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <h6 class="mb-3 fw-normal">Área de texto</h6>
+                    <textarea class="form-control bg-body-secondary" rows="4" placeholder="Ingrese texto"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white border rounded shadow-sm p-3 w-100 mw-100 position-relative mb-4">
+                <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                  <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                    <i class="bi bi-grip-vertical"></i>
+                  </button>
+                  <div class="btn-group btn-group-sm shadow-sm">
+                    <button type="button" class="btn btn-white" title="Duplicar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                      </svg>
+                    </button>
+                    <button type="button" class="btn btn-white" title="Comentar">
+                      <i class="bi bi-chat-dots fs-6"></i>
+                    </button>
+                    <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="mb-3 mt-4">
+                  <div class="border rounded bg-body-secondary py-2 px-3">
+                    <h6 class="mb-0 fw-normal text-uppercase">Sección 4</h6>
+                  </div>
+                </div>
+                <div class="border rounded p-3 mt-4 position-relative">
+                  <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                      <i class="bi bi-grip-vertical"></i>
+                    </button>
+                    <div class="btn-group btn-group-sm shadow-sm">
+                      <button type="button" class="btn btn-white" title="Duplicar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="btn btn-white" title="Comentar">
+                        <i class="bi bi-chat-dots fs-6"></i>
+                      </button>
+                      <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <h6 class="mb-3 fw-normal">Área de texto</h6>
+                    <textarea class="form-control bg-body-secondary" rows="4" placeholder="Ingrese texto"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white border rounded shadow-sm p-3 w-100 mw-100 position-relative mb-4">
+                <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                  <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                    <i class="bi bi-grip-vertical"></i>
+                  </button>
+                  <div class="btn-group btn-group-sm shadow-sm">
+                    <button type="button" class="btn btn-white" title="Duplicar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                      </svg>
+                    </button>
+                    <button type="button" class="btn btn-white" title="Comentar">
+                      <i class="bi bi-chat-dots fs-6"></i>
+                    </button>
+                    <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                      <svg class="icon">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="mb-3 mt-4">
+                  <div class="border rounded bg-body-secondary py-2 px-3">
+                    <h6 class="mb-0 fw-normal text-uppercase">Sección 5</h6>
+                  </div>
+                </div>
+                <div class="border rounded p-3 mt-4 position-relative">
+                  <div class="position-absolute top-0 end-0 translate-middle-y d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-white shadow-sm" title="Mover">
+                      <i class="bi bi-grip-vertical"></i>
+                    </button>
+                    <div class="btn-group btn-group-sm shadow-sm">
+                      <button type="button" class="btn btn-white" title="Duplicar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-copy"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="btn btn-white" title="Comentar">
+                        <i class="bi bi-chat-dots fs-6"></i>
+                      </button>
+                      <button type="button" class="btn btn-white text-danger" title="Eliminar">
+                        <svg class="icon">
+                          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-trash"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <h6 class="mb-3 fw-normal">Área de texto</h6>
+                    <textarea class="form-control bg-body-secondary" rows="4" placeholder="Ingrese texto"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 my-4">
+                <hr class="flex-grow-1" />
+                <button class="btn btn-outline-primary btn-sm">
+                  <svg class="icon me-1" width="16" height="16" fill="currentColor">
+                    <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                  </svg>
+                  AGREGAR NUEVA SECCIÓN
+                </button>
+                <hr class="flex-grow-1" />
+              </div>
+            </div>
+          </main>
+
+          <!-- Panel Derecho: Propiedades -->
+          <aside class="col-2 border-start builder-column-fixed">
+            <div class="d-flex flex-column h-100 overflow-hidden">
+              <div class="p-3 border-bottom bg-body">
+                <h6 class="mb-0 fw-semibold pfud-panel-title">Propiedades</h6>
+              </div>
+              <div class="flex-grow-1 overflow-auto p-3">
+                <div class="mb-3">
+                  <label for="nombreStepper" class="form-label small text-body-secondary">Nombre en Stepper</label>
+                  <input type="text" class="form-control form-control-sm" id="nombreStepper" value="SECCIÓN 1" placeholder="Máximo de caracteres Altas y Bajas" />
+                </div>
+                <div class="mb-3">
+                  <label for="descripcionSeccion" class="form-label small text-body-secondary">Descripción</label>
+                  <textarea class="form-control form-control-sm" id="descripcionSeccion" rows="3" placeholder="Solo se registra, no se publica en ninguna parte.">Breve descripción de la sección, qué hace y para qué sirve.</textarea>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
-      <!-- ============================= FIN CUERPO ============================= -->
-
-      <!-- ============================= FOOT: Pie de Página ============================= -->
-      <footer class="footer px-4">
-        <div class="d-flex justify-content-between align-items-center w-100 small">
-          <div class="small">MINVU © 2026 MINISTERIO DE VIVIENDA Y URBANISMO</div>
-          <div class="d-flex gap-2">
-            <span class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center">
-              <span class="small" id="fontSizeIndicator">100%</span>
-            </span>
-            <span class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center">
-              <span class="small">VERSIÓN 2.1</span>
-            </span>
-          </div>
-        </div>
-      </footer>
-      <!-- ============================= FIN FOOT ============================= -->
-
     </div>
-    <!-- ============================= FIN LAYOUT ============================= -->
-
+  </div>
     <!-- Offcanvas de Detalles -->
-    <div 
-      class="offcanvas offcanvas-end" 
-      tabindex="-1" 
-      id="offcanvasDetalles" 
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasDetalles"
       aria-labelledby="offcanvasDetallesLabel"
     >
       <div class="offcanvas-header border-bottom">
@@ -739,10 +850,10 @@
           <i class="bi bi-info-circle"></i>
           Detalles del Formulario
         </h6>
-        <button 
-          type="button" 
-          class="btn-close" 
-          data-coreui-dismiss="offcanvas" 
+        <button
+          type="button"
+          class="btn-close"
+          data-coreui-dismiss="offcanvas"
           aria-label="Cerrar"
         ></button>
       </div>
@@ -753,9 +864,9 @@
           <label class="form-label small text-body-secondary">
             Nombre del formulario
           </label>
-          <input 
-            type="text" 
-            class="form-control form-control-sm" 
+          <input
+            type="text"
+            class="form-control form-control-sm"
             id="formNombre"
             value="Solicitud de Modificación de Proyecto de Edificación, Ampliación Mayor a 100 m2"
             disabled
@@ -777,9 +888,9 @@
           <label class="form-label small text-body-secondary">
             Familia
           </label>
-          <input 
-            type="text" 
-            class="form-control form-control-sm" 
+          <input
+            type="text"
+            class="form-control form-control-sm"
             id="formFamilia"
             value="Modificación del Proyecto"
             disabled
@@ -790,9 +901,9 @@
           <label class="form-label small text-body-secondary">
             Norma
           </label>
-          <input 
-            type="text" 
-            class="form-control form-control-sm" 
+          <input
+            type="text"
+            class="form-control form-control-sm"
             id="formNorma"
             placeholder="No especificada"
             disabled
@@ -801,9 +912,9 @@
         <hr />
         <div class="mb-3">
           <label class="form-label small text-body-secondary">Vigencia</label>
-          <input 
-            type="text" 
-            class="form-control form-control-sm" 
+          <input
+            type="text"
+            class="form-control form-control-sm"
             id="formVigencia"
             placeholder="Sin vigencia fija"
             disabled
@@ -811,11 +922,11 @@
         </div>
         <hr />
         <div>
-          <button 
-            type="button" 
-            class="btn btn-primary" 
+          <button
+            type="button"
+            class="btn btn-primary"
             id="toggleEditMode"
-            onclick="toggleEditMode()"
+            data-action="toggle-edit-mode"
           >
             <i class="bi bi-pencil me-1"></i>
             Habilitar Edición
@@ -823,13 +934,12 @@
         </div>
       </div>
     </div>
-    <!-- Fin Offcanvas Detalles -->
 
     <!-- Offcanvas de Comentarios -->
-    <div 
-      class="offcanvas offcanvas-end" 
-      tabindex="-1" 
-      id="offcanvasComentarios" 
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasComentarios"
       aria-labelledby="offcanvasComentariosLabel"
     >
       <div class="offcanvas-header border-bottom">
@@ -838,10 +948,10 @@
           Comentarios
           <span class="badge bg-primary rounded-pill">2</span>
         </h6>
-        <button 
-          type="button" 
-          class="btn-close" 
-          data-coreui-dismiss="offcanvas" 
+        <button
+          type="button"
+          class="btn-close"
+          data-coreui-dismiss="offcanvas"
           aria-label="Cerrar"
         ></button>
       </div>
@@ -899,73 +1009,32 @@
         </div>
       </div>
     </div>
-    <!-- Fin Offcanvas -->
 
-    <!-- Scroll to top button -->
-    <button
-      id="scrollTopBtn"
-      class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle"
-      title="Volver arriba"
-    >
-      <svg width="20" height="20" fill="currentColor">
-        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-arrow-top"></use>
-      </svg>
-    </button>
-      <!-- Toast Container -->
-      <div class="toast-container position-fixed top-0 end-0 p-3">
-        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header bg-primary text-white">
-            <svg class="me-2" width="16" height="16" fill="currentColor">
-              <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
-            </svg>
-            <strong class="me-auto">Éxito</strong>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-coreui-dismiss="toast"
-              title="Close"
-            ></button>
+    <!-- Modal Cerrar Constructor -->
+    <div class="modal fade" id="closeConstructorModal" tabindex="-1" aria-labelledby="closeConstructorModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="closeConstructorModalLabel">Cerrar Constructor</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Cerrar"></button>
           </div>
-          <div class="toast-body">Cambios guardados con éxito.</div>
-        </div>
-      </div>
-      <!-- Botón scroll to top -->
-      <button
-        type="button"
-        class="btn btn-primary position-fixed bottom-0 end-0 m-4 d-none pfud-btn-float"
-        id="scrollToTop"
-        title="Volver arriba"
-      >
-        <svg width="20" height="20" fill="currentColor">
-          <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-arrow-top"></use>
-        </svg>
-      </button>
-
-      <!-- Modal Cerrar Constructor -->
-      <div class="modal fade" id="closeConstructorModal" tabindex="-1" aria-labelledby="closeConstructorModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="closeConstructorModalLabel">Cerrar Constructor</h5>
-              <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-              <p>¿Deseas guardar los cambios antes de cerrar el constructor?</p>
-              <p class="text-body-secondary small mb-0">Si cierras sin guardar, perderás todos los cambios realizados desde la última vez que guardaste.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" onclick="cerrarSinGuardar()">Cerrar sin guardar</button>
-              <button type="button" class="btn btn-primary" onclick="guardarYCerrar()">Guardar y cerrar</button>
-            </div>
+          <div class="modal-body">
+            <p>¿Deseas guardar los cambios antes de cerrar el constructor?</p>
+            <p class="text-body-secondary small mb-0">Si cierras sin guardar, perderás todos los cambios realizados desde la última vez que guardaste.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-action="cerrar-sin-guardar">Cerrar sin guardar</button>
+            <button type="button" class="btn btn-primary" data-action="guardar-y-cerrar">Guardar y cerrar</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- CoreUI and necessary plugins-->
-      <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
-      <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
-      <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
-      <script src="../../_coreui-base/js/main.js"></script>
-      <script src="../../assets/js/pfud.js"></script>
+    <!-- CoreUI and necessary plugins-->
+    <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
+    <script src="../../_coreui-base/js/main.js"></script>
+    <script src="../../assets/js/pfud.js"></script>
   </body>
 </html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="Portal Ciudadano - MINVU" />
+    <meta name="author" content="MINVU" />
+    <title>Crear Formulario - PFUD - MINVU</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/logos/favico.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/logos/favico.png" />
+    <meta name="theme-color" content="#09132D" />
+    <link rel="stylesheet" href="../../_coreui-base/vendors/simplebar/css/simplebar.css" />
+    <link rel="stylesheet" href="../../_coreui-base/css/vendors/simplebar.css" />
+    <link href="../../_coreui-base/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../assets/css/pfud-dev.css?v=158" />
+    <script src="../../_coreui-base/js/config.js"></script>
+    <script src="../../_coreui-base/js/color-modes.js"></script>
+  </head>
+  <body class="theme-auto">
+    <!-- ============================= LAYOUT: 2 COLUMNAS ============================= -->
+    <div class="d-flex gap-0">
+
+      <!-- ============================= COLUMNA 1: SIDEBAR ============================= -->
+      <div class="sidebar sidebar-dark sidebar-narrow sidebar-fixed" id="sidebar">
+        <div class="sidebar-header border-bottom">
+          <div class="sidebar-brand">
+            <img src="../../assets/img/logos/logo-minvu.png" alt="MINVU" class="sidebar-brand-full w-75" />
+            <img src="../../assets/img/logos/logo-minvu.png" alt="MINVU" class="sidebar-brand-narrow" />
+          </div>
+        </div>
+
+        <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html" title="Ir a Dashboard">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-title">Formularios</li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="crear-formulario.html" title="Ir a Crear Formulario">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+              </svg>
+              <span>Crear Formulario</span>
+            </a>
+          </li>
+
+          <li class="nav-divider border-top border-white border-opacity-10 my-2"></li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="en-creacion.html" title="Ir a En Creacion">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-file"></use>
+              </svg>
+              <span>En creación</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="aprobaciones.html" title="Ir a Aprobaciones">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-thumb-up"></use>
+              </svg>
+              <span>Pendientes de Aprobación</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="pendientes.html" title="Ir a Pendientes">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-clock"></use>
+              </svg>
+              <span>Pendientes de Publicación</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="publicados.html" title="Ir a Publicados">
+              <svg class="nav-icon">
+                <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-check-circle"></use>
+              </svg>
+              <span>Publicados</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- ============================= FIN COLUMNA 1: SIDEBAR ============================= -->
+
+      <!-- ============================= COLUMNA 2: CONTENIDO ============================= -->
+      <div class="wrapper d-flex flex-column min-vh-100 flex-grow-1 p-0 bg-body">
+
+        <!-- ============================= TOP: BARRA SUPERIOR ============================= -->
+        <header class="header header-sticky p-0 mb-2 border-0">
+          <div class="w-100 bg-white border-bottom">
+            <div class="container-fluid px-5">
+              <div class="d-flex flex-row align-items-center justify-content-between gap-2 py-2">
+                
+                <!-- Saludo -->
+                <div class="d-flex align-items-center flex-shrink-0">
+                  <span class="text-body-secondary small me-2 d-none d-lg-inline">Hola,</span>
+                  <span class="fw-semibold small d-none d-lg-inline">Dominique Chacra Gaete</span>
+                </div>
+
+                <!-- Selector de Rol -->
+                <div class="d-flex align-items-center gap-2 flex-shrink-0">
+                  <div class="dropdown">
+                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-coreui-toggle="dropdown" aria-expanded="false" title="Seleccionar rol">
+                      Rol Minvu Normas Aprobador
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#" title="MINVU ADM">MINVU ADM</a></li>
+                      <li><a class="dropdown-item" href="#" title="MINVU NORMAS CREADOR">MINVU NORMAS CREADOR</a></li>
+                      <li><a class="dropdown-item active" href="#" title="MINVU NORMAS APROBADOR">MINVU NORMAS APROBADOR</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Controles: A-, A+, Tema, Ayuda, Mi Perfil, Salir -->
+                <div class="d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
+                  
+                  <!-- Botones A- y A+ -->
+                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" title="Disminuir tamaño de fuente" onclick="adjustFontSize(-1)">
+                    <span class="fw-bold">A-</span>
+                  </button>
+                  <button class="btn btn-outline-secondary btn-sm me-0" type="button" title="Aumentar tamaño de fuente" onclick="adjustFontSize(1)">
+                    <span class="fw-bold">A+</span>
+                  </button>
+
+                  <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
+
+                  <!-- Selector de Tema -->
+                  <div class="dropdown">
+                    <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" data-coreui-toggle="dropdown" aria-expanded="false" title="Cambiar tema">
+                      <svg class="icon icon-lg theme-icon-active">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+                      </svg>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li>
+                        <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light" title="Cambiar a modo claro">
+                          <svg class="icon icon-lg me-3">
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-sun"></use>
+                          </svg>
+                          Claro
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark" title="Cambiar a modo oscuro">
+                          <svg class="icon icon-lg me-3">
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-moon"></use>
+                          </svg>
+                          Oscuro
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto" title="Cambiar a modo automático">
+                          <svg class="icon icon-lg me-3">
+                            <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-contrast"></use>
+                          </svg>
+                          Automático
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="vr h-200 mx-1 text-body text-opacity-75 d-none d-lg-block"></div>
+
+                  <!-- Ayuda -->
+                  <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary" href="ayuda.html" title="Ver ayuda">
+                    <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-info"></use>
+                    </svg>
+                    <span>Ayuda</span>
+                  </a>
+
+                  <!-- Mi Perfil -->
+                  <div class="dropdown">
+                    <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary dropdown-toggle" href="#" id="perfilDropdown" data-coreui-toggle="dropdown" aria-expanded="false" title="Abrir menú de perfil">
+                      <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
+                        <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                      </svg>
+                      <span>Mi Perfil</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end text-nowrap" aria-labelledby="perfilDropdown">
+                      <li class="px-3 py-1">
+                        <div class="avatar avatar-xl mb-3">
+                          <img class="avatar-img" src="../../assets/img/perfil.jpg" alt="Foto del usuario" />
+                        </div>
+                      </li>
+                      <li class="px-3 py-2">
+                        <div class="small text-body-secondary">Nombre</div>
+                        <div class="small text-nowrap">Dominique Chacra Gaete</div>
+                      </li>
+                      <li><hr class="dropdown-divider my-0" /></li>
+                      <li class="px-3 py-2">
+                        <div class="small text-body-secondary">Rol</div>
+                        <div class="small text-nowrap">Minvu Normas</div>
+                      </li>
+                      <li><hr class="dropdown-divider my-0" /></li>
+                      <li class="px-3 py-2">
+                        <div class="small text-body-secondary">E-mail</div>
+                        <div class="small text-nowrap">
+                          <a href="mailto:dchacrag@minvu.cl" title="Enviar correo">dchacrag@minvu.cl</a>
+                        </div>
+                      </li>
+                      <li><hr class="dropdown-divider my-0" /></li>
+                      <li class="px-3 py-2">
+                        <div class="small text-body-secondary">Teléfono</div>
+                        <div class="small text-nowrap">+56912345678</div>
+                      </li>
+                      <li><hr class="dropdown-divider my-0" /></li>
+                      <li class="px-3 pt-2 pb-1">
+                        <a href="mi-perfil.html" class="btn btn-sm btn-outline-primary w-100" title="Ver/actualizar datos">
+                          Ver / Actualizar Datos
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Salir -->
+                  <a class="btn btn-link btn-sm d-inline-flex align-items-center small text-body-secondary" href="#" data-coreui-toggle="modal" data-coreui-target="#logoutModal" title="Cerrar sesión">
+                    <svg class="me-1 align-middle" width="18" height="18" fill="currentColor">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                    </svg>
+                    <span>Salir</span>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- ============================= FIN TOP ============================= -->
+
+        <!-- ============================= TITULO: Breadcrumb, Icono, Título, Botón ============================= -->
+        <div class="container-fluid px-5">
+          <div class="pfud-header-section">
+            <!-- Fila superior: Breadcrumb -->
+            <div class="row">
+              <div class="col">
+                <nav aria-label="breadcrumb" class="mb-2">
+                  <ol class="breadcrumb my-0">
+                    <li class="breadcrumb-item">
+                      <span>Formularios</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            
+            <!-- Fila inferior: Icono/Título -->
+            <div class="row align-items-center">
+              <!-- Columna 1: Icono y Título -->
+              <div class="col-auto">
+                <div class="d-flex align-items-center">
+                  <div class="pfud-icon-circle bg-sidebar-dark">
+                    <svg width="28" height="28" fill="currentColor">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
+                    </svg>
+                  </div>
+                  <h1 class="h2 mb-0">Crear Formulario</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================= FIN TITULO ============================= -->
+
+        <!-- ============================= CUERPO: Contenido Principal ============================= -->
+        <div class="body flex-grow-1">
+          <div class="container-fluid px-5">
+            <div class="row g-5">
+              <div class="col-12 col-md-6">
+                <div class="bg-white rounded-3 p-4 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+                  <h2 class="h5 mb-2 fw-light text-center text-body">NUEVO FORMULARIO</h2>
+                  <p class="text-body-secondary mb-4">Desde Cero</p>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="window.location.href='crear-formulario-desde-cero.html'"
+                  >
+                    <svg class="icon me-1">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                    </svg>
+                    Crear Formulario desde Cero
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="bg-white rounded-3 p-4 h-100 d-flex flex-column align-items-center justify-content-center text-center">
+                  <h2 class="h5 mb-2 fw-light text-center text-body">NUEVO FORMULARIO</h2>
+                  <p class="text-body-secondary mb-4">A partir de uno ya publicado</p>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="window.location.href='crear-formulario-duplicado.html'"
+                  >
+                    <svg class="icon me-1">
+                      <use xlink:href="../../_coreui-base/vendors/@coreui/icons/svg/free.svg#cil-plus"></use>
+                    </svg>
+                    Crear Formulario a partir de uno ya publicado
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================= FIN CUERPO ============================= -->
+
+        <!-- ============================= FOOT: Pie de Página ============================= -->
+        <footer class="footer px-4">
+          <div class="d-flex justify-content-between align-items-center w-100 small">
+            <div class="small">MINVU © 2026 MINISTERIO DE VIVIENDA Y URBANISMO</div>
+            <div class="d-flex gap-2">
+              <span class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center">
+                <span class="small" id="fontSizeIndicator">100%</span>
+              </span>
+              <span class="border border-1 rounded px-3 py-1 text-secondary bg-transparent d-inline-flex align-items-center">
+                <span class="small">VERSIÓN 2.1</span>
+              </span>
+            </div>
+          </div>
+        </footer>
+        <!-- ============================= FIN FOOT ============================= -->
+
+      </div>
+      <!-- ============================= FIN COLUMNA 2: CONTENIDO ============================= -->
+
+    </div>
+    <!-- ============================= FIN LAYOUT ============================= -->
+
+    <!-- Modal de Cerrar Sesión -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoutModalLabel">¿Cerrar sesión?</h5>
+            <button type="button" class="btn-close" data-coreui-dismiss="modal" title="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-0">¿Estás seguro de que deseas cerrar sesión?</p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-sm btn-secondary" data-coreui-dismiss="modal" title="Cancelar">Cancelar</button>
+            <a href="index.html" class="btn btn-sm btn-primary" title="Cerrar sesión">Cerrar sesión</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../_coreui-base/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="../../_coreui-base/vendors/simplebar/js/simplebar.min.js"></script>
+    <script src="../../_coreui-base/vendors/@coreui/utils/js/index.js"></script>
+    <script src="../../_coreui-base/js/main.js"></script>
+    <script src="../../assets/js/pfud.js"></script>
+  </body>
+</html>

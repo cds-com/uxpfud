@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+/* ========================================
+  TITULOS - Familia tipográfica global
+  ======================================== */
+/* Ancho mínimo para dropdown de filtros en TI/en-creacion.html */
+.pfud-min-w-600 {
+  min-width: 600px !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* ========================================
    BODY - Font Size
@@ -502,9 +510,24 @@ body {
   font-size: 0.875rem !important;
 }
 
-.pfud-header-section h1 {
-  font-family: 'Roboto Slab', serif !important;
+/* Forzar familia tipográfica en todos los títulos de la cabecera */
+/* Forzar familia tipográfica Roboto Slab en títulos de cabecera con máxima especificidad */
+/* Especificidad para sobrescribir el global si es necesario */
+/* Forzar Roboto Slab solo para h1 de cabecera, máxima especificidad y fallback */
+.pfud-header-section h2,
+.pfud-header-section h3,
+.pfud-header-section h4,
+.pfud-header-section h5,
+.pfud-header-section h6,
+body .pfud-header-section h2,
+body .pfud-header-section h3,
+body .pfud-header-section h4,
+body .pfud-header-section h5,
+body .pfud-header-section h6 {
+  font-family: 'Roboto Slab', "Roboto Slab", serif !important;
   font-weight: 400 !important;
+  font-style: normal !important;
+  color: #23272b !important;
 }
 
 /* Círculo para icono del título */
@@ -681,10 +704,7 @@ aside .nav-tabs .nav-link.active {
 }
 
 /* Alert messages (index error pages) */
-.border.rounded.bg-white .fw-bold {
-  font-size: 0.875rem !important;
-  font-family: 'Roboto Slab', serif !important;
-}
+
 
 .border.rounded.bg-white > .small {
   font-size: 0.75rem !important;
@@ -1506,14 +1526,14 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.navbar-brand):active {
   background-color: #F3F4F7 !important;
   border: 1px solid var(--cui-border-color) !important;
   border-bottom: 0 !important;
-  border-radius: 0.5rem 0.5rem 0 0 !important;
+  border-radius: 0 !important;
   color: #0051A8 !important;
 }
 
 .body aside.col-2 .nav-tabs .nav-link {
   background-color: #fff !important;
   border: 1px solid var(--cui-border-color) !important;
-  border-radius: 0.5rem !important;
+  border-radius: 0 !important;
 }
 
 .body aside.col-2 .btn-ghost-secondary {
@@ -1656,34 +1676,12 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):not(.navbar-brand):active {
   color: #8c8c8c !important;
 }
 
-/* Forzar tabs rectos con máxima especificidad */
-body .nav-tabs .nav-link,
-body .nav-tabs .nav-link.active,
-body .nav-tabs .nav-link.disabled,
-body .builder-tabs-wrapper,
-body .builder-tab-link {
+.nav-tabs.pfud-tab-muted .nav-link {
   border-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
 }
 
-/* Forzar tabs rectos con máxima especificidad real */
-.body aside.col-2 .nav-tabs .nav-link,
-.body aside.col-2 .nav-tabs .nav-link.active,
-.body aside.col-2 .nav-tabs .nav-link.disabled {
-  border-radius: 0 !important;
-}
-
-.dropdown-menu.pfud-filtro-busqueda {
-  min-width: 640px !important;
-}
-
-/* Botón igual a '+ Crear nuevo Formulario' */
-.pfud-btn-igual-crear {
-  font-weight: 500;
-  font-size: 0.84375rem;
-  border-radius: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: auto;
-  padding: 0.25rem 0.5rem;
+.pfud-panel-title {
+  font-size: 0.875rem !important;
 }
